@@ -1,0 +1,10 @@
+# Exclude resource folder as requested
+resource/
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.vscode/
+.idea/

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Luyện Thi Trắc Nghiệm Java Online</title>
+  <meta name="description"
+    content="Hệ thống thi trắc nghiệm và ôn tập 340+ câu hỏi lập trình Java & OOP chuyên sâu với đáp án chính xác và lời giải chi tiết.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a class="brand-wrapper" id="brandHomeBtn" href="#">
+        <div class="brand-icon">☕</div>
+        <div class="brand-text">
+          <h1>Java Quiz Pro</h1>
+          <span>Luyện thi &amp; Đánh giá năng lực</span>
+        </div>
+      </a>
+
+      <div class="nav-controls">
+        <!-- Admin toggle badge to quickly toggle practice lock/unlock -->
+        <div id="adminToggleBadge" class="admin-badge locked" title="Điều khiển bật/tắt chế độ ôn tập">
+          🔒 Ôn tập: ĐANG KHÓA
+        </div>
+        <a href="Tong_hop_200_cau_trac_nghiem_Java.html" target="_blank" class="btn btn-outline"
+          style="font-size:0.8rem; padding:6px 12px;">
+          📄 Bản In PDF / Bảng Tổng Hợp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (Dynamically switched between Home, Practice, Exam, Result) -->
+  <main class="main-wrapper" id="appContainer">
+    <!-- Dynamic content rendered by app.js -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>☕ Hệ Thống Luyện Thi &amp; Đánh Giá Năng Lực Trắc Nghiệm Java Online • Ngân hàng 340+ câu hỏi chuẩn hóa &amp; OOP
+      chuyên sâu</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="config.js"></script>
+  <script src="quiz_data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
