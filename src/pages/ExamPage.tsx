@@ -10,7 +10,7 @@ import { QuizTimer } from '../components/quiz/QuizTimer';
 import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
 import { CodeBlock } from '../components/common/CodeBlock';
-import { ArrowLeft, ArrowRight, Send, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Send, AlertTriangle, LayoutGrid, X } from 'lucide-react';
 
 interface ExamPageProps {
   examItems: ExamQuestionItem[];
@@ -31,6 +31,7 @@ export const ExamPage: React.FC<ExamPageProps> = ({
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
   const [isTimeoutModalOpen, setIsTimeoutModalOpen] = useState<boolean>(false);
+  const [isPaletteOpen, setIsPaletteOpen] = useState<boolean>(false);
 
   const totalSeconds = timeMinutes * 60;
 
@@ -65,6 +66,11 @@ export const ExamPage: React.FC<ExamPageProps> = ({
     }
   };
 
+  const handlePaletteSelect = (index: number) => {
+    setCurrentIndex(index);
+    setIsPaletteOpen(false); // Close palette drawer on mobile after selection
+  };
+
   if (!currentItem) return null;
 
   const q = currentItem.question;
@@ -80,38 +86,72 @@ export const ExamPage: React.FC<ExamPageProps> = ({
   const selectedShuffledIndex = answers[q.id];
 
   return (
-    <div style={{ padding: '24px 0 64px' }}>
+    <div style={{ padding: '16px 0 64px' }}>
       <div className="container" style={{ maxWidth: '1160px' }}>
-        {/* Exam Header */}
+        {/* Exam Top Header Bar */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '16px',
+            gap: '12px',
             backgroundColor: 'var(--bg-surface)',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-lg)',
-            padding: '16px 24px',
-            marginBottom: '24px',
+            padding: '12px 18px',
+            marginBottom: '18px',
             boxShadow: 'var(--shadow-sm)',
           }}
         >
-          <div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+          {/* Left info */}
+          <div style={{ minWidth: '180px' }}>
+            <h2
+              style={{
+                fontSize: 'clamp(1rem, 3.5vw, 1.2rem)',
+                fontWeight: 800,
+                color: 'var(--text-primary)',
+                lineHeight: 1.2,
+              }}
+            >
               {t('exam.headerTitle')}
             </h2>
-            <div style={{ fontSize: '0.84rem', color: 'var(--text-muted)' }}>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2px' }}>
               {t('exam.questionNum')}:{' '}
               <strong style={{ color: 'var(--brand-primary)' }}>
-                {currentIndex + 1} / {examItems.length}
+                {currentIndex + 1}/{examItems.length}
               </strong>{' '}
-              • {t('practice.topics')}: {topicMeta?.shortName[language] || q.topicId}
+              • {topicMeta?.shortName[language] || q.topicId}
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          {/* Right Tools: Timer, Palette Toggle on Mobile, Cancel Button */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            {/* Mobile Palette Toggle Button */}
+            <button
+              type="button"
+              className="mobile-only"
+              onClick={() => setIsPaletteOpen(true)}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--brand-primary-subtle)',
+                border: '1px solid var(--brand-primary)',
+                color: 'var(--brand-primary)',
+                fontWeight: 700,
+                fontSize: '0.82rem',
+                cursor: 'pointer',
+              }}
+            >
+              <LayoutGrid size={16} />
+              <span>
+                {answeredCount}/{examItems.length}
+              </span>
+            </button>
+
             <QuizTimer
               formattedTime={timer.formattedTime}
               isWarning={timer.isWarning}
@@ -123,32 +163,38 @@ export const ExamPage: React.FC<ExamPageProps> = ({
               variant="outline"
               size="sm"
               onClick={handleConfirmCancel}
-              style={{ color: 'var(--state-error)', borderColor: 'var(--state-error-border)' }}
+              style={{
+                color: 'var(--state-error)',
+                borderColor: 'var(--state-error-border)',
+                padding: '6px 10px',
+                fontSize: '0.8rem',
+              }}
             >
               {t('exam.cancelBtn')}
             </Button>
           </div>
         </div>
 
-        {/* Main Grid: Question Content (Left) + Palette Sidebar (Right) */}
+        {/* Responsive Layout Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 1fr) 280px',
-            gap: '24px',
+            gridTemplateColumns: 'minmax(0, 1fr)',
+            gap: '20px',
             alignItems: 'start',
           }}
         >
-          {/* Question Card */}
+          {/* Main Question Card (100% width on mobile) */}
           <div
             style={{
               backgroundColor: 'var(--bg-surface)',
               border: '1px solid var(--border-subtle)',
               borderRadius: 'var(--radius-lg)',
-              padding: '32px',
+              padding: 'clamp(18px, 4vw, 32px)',
               boxShadow: 'var(--shadow-sm)',
               display: 'flex',
               flexDirection: 'column',
+              width: '100%',
             }}
           >
             {/* Header: Question Number & Topic */}
@@ -157,49 +203,80 @@ export const ExamPage: React.FC<ExamPageProps> = ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                marginBottom: '18px',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginBottom: '16px',
               }}
             >
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontWeight: 800,
-                  fontSize: '1.05rem',
+                  fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
                   color: 'var(--brand-primary)',
                 }}
               >
                 {t('exam.questionNum')} {currentIndex + 1} / {examItems.length}
               </span>
 
-              {topicMeta && (
-                <span
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {/* Desktop Toggle Button for Question Palette */}
+                <button
+                  type="button"
+                  onClick={() => setIsPaletteOpen((prev) => !prev)}
+                  title="Mở bảng danh sách câu hỏi"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
-                    padding: '4px 12px',
-                    borderRadius: 'var(--radius-full)',
-                    backgroundColor: 'var(--bg-surface-subtle)',
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: isPaletteOpen
+                      ? 'var(--brand-primary)'
+                      : 'var(--bg-surface-subtle)',
+                    color: isPaletteOpen ? '#ffffff' : 'var(--text-secondary)',
                     border: '1px solid var(--border-default)',
-                    fontSize: '0.8rem',
+                    fontSize: '0.78rem',
                     fontWeight: 600,
-                    color: 'var(--text-secondary)',
+                    cursor: 'pointer',
                   }}
                 >
-                  <span>{topicMeta.icon}</span>
-                  <span>{topicMeta.shortName[language]}</span>
-                </span>
-              )}
+                  <LayoutGrid size={14} />
+                  <span>
+                    {isPaletteOpen ? 'Đóng danh sách ✕' : `Danh sách (${answeredCount}/${examItems.length})`}
+                  </span>
+                </button>
+
+                {topicMeta && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'var(--bg-surface-subtle)',
+                      border: '1px solid var(--border-default)',
+                      fontSize: '0.76rem',
+                      fontWeight: 600,
+                      color: 'var(--text-secondary)',
+                    }}
+                  >
+                    <span>{topicMeta.icon}</span>
+                    <span>{topicMeta.shortName[language]}</span>
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Question Text */}
             <h3
               style={{
-                fontSize: '1.15rem',
+                fontSize: 'clamp(1rem, 3.5vw, 1.15rem)',
                 fontWeight: 600,
-                lineHeight: 1.5,
+                lineHeight: 1.55,
                 color: 'var(--text-primary)',
-                marginBottom: '16px',
+                marginBottom: '14px',
               }}
             >
               {questionText}
@@ -210,15 +287,16 @@ export const ExamPage: React.FC<ExamPageProps> = ({
 
             {/* Image if any */}
             {q.image && (
-              <div style={{ margin: '16px 0', textAlign: 'center' }}>
+              <div style={{ margin: '14px 0', textAlign: 'center' }}>
                 <img
                   src={q.image.startsWith('/') ? q.image : `/${q.image}`}
                   alt={`Question ${currentIndex + 1}`}
                   style={{
                     maxWidth: '100%',
-                    maxHeight: '360px',
+                    maxHeight: '340px',
                     borderRadius: 'var(--radius-md)',
                     border: '1px solid var(--border-default)',
+                    objectFit: 'contain',
                   }}
                 />
               </div>
@@ -249,32 +327,36 @@ export const ExamPage: React.FC<ExamPageProps> = ({
               })}
             </div>
 
-            {/* Navigation buttons */}
+            {/* Navigation buttons bar */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                marginTop: '36px',
-                paddingTop: '20px',
+                flexWrap: 'wrap',
+                gap: '10px',
+                marginTop: '28px',
+                paddingTop: '18px',
                 borderTop: '1px solid var(--border-subtle)',
               }}
             >
               <Button
                 variant="outline"
+                size="md"
                 onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
                 disabled={currentIndex === 0}
-                icon={<ArrowLeft size={17} />}
+                icon={<ArrowLeft size={16} />}
               >
                 Quay lại
               </Button>
 
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'flex', gap: '8px' }}>
                 {currentIndex < examItems.length - 1 ? (
                   <Button
                     variant="primary"
+                    size="md"
                     onClick={() => setCurrentIndex((prev) => Math.min(examItems.length - 1, prev + 1))}
-                    icon={<ArrowRight size={17} />}
+                    icon={<ArrowRight size={16} />}
                     iconPosition="right"
                   >
                     Câu tiếp
@@ -282,8 +364,9 @@ export const ExamPage: React.FC<ExamPageProps> = ({
                 ) : (
                   <Button
                     variant="primary"
+                    size="md"
                     onClick={() => setIsConfirmModalOpen(true)}
-                    icon={<Send size={16} />}
+                    icon={<Send size={15} />}
                     iconPosition="right"
                   >
                     {t('exam.submitBtn')}
@@ -292,51 +375,114 @@ export const ExamPage: React.FC<ExamPageProps> = ({
               </div>
             </div>
           </div>
-
-          {/* Palette Sidebar */}
-          <div
-            style={{
-              backgroundColor: 'var(--bg-surface)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 'var(--radius-lg)',
-              padding: '20px',
-              boxShadow: 'var(--shadow-sm)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px',
-              position: 'sticky',
-              top: '90px',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 700, fontSize: '0.94rem' }}>
-                {t('exam.paletteTitle')}
-              </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                {answeredCount}/{examItems.length}
-              </span>
-            </div>
-
-            <QuestionPalette
-              totalQuestions={examItems.length}
-              currentIndex={currentIndex}
-              answers={answers}
-              questionIds={questionIds}
-              onSelectQuestion={setCurrentIndex}
-            />
-
-            <Button
-              variant="primary"
-              fullWidth
-              onClick={() => setIsConfirmModalOpen(true)}
-              icon={<Send size={16} />}
-              iconPosition="right"
-            >
-              {t('exam.submitBtn')}
-            </Button>
-          </div>
         </div>
       </div>
+
+      {/* QUESTION PALETTE MODAL / BOTTOM SHEET (Toggleable on both Mobile and Desktop) */}
+      {isPaletteOpen && (
+        <>
+          <div
+            className="palette-backdrop"
+            onClick={() => setIsPaletteOpen(false)}
+            aria-label="Close question palette"
+          />
+          <div className="palette-bottom-sheet">
+            {/* Header */}
+            <div
+              style={{
+                padding: '14px 20px',
+                borderBottom: '1px solid var(--border-subtle)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                backgroundColor: 'var(--bg-surface)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <LayoutGrid size={18} color="var(--brand-primary)" />
+                <span style={{ fontWeight: 700, fontSize: '0.98rem' }}>
+                  {t('exam.paletteTitle')}
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.8rem',
+                    padding: '2px 8px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: 'var(--brand-primary-subtle)',
+                    color: 'var(--brand-primary)',
+                    fontWeight: 700,
+                  }}
+                >
+                  {answeredCount}/{examItems.length} đã làm
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsPaletteOpen(false)}
+                style={{
+                  padding: '6px',
+                  borderRadius: 'var(--radius-sm)',
+                  color: 'var(--text-secondary)',
+                  cursor: 'pointer',
+                  display: 'flex',
+                }}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Grid Body */}
+            <div
+              style={{
+                padding: '18px 20px',
+                overflowY: 'auto',
+                maxHeight: '55vh',
+                backgroundColor: 'var(--bg-surface-elevated)',
+              }}
+            >
+              <QuestionPalette
+                totalQuestions={examItems.length}
+                currentIndex={currentIndex}
+                answers={answers}
+                questionIds={questionIds}
+                onSelectQuestion={handlePaletteSelect}
+              />
+            </div>
+
+            {/* Footer with Submit Button */}
+            <div
+              style={{
+                padding: '12px 20px',
+                borderTop: '1px solid var(--border-subtle)',
+                backgroundColor: 'var(--bg-surface)',
+                display: 'flex',
+                gap: '12px',
+              }}
+            >
+              <Button
+                variant="ghost"
+                onClick={() => setIsPaletteOpen(false)}
+                style={{ flex: 1 }}
+              >
+                Đóng
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => {
+                  setIsPaletteOpen(false);
+                  setIsConfirmModalOpen(true);
+                }}
+                icon={<Send size={15} />}
+                iconPosition="right"
+                style={{ flex: 2 }}
+              >
+                {t('exam.submitBtn')}
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Confirm Submit Modal */}
       <Modal

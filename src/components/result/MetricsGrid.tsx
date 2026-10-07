@@ -23,9 +23,9 @@ export const MetricsGrid: React.FC<MetricsGridProps> = ({
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-        gap: '16px',
-        margin: '24px 0',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+        gap: '12px',
+        margin: '20px 0',
       }}
     >
       {/* Correct */}

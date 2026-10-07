@@ -19,23 +19,23 @@ export const HomePage: React.FC<HomePageProps> = ({
   const { t } = useI18n();
 
   return (
-    <div style={{ padding: '48px 0 64px' }}>
+    <div style={{ padding: 'clamp(20px, 4vw, 48px) 0 64px' }}>
       <div className="container" style={{ maxWidth: '1060px' }}>
         {/* Hero Section */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 48px)' }}>
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '6px 16px',
+              padding: '6px 14px',
               borderRadius: 'var(--radius-full)',
               backgroundColor: 'var(--brand-primary-subtle)',
               border: '1px solid rgba(59, 130, 246, 0.3)',
               color: 'var(--brand-primary)',
-              fontSize: '0.85rem',
+              fontSize: 'clamp(0.76rem, 2.5vw, 0.85rem)',
               fontWeight: 600,
-              marginBottom: '20px',
+              marginBottom: '16px',
             }}
           >
             {t('home.badge')}
@@ -43,11 +43,11 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <h1
             style={{
-              fontSize: '2.75rem',
+              fontSize: 'clamp(1.75rem, 5vw, 2.75rem)',
               fontWeight: 800,
               letterSpacing: '-0.03em',
-              lineHeight: 1.2,
-              marginBottom: '16px',
+              lineHeight: 1.25,
+              marginBottom: '14px',
               color: 'var(--text-primary)',
             }}
           >
@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <p
             style={{
-              fontSize: '1.12rem',
+              fontSize: 'clamp(0.92rem, 2.8vw, 1.1rem)',
               color: 'var(--text-secondary)',
               maxWidth: '680px',
               margin: '0 auto',
@@ -73,8 +73,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-            gap: '28px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+            gap: 'clamp(16px, 3vw, 28px)',
           }}
         >
           {/* Exam Mode Card */}
@@ -83,7 +83,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               backgroundColor: 'var(--bg-surface)',
               border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-lg)',
-              padding: '36px 32px',
+              padding: 'clamp(20px, 4vw, 36px) clamp(16px, 4vw, 32px)',
               display: 'flex',
               flexDirection: 'column',
               boxShadow: 'var(--shadow-md)',
@@ -171,7 +171,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               backgroundColor: 'var(--bg-surface)',
               border: `1px solid ${!isPracticeEnabled ? 'var(--state-warning-border)' : 'var(--border-default)'}`,
               borderRadius: 'var(--radius-lg)',
-              padding: '36px 32px',
+              padding: 'clamp(20px, 4vw, 36px) clamp(16px, 4vw, 32px)',
               display: 'flex',
               flexDirection: 'column',
               boxShadow: 'var(--shadow-md)',

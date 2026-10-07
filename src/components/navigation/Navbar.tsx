@@ -34,7 +34,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          height: '68px',
+          height: '62px',
+          gap: '8px',
         }}
       >
         {/* Brand */}
@@ -43,30 +44,32 @@ export const Navbar: React.FC<NavbarProps> = ({
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
+            gap: '8px',
             cursor: 'pointer',
             userSelect: 'none',
+            flexShrink: 0,
           }}
         >
           <div
             style={{
-              width: '42px',
-              height: '42px',
+              width: '36px',
+              height: '36px',
               borderRadius: 'var(--radius-md)',
               background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
               color: '#ffffff',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 4px 12px rgba(59, 130, 246, 0.35)',
+              boxShadow: '0 4px 10px rgba(59, 130, 246, 0.3)',
+              flexShrink: 0,
             }}
           >
-            <Coffee size={22} />
+            <Coffee size={20} />
           </div>
           <div>
             <div
               style={{
-                fontSize: '1.25rem',
+                fontSize: 'clamp(1rem, 3.2vw, 1.25rem)',
                 fontWeight: 800,
                 letterSpacing: '-0.02em',
                 color: 'var(--text-primary)',
@@ -76,8 +79,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t('nav.brandTitle')}
             </div>
             <div
+              className="hide-on-mobile"
               style={{
-                fontSize: '0.75rem',
+                fontSize: '0.72rem',
                 color: 'var(--text-muted)',
                 fontWeight: 500,
               }}
@@ -88,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Right Action Tools */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
           {/* Admin Practice Lock Toggle Badge */}
           <button
             onClick={onTogglePracticeLock}
@@ -96,10 +100,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              padding: '6px 12px',
+              gap: '4px',
+              padding: '5px 10px',
               borderRadius: 'var(--radius-full)',
-              fontSize: '0.78rem',
+              fontSize: '0.75rem',
               fontWeight: 700,
               cursor: 'pointer',
               transition: 'all var(--transition-fast)',
@@ -108,8 +112,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               color: isPracticeEnabled ? 'var(--state-success)' : 'var(--state-warning)',
             }}
           >
-            {isPracticeEnabled ? <Unlock size={14} /> : <Lock size={14} />}
-            <span>{isPracticeEnabled ? t('nav.practiceUnlocked') : t('nav.practiceLocked')}</span>
+            {isPracticeEnabled ? <Unlock size={13} /> : <Lock size={13} />}
+            <span className="hide-on-mobile">
+              {isPracticeEnabled ? t('nav.practiceUnlocked') : t('nav.practiceLocked')}
+            </span>
+            <span
+              style={{ display: 'none' }}
+              className="mobile-only"
+            >
+              {isPracticeEnabled ? 'MỞ' : 'KHÓA'}
+            </span>
           </button>
 
           {/* PDF Summary Document Link */}
@@ -121,10 +133,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              padding: '6px 12px',
+              gap: '5px',
+              padding: '6px 10px',
               borderRadius: 'var(--radius-md)',
-              fontSize: '0.82rem',
+              fontSize: '0.8rem',
               fontWeight: 600,
               backgroundColor: 'var(--bg-surface-subtle)',
               border: '1px solid var(--border-default)',

@@ -143,7 +143,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
               borderRadius: 'var(--radius-sm)',
               padding: '8px 14px',
               flex: 1,
-              minWidth: '260px',
+              minWidth: 'min(100%, 260px)',
             }}
           >
             <Search size={18} color="var(--text-muted)" />
@@ -260,7 +260,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                   backgroundColor: 'var(--bg-surface)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  padding: '24px',
+                  padding: 'clamp(16px, 4vw, 24px)',
                   boxShadow: 'var(--shadow-sm)',
                   transition: 'border-color var(--transition-fast)',
                 }}
