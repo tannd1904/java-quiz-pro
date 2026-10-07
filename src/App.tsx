@@ -55,11 +55,11 @@ const MainApp: React.FC = () => {
     loadData();
   }, []);
 
-  // Compute question count by topic
+  // Compute question count by topic (using Object.create(null) to avoid prototype collision with 'constructor')
   const topicCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
+    const counts: Record<string, number> = Object.create(null);
     questions.forEach((q) => {
-      counts[q.topicId] = (counts[q.topicId] || 0) + 1;
+      counts[q.topicId] = (Number(counts[q.topicId]) || 0) + 1;
     });
     return counts;
   }, [questions]);

@@ -24,9 +24,9 @@ const mockQuestions: Question[] = [
   },
   {
     id: 'test-2',
-    topicId: 'encapsulation',
-    category: { vi: 'Đóng Gói', en: 'Encapsulation' },
-    question: { vi: 'Câu 2', en: 'Question 2' },
+    topicId: 'constructor',
+    category: { vi: 'Hàm Tạo', en: 'Constructors' },
+    question: { vi: 'Câu Constructor', en: 'Constructor Question' },
     codeSnippet: null,
     image: null,
     options: {
@@ -39,15 +39,15 @@ const mockQuestions: Question[] = [
 ];
 
 describe('quizEngine', () => {
-  it('filters questions by topics', () => {
-    const filtered = filterQuestionsByTopics(mockQuestions, ['polymorphism']);
+  it('filters questions by topics including constructor topic', () => {
+    const filtered = filterQuestionsByTopics(mockQuestions, ['constructor']);
     expect(filtered.length).toBe(1);
-    expect(filtered[0].id).toBe('test-1');
+    expect(filtered[0].id).toBe('test-2');
   });
 
   it('prepares exam session with question slice and option indices', () => {
     const session = prepareExamSession(mockQuestions, {
-      selectedTopicIds: ['polymorphism', 'encapsulation'],
+      selectedTopicIds: ['polymorphism', 'constructor'],
       questionCount: 1,
       timeMinutes: 10,
       shuffleOptions: true,
@@ -56,6 +56,19 @@ describe('quizEngine', () => {
 
     expect(session.length).toBe(1);
     expect(session[0].shuffledIndices.length).toBe(mockQuestions[0].options.vi.length);
+  });
+
+  it('gracefully handles non-finite or NaN questionCount without returning empty', () => {
+    const session = prepareExamSession(mockQuestions, {
+      selectedTopicIds: ['constructor'],
+      questionCount: NaN,
+      timeMinutes: 10,
+      shuffleOptions: false,
+      shuffleQuestions: false
+    });
+
+    expect(session.length).toBe(1);
+    expect(session[0].question.id).toBe('test-2');
   });
 
   it('calculates score correctly when user selects correct shuffled option', () => {

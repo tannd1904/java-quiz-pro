@@ -56,7 +56,8 @@ export function prepareExamSession(
   }
 
   // 3. Slice to desired count
-  const count = Math.min(config.questionCount, pool.length);
+  const parsedCount = Number(config.questionCount);
+  const count = Number.isFinite(parsedCount) && parsedCount > 0 ? Math.min(parsedCount, pool.length) : pool.length;
   const selected = pool.slice(0, count);
 
   // 4. Map questions with option indices (supporting option shuffle)

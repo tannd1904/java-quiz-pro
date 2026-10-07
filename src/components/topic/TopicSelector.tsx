@@ -125,7 +125,11 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
             topic={topic}
             selected={selectedTopicIds.includes(topic.id)}
             onToggle={handleToggle}
-            count={questionCounts ? questionCounts[topic.id] : undefined}
+            count={
+              questionCounts && Number.isFinite(Number(questionCounts[topic.id]))
+                ? Number(questionCounts[topic.id])
+                : undefined
+            }
           />
         ))}
       </div>

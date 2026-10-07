@@ -33,7 +33,10 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
   // Compute total questions matching selected topics
   const matchingPoolCount = useMemo(() => {
     if (selectedTopicIds.length === 0) return 0;
-    return selectedTopicIds.reduce((sum, tid) => sum + (topicCounts[tid] || 0), 0);
+    return selectedTopicIds.reduce((sum, tid) => {
+      const c = Number(topicCounts?.[tid]);
+      return sum + (Number.isFinite(c) ? c : 0);
+    }, 0);
   }, [selectedTopicIds, topicCounts]);
 
   // Adjust questionCount when pool changes
@@ -44,11 +47,13 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
   }, [matchingPoolCount]);
 
   const handleStart = () => {
-    if (matchingPoolCount === 0) return;
+    const pool = Number(matchingPoolCount) || 0;
+    if (pool <= 0) return;
+    const finalCount = Math.min(Number(questionCount) || 10, pool);
     onStartExam({
       selectedTopicIds,
-      questionCount: Math.min(questionCount, matchingPoolCount),
-      timeMinutes,
+      questionCount: finalCount,
+      timeMinutes: Number(timeMinutes) || 40,
       shuffleOptions,
       shuffleQuestions,
     });
