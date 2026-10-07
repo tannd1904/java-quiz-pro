@@ -1,31 +1,40 @@
-# ☕ Java Quiz Pro - Hệ Thống Luyện Thi Trắc Nghiệm Java Online
+# ☕ Java Quiz Pro - Modern Java Certification & Competency Platform
 
-Nền tảng thi trắc nghiệm và ôn luyện lập trình Java & Lập trình Hướng đối tượng (OOP) chuyên sâu với hơn **340+ câu hỏi chuẩn hóa**, giải thích chi tiết và phân loại theo 16 chủ đề cốt lõi.
+Nền tảng thi trắc nghiệm và ôn luyện lập trình Java & Lập trình Hướng đối tượng (OOP) chuyên sâu với hơn **340+ câu hỏi chuẩn hóa**, giải thích chi tiết, hỗ trợ **Song Ngữ (Tiếng Việt 🇻🇳 / English 🇺🇸)**, giao diện **Dark/Light Mode** hiện đại, xây dựng trên nền tảng **React 18 + TypeScript + Vite**.
 
 ---
 
 ## 🌟 Tính Năng Nổi Bật
 
 - **🎯 Chế độ Kiểm tra (Exam Mode):**
-  - Tự do chọn các chủ đề muốn thi (Encapsulation, Inheritance, Polymorphism, Abstraction, Interface, Constructor, Memory, Exception, Collections...).
-  - Tùy chỉnh số lượng câu hỏi và thời gian làm bài (15, 30, 45, 60, 90 phút).
-  - Tự động xáo trộn ngẫu nhiên thứ tự câu hỏi và thứ tự đáp án A, B, C, D để chống học vẹt.
-  - Đồng hồ đếm ngược, thanh điều hướng câu hỏi (palette), chấm điểm và xem lại chi tiết sau khi nộp.
+  - Tự do chọn một hoặc nhiều chủ đề muốn thi (Encapsulation, Inheritance, Polymorphism, Abstraction, Interface, Constructor, Memory, Exception, Collections...).
+  - Tùy chỉnh số lượng câu hỏi và thời gian làm bài với thanh trượt và presets linh hoạt.
+  - Tự động xáo trộn ngẫu nhiên thứ tự câu hỏi và thứ tự đáp án A, B, C, D (giữ tính toàn vẹn câu hỏi và đáp án).
+  - Đồng hồ đếm ngược chính xác, cảnh báo thời gian, thanh điều hướng câu hỏi (palette) trực quan.
+  - Chấm điểm tự động thang điểm 10 & phần trăm, phân tích số câu đúng/sai/bỏ qua, và xem lại toàn bộ bài làm kèm giải thích chi tiết.
 
 - **💡 Chế độ Ôn tập (Practice Mode):**
-  - Bộ lọc chủ đề linh hoạt: Lựa chọn 1 hoặc nhiều chủ đề cùng lúc.
-  - Phản hồi tức thì: Chọn đáp án để biết ngay Đúng/Sai kèm giải thích bản chất nguyên lý Java.
-  - Hỗ trợ khối mã nguồn (Syntax-highlighted code block) rõ nét và hình ảnh minh họa.
-  - Tìm kiếm nhanh theo từ khóa trong câu hỏi, đáp án, mã nguồn và lời giải.
+  - Bộ lọc chủ đề linh hoạt kèm các preset thông minh: *Tất cả*, *Bộ 6 Chủ Đề OOP*, *4 Tính Chất OOP*, *Nâng Cao & JVM*.
+  - Phản hồi tức thì: Chọn đáp án để biết ngay kết quả Đúng (xanh) / Sai (đỏ) kèm lời giải chi tiết và mã nguồn minh họa.
+  - Hỗ trợ khối mã nguồn (Syntax-highlighted code block với nút copy) rõ nét và 77 hình ảnh đề thi nguyên bản.
+  - Tìm kiếm nhanh thời gian thực theo từ khóa trong câu hỏi, đáp án, mã nguồn và lời giải.
 
-- **🔒 Tính năng Khóa / Mở Quản trị:**
-  - Có thể cấu hình khóa chế độ ôn tập qua `config.js` (`ENABLE_PRACTICE_MODE: false`) để yêu cầu học viên làm bài kiểm tra trước, hoặc chuyển đổi trực tiếp trên thanh menu.
+- **🌐 Hỗ trợ Song Ngữ (Bilingual i18n):**
+  - Chuyển đổi mượt mà giữa **Tiếng Việt 🇻🇳** và **English 🇺🇸**.
+  - Lưu trạng thái ngôn ngữ đã chọn vào `localStorage`.
+
+- **🎨 Developer-Focused Design System (Dark & Light Mode):**
+  - Mặc định giao diện Tối (Dark mode `#09090b`) tối ưu cho lập trình viên.
+  - Tùy chọn chuyển đổi sang giao diện Sáng (Light mode) với bảng màu tinh tế, hiện đại.
+
+- **🔒 Quản Trị Khóa / Mở Chế Độ Ôn Tập:**
+  - Nút chuyển đổi nhanh quyền truy cập chế độ Ôn tập ngay trên thanh Navbar (`🔒 ĐANG KHÓA` / `🟢 ĐÃ MỞ`).
 
 ---
 
-## 📚 Phân Bổ Ngân Hàng Câu Hỏi (340+ Câu)
+## 📚 Phân Bổ Ngân Hàng Câu Hỏi (343 Câu Chuẩn Hóa)
 
-Toàn bộ câu hỏi được quản lý tập trung trong file `ngan_hang_de.json`:
+Toàn bộ câu hỏi được quản lý tập trung trong file `public/data/questions.json`:
 
 | Icon | Chủ đề | Số lượng câu |
 | :---: | :--- | :---: |
@@ -45,11 +54,58 @@ Toàn bộ câu hỏi được quản lý tập trung trong file `ngan_hang_de.j
 | ⌨️ | **I/O & Scanner** (Nhập Xuất Dữ Liệu) | 32 |
 | 🔁 | **Control Flow** (Vòng Lặp & Rẽ Nhánh) | 20 |
 | ☕ | **Core Java** (Căn Bản & Tổng Hợp) | 59 |
+| **Tổng** | **16 Chủ Đề Toàn Diện** | **343 Câu** |
 
 ---
 
-## 🚀 Hướng Dẫn Sử Dụng
+## 🛠️ Cấu Trúc Mã Nguồn
 
-1. Mở trực tiếp tệp `index.html` trên bất kỳ trình duyệt web hiện đại nào (Chrome, Edge, Firefox, Safari).
-2. Không cần cài đặt server phức tạp hay dependencies.
-3. Chỉnh sửa cấu hình hệ thống trực tiếp trong `config.js`.
+```text
+src/
+├── components/
+│   ├── common/        # Button, Modal, CodeBlock, ThemeToggle, LanguageSwitcher
+│   ├── navigation/    # Navbar, Footer
+│   ├── quiz/          # AnswerOption, ExplanationDrawer, QuestionPalette, QuizTimer, ExamSetupModal
+│   ├── result/        # ScoreCard, MetricsGrid, ReviewQuestionList
+│   └── topic/         # TopicChip, TopicSelector
+├── config/            # app.config.ts, topics.config.ts
+├── hooks/             # useI18n, useTheme, useQuizTimer
+├── i18n/              # vi/common.json, en/common.json
+├── pages/             # HomePage, PracticePage, ExamPage, ResultPage
+├── services/          # questionRepository.ts, quizEngine.ts
+├── styles/            # tokens.css, global.css
+└── types/             # question.ts, quiz.ts, theme.ts
+```
+
+---
+
+## 🚀 Hướng Dẫn Chạy & Phát Triển
+
+### 1. Cài đặt môi trường
+Yêu cầu Node.js (hỗ trợ cả Node 16+ và Node 18+).
+
+```bash
+npm install
+```
+
+### 2. Chạy môi trường phát triển (Dev Server)
+```bash
+npm run dev
+```
+Mở trình duyệt tại: `http://localhost:3000`
+
+### 3. Kiểm thử đơn vị (Unit Tests)
+```bash
+npm test
+```
+
+### 4. Build phiên bản phát hành (Production Build)
+```bash
+npm run build
+```
+Thư mục xuất xưởng được đóng gói tối ưu tại `dist/`.
+
+---
+
+## 📄 Tài Liệu Bảng Tổng Hợp
+File [bang_tong_hop_cau_hoi.html](bang_tong_hop_cau_hoi.html) cung cấp bản in tổng hợp đầy đủ nội dung câu hỏi, hình ảnh và đáp án, sẵn sàng để xuất file PDF chất lượng cao.

@@ -1,3 +1,11 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build output
+dist/
+
 # Exclude resource folder as requested
 resource/
 

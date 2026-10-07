@@ -1,0 +1,210 @@
+import React from 'react';
+import { ExamReviewItem } from '../../types/quiz';
+import { useI18n } from '../../hooks/useI18n';
+import { TOPICS_CONFIG } from '../../config/topics.config';
+import { AnswerOption } from '../quiz/AnswerOption';
+import { ExplanationDrawer } from '../quiz/ExplanationDrawer';
+import { CodeBlock } from '../common/CodeBlock';
+import { CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
+
+interface ReviewQuestionListProps {
+  reviewList: ExamReviewItem[];
+}
+
+export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewList }) => {
+  const { language, t } = useI18n();
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div style={{ borderBottom: '1px solid var(--border-subtle)', paddingBottom: '12px' }}>
+        <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+          {t('result.reviewSectionTitle')}
+        </h3>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '4px' }}>
+          {t('result.reviewSectionDesc')}
+        </p>
+      </div>
+
+      {reviewList.map((item) => {
+        const q = item.question;
+        const isAnswered = item.selectedOriginalIndex !== null;
+        const topicMeta = TOPICS_CONFIG.find((tc) => tc.id === q.topicId);
+
+        const questionText = language === 'en' && q.question.en ? q.question.en : q.question.vi;
+        const explanationText =
+          language === 'en' && q.explanation?.en ? q.explanation.en : (q.explanation?.vi || '');
+        const optionsList =
+          language === 'en' && q.options.en && q.options.en.length > 0 ? q.options.en : q.options.vi;
+
+        return (
+          <div
+            key={q.id}
+            style={{
+              backgroundColor: 'var(--bg-surface)',
+              border: `1.5px solid ${
+                !isAnswered
+                  ? 'var(--state-warning-border)'
+                  : item.isCorrect
+                  ? 'var(--state-success-border)'
+                  : 'var(--state-error-border)'
+              }`,
+              borderRadius: 'var(--radius-lg)',
+              padding: '24px',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            {/* Header: Question Number, Topic Badge, Result Status */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginBottom: '16px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span
+                  style={{
+                    fontWeight: 800,
+                    fontSize: '1rem',
+                    color: 'var(--brand-primary)',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  #{item.num}
+                </span>
+
+                {topicMeta && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '3px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'var(--bg-surface-subtle)',
+                      border: '1px solid var(--border-default)',
+                      fontSize: '0.78rem',
+                      fontWeight: 600,
+                      color: 'var(--text-secondary)',
+                    }}
+                  >
+                    <span>{topicMeta.icon}</span>
+                    <span>{language === 'en' ? topicMeta.shortName.en : topicMeta.shortName.vi}</span>
+                  </span>
+                )}
+              </div>
+
+              {/* Status pill */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                {!isAnswered ? (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      color: 'var(--state-warning)',
+                      fontWeight: 600,
+                      fontSize: '0.84rem',
+                    }}
+                  >
+                    <AlertCircle size={16} />
+                    <span>{t('result.statusSkipped')}</span>
+                  </span>
+                ) : item.isCorrect ? (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      color: 'var(--state-success)',
+                      fontWeight: 600,
+                      fontSize: '0.84rem',
+                    }}
+                  >
+                    <CheckCircle2 size={16} />
+                    <span>{t('result.statusCorrect')}</span>
+                  </span>
+                ) : (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      color: 'var(--state-error)',
+                      fontWeight: 600,
+                      fontSize: '0.84rem',
+                    }}
+                  >
+                    <XCircle size={16} />
+                    <span>{t('result.statusWrong')}</span>
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Question Text */}
+            <h4
+              style={{
+                fontSize: '1.05rem',
+                fontWeight: 600,
+                color: 'var(--text-primary)',
+                lineHeight: 1.5,
+                marginBottom: '14px',
+              }}
+            >
+              {questionText}
+            </h4>
+
+            {/* Code snippet if any */}
+            {q.codeSnippet && <CodeBlock code={q.codeSnippet} language="java" />}
+
+            {/* Image if any */}
+            {q.image && (
+              <div style={{ margin: '14px 0', textAlign: 'center' }}>
+                <img
+                  src={q.image.startsWith('/') ? q.image : `/${q.image}`}
+                  alt={`Question ${item.num}`}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '340px',
+                    borderRadius: 'var(--radius-md)',
+                    border: '1px solid var(--border-default)',
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Options */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+              {optionsList.map((optText, optIdx) => {
+                const letter = String.fromCharCode(65 + optIdx);
+                const isThisTheCorrectAnswer = optIdx === item.correctOriginalIndex;
+                const didUserChooseThis = item.selectedOriginalIndex === optIdx;
+
+                return (
+                  <AnswerOption
+                    key={optIdx}
+                    letter={letter}
+                    text={optText}
+                    isSelected={didUserChooseThis}
+                    isCorrect={isThisTheCorrectAnswer}
+                    isWrong={didUserChooseThis && !isThisTheCorrectAnswer}
+                    isRevealed={true}
+                    disabled={true}
+                    onClick={() => {}}
+                  />
+                );
+              })}
+            </div>
+
+            {/* Explanation Drawer */}
+            <ExplanationDrawer explanation={explanationText} />
+          </div>
+        );
+      })}
+    </div>
+  );
+};

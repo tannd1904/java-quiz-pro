@@ -1,40 +1,73 @@
 # 📂 Cấu Trúc Thư Mục Dự Án (Project Structure)
 
-Dưới đây là sơ đồ cây cấu trúc thư mục của dự án **Java Quiz Pro** (đã loại trừ thư mục `resource/`):
+Dưới đây là sơ đồ cây cấu trúc thư mục của dự án **Java Quiz Pro (Modernized Architecture)**:
 
 ```text
 java-quiz-pro/
-├── images/                                 # Thư mục chứa hình ảnh đoạn mã nguồn câu hỏi trắc nghiệm (77 ảnh)
-│   ├── de1_q12_5s9yGZZwP003nYzwIVaVSmf...png
-│   ├── de1_q15_NinWWUbNBcsXfuSIuy410Bs...png
-│   ├── de2_q24_k5wRNl1QDOXvaAi8SNX2JUB...png
-│   ├── de3_q1_VbQy5PVoY3VeEzK2GPAgOUZ...png
-│   ├── de4_q1_fReCipBSg38HSmKaJzDcAu5...png
-│   └── ...                                 # (Tổng cộng 77 tệp hình ảnh câu hỏi từ các đề thi)
-├── .gitignore                              # Cấu hình loại trừ thư mục resource/ và các file tạm hệ thống
-├── app.js                                  # Xử lý logic toàn bộ web app (chế độ ôn tập, thi kiểm tra, tính giờ, chấm điểm, bộ lọc chủ đề)
-├── config.js                               # Tệp cấu hình hệ thống (cờ khóa ôn tập ENABLE_PRACTICE_MODE, cấu hình mặc định)
-├── index.html                              # Trang chủ giao diện người dùng (Single Page Application - SPA)
-├── ngan_hang_de.json                       # Ngân hàng 343 câu hỏi gốc chuẩn hóa định dạng JSON (dùng lưu trữ, tra cứu lâu dài)
-├── quiz_data.js                            # Dữ liệu hằng số Javascript chứa 343 câu hỏi và cấu hình 16 chủ đề (QUIZ_DATA, TOPICS_CONFIG)
-├── style.css                               # Toàn bộ mã nguồn giao diện CSS hiện đại (Design System, Responsive, Dark/Light elements)
-├── README.md                               # Tài liệu giới thiệu hệ thống, hướng dẫn sử dụng và bảng phân loại chủ đề
-└── Tong_hop_200_cau_trac_nghiem_Java.pdf   # Tài liệu PDF tổng hợp 200 câu hỏi trắc nghiệm Java sạch đẹp dùng để in ấn/đọc offline
+├── public/
+│   ├── data/
+│   │   └── questions.json                # Single Source of Truth: 343 câu hỏi song ngữ (VI/EN) & 16 chủ đề
+│   └── images/                           # 77 tệp hình ảnh câu hỏi gốc phục vụ static assets
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button.tsx                # Nút bấm tái sử dụng với các biến thể (primary, secondary, outline, ghost)
+│   │   │   ├── CodeBlock.tsx             # Khối hiển thị mã nguồn Java kèm nút Copy
+│   │   │   ├── LanguageSwitcher.tsx      # Bộ chuyển đổi song ngữ Tiếng Việt 🇻🇳 / English 🇺🇸
+│   │   │   ├── Modal.tsx                 # Hộp thoại Modal hỗ trợ phím ESC và backdrop blur
+│   │   │   └── ThemeToggle.tsx           # Bộ chuyển đổi giao diện Dark (#09090b) / Light Mode
+│   │   ├── navigation/
+│   │   │   ├── Navbar.tsx                # Thanh điều hướng với Admin Lock toggle, PDF link, Theme & Lang switcher
+│   │   │   └── Footer.tsx                # Chân trang bản quyền và tiêu chuẩn Java SE
+│   │   ├── quiz/
+│   │   │   ├── AnswerOption.tsx          # Tùy chọn đáp án (A, B, C, D) với trạng thái tương tác & phản hồi màu
+│   │   │   ├── ExamSetupModal.tsx        # Modal cấu hình đề thi theo chủ đề, số câu, thời gian và xáo trộn
+│   │   │   ├── ExplanationDrawer.tsx     # Ngăn hiển thị giải thích chi tiết đáp án và nguyên lý OOP
+│   │   │   ├── QuestionPalette.tsx       # Bảng điều hướng câu hỏi trực quan dạng lưới
+│   │   │   └── QuizTimer.tsx             # Đồng hồ đếm ngược với trạng thái cảnh báo thời gian
+│   │   ├── result/
+│   │   │   ├── MetricsGrid.tsx           # Lưới thống kê số câu đúng, sai, chưa làm và thời gian làm bài
+│   │   │   ├── ReviewQuestionList.tsx    # Danh sách đối chiếu chi tiết bài làm với đáp án chuẩn
+│   │   │   └── ScoreCard.tsx             # Thẻ hiển thị điểm số thang 10, tỉ lệ % và trạng thái Đạt / Chưa đạt
+│   │   └── topic/
+│   │       ├── TopicChip.tsx             # Huy hiệu chủ đề kèm icon và số lượng câu hỏi khả dụng
+│   │       └── TopicSelector.tsx         # Bộ chọn đa chủ đề tích hợp các nút preset nhanh
+│   ├── config/
+│   │   ├── app.config.ts                 # Cấu hình tham số ứng dụng (điểm đạt, thời gian mặc định, practice lock)
+│   │   └── topics.config.ts              # Cấu hình 16 chủ đề chuẩn hóa và các bộ preset lọc
+│   ├── hooks/
+│   │   ├── useI18n.tsx                   # Hook & Context quản lý đa ngôn ngữ với localStorage persistence
+│   │   ├── useQuizTimer.ts               # Hook quản lý đồng hồ đếm ngược chính xác theo thời gian thực
+│   │   └── useTheme.tsx                  # Hook & Context quản lý Dark/Light mode với data-theme attribute
+│   ├── i18n/
+│   │   ├── en/
+│   │   │   └── common.json               # Tài nguyên văn bản Tiếng Anh
+│   │   └── vi/
+│   │       └── common.json               # Tài nguyên văn bản Tiếng Việt
+│   ├── pages/
+│   │   ├── ExamPage.tsx                  # Màn hình làm bài thi có tính giờ, xáo trộn câu/đáp án và palette
+│   │   ├── HomePage.tsx                  # Màn hình chính giới thiệu nền tảng và 2 chế độ thi / ôn tập
+│   │   ├── PracticePage.tsx              # Màn hình ôn tập theo chủ đề với phản hồi tức thì và tìm kiếm nhanh
+│   │   └── ResultPage.tsx                # Màn hình tổng kết kết quả, xếp loại và xem lại lời giải chi tiết
+│   ├── services/
+│   │   ├── questionRepository.ts         # Service nạp và cache dữ liệu câu hỏi từ public/data/questions.json
+│   │   └── quizEngine.ts                 # Engine nghiệp vụ: lọc chủ đề, xáo trộn mảng, tính điểm và review
+│   ├── styles/
+│   │   ├── global.css                    # CSS toàn cục, reset và typography
+│   │   └── tokens.css                    # Design tokens (màu sắc HSL, font Inter & JetBrains Mono, border, shadow)
+│   ├── types/
+│   │   ├── question.ts                   # Định nghĩa kiểu dữ liệu Question, TopicConfig, LocalizedString
+│   │   ├── quiz.ts                       # Định nghĩa kiểu dữ liệu ExamSetupConfig, ExamQuestionItem, ExamResult
+│   │   └── theme.ts                      # Định nghĩa kiểu Theme ('dark' | 'light')
+│   ├── App.tsx                           # Root React Component điều phối state machine các views
+│   └── main.tsx                          # Điểm khởi chạy React 18 DOM root
+├── tests/
+│   ├── dataIntegrity.test.ts             # Kiểm thử toàn vẹn 343 câu hỏi, 16 topics và đường dẫn 77 ảnh
+│   └── quizEngine.test.ts                # Kiểm thử thuật toán xáo trộn, lọc chủ đề và tính điểm
+├── bang_tong_hop_cau_hoi.html            # Bản tổng hợp 343 câu hỏi định dạng HTML tối ưu in ấn PDF
+├── index.html                            # File HTML gốc của Vite SPA
+├── package.json                          # Cấu hình dependencies (React 18, Vite 4.5, Lucide-react, Vitest)
+├── tsconfig.json                         # Cấu hình TypeScript compiler
+├── vite.config.ts                        # Cấu hình Vite bundler và Vitest
+└── README.md                             # Tài liệu giới thiệu và hướng dẫn sử dụng
 ```
-
----
-
-## 📌 Chi Tiết Vai Trò Các Thành Phần
-
-| Tên tệp / Thư mục | Định dạng | Vai trò chính |
-| :--- | :---: | :--- |
-| `index.html` | HTML | Khung giao diện chính, thanh điều hướng Navbar, Admin Toggle Badge, Container chuyển đổi các màn hình (Home, Practice, Exam, Result). |
-| `style.css` | CSS | Giao diện hiện đại tối ưu trải nghiệm (Typography Google Fonts, Glassmorphism navbar, chip chủ đề, palette chọn câu, code snippet dark theme). |
-| `app.js` | JavaScript | Logic vận hành: điều hướng SPA, quản lý trạng thái, bộ lọc đa chủ đề (Multi-select Topic Filter), xáo trộn câu hỏi và đáp án A/B/C/D, tính giờ làm bài và chấm điểm tự động. |
-| `config.js` | JavaScript | Nơi quản trị viên cấu hình nhanh tham số: `ENABLE_PRACTICE_MODE` (bật/tắt khóa ôn tập), `EXAM_QUESTION_COUNT`, `EXAM_TIME_MINUTES`, `PASSING_SCORE_PERCENT`. |
-| `ngan_hang_de.json` | JSON | Kho lưu trữ toàn diện 343 câu hỏi Java (gồm 70 câu OOP nâng cao, 73 câu mở rộng chuyên sâu cho Polymorphism, Abstraction, Interface, Exception, Collections và 200 câu thực hành). |
-| `quiz_data.js` | JavaScript | Cung cấp hằng số `QUIZ_DATA` và danh sách cấu hình `TOPICS_CONFIG` cho `app.js` nạp trực tiếp mà không bị chặn bởi CORS khi chạy file offline. |
-| `images/` | PNG | Chứa 77 ảnh chụp đoạn mã nguồn trong các câu hỏi trắc nghiệm của 4 bộ đề gốc. |
-| `Tong_hop_200_cau_trac_nghiem_Java.pdf` | PDF | Bản PDF tổng hợp 200 câu trắc nghiệm đã được làm sạch, không có quảng cáo hay chi tiết che khuất để in ấn hoặc học ngoại tuyến. |
-| `.gitignore` | Config | Cấu hình Git bỏ qua thư mục `resource/`, file rác hệ điều hành (`.DS_Store`, `Thumbs.db`) và các file tạm. |
-| `README.md` | Markdown | Trang giới thiệu tổng quan dự án trên GitHub repository. |

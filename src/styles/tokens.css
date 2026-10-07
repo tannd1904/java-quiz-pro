@@ -1,0 +1,98 @@
+/* =========================================================================
+   DESIGN TOKENS - MODERN DEVELOPER PLATFORM (LINEAR / VERCEL INSPIRED)
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
+
+  /* Transitions & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Light Theme (Default fallback) */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-subtle: #f1f5f9;
+  --bg-code: #0f172a;
+
+  --border-subtle: #e2e8f0;
+  --border-default: #cbd5e1;
+  --border-hover: #94a3b8;
+  --border-focus: #3b82f6;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-code: #38bdf8;
+  --text-inverted: #ffffff;
+
+  --brand-primary: #3b82f6;
+  --brand-primary-hover: #2563eb;
+  --brand-primary-subtle: #eff6ff;
+
+  --state-success: #16a34a;
+  --state-success-subtle: #dcfce7;
+  --state-success-border: #86efac;
+
+  --state-error: #dc2626;
+  --state-error-subtle: #fee2e2;
+  --state-error-border: #fca5a5;
+
+  --state-warning: #d97706;
+  --state-warning-subtle: #fef3c7;
+  --state-warning-border: #fde68a;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Theme (Developer Focused) */
+[data-theme='dark'] {
+  --bg-app: #09090b;
+  --bg-surface: #111113;
+  --bg-surface-elevated: #18181b;
+  --bg-surface-subtle: #27272a;
+  --bg-code: #000000;
+
+  --border-subtle: #27272a;
+  --border-default: #3f3f46;
+  --border-hover: #52525b;
+  --border-focus: #60a5fa;
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-code: #38bdf8;
+  --text-inverted: #09090b;
+
+  --brand-primary: #3b82f6;
+  --brand-primary-hover: #60a5fa;
+  --brand-primary-subtle: rgba(59, 130, 246, 0.15);
+
+  --state-success: #22c55e;
+  --state-success-subtle: rgba(34, 197, 94, 0.15);
+  --state-success-border: #15803d;
+
+  --state-error: #ef4444;
+  --state-error-subtle: rgba(239, 68, 68, 0.15);
+  --state-error-border: #b91c1c;
+
+  --state-warning: #f59e0b;
+  --state-warning-subtle: rgba(245, 158, 11, 0.15);
+  --state-warning-border: #b45309;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
