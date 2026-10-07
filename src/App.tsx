@@ -244,11 +244,14 @@ const MainApp: React.FC = () => {
   );
 };
 
+import { Analytics } from '@vercel/analytics/react';
+
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <I18nProvider>
         <MainApp />
+        <Analytics />
       </I18nProvider>
     </ThemeProvider>
   );

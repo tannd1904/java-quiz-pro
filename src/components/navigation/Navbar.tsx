@@ -114,10 +114,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* PDF Summary Document Link */}
           <a
-            href="./bang_tong_hop_cau_hoi.html"
+            href="./Tong_hop_200_cau_trac_nghiem_Java.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            title="Mở tài liệu bảng tổng hợp 340+ câu hỏi"
+            title="Mở tài liệu bảng tổng hợp câu hỏi"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
