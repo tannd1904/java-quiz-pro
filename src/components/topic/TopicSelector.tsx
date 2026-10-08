@@ -24,8 +24,11 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
     }
   };
 
-  const handleSelectPreset = (preset: 'ALL' | 'OOP_6' | 'OOP_4' | 'ADV' | 'NONE') => {
+  const handleSelectPreset = (preset: 'CO_HAI' | 'ALL' | 'OOP_6' | 'OOP_4' | 'ADV' | 'NONE') => {
     switch (preset) {
+      case 'CO_HAI':
+        onChange(TOPIC_PRESETS.OOP_MIDTERM_CO_HAI);
+        break;
       case 'ALL':
         onChange(TOPIC_PRESETS.ALL);
         break;
@@ -73,6 +76,19 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
 
         {/* Presets */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          <button
+            type="button"
+            onClick={() => handleSelectPreset('CO_HAI')}
+            style={{
+              ...presetBtnStyle,
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              borderColor: 'var(--state-error)',
+              color: 'var(--state-error)',
+              fontWeight: 700,
+            }}
+          >
+            {t('practice.presetMidtermCoHai')}
+          </button>
           <button
             type="button"
             onClick={() => handleSelectPreset('ALL')}

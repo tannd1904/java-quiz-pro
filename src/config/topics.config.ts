@@ -182,6 +182,42 @@ export const TOPICS_CONFIG: TopicConfig[] = [
     icon: "🔁"
   },
   {
+    id: "objects_classes",
+    name: {
+      vi: "Objects and Classes (Lớp & Đối tượng)",
+      en: "Objects and Classes"
+    },
+    shortName: {
+      vi: "Objects & Classes",
+      en: "Objects & Classes"
+    },
+    icon: "📦"
+  },
+  {
+    id: "lambda",
+    name: {
+      vi: "Lambda Expressions & Functional Interface",
+      en: "Lambda & Functional Interfaces"
+    },
+    shortName: {
+      vi: "Lambda",
+      en: "Lambda"
+    },
+    icon: "λ"
+  },
+  {
+    id: "inner_class",
+    name: {
+      vi: "Inner Class & Nested Class (Lớp lồng nhau)",
+      en: "Inner & Nested Classes"
+    },
+    shortName: {
+      vi: "Inner Class",
+      en: "Inner Class"
+    },
+    icon: "🪆"
+  },
+  {
     id: "core_java",
     name: {
       vi: "Core Java (Căn Bản & Tổng Hợp)",
@@ -197,6 +233,17 @@ export const TOPICS_CONFIG: TopicConfig[] = [
 
 export const TOPIC_PRESETS = {
   ALL: TOPICS_CONFIG.map(t => t.id),
+  OOP_MIDTERM_CO_HAI: [
+    'objects_classes',
+    'encapsulation',
+    'inheritance',
+    'polymorphism',
+    'abstraction',
+    'interface',
+    'lambda',
+    'inner_class',
+    'exception'
+  ],
   CORE_OOP_6: ['encapsulation', 'inheritance', 'polymorphism', 'abstraction', 'interface', 'constructor'],
   OOP_4: ['encapsulation', 'inheritance', 'polymorphism', 'abstraction'],
   ADVANCED_JVM: ['static_final', 'exception', 'memory_jvm', 'collections', 'design_patterns'],

@@ -8,13 +8,43 @@ describe('Data Integrity (questions.json)', () => {
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
   const questions: Question[] = JSON.parse(rawData);
 
-  it('contains exactly 343 questions', () => {
-    expect(questions.length).toBe(343);
+  it('contains exactly 933 questions', () => {
+    expect(questions.length).toBe(933);
   });
 
   it('has unique question IDs without duplicates', () => {
     const idSet = new Set(questions.map(q => q.id));
-    expect(idSet.size).toBe(343);
+    expect(idSet.size).toBe(933);
+  });
+
+  it('ensures all 6 midterm OOP areas have at least 100 questions each', () => {
+    const topicCounts = questions.reduce((acc, q) => {
+      acc[q.topicId] = (acc[q.topicId] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    // 1. Objects and Classes
+    expect(topicCounts['objects_classes'] || 0).toBeGreaterThanOrEqual(100);
+
+    // 2. 4 OOP Pillars
+    const oop4Count =
+      (topicCounts['encapsulation'] || 0) +
+      (topicCounts['inheritance'] || 0) +
+      (topicCounts['polymorphism'] || 0) +
+      (topicCounts['abstraction'] || 0);
+    expect(oop4Count).toBeGreaterThanOrEqual(100);
+
+    // 3. Interface
+    expect(topicCounts['interface'] || 0).toBeGreaterThanOrEqual(100);
+
+    // 4. Lambda
+    expect(topicCounts['lambda'] || 0).toBeGreaterThanOrEqual(100);
+
+    // 5. Inner Class
+    expect(topicCounts['inner_class'] || 0).toBeGreaterThanOrEqual(100);
+
+    // 6. Exception
+    expect(topicCounts['exception'] || 0).toBeGreaterThanOrEqual(100);
   });
 
   it('ensures each question has matching options in VI and EN', () => {
