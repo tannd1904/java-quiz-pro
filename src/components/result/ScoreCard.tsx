@@ -1,6 +1,7 @@
 import React from 'react';
-import { Award, AlertTriangle } from 'lucide-react';
+import { Award, AlertTriangle, User } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
+import { examTelemetryService } from '../../services/examTelemetryService';
 
 interface ScoreCardProps {
   score10: number; // 0..10
@@ -10,6 +11,7 @@ interface ScoreCardProps {
 
 export const ScoreCard: React.FC<ScoreCardProps> = ({ score10, percentage, isPassed }) => {
   const { t } = useI18n();
+  const candidateName = examTelemetryService.getCandidateName();
 
   return (
     <div
@@ -38,6 +40,29 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({ score10, percentage, isPas
       >
         {isPassed ? <Award size={36} /> : <AlertTriangle size={36} />}
       </div>
+
+      {candidateName && (
+        <div>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '4px 14px',
+              borderRadius: 'var(--radius-full)',
+              backgroundColor: 'var(--bg-surface-elevated)',
+              color: 'var(--text-secondary)',
+              fontSize: '0.88rem',
+              fontWeight: 600,
+              marginBottom: '10px',
+              border: '1px solid var(--border-subtle)',
+            }}
+          >
+            <User size={14} color="var(--brand-primary)" />
+            <span>{candidateName}</span>
+          </div>
+        </div>
+      )}
 
       <h2
         style={{

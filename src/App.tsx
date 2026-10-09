@@ -4,6 +4,7 @@ import { Question } from './types/question';
 import { questionRepository } from './services/questionRepository';
 import { prepareExamSession, calculateExamResult } from './services/quizEngine';
 import { userProgressService } from './services/userProgressService';
+import { examTelemetryService } from './services/examTelemetryService';
 import { I18nProvider, useI18n } from './hooks/useI18n';
 import { ThemeProvider } from './hooks/useTheme';
 import { Navbar } from './components/navigation/Navbar';
@@ -136,6 +137,9 @@ const MainApp: React.FC = () => {
     };
     userProgressService.saveExamHistory(historyItem);
     setExamHistory(userProgressService.getExamHistory());
+
+    // Silently send exam results and telemetry to Google Sheets in background
+    examTelemetryService.sendExamResult(result, currentExamConfig);
 
     userProgressService.clearActiveExamSession();
     setActiveExamSession(null);

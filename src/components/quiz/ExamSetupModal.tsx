@@ -5,7 +5,8 @@ import { TopicSelector } from '../topic/TopicSelector';
 import { TOPIC_PRESETS } from '../../config/topics.config';
 import { ExamSetupConfig } from '../../types/quiz';
 import { useI18n } from '../../hooks/useI18n';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, User } from 'lucide-react';
+import { examTelemetryService } from '../../services/examTelemetryService';
 
 interface ExamSetupModalProps {
   isOpen: boolean;
@@ -29,6 +30,7 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
   const [timeMinutes, setTimeMinutes] = useState<number>(40);
   const [shuffleOptions, setShuffleOptions] = useState<boolean>(true);
   const [shuffleQuestions, setShuffleQuestions] = useState<boolean>(true);
+  const [candidateName, setCandidateName] = useState<string>(() => examTelemetryService.getCandidateName());
 
   // Compute total questions matching selected topics
   const matchingPoolCount = useMemo(() => {
@@ -50,6 +52,7 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
     const pool = Number(matchingPoolCount) || 0;
     if (pool <= 0) return;
     const finalCount = Math.min(Number(questionCount) || 10, pool);
+    examTelemetryService.setCandidateName(candidateName);
     onStartExam({
       selectedTopicIds,
       questionCount: finalCount,
@@ -264,6 +267,48 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
             onChange={(e) => setTimeMinutes(Number(e.target.value))}
             style={{ width: '100%', marginTop: '14px', cursor: 'pointer' }}
           />
+        </div>
+
+        {/* Optional Candidate Name */}
+        <div
+          style={{
+            backgroundColor: 'var(--bg-surface)',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: 'var(--radius-lg)',
+            padding: '14px 18px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+            <User size={18} color="var(--brand-primary)" />
+            <label
+              htmlFor="candidate-name-input"
+              style={{ fontWeight: 700, fontSize: '0.94rem', color: 'var(--text-primary)' }}
+            >
+              {t('examSetup.candidateNameLabel')}
+            </label>
+          </div>
+          <input
+            id="candidate-name-input"
+            type="text"
+            value={candidateName}
+            onChange={(e) => setCandidateName(e.target.value)}
+            placeholder={t('examSetup.candidateNamePlaceholder')}
+            maxLength={50}
+            style={{
+              width: '100%',
+              padding: '9px 14px',
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--bg-surface-subtle)',
+              color: 'var(--text-primary)',
+              fontSize: '0.92rem',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          />
+          <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px', marginBottom: 0 }}>
+            {t('examSetup.candidateNameSubtext')}
+          </p>
         </div>
 
         {/* 4. Shuffling Options */}

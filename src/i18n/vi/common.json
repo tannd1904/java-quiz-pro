@@ -60,6 +60,9 @@
     "sectionShuffle": "4. Tùy chọn xáo trộn",
     "shuffleOptions": "🔀 Tự động xáo trộn vị trí đáp án A, B, C, D (Chống học vẹt vị trí)",
     "shuffleQuestions": "🎲 Tự động xáo trộn ngẫu nhiên thứ tự các câu hỏi",
+    "candidateNameLabel": "Họ tên hoặc Biệt danh (Không bắt buộc)",
+    "candidateNamePlaceholder": "Ví dụ: Nguyễn Văn A hoặc Nickname...",
+    "candidateNameSubtext": "Nhập tên để cá nhân hóa kết quả thi và lưu vào lịch sử bài làm",
     "backBtn": "Quay lại",
     "startBtn": "Bắt đầu làm bài ngay 🚀"
   },
