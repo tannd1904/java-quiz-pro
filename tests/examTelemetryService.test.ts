@@ -37,7 +37,7 @@ describe('ExamTelemetryService', () => {
   });
 
   it('manages Google Sheet webhook URL', () => {
-    expect(examTelemetryService.getSheetWebhookUrl()).toBe('');
+    expect(examTelemetryService.getSheetWebhookUrl().startsWith('https://script.google.com/macros/s/')).toBe(true);
 
     examTelemetryService.setSheetWebhookUrl('https://script.google.com/macros/s/xyz/exec');
     expect(examTelemetryService.getSheetWebhookUrl()).toBe('https://script.google.com/macros/s/xyz/exec');
@@ -74,6 +74,8 @@ describe('ExamTelemetryService', () => {
       shuffleQuestions: true,
     };
 
+    // Test when webhook is explicitly disabled/empty
+    examTelemetryService.setSheetWebhookUrl('   ');
     const res = await examTelemetryService.sendExamResult(mockResult, mockConfig);
     expect(res).toBe(false); // Returns false cleanly when no webhook URL is set
   });

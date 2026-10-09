@@ -5,7 +5,7 @@ const STORAGE_KEY_DEVICE_ID = 'java_quiz_device_id';
 const STORAGE_KEY_WEBHOOK = 'java_quiz_sheet_webhook_url';
 
 // Default Google Sheets Webhook URL (Can be overridden via localStorage or direct configuration)
-export const DEFAULT_SHEET_WEBHOOK_URL = '';
+export const DEFAULT_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyA3DfH_odzp_1N64ioXeRBZ6dt5Q0MLhdiZAm1FBd4ONn-2Ck-h97D7oeeE6isfKmp/exec';
 
 export interface TelemetryPayload {
   timestamp: string;
@@ -101,7 +101,7 @@ class ExamTelemetryService {
     if (typeof localStorage === 'undefined') return DEFAULT_SHEET_WEBHOOK_URL;
     try {
       const stored = localStorage.getItem(STORAGE_KEY_WEBHOOK);
-      if (stored && stored.trim()) return stored.trim();
+      if (stored !== null) return stored.trim();
     } catch {}
     return DEFAULT_SHEET_WEBHOOK_URL;
   }
@@ -110,7 +110,7 @@ class ExamTelemetryService {
     if (typeof localStorage === 'undefined') return;
     try {
       localStorage.setItem(STORAGE_KEY_WEBHOOK, url.trim());
-    } catch {}
+    } catch { }
   }
 
   /**
@@ -195,7 +195,7 @@ class ExamTelemetryService {
             isp: 'Không xác định',
           };
         }
-      } catch {}
+      } catch { }
     }
 
     return {
@@ -217,6 +217,10 @@ class ExamTelemetryService {
       if (!webhookUrl) {
         // If not configured yet, log quietly in debug and return
         console.debug('Google Sheet webhook URL is not configured yet.');
+        return false;
+      }
+
+      if (typeof fetch === 'undefined') {
         return false;
       }
 
