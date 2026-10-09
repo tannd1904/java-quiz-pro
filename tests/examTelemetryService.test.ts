@@ -74,9 +74,35 @@ describe('ExamTelemetryService', () => {
       shuffleQuestions: true,
     };
 
-    // Test when webhook is explicitly disabled/empty
     examTelemetryService.setSheetWebhookUrl('   ');
     const res = await examTelemetryService.sendExamResult(mockResult, mockConfig);
-    expect(res).toBe(false); // Returns false cleanly when no webhook URL is set
+    expect(res).toBe(false);
+  });
+
+  it('checks hasCandidateName accurately', () => {
+    expect(examTelemetryService.hasCandidateName()).toBe(false);
+    examTelemetryService.setCandidateName('Trần Văn B');
+    expect(examTelemetryService.hasCandidateName()).toBe(true);
+  });
+
+  it('handles practice summary gracefully without throwing', async () => {
+    const resEmpty = await examTelemetryService.sendPracticeSummary({
+      answeredCount: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      timeSpentSeconds: 0,
+    });
+    expect(resEmpty).toBe(false);
+
+    examTelemetryService.setSheetWebhookUrl('   ');
+    const res = await examTelemetryService.sendPracticeSummary({
+      answeredCount: 15,
+      correctCount: 12,
+      wrongCount: 3,
+      timeSpentSeconds: 300,
+      topicsSummary: 'encapsulation',
+      wrongQuestionIds: ['java-001', 'java-002'],
+    });
+    expect(res).toBe(false);
   });
 });

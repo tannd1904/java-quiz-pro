@@ -15,6 +15,7 @@ import { ExamPage } from './pages/ExamPage';
 import { ResultPage } from './pages/ResultPage';
 import { ExamSetupModal } from './components/quiz/ExamSetupModal';
 import { ExamHistoryModal } from './components/history/ExamHistoryModal';
+import { CandidateNameModal } from './components/common/CandidateNameModal';
 import { Coffee, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from './components/common/Button';
 
@@ -44,6 +45,10 @@ const MainApp: React.FC = () => {
     currentIndex: number;
     remainingSeconds: number;
   } | null>(null);
+
+  // Candidate Name modal state
+  const [isNameModalOpen, setIsNameModalOpen] = useState<boolean>(false);
+  const [pendingActionAfterName, setPendingActionAfterName] = useState<'PRACTICE' | 'EXAM' | null>(null);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -173,6 +178,11 @@ const MainApp: React.FC = () => {
   };
 
   const handleStartPractice = () => {
+    if (!examTelemetryService.hasCandidateName()) {
+      setPendingActionAfterName('PRACTICE');
+      setIsNameModalOpen(true);
+      return;
+    }
     setView('PRACTICE');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -202,6 +212,10 @@ const MainApp: React.FC = () => {
         onNavigateHome={handleNavigateHome}
         onOpenExamHistory={() => setIsExamHistoryModalOpen(true)}
         historyCount={examHistory.length}
+        onEditCandidateName={() => {
+          setPendingActionAfterName(null);
+          setIsNameModalOpen(true);
+        }}
       />
 
       <main style={{ flex: 1 }}>
@@ -324,6 +338,24 @@ const MainApp: React.FC = () => {
         onSelectReview={handleReviewHistoryItem}
         onDeleteItem={handleDeleteHistoryItem}
         onClearAll={handleClearAllHistory}
+      />
+
+      {/* Candidate Name Modal */}
+      <CandidateNameModal
+        isOpen={isNameModalOpen}
+        onClose={() => {
+          setIsNameModalOpen(false);
+          setPendingActionAfterName(null);
+        }}
+        onSuccess={() => {
+          setIsNameModalOpen(false);
+          if (pendingActionAfterName === 'PRACTICE') {
+            setView('PRACTICE');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          setPendingActionAfterName(null);
+        }}
+        isMandatory={pendingActionAfterName !== null}
       />
 
       <Footer />

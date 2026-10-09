@@ -1,21 +1,35 @@
-import React from 'react';
-import { Coffee, History } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Coffee, History, User } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
+import { examTelemetryService, EVENT_CANDIDATE_NAME_UPDATED } from '../../services/examTelemetryService';
 
 interface NavbarProps {
   onNavigateHome: () => void;
   onOpenExamHistory?: () => void;
   historyCount?: number;
+  onEditCandidateName?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onNavigateHome,
   onOpenExamHistory,
   historyCount = 0,
+  onEditCandidateName,
 }) => {
   const { language, t } = useI18n();
+  const [candidateName, setCandidateName] = useState<string>(() =>
+    examTelemetryService.getCandidateName()
+  );
+
+  useEffect(() => {
+    const handleNameUpdate = (e: any) => {
+      setCandidateName(e.detail || examTelemetryService.getCandidateName());
+    };
+    window.addEventListener(EVENT_CANDIDATE_NAME_UPDATED, handleNameUpdate);
+    return () => window.removeEventListener(EVENT_CANDIDATE_NAME_UPDATED, handleNameUpdate);
+  }, []);
 
   return (
     <header
@@ -93,6 +107,34 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Tools */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+          {/* Candidate Name Badge */}
+          {candidateName && (
+            <button
+              type="button"
+              onClick={onEditCandidateName}
+              title={language === 'en' ? 'Click to change candidate name' : 'Bấm để đổi tên thí sinh'}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '5px 10px',
+                borderRadius: 'var(--radius-full)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                backgroundColor: 'var(--brand-primary-subtle)',
+                border: '1px solid var(--brand-primary)',
+                color: 'var(--brand-primary)',
+                cursor: 'pointer',
+                maxWidth: '140px',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              <User size={13} style={{ flexShrink: 0 }} />
+              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{candidateName}</span>
+            </button>
+          )}
 
           {/* Exam History Button */}
           {onOpenExamHistory && (

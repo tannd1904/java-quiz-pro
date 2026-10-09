@@ -60,9 +60,10 @@
     "sectionShuffle": "4. Randomization Options",
     "shuffleOptions": "🔀 Shuffle answer options A, B, C, D (Prevents position bias)",
     "shuffleQuestions": "🎲 Randomize question sequence",
-    "candidateNameLabel": "Your Name or Nickname (Optional)",
-    "candidateNamePlaceholder": "e.g., Alex Johnson or Nickname...",
-    "candidateNameSubtext": "Enter your name to personalize your exam report and history",
+    "candidateNameLabel": "Candidate Full Name",
+    "candidateNamePlaceholder": "e.g. Alex Johnson",
+    "candidateNameSubtext": "Enter your name to start the exam and track your score",
+    "nameRequiredError": "Please enter your name to proceed",
     "backBtn": "Back",
     "startBtn": "Start Exam Now 🚀"
   },

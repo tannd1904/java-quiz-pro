@@ -31,6 +31,9 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
   const [shuffleOptions, setShuffleOptions] = useState<boolean>(true);
   const [shuffleQuestions, setShuffleQuestions] = useState<boolean>(true);
   const [candidateName, setCandidateName] = useState<string>(() => examTelemetryService.getCandidateName());
+  const [nameError, setNameError] = useState<string>('');
+
+  const hasRegisteredName = Boolean(examTelemetryService.getCandidateName());
 
   // Compute total questions matching selected topics
   const matchingPoolCount = useMemo(() => {
@@ -51,8 +54,19 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
   const handleStart = () => {
     const pool = Number(matchingPoolCount) || 0;
     if (pool <= 0) return;
+
+    if (!hasRegisteredName) {
+      const trimmed = candidateName.trim();
+      if (!trimmed) {
+        setNameError(
+          t('examSetup.nameRequiredError') || 'Vui lòng nhập họ và tên của bạn để tiếp tục.'
+        );
+        return;
+      }
+      examTelemetryService.setCandidateName(trimmed);
+    }
+
     const finalCount = Math.min(Number(questionCount) || 10, pool);
-    examTelemetryService.setCandidateName(candidateName);
     onStartExam({
       selectedTopicIds,
       questionCount: finalCount,
@@ -269,47 +283,59 @@ export const ExamSetupModal: React.FC<ExamSetupModalProps> = ({
           />
         </div>
 
-        {/* Optional Candidate Name */}
-        <div
-          style={{
-            backgroundColor: 'var(--bg-surface)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '14px 18px',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <User size={18} color="var(--brand-primary)" />
-            <label
-              htmlFor="candidate-name-input"
-              style={{ fontWeight: 700, fontSize: '0.94rem', color: 'var(--text-primary)' }}
-            >
-              {t('examSetup.candidateNameLabel')}
-            </label>
-          </div>
-          <input
-            id="candidate-name-input"
-            type="text"
-            value={candidateName}
-            onChange={(e) => setCandidateName(e.target.value)}
-            placeholder={t('examSetup.candidateNamePlaceholder')}
-            maxLength={50}
+        {/* Mandatory Candidate Name on First Attempt */}
+        {!hasRegisteredName && (
+          <div
             style={{
-              width: '100%',
-              padding: '9px 14px',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-default)',
-              backgroundColor: 'var(--bg-surface-subtle)',
-              color: 'var(--text-primary)',
-              fontSize: '0.92rem',
-              outline: 'none',
-              boxSizing: 'border-box',
+              backgroundColor: 'var(--bg-surface)',
+              border: `1.5px solid ${nameError ? 'var(--state-error)' : 'var(--border-subtle)'}`,
+              borderRadius: 'var(--radius-lg)',
+              padding: '14px 18px',
             }}
-          />
-          <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px', marginBottom: 0 }}>
-            {t('examSetup.candidateNameSubtext')}
-          </p>
-        </div>
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+              <User size={18} color="var(--brand-primary)" />
+              <label
+                htmlFor="candidate-name-input"
+                style={{ fontWeight: 700, fontSize: '0.94rem', color: 'var(--text-primary)' }}
+              >
+                {t('examSetup.candidateNameLabel')}{' '}
+                <span style={{ color: 'var(--state-error)' }}>*</span>
+              </label>
+            </div>
+            <input
+              id="candidate-name-input"
+              type="text"
+              value={candidateName}
+              onChange={(e) => {
+                setCandidateName(e.target.value);
+                if (nameError) setNameError('');
+              }}
+              placeholder={t('examSetup.candidateNamePlaceholder')}
+              maxLength={50}
+              style={{
+                width: '100%',
+                padding: '9px 14px',
+                borderRadius: 'var(--radius-md)',
+                border: `1px solid ${nameError ? 'var(--state-error)' : 'var(--border-default)'}`,
+                backgroundColor: 'var(--bg-surface-subtle)',
+                color: 'var(--text-primary)',
+                fontSize: '0.92rem',
+                outline: 'none',
+                boxSizing: 'border-box',
+              }}
+            />
+            {nameError ? (
+              <p style={{ fontSize: '0.8rem', color: 'var(--state-error)', marginTop: '6px', marginBottom: 0 }}>
+                {nameError}
+              </p>
+            ) : (
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px', marginBottom: 0 }}>
+                {t('examSetup.candidateNameSubtext')}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* 4. Shuffling Options */}
         <div

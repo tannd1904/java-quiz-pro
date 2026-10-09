@@ -1,9 +1,10 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Question, TopicConfig } from '../types/question';
 import { TOPICS_CONFIG, TOPIC_PRESETS } from '../config/topics.config';
 import { useI18n } from '../hooks/useI18n';
 import { userProgressService } from '../services/userProgressService';
 import { questionReportService, EVENT_REPORTS_UPDATED } from '../services/questionReportService';
+import { examTelemetryService } from '../services/examTelemetryService';
 import { PracticeProgressItem } from '../types/quiz';
 import { TopicSelector } from '../components/topic/TopicSelector';
 import { AnswerOption } from '../components/quiz/AnswerOption';
@@ -59,6 +60,57 @@ export const PracticePage: React.FC<PracticePageProps> = ({
   const [userReportedIds, setUserReportedIds] = useState<string[]>(() => {
     return questionReportService.getUserReportedQuestionIds();
   });
+
+  // Session Telemetry Tracking (Silent)
+  const sessionStartTimeRef = useRef<number>(Date.now());
+  const sessionAnsweredQIds = useRef<Set<string>>(new Set());
+  const sessionCorrectQIds = useRef<Set<string>>(new Set());
+  const sessionWrongQIds = useRef<Set<string>>(new Set());
+  const hasDispatchedTelemetry = useRef<boolean>(false);
+
+  const recordSessionAnswer = (questionId: string, isCorrect: boolean) => {
+    sessionAnsweredQIds.current.add(questionId);
+    if (isCorrect) {
+      sessionCorrectQIds.current.add(questionId);
+      sessionWrongQIds.current.delete(questionId);
+    } else {
+      sessionWrongQIds.current.add(questionId);
+      sessionCorrectQIds.current.delete(questionId);
+    }
+    hasDispatchedTelemetry.current = false;
+  };
+
+  const dispatchPracticeSummary = () => {
+    if (hasDispatchedTelemetry.current) return;
+    if (sessionAnsweredQIds.current.size === 0) return;
+
+    const timeSpentSeconds = Math.max(1, Math.round((Date.now() - sessionStartTimeRef.current) / 1000));
+    examTelemetryService.sendPracticeSummary({
+      answeredCount: sessionAnsweredQIds.current.size,
+      correctCount: sessionCorrectQIds.current.size,
+      wrongCount: sessionWrongQIds.current.size,
+      timeSpentSeconds,
+      topicsSummary: selectedTopicIds.join(', '),
+      wrongQuestionIds: Array.from(sessionWrongQIds.current),
+    });
+    hasDispatchedTelemetry.current = true;
+  };
+
+  useEffect(() => {
+    const handleUnload = () => {
+      dispatchPracticeSummary();
+    };
+    window.addEventListener('beforeunload', handleUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleUnload);
+      dispatchPracticeSummary();
+    };
+  }, [selectedTopicIds]);
+
+  const handleBackHome = () => {
+    dispatchPracticeSummary();
+    onNavigateHome();
+  };
 
   useEffect(() => {
     const handleReportUpdate = () => {
@@ -224,6 +276,8 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     const isCorrect = optionIdx === targetQ.correctIndex;
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, optionIdx];
 
+    recordSessionAnswer(questionId, isCorrect);
+
     // Save persistent answer
     const record = userProgressService.savePracticeAnswer(
       questionId,
@@ -268,6 +322,8 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     const existingWrongs = wrongAttempts[questionId] || [];
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
 
+    recordSessionAnswer(questionId, isCorrect);
+
     const record = userProgressService.savePracticeAnswer(
       questionId,
       selected,
@@ -296,6 +352,8 @@ export const PracticePage: React.FC<PracticePageProps> = ({
 
     const existingWrongs = wrongAttempts[questionId] || [];
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
+
+    recordSessionAnswer(questionId, isCorrect);
 
     const record = userProgressService.savePracticeAnswer(
       questionId,
@@ -379,7 +437,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         >
           <Button
             variant="ghost"
-            onClick={onNavigateHome}
+            onClick={handleBackHome}
             icon={<Home size={18} />}
           >
             {t('practice.backHomeBtn')}

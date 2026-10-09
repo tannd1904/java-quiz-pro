@@ -3,9 +3,14 @@ import { ExamResult, ExamSetupConfig } from '../types/quiz';
 const STORAGE_KEY_CANDIDATE_NAME = 'java_quiz_candidate_name';
 const STORAGE_KEY_DEVICE_ID = 'java_quiz_device_id';
 const STORAGE_KEY_WEBHOOK = 'java_quiz_sheet_webhook_url';
+const STORAGE_KEY_CACHED_IP = 'java_quiz_cached_ip';
+const STORAGE_KEY_CACHED_LOC = 'java_quiz_cached_loc';
 
-// Default Google Sheets Webhook URL (Can be overridden via localStorage or direct configuration)
-export const DEFAULT_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyA3DfH_odzp_1N64ioXeRBZ6dt5Q0MLhdiZAm1FBd4ONn-2Ck-h97D7oeeE6isfKmp/exec';
+export const EVENT_CANDIDATE_NAME_UPDATED = 'java_quiz_candidate_name_updated';
+
+// Default Google Sheets Webhook URL configured by administrator
+export const DEFAULT_SHEET_WEBHOOK_URL =
+  'https://script.google.com/macros/s/AKfycbyA3DfH_odzp_1N64ioXeRBZ6dt5Q0MLhdiZAm1FBd4ONn-2Ck-h97D7oeeE6isfKmp/exec';
 
 export interface TelemetryPayload {
   timestamp: string;
@@ -33,6 +38,16 @@ export interface TelemetryPayload {
 }
 
 class ExamTelemetryService {
+  private cachedIp: string = '';
+  private cachedLocation: string = '';
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      // Pre-warm / prefetch IP immediately on background load
+      this.prefetchIp();
+    }
+  }
+
   /**
    * Initializes or retrieves persistent Device ID.
    */
@@ -74,15 +89,26 @@ class ExamTelemetryService {
   }
 
   /**
-   * Updates candidate name in localStorage.
+   * Updates candidate name in localStorage and dispatches change event.
    */
   public setCandidateName(name: string): void {
     if (typeof localStorage === 'undefined') return;
     try {
-      localStorage.setItem(STORAGE_KEY_CANDIDATE_NAME, name.trim());
+      const clean = name.trim();
+      localStorage.setItem(STORAGE_KEY_CANDIDATE_NAME, clean);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent(EVENT_CANDIDATE_NAME_UPDATED, { detail: clean }));
+      }
     } catch (err) {
       console.warn('Failed to save candidate name:', err);
     }
+  }
+
+  /**
+   * Returns true if candidate name has already been registered.
+   */
+  public hasCandidateName(): boolean {
+    return Boolean(this.getCandidateName());
   }
 
   /**
@@ -110,7 +136,7 @@ class ExamTelemetryService {
     if (typeof localStorage === 'undefined') return;
     try {
       localStorage.setItem(STORAGE_KEY_WEBHOOK, url.trim());
-    } catch { }
+    } catch {}
   }
 
   /**
@@ -154,54 +180,76 @@ class ExamTelemetryService {
   }
 
   /**
-   * Silently fetches public IP and approximate geolocation without requesting permissions.
+   * Pre-fetches IP and location in the background and caches it.
    */
-  public async fetchNetworkInfo(): Promise<{ ip: string; location: string; isp: string }> {
+  public async prefetchIp(): Promise<string> {
+    if (this.cachedIp && this.cachedIp !== 'Không xác định') return this.cachedIp;
+
     try {
-      // Fast fetch with 2.5s timeout abort signal
+      const stored = localStorage.getItem(STORAGE_KEY_CACHED_IP);
+      const storedLoc = localStorage.getItem(STORAGE_KEY_CACHED_LOC);
+      if (stored) {
+        this.cachedIp = stored;
+        this.cachedLocation = storedLoc || 'Việt Nam';
+        return stored;
+      }
+    } catch {}
+
+    // 1. Try ipify (Fastest, zero rate limit, full CORS, never blocked)
+    try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2500);
-
-      const res = await fetch('https://ipapi.co/json/', {
-        signal: controller.signal,
-      });
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+      const res = await fetch('https://api64.ipify.org?format=json', { signal: controller.signal });
       clearTimeout(timeoutId);
-
       if (res.ok) {
         const data = await res.json();
-        const city = data.city || '';
-        const country = data.country_name || '';
-        const location = [city, country].filter(Boolean).join(', ') || 'Việt Nam';
-        return {
-          ip: data.ip || 'Không xác định',
-          location,
-          isp: data.org || data.asn || 'Không xác định',
-        };
-      }
-    } catch {
-      // Fallback to simple ipify
-      try {
-        const controller2 = new AbortController();
-        const timeoutId2 = setTimeout(() => controller2.abort(), 1800);
-        const res2 = await fetch('https://api.ipify.org?format=json', {
-          signal: controller2.signal,
-        });
-        clearTimeout(timeoutId2);
-        if (res2.ok) {
-          const data2 = await res2.json();
-          return {
-            ip: data2.ip || 'Không xác định',
-            location: 'Việt Nam',
-            isp: 'Không xác định',
-          };
+        if (data.ip) {
+          this.cachedIp = data.ip;
+          try {
+            localStorage.setItem(STORAGE_KEY_CACHED_IP, data.ip);
+          } catch {}
         }
-      } catch { }
-    }
+      }
+    } catch {}
+
+    // 2. Try ipwho.is for City / Country location enrichment
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+      const res = await fetch('https://ipwho.is/', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.ip) {
+          this.cachedIp = data.ip;
+          const loc = [data.city, data.country].filter(Boolean).join(', ') || 'Việt Nam';
+          this.cachedLocation = loc;
+          try {
+            localStorage.setItem(STORAGE_KEY_CACHED_IP, data.ip);
+            localStorage.setItem(STORAGE_KEY_CACHED_LOC, loc);
+          } catch {}
+        }
+      }
+    } catch {}
+
+    return this.cachedIp || 'Không xác định';
+  }
+
+  /**
+   * Silently fetches public IP and approximate geolocation.
+   */
+  public async fetchNetworkInfo(): Promise<{ ip: string; location: string; isp: string }> {
+    const ip = await this.prefetchIp();
+    let location = this.cachedLocation || 'Việt Nam';
+    try {
+      const storedLoc = localStorage.getItem(STORAGE_KEY_CACHED_LOC);
+      if (storedLoc) location = storedLoc;
+    } catch {}
 
     return {
-      ip: 'Không xác định',
-      location: 'Không xác định',
-      isp: 'Không xác định',
+      ip: ip || 'Không xác định',
+      location: location || 'Việt Nam',
+      isp: 'Nhà mạng VN',
     };
   }
 
@@ -215,7 +263,6 @@ class ExamTelemetryService {
     try {
       const webhookUrl = this.getSheetWebhookUrl();
       if (!webhookUrl) {
-        // If not configured yet, log quietly in debug and return
         console.debug('Google Sheet webhook URL is not configured yet.');
         return false;
       }
@@ -266,8 +313,7 @@ class ExamTelemetryService {
         pageUrl: typeof window !== 'undefined' ? window.location.href : '',
       };
 
-      // 3. Silent non-blocking HTTP POST
-      // mode: 'no-cors' prevents browser CORS blocks from Google Apps Script redirect
+      // 3. Silent non-blocking HTTP POST with keepalive
       await fetch(webhookUrl, {
         method: 'POST',
         mode: 'no-cors',
@@ -281,6 +327,78 @@ class ExamTelemetryService {
       return true;
     } catch (err) {
       console.debug('Silent telemetry dispatch failed:', err);
+      return false;
+    }
+  }
+
+  /**
+   * Silently tracks practice mode session when user finishes or exits practice.
+   */
+  public async sendPracticeSummary(params: {
+    answeredCount: number;
+    correctCount: number;
+    wrongCount: number;
+    timeSpentSeconds: number;
+    topicsSummary?: string;
+    wrongQuestionIds?: string[];
+  }): Promise<boolean> {
+    try {
+      if (params.answeredCount <= 0) return false;
+
+      const webhookUrl = this.getSheetWebhookUrl();
+      if (!webhookUrl || typeof fetch === 'undefined') return false;
+
+      const network = await this.fetchNetworkInfo();
+      const device = this.getDeviceInfo();
+
+      const mins = Math.floor(params.timeSpentSeconds / 60);
+      const secs = params.timeSpentSeconds % 60;
+      const formattedTime = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+
+      const score10 = Number(((params.correctCount / params.answeredCount) * 10).toFixed(1));
+      const percentage = Math.round((params.correctCount / params.answeredCount) * 100);
+
+      const payload = {
+        timestamp: new Date().toLocaleString('vi-VN'),
+        candidateName: this.getEffectiveCandidateName(),
+        deviceId: this.getDeviceId(),
+        score10,
+        percentage,
+        correctCount: params.correctCount,
+        wrongCount: params.wrongCount,
+        skippedCount: 0,
+        totalQuestions: params.answeredCount,
+        isPassed: 'LUYỆN TẬP',
+        timeSpent: formattedTime,
+        topicsSummary: params.topicsSummary || 'Tự do ôn luyện',
+        wrongQuestions:
+          params.wrongQuestionIds && params.wrongQuestionIds.length > 0
+            ? params.wrongQuestionIds.join(', ')
+            : 'Không có',
+        skippedQuestions: 'Không có',
+        ip: network.ip,
+        location: network.location,
+        isp: network.isp,
+        device: device.deviceType,
+        os: device.os,
+        browser: device.browser,
+        screen: device.screen,
+        pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+      };
+
+      await fetch(webhookUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      });
+
+      return true;
+    } catch (err) {
+      console.debug('Silent practice telemetry dispatch failed:', err);
       return false;
     }
   }
