@@ -49,6 +49,7 @@ const MainApp: React.FC = () => {
   // Candidate Name modal state
   const [isNameModalOpen, setIsNameModalOpen] = useState<boolean>(false);
   const [pendingActionAfterName, setPendingActionAfterName] = useState<'PRACTICE' | 'EXAM' | null>(null);
+  const [practiceInitialTopicId, setPracticeInitialTopicId] = useState<string | undefined>(undefined);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -178,6 +179,18 @@ const MainApp: React.FC = () => {
   };
 
   const handleStartPractice = () => {
+    setPracticeInitialTopicId(undefined);
+    if (!examTelemetryService.hasCandidateName()) {
+      setPendingActionAfterName('PRACTICE');
+      setIsNameModalOpen(true);
+      return;
+    }
+    setView('PRACTICE');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handlePracticeTopicFromAnalytics = (topicId: string) => {
+    setPracticeInitialTopicId(topicId);
     if (!examTelemetryService.hasCandidateName()) {
       setPendingActionAfterName('PRACTICE');
       setIsNameModalOpen(true);
@@ -293,6 +306,7 @@ const MainApp: React.FC = () => {
                 allQuestions={questions}
                 topicCounts={topicCounts}
                 onNavigateHome={handleNavigateHome}
+                initialTopicId={practiceInitialTopicId}
               />
             )}
 
@@ -315,6 +329,7 @@ const MainApp: React.FC = () => {
                 onRetakeExam={handleRetakeExam}
                 onNavigateHome={handleNavigateHome}
                 onOpenHistory={() => setIsExamHistoryModalOpen(true)}
+                onPracticeTopic={handlePracticeTopicFromAnalytics}
               />
             )}
           </>

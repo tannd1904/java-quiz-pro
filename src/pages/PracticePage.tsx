@@ -36,6 +36,7 @@ interface PracticePageProps {
   allQuestions: Question[];
   topicCounts: Record<string, number>;
   onNavigateHome: () => void;
+  initialTopicId?: string;
 }
 
 type PracticeStatusFilter = 'ALL' | 'UNANSWERED' | 'CORRECT' | 'WRONG' | 'BOOKMARKED';
@@ -44,10 +45,20 @@ export const PracticePage: React.FC<PracticePageProps> = ({
   allQuestions,
   topicCounts,
   onNavigateHome,
+  initialTopicId,
 }) => {
   const { language, t } = useI18n();
 
-  const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>(TOPIC_PRESETS.ALL);
+  const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>(() => {
+    return initialTopicId ? [initialTopicId] : TOPIC_PRESETS.ALL;
+  });
+
+  useEffect(() => {
+    if (initialTopicId) {
+      setSelectedTopicIds([initialTopicId]);
+    }
+  }, [initialTopicId]);
+
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<PracticeStatusFilter>('ALL');
 
