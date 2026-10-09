@@ -13,6 +13,7 @@ import { ExplanationDrawer } from '../components/quiz/ExplanationDrawer';
 import { CodeBlock } from '../components/common/CodeBlock';
 import { Button } from '../components/common/Button';
 import { ReportQuestionModal } from '../components/quiz/ReportQuestionModal';
+import { CandidateNameModal } from '../components/common/CandidateNameModal';
 import {
   Search,
   RotateCcw,
@@ -59,6 +60,11 @@ export const PracticePage: React.FC<PracticePageProps> = ({
   // Track questions reported by this user on this device
   const [userReportedIds, setUserReportedIds] = useState<string[]>(() => {
     return questionReportService.getUserReportedQuestionIds();
+  });
+
+  // Prompt candidate name if not yet entered
+  const [isCandidateNameModalOpen, setIsCandidateNameModalOpen] = useState<boolean>(() => {
+    return !examTelemetryService.hasCandidateName();
   });
 
   // Session Telemetry Tracking (Silent & In-Depth)
@@ -300,6 +306,11 @@ export const PracticePage: React.FC<PracticePageProps> = ({
 
   // Handle selecting an option for SINGLE_CHOICE / TRUE_FALSE
   const handleSelectOption = (questionId: string, optionIdx: number) => {
+    if (!examTelemetryService.hasCandidateName()) {
+      setIsCandidateNameModalOpen(true);
+      return;
+    }
+
     const targetQ = allQuestions.find((q) => q.id === questionId);
     if (!targetQ) return;
 
@@ -346,6 +357,11 @@ export const PracticePage: React.FC<PracticePageProps> = ({
 
   // Submit and verify multiple-choice question
   const handleCheckMultipleChoice = (questionId: string) => {
+    if (!examTelemetryService.hasCandidateName()) {
+      setIsCandidateNameModalOpen(true);
+      return;
+    }
+
     const targetQ = allQuestions.find((q) => q.id === questionId);
     if (!targetQ) return;
     const selected = (multiDrafts[questionId] || []).sort((a, b) => a - b);
@@ -379,6 +395,11 @@ export const PracticePage: React.FC<PracticePageProps> = ({
 
   // Check fill-in-the-blank answer
   const handleCheckFillBlank = (questionId: string) => {
+    if (!examTelemetryService.hasCandidateName()) {
+      setIsCandidateNameModalOpen(true);
+      return;
+    }
+
     const targetQ = allQuestions.find((q) => q.id === questionId);
     if (!targetQ) return;
     const typed = (blankDrafts[questionId] || '').trim();
@@ -1264,6 +1285,26 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         isOpen={Boolean(reportingQuestion)}
         question={reportingQuestion}
         onClose={() => setReportingQuestion(null)}
+      />
+
+      {/* Candidate Name Modal for Practice Mode */}
+      <CandidateNameModal
+        isOpen={isCandidateNameModalOpen}
+        onClose={() => {
+          if (examTelemetryService.hasCandidateName()) {
+            setIsCandidateNameModalOpen(false);
+          }
+        }}
+        onSuccess={() => {
+          setIsCandidateNameModalOpen(false);
+        }}
+        isMandatory={!examTelemetryService.hasCandidateName()}
+        title={language === 'en' ? 'Welcome to Practice Mode' : 'Bắt Đầu Chế Độ Ôn Luyện'}
+        subtitle={
+          language === 'en'
+            ? 'Please enter your full name or nickname so your learning progress can be tracked and recorded.'
+            : 'Vui lòng nhập họ và tên hoặc biệt danh của bạn để hệ thống ghi nhận và lưu lại kết quả tiến độ học tập nhé.'
+        }
       />
     </div>
   );
