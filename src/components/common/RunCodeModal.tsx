@@ -469,7 +469,11 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
               {isRunning && (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#38bdf8' }}>
                   <Loader2 size={16} className="spin" />
-                  <span>Đang gửi code lên máy chủ sandbox và biên dịch...</span>
+                  <span>
+                    {language === 'en'
+                      ? 'Running code, please wait a moment...'
+                      : 'Đang chạy code, xin đợi trong giây lát'}
+                  </span>
                 </div>
               )}
 
