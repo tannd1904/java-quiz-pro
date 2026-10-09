@@ -62,4 +62,5 @@ export interface PracticeProgressItem {
   selectedOptionIdx: number;
   isCorrect: boolean;
   answeredAt: number;
+  wrongAttempts?: number[];
 }

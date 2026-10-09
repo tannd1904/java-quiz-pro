@@ -334,6 +334,25 @@ describe('userProgressService', () => {
       expect(topicStats['lambda'].total).toBe(1);
     });
 
+    it('saves and retrieves practice answer records with wrongAttempts', () => {
+      userProgressService.savePracticeAnswer('midterm-obj-001', 1, true, []);
+      userProgressService.savePracticeAnswer('midterm-obj-002', 2, false, [0, 2]);
+
+      const progress = userProgressService.getPracticeProgress();
+      expect(progress['midterm-obj-001']).toBeDefined();
+      expect(progress['midterm-obj-001'].isCorrect).toBe(true);
+      expect(progress['midterm-obj-002'].isCorrect).toBe(false);
+      expect(progress['midterm-obj-002'].wrongAttempts).toEqual([0, 2]);
+    });
+
+    it('deletes single practice answer', () => {
+      userProgressService.savePracticeAnswer('q-del-1', 1, false, [1]);
+      expect(userProgressService.getPracticeProgress()['q-del-1']).toBeDefined();
+
+      userProgressService.deletePracticeAnswer('q-del-1');
+      expect(userProgressService.getPracticeProgress()['q-del-1']).toBeUndefined();
+    });
+
     it('clears all practice progress', () => {
       userProgressService.savePracticeAnswer('q-x', 0, true);
       userProgressService.clearPracticeProgress();

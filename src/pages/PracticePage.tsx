@@ -9,7 +9,7 @@ import { AnswerOption } from '../components/quiz/AnswerOption';
 import { ExplanationDrawer } from '../components/quiz/ExplanationDrawer';
 import { CodeBlock } from '../components/common/CodeBlock';
 import { Button } from '../components/common/Button';
-import { Search, RotateCcw, Home, HelpCircle, CheckCircle2, XCircle, Clock, BookOpen, Filter } from 'lucide-react';
+import { Search, RotateCcw, Home, HelpCircle, CheckCircle2, XCircle, Clock, BookOpen, Filter, AlertCircle } from 'lucide-react';
 
 interface PracticePageProps {
   allQuestions: Question[];
@@ -45,6 +45,24 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     return ans;
   });
 
+  // Track wrong attempt indices per question for visual feedback and allowing retries
+  const [wrongAttempts, setWrongAttempts] = useState<Record<string, number[]>>(() => {
+    const saved = userProgressService.getPracticeProgress();
+    const map: Record<string, number[]> = {};
+    Object.keys(saved).forEach((qId) => {
+      const item = saved[qId];
+      if (item.wrongAttempts && Array.isArray(item.wrongAttempts)) {
+        map[qId] = item.wrongAttempts;
+      } else if (!item.isCorrect && typeof item.selectedOptionIdx === 'number') {
+        map[qId] = [item.selectedOptionIdx];
+      }
+    });
+    return map;
+  });
+
+  // Track explicitly revealed solutions / explanations (e.g. if user gives up and requests to see answer)
+  const [revealedSolutions, setRevealedSolutions] = useState<Record<string, boolean>>({});
+
   // Compute completed counts per topic
   const completedTopicCounts = useMemo(() => {
     const topicStats = userProgressService.computeTopicProgress(allQuestions, practiceProgress);
@@ -69,12 +87,13 @@ export const PracticePage: React.FC<PracticePageProps> = ({
       if (!selectedTopicIds.includes(q.topicId)) return false;
 
       // Status Filter
+      const p = practiceProgress[q.id];
       if (statusFilter === 'UNANSWERED') {
-        if (answers[q.id] !== undefined) return false;
+        if (p !== undefined) return false;
       } else if (statusFilter === 'CORRECT') {
-        if (answers[q.id] !== q.correctIndex) return false;
+        if (!p || !p.isCorrect) return false;
       } else if (statusFilter === 'WRONG') {
-        if (answers[q.id] === undefined || answers[q.id] === q.correctIndex) return false;
+        if (!p || p.isCorrect) return false;
       }
 
       if (!query) return true;
@@ -93,7 +112,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         optsEn.includes(query)
       );
     });
-  }, [allQuestions, selectedTopicIds, searchQuery, statusFilter, answers]);
+  }, [allQuestions, selectedTopicIds, searchQuery, statusFilter, practiceProgress]);
 
   // Performance stats for practice session within selected topics
   const stats = useMemo(() => {
@@ -101,9 +120,9 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     let wrong = 0;
     allQuestions.forEach((q) => {
       if (!selectedTopicIds.includes(q.topicId)) return;
-      const ans = answers[q.id];
-      if (ans !== undefined) {
-        if (ans === q.correctIndex) {
+      const p = practiceProgress[q.id];
+      if (p !== undefined) {
+        if (p.isCorrect) {
           correct++;
         } else {
           wrong++;
@@ -112,19 +131,63 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     });
     const totalInSelected = allQuestions.filter((q) => selectedTopicIds.includes(q.topicId)).length;
     return { correct, wrong, totalAnswered: correct + wrong, totalInSelected };
-  }, [allQuestions, selectedTopicIds, answers]);
+  }, [allQuestions, selectedTopicIds, practiceProgress]);
 
+  // Handle selecting an option: allows retrying when wrong until user picks correctly
   const handleSelectOption = (questionId: string, optionIdx: number) => {
-    if (answers[questionId] !== undefined) return;
-
     const targetQ = allQuestions.find((q) => q.id === questionId);
-    const isCorrect = targetQ ? optionIdx === targetQ.correctIndex : false;
+    if (!targetQ) return;
+
+    // If already correctly answered, no need to change
+    if (practiceProgress[questionId]?.isCorrect) return;
+
+    const existingWrongs = wrongAttempts[questionId] || [];
+    // If this option was already tried and known to be wrong, do nothing
+    if (existingWrongs.includes(optionIdx)) return;
+
+    const isCorrect = optionIdx === targetQ.correctIndex;
+    const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, optionIdx];
 
     // Save persistent answer
-    const record = userProgressService.savePracticeAnswer(questionId, optionIdx, isCorrect);
+    const record = userProgressService.savePracticeAnswer(
+      questionId,
+      optionIdx,
+      isCorrect,
+      newWrongs
+    );
 
     setPracticeProgress((prev) => ({ ...prev, [questionId]: record }));
     setAnswers((prev) => ({ ...prev, [questionId]: optionIdx }));
+    setWrongAttempts((prev) => ({ ...prev, [questionId]: newWrongs }));
+
+    if (isCorrect) {
+      setRevealedSolutions((prev) => ({ ...prev, [questionId]: true }));
+    }
+  };
+
+  // Reset a single question so user can start fresh
+  const handleResetSingleQuestion = (questionId: string) => {
+    userProgressService.deletePracticeAnswer(questionId);
+    setPracticeProgress((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
+    setAnswers((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
+    setWrongAttempts((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
+    setRevealedSolutions((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
   };
 
   const handleResetAnswers = () => {
@@ -138,6 +201,8 @@ export const PracticePage: React.FC<PracticePageProps> = ({
       userProgressService.clearPracticeProgress();
       setPracticeProgress({});
       setAnswers({});
+      setWrongAttempts({});
+      setRevealedSolutions({});
     }
   };
 
@@ -418,9 +483,13 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         {/* Question List */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
           {filteredQuestions.map((q, idx) => {
-            const userSelected = answers[q.id];
-            const isAnswered = userSelected !== undefined;
-            const isCorrect = isAnswered && userSelected === q.correctIndex;
+            const progress = practiceProgress[q.id];
+            const isCompletedCorrect = progress?.isCorrect === true;
+            const currentWrongList =
+              wrongAttempts[q.id] ||
+              (progress && !progress.isCorrect ? [progress.selectedOptionIdx] : []);
+            const hasAttempted = progress !== undefined || currentWrongList.length > 0;
+            const isSolutionRevealed = isCompletedCorrect || !!revealedSolutions[q.id];
             const topicMeta = TOPICS_CONFIG.find((tc: TopicConfig) => tc.id === q.topicId);
 
             const questionText =
@@ -440,10 +509,10 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                 id={`practice-q-${q.id}`}
                 style={{
                   backgroundColor: 'var(--bg-surface)',
-                  border: isAnswered
-                    ? isCorrect
-                      ? '1.5px solid var(--state-success)'
-                      : '1.5px solid var(--state-error)'
+                  border: isCompletedCorrect
+                    ? '1.5px solid var(--state-success)'
+                    : currentWrongList.length > 0
+                    ? '1.5px solid var(--state-warning)'
                     : '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'clamp(16px, 4vw, 24px)',
@@ -451,7 +520,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                   transition: 'border-color var(--transition-fast)',
                 }}
               >
-                {/* Header: Question Number, Completion Status Badge, and Topic Tag */}
+                {/* Header: Question Number, Completion Status Badge, Reset Button, and Topic Tag */}
                 <div
                   style={{
                     display: 'flex',
@@ -462,7 +531,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                     marginBottom: '14px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
@@ -475,44 +544,42 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                     </span>
 
                     {/* Completion Status Badge */}
-                    {isAnswered ? (
-                      isCorrect ? (
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '4px',
-                            padding: '3px 9px',
-                            borderRadius: 'var(--radius-full)',
-                            fontSize: '0.74rem',
-                            fontWeight: 700,
-                            backgroundColor: 'var(--state-success-subtle)',
-                            color: 'var(--state-success)',
-                            border: '1px solid var(--state-success-border)',
-                          }}
-                        >
-                          <CheckCircle2 size={12} />
-                          <span>{language === 'en' ? 'Completed (Correct)' : 'Đã học (Đúng)'}</span>
-                        </span>
-                      ) : (
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '4px',
-                            padding: '3px 9px',
-                            borderRadius: 'var(--radius-full)',
-                            fontSize: '0.74rem',
-                            fontWeight: 700,
-                            backgroundColor: 'var(--state-error-subtle)',
-                            color: 'var(--state-error)',
-                            border: '1px solid var(--state-error-border)',
-                          }}
-                        >
-                          <XCircle size={12} />
-                          <span>{language === 'en' ? 'Completed (Incorrect)' : 'Đã học (Sai)'}</span>
-                        </span>
-                      )
+                    {isCompletedCorrect ? (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '3px 9px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.74rem',
+                          fontWeight: 700,
+                          backgroundColor: 'var(--state-success-subtle)',
+                          color: 'var(--state-success)',
+                          border: '1px solid var(--state-success-border)',
+                        }}
+                      >
+                        <CheckCircle2 size={12} />
+                        <span>{language === 'en' ? 'Completed (Correct)' : 'Đã học (Chính xác)'}</span>
+                      </span>
+                    ) : currentWrongList.length > 0 ? (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '3px 9px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.74rem',
+                          fontWeight: 700,
+                          backgroundColor: 'var(--state-warning-subtle)',
+                          color: 'var(--state-warning)',
+                          border: '1px solid var(--state-warning-border)',
+                        }}
+                      >
+                        <XCircle size={12} />
+                        <span>{language === 'en' ? 'Incorrect (Try again)' : 'Chưa đúng (Chọn lại)'}</span>
+                      </span>
                     ) : (
                       <span
                         style={{
@@ -531,6 +598,36 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                         <Clock size={12} />
                         <span>{language === 'en' ? 'Not Answered' : 'Chưa học'}</span>
                       </span>
+                    )}
+
+                    {/* Retry / Reset Single Question Button */}
+                    {hasAttempted && (
+                      <button
+                        type="button"
+                        onClick={() => handleResetSingleQuestion(q.id)}
+                        title={
+                          language === 'en'
+                            ? 'Reset this question and try again'
+                            : 'Làm lại câu hỏi này từ đầu'
+                        }
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '2px 8px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.72rem',
+                          fontWeight: 600,
+                          backgroundColor: 'transparent',
+                          color: 'var(--text-secondary)',
+                          border: '1px solid var(--border-subtle)',
+                          cursor: 'pointer',
+                          transition: 'all var(--transition-fast)',
+                        }}
+                      >
+                        <RotateCcw size={11} />
+                        <span>{language === 'en' ? 'Reset' : 'Làm lại'}</span>
+                      </button>
                     )}
                   </div>
 
@@ -600,9 +697,11 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                 >
                   {optionsList.map((optText: string, optIdx: number) => {
                     const letter = String.fromCharCode(65 + optIdx);
-                    const isSelected = userSelected === optIdx;
-                    const isCorrect = optIdx === q.correctIndex;
-                    const isWrong = isSelected && !isCorrect;
+                    const isSelected = answers[q.id] === optIdx;
+                    const isThisOptWrong = currentWrongList.includes(optIdx);
+                    const isThisOptCorrect = isSolutionRevealed && optIdx === q.correctIndex;
+                    const isRevealed = isThisOptWrong || (isSolutionRevealed && isThisOptCorrect);
+                    const disabled = isCompletedCorrect || isThisOptWrong;
 
                     return (
                       <AnswerOption
@@ -610,18 +709,64 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                         letter={letter}
                         text={optText}
                         isSelected={isSelected}
-                        isCorrect={isCorrect}
-                        isWrong={isWrong}
-                        isRevealed={isAnswered}
-                        disabled={isAnswered}
+                        isCorrect={isThisOptCorrect}
+                        isWrong={isThisOptWrong}
+                        isRevealed={isRevealed}
+                        disabled={disabled}
                         onClick={() => handleSelectOption(q.id, optIdx)}
                       />
                     );
                   })}
                 </div>
 
+                {/* Motivational Banner on wrong choice: encourages trying again or revealing explanation */}
+                {!isCompletedCorrect && currentWrongList.length > 0 && (
+                  <div
+                    style={{
+                      marginTop: '14px',
+                      padding: '10px 14px',
+                      borderRadius: 'var(--radius-md)',
+                      backgroundColor: 'var(--state-warning-subtle)',
+                      border: '1px solid var(--state-warning-border)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '8px',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <AlertCircle size={16} color="var(--state-warning)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--state-warning)' }}>
+                        {language === 'en'
+                          ? 'Incorrect attempt. Select another option to try again and learn!'
+                          : 'Phương án chưa chính xác. Bạn hãy suy nghĩ và chọn lại phương án khác để tiếp tục học nhé!'}
+                      </span>
+                    </div>
+
+                    {!isSolutionRevealed && (
+                      <button
+                        type="button"
+                        onClick={() => setRevealedSolutions((prev) => ({ ...prev, [q.id]: true }))}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--brand-primary)',
+                          fontSize: '0.82rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          textDecoration: 'underline',
+                          padding: 0,
+                        }}
+                      >
+                        {language === 'en' ? 'Show answer & explanation' : 'Xem đáp án & giải thích'}
+                      </button>
+                    )}
+                  </div>
+                )}
+
                 {/* Instant Explanation Drawer */}
-                {isAnswered && <ExplanationDrawer explanation={explanationText} />}
+                {isSolutionRevealed && <ExplanationDrawer explanation={explanationText} />}
               </div>
             );
           })}

@@ -123,13 +123,15 @@ class UserProgressService {
   public savePracticeAnswer(
     questionId: string,
     selectedOptionIdx: number,
-    isCorrect: boolean
+    isCorrect: boolean,
+    wrongAttempts?: number[]
   ): PracticeProgressItem {
     const record: PracticeProgressItem = {
       questionId,
       selectedOptionIdx,
       isCorrect,
       answeredAt: Date.now(),
+      wrongAttempts,
     };
 
     try {
@@ -141,6 +143,16 @@ class UserProgressService {
     }
 
     return record;
+  }
+
+  public deletePracticeAnswer(questionId: string): void {
+    try {
+      const progress = this.getPracticeProgress();
+      delete progress[questionId];
+      localStorage.setItem(STORAGE_KEY_PRACTICE_PROGRESS, JSON.stringify(progress));
+    } catch (err) {
+      console.warn('Failed to delete practice answer in localStorage:', err);
+    }
   }
 
   public clearPracticeProgress(): void {
