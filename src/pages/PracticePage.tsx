@@ -3,6 +3,7 @@ import { Question, TopicConfig } from '../types/question';
 import { TOPICS_CONFIG, TOPIC_PRESETS } from '../config/topics.config';
 import { useI18n } from '../hooks/useI18n';
 import { userProgressService } from '../services/userProgressService';
+import { questionReportService, EVENT_REPORTS_UPDATED } from '../services/questionReportService';
 import { PracticeProgressItem } from '../types/quiz';
 import { TopicSelector } from '../components/topic/TopicSelector';
 import { AnswerOption } from '../components/quiz/AnswerOption';
@@ -53,6 +54,19 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     return userProgressService.getBookmarks();
   });
   const [reportingQuestion, setReportingQuestion] = useState<Question | null>(null);
+
+  // Track questions reported by this user on this device
+  const [userReportedIds, setUserReportedIds] = useState<string[]>(() => {
+    return questionReportService.getUserReportedQuestionIds();
+  });
+
+  useEffect(() => {
+    const handleReportUpdate = () => {
+      setUserReportedIds(questionReportService.getUserReportedQuestionIds());
+    };
+    window.addEventListener(EVENT_REPORTS_UPDATED, handleReportUpdate);
+    return () => window.removeEventListener(EVENT_REPORTS_UPDATED, handleReportUpdate);
+  }, []);
 
   const handleToggleBookmark = (questionId: string) => {
     userProgressService.toggleBookmark(questionId);
@@ -876,33 +890,58 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                       </span>
                     </button>
 
-                    {/* Report Question Button */}
-                    <button
-                      type="button"
-                      onClick={() => setReportingQuestion(q)}
-                      title={
-                        language === 'en'
-                          ? 'Report issue with this question'
-                          : 'Báo lỗi câu hỏi này cho Quản trị viên'
-                      }
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px',
-                        padding: '4px 10px',
-                        borderRadius: 'var(--radius-full)',
-                        backgroundColor: 'var(--bg-surface-subtle)',
-                        border: '1px solid var(--border-default)',
-                        color: 'var(--text-muted)',
-                        fontSize: '0.76rem',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        transition: 'all var(--transition-fast)',
-                      }}
-                    >
-                      <Flag size={12} />
-                      <span>{language === 'en' ? 'Report' : 'Báo lỗi'}</span>
-                    </button>
+                    {/* Report Question Button or Marked Reported Badge */}
+                    {userReportedIds.includes(q.id) ? (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '4px 10px',
+                          borderRadius: 'var(--radius-full)',
+                          backgroundColor: 'rgba(239, 68, 68, 0.12)',
+                          border: '1px solid rgba(239, 68, 68, 0.35)',
+                          color: '#ef4444',
+                          fontSize: '0.74rem',
+                          fontWeight: 700,
+                        }}
+                        title={
+                          language === 'en'
+                            ? 'You reported this question (Under admin review)'
+                            : 'Bạn đã báo lỗi câu hỏi này (Đang chờ Quản trị viên xem xét)'
+                        }
+                      >
+                        <Flag size={12} fill="#ef4444" color="#ef4444" />
+                        <span>{language === 'en' ? 'Reported (Under review)' : 'Đã báo lỗi (Đang xem xét)'}</span>
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setReportingQuestion(q)}
+                        title={
+                          language === 'en'
+                            ? 'Report issue with this question'
+                            : 'Báo lỗi câu hỏi này cho Quản trị viên'
+                        }
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '4px 10px',
+                          borderRadius: 'var(--radius-full)',
+                          backgroundColor: 'var(--bg-surface-subtle)',
+                          border: '1px solid var(--border-default)',
+                          color: 'var(--text-muted)',
+                          fontSize: '0.76rem',
+                          fontWeight: 600,
+                          cursor: 'pointer',
+                          transition: 'all var(--transition-fast)',
+                        }}
+                      >
+                        <Flag size={12} />
+                        <span>{language === 'en' ? 'Report' : 'Báo lỗi'}</span>
+                      </button>
+                    )}
 
                     {topicMeta && (
                       <span

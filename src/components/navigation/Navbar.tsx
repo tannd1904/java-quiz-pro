@@ -8,6 +8,7 @@ interface NavbarProps {
   onNavigateHome: () => void;
   onOpenExamHistory?: () => void;
   historyCount?: number;
+  isAdmin?: boolean;
   onOpenReports?: () => void;
   pendingReportCount?: number;
 }
@@ -16,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigateHome,
   onOpenExamHistory,
   historyCount = 0,
+  isAdmin = false,
   onOpenReports,
   pendingReportCount = 0,
 }) => {
@@ -138,8 +140,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           )}
 
-          {/* Admin Reports Button */}
-          {onOpenReports && (
+          {/* Admin Reports Button (Only shown in Admin mode) */}
+          {isAdmin && onOpenReports && (
             <button
               type="button"
               onClick={onOpenReports}

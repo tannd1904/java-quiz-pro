@@ -1,7 +1,9 @@
 import { QuestionReport, ReportReason } from '../types/report';
 
 const STORAGE_KEY_REPORTS = 'java_quiz_reported_questions';
+const STORAGE_KEY_USER_REPORTED = 'java_quiz_user_reported_questions';
 export const EVENT_REPORTS_UPDATED = 'java_quiz_reports_updated';
+export const ADMIN_NOTIFICATION_EMAIL = 'tan.nguyenduy@sai-digital.com';
 
 class QuestionReportService {
   public getReports(): QuestionReport[] {
@@ -20,6 +22,28 @@ class QuestionReportService {
 
   public getPendingCount(): number {
     return this.getReports().filter((r) => r.status === 'PENDING').length;
+  }
+
+  /**
+   * Returns list of question IDs that the current user has reported on this device.
+   */
+  public getUserReportedQuestionIds(): string[] {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY_USER_REPORTED);
+      if (!data) return [];
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    } catch (err) {
+      console.warn('Failed to load user-reported questions from localStorage:', err);
+    }
+    return [];
+  }
+
+  public isQuestionReportedByUser(questionId: string): boolean {
+    const list = this.getUserReportedQuestionIds();
+    return list.includes(questionId);
   }
 
   public submitReport(params: {
@@ -44,6 +68,16 @@ class QuestionReportService {
       const current = this.getReports();
       const updated = [newReport, ...current];
       localStorage.setItem(STORAGE_KEY_REPORTS, JSON.stringify(updated));
+
+      // Mark this question as reported on the current user's device
+      const userReported = this.getUserReportedQuestionIds();
+      if (!userReported.includes(params.questionId)) {
+        localStorage.setItem(
+          STORAGE_KEY_USER_REPORTED,
+          JSON.stringify([...userReported, params.questionId])
+        );
+      }
+
       this.notifyUpdate();
     } catch (err) {
       console.warn('Failed to save question report to localStorage:', err);
@@ -139,6 +173,42 @@ class QuestionReportService {
       },
     };
     return labels[reason]?.[lang] || reason;
+  }
+
+  /**
+   * Silently sends the report payload to the administrator's email in the background
+   * using a serverless endpoint without user interaction or popup.
+   */
+  public async sendReportEmailSilent(report: QuestionReport): Promise<boolean> {
+    try {
+      const reasonLabel = this.getReasonLabel(report.reason, report.userLanguage || 'vi');
+      const payload = {
+        _subject: `[Java Quiz Pro] Báo lỗi câu hỏi #${report.questionId} (${reasonLabel})`,
+        _template: 'table',
+        _captcha: 'false',
+        'Mã câu hỏi': report.questionId,
+        'Nội dung tóm tắt': report.questionTitle,
+        'Lý do báo lỗi': reasonLabel,
+        'Ghi chú của người dùng': report.comment || '(Không có)',
+        'Ngôn ngữ': report.userLanguage === 'en' ? 'English' : 'Tiếng Việt',
+        'Thời gian gửi': new Date(report.reportedAt).toLocaleString('vi-VN'),
+        'Đường dẫn web': typeof window !== 'undefined' ? window.location.href : 'Java Quiz Pro',
+      };
+
+      const res = await fetch(`https://formsubmit.co/ajax/${ADMIN_NOTIFICATION_EMAIL}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return res.ok;
+    } catch (err) {
+      console.warn('Silent email delivery failed, report is stored locally:', err);
+      return false;
+    }
   }
 
   private notifyUpdate(): void {

@@ -82,6 +82,9 @@ export const ReportQuestionModal: React.FC<ReportQuestionModalProps> = ({
       userLanguage: language as 'vi' | 'en',
     });
 
+    // Silently send email in the background to admin
+    questionReportService.sendReportEmailSilent(report);
+
     setLastReport(report);
     setIsSubmitted(true);
     if (onReportSubmitted) {
@@ -132,7 +135,7 @@ export const ReportQuestionModal: React.FC<ReportQuestionModalProps> = ({
           </div>
 
           <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>
-            {language === 'en' ? 'Report Received!' : 'Đã gửi báo cáo thành công!'}
+            {language === 'en' ? 'Report Received!' : 'Đã ghi nhận báo lỗi thành công!'}
           </h3>
 
           <p
@@ -145,40 +148,16 @@ export const ReportQuestionModal: React.FC<ReportQuestionModalProps> = ({
             }}
           >
             {language === 'en'
-              ? 'Thank you for your feedback! The administrator has been notified and will review the question promptly.'
-              : 'Cảm ơn bạn đã đóng góp! Thông tin đã được lưu vào hệ thống để Quản trị viên xem xét và cập nhật kịp thời.'}
+              ? 'Thank you for your feedback! This question has been marked on your device. The administrator will review and update it promptly.'
+              : 'Cảm ơn bạn đã đóng góp! Câu hỏi này đã được đánh dấu báo lỗi trên máy của bạn. Quản trị viên sẽ kiểm tra và cập nhật sớm nhất.'}
           </p>
 
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
-              gap: '12px',
-              flexWrap: 'wrap',
             }}
           >
-            {lastReport && (
-              <a
-                href={questionReportService.createMailtoLink(lastReport)}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '9px 16px',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: 'var(--bg-surface-subtle)',
-                  border: '1px solid var(--border-default)',
-                  color: 'var(--text-primary)',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                }}
-              >
-                <Mail size={16} />
-                <span>{language === 'en' ? 'Send via Email' : 'Gửi thêm qua Email'}</span>
-              </a>
-            )}
-
             <Button variant="primary" onClick={handleResetAndClose}>
               {language === 'en' ? 'Close' : 'Đóng'}
             </Button>

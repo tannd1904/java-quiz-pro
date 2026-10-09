@@ -81,4 +81,19 @@ describe('QuestionReportService', () => {
     expect(link.startsWith('mailto:admin@example.com')).toBe(true);
     expect(link.includes('oop-04')).toBe(true);
   });
+
+  it('tracks user reported question IDs on the client device', () => {
+    expect(questionReportService.getUserReportedQuestionIds()).toEqual([]);
+    expect(questionReportService.isQuestionReportedByUser('q-101')).toBe(false);
+
+    questionReportService.submitReport({
+      questionId: 'q-101',
+      questionTitle: 'Question 101',
+      reason: 'WRONG_ANSWER',
+    });
+
+    expect(questionReportService.getUserReportedQuestionIds()).toContain('q-101');
+    expect(questionReportService.isQuestionReportedByUser('q-101')).toBe(true);
+  });
 });
+
