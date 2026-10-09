@@ -2683,7 +2683,7 @@
       "vi": "Đọc đoạn mã lệnh sau. Sau khi thực thi chương trình sẽ in ra kết quả gì ?",
       "en": "Read the following code snippet. What result will be printed after executing the program?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        int x = -1;\n        String y = x + 3; // Lỗi: incompatible types\n        System.out.println(\"x = \" + x + \" y = \" + y);\n    }\n}",
     "image": "images/de1_q12_5s9yGZZwP003nYzwIVaVSmfBjMdt7wnthdk0mAED.png",
     "options": {
       "vi": [
@@ -2782,7 +2782,7 @@
       "vi": "Đọc đoạn mã sau. Kết quả in ra của đoạn mã trên là gì?",
       "en": "Read the following code. What is the output of the above code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int i = 1, j = 10;\ndo {\n    if (i++ > --j) {\n        break;\n    }\n} while (i < 5);\nSystem.out.println(\"i = \" + i + \" and j = \" + j);",
     "image": "images/de1_q15_NinWWUbNBcsXfuSIuy410BsTeTy78MCSF654CMNi.png",
     "options": {
       "vi": [
@@ -2914,7 +2914,7 @@
       "vi": "Kết quả in ra của đoạn mã trên là gì?",
       "en": "What is the output of the above code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int i = 0;\nboolean flag;\ndo {\n    flag = false;\n    System.out.print(i++);\n    flag = i < 10;\n    continue;\n} while ((flag) ? true : false);",
     "image": "images/de1_q19_c4KWV9RqYPOt55DQmDKUbjpUDWFXOB3i3gwXF2oK.png",
     "options": {
       "vi": [
@@ -3046,7 +3046,7 @@
       "vi": "Kết quả in ra của đoạn mã bên dưới là gì?",
       "en": "What is the output of the code below?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Test {\n    public static int switchIt(int x) {\n        int j = 1;\n        switch (x) {\n            case 1: j++;\n            case 2: j++;\n            case 3: j++;\n            case 4: j++;\n            default: j++;\n        }\n        return j + x;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"value = \" + switchIt(4));\n    }\n}",
     "image": "images/de1_q23_w6eEORD8wkyIbHkCUp5Yec22MuyI1ugZrBiQXdTg.png",
     "options": {
       "vi": [
@@ -3079,7 +3079,7 @@
       "vi": "Khi thực hiện lệnh: A a = new A(); a.calTotal(a); Giá trị của x sau khi thực hiện lệnh trên sẽ cho kết quả gì?",
       "en": "When executing the command: A a = new A(); a.calTotal(a); What will be the value of x after executing the above command?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class A {\n    int x = 10;\n    public void calTotal(A a) {\n        a.x = 12;\n        System.out.println(a.x);\n    }\n}",
     "image": "images/de1_q24_1ibyfd9HyG5CvLKV3hP08KYqqCU2D0vA212g0KFE.png",
     "options": {
       "vi": [
@@ -3244,7 +3244,7 @@
       "vi": "Chương trình sau in ra màn hình xâu nào?",
       "en": "The following program prints which string to the screen?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
     "image": "images/de1_q30_OmBn9pyDHXJppfRPpgmxwDMnorStA14ZCk6yKalz.png",
     "options": {
       "vi": [
@@ -3310,7 +3310,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào?",
       "en": "Does the following code have any compilation errors?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    // Lỗi: Kiểu trả về int không tương thích với String ở lớp cha\n    public int sayHello() {\n        return 0;\n    }\n}",
     "image": "images/de1_q32_zoGuKRgMcb5GvSp47mNzpl7WpKg43HNH4KO8uHzH.png",
     "options": {
       "vi": [
@@ -3376,7 +3376,7 @@
       "vi": "Chương trình sau in ra màn hình xâu nào?",
       "en": "The following program prints which string to the screen?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
     "image": "images/de1_q37_TNYGSZtDNInud357tKjKJPZmvKDvJvNDRw3qTgGc.png",
     "options": {
       "vi": [
@@ -3409,7 +3409,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào?.",
       "en": "Does the following code have any compilation errors?."
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public static void main(String[] args) {\n        Man m = new Student(); // Lỗi: Incompatible types\n    }\n}",
     "image": "images/de1_q38_reQ7QkxnenUaAbX6RBezIe4FYgtxGKvL1KTYTKRP.png",
     "options": {
       "vi": [
@@ -3442,7 +3442,7 @@
       "vi": "Giá trị của x sau khi thực hiện lệnh trên sẽ cho kết quả gì? Khi thực hiện lệnh: A a = new A(); a.calTotal(a);",
       "en": "What will be the value of x after executing the above command? When executing the command: A a = new A(); a.calTotal(a);"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class A {\n    int x = 10;\n    public void calTotal(A a) {\n        a.x = 12;\n        System.out.println(a.x);\n    }\n}",
     "image": "images/de1_q39_vgIQYmOWeGVUrjHuHneA68ZdpldNtE9VV5Jhd5K2.png",
     "options": {
       "vi": [
@@ -4498,7 +4498,7 @@
       "vi": "Khối lệnh sau có kết quả bao nhiêu?",
       "en": "What is the result of the following block of commands?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String greeting = \"Hello\";\nint k = greeting.length();\nSystem.out.print(k);",
     "image": "images/de2_q24_k5wRNl1QDOXvaAi8SNX2JUBv2vOnw0JM7QoGoQNg.png",
     "options": {
       "vi": [
@@ -4531,7 +4531,7 @@
       "vi": "Chương trình sau in ra màn hình xâu nào?",
       "en": "The following program prints which string to the screen?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
     "image": "images/de2_q28_KD6evPqIAFRxJYgxapzJsgBGj1Yjx1zGc1rBjCUa.png",
     "options": {
       "vi": [
@@ -4564,7 +4564,7 @@
       "vi": "Trong đoạn mã trên x nhận giá trị bao nhiêu?",
       "en": "In the code above, what value does x receive?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String s = \"cabcab\";\njava.util.StringTokenizer st = new java.util.StringTokenizer(s, \"ab\");\nint x = st.countTokens();\nSystem.out.println(x);",
     "image": "images/de2_q29_AmpA2hTo7hvM8LqabA5PDF7gsDb9S8oTCoA8BDa5.png",
     "options": {
       "vi": [
@@ -4597,7 +4597,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch KHÔNG? Nếu có là lỗi nào sau?",
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public boolean isMan() {\n        return true;\n    }\n}",
     "image": "images/de2_q30_MNwl4BhtuStAoRszKQpcPHoe3THGpLWa3mVeZG6H.png",
     "options": {
       "vi": [
@@ -4630,7 +4630,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào?",
       "en": "Does the following code have any compilation errors?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    public String sayHello() {\n        return \"man\";\n    }\n\n    public static void main(String[] args) {\n        Man m = new Student(); // Lỗi biên dịch: Incompatible types\n        System.out.println(m.sayHello());\n    }\n}",
     "image": "images/de2_q31_70UShZdH0ae2pcqfPtifpD8fsNoFyErcUE0NYDYN.png",
     "options": {
       "vi": [
@@ -4663,7 +4663,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào?",
       "en": "Does the following code have any compilation errors?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    // Không lỗi vì đây là nạp chồng (overload) phương thức getAge\n    protected int getAge(int added) {\n        return super.getAge() + added;\n    }\n}",
     "image": "images/de2_q32_7w62zSqMv1SMnzPTrK78EwAWD88MyOvOWtC2UFwS.png",
     "options": {
       "vi": [
@@ -4729,7 +4729,7 @@
       "vi": "Chương trình sẽ in ra kết quả gì khi thực thi đoạn mã sau?",
       "en": "What output will the program print when executing the following code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "package pac02;\npublic class ClassA {\n    public int xA;\n    public String yA;\n}\n\npackage pac01;\nimport pac02.ClassA;\npublic class Test {\n    public static void main(String[] args) {\n        ClassA a = new ClassA();\n        a.xA = 12;\n        a.yA = \"Hello\";\n        System.out.println(\"a.xA = \" + a.xA + \"; a.yA = \" + a.yA);\n    }\n}",
     "image": "images/de2_q34_YVjleifXjwlxZtzgrUvEMDmPxbIai8CNcjLaxfS4.png",
     "options": {
       "vi": [
@@ -4795,7 +4795,7 @@
       "vi": "Khối lệnh sau có kết quả bao nhiêu khi thực hiện?",
       "en": "What is the result of the following block of commands when executed?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "char[] greet = new char[10];\ngreet = \"Hello\"; // Lỗi biên dịch: không thể gán String cho char[]\nint k = greet.length;\nSystem.out.print(k);",
     "image": "images/de2_q36_6vhbWrTu2JuQ86lgU4g9WikFqDKEWavhICS6ebB8.png",
     "options": {
       "vi": [
@@ -4927,7 +4927,7 @@
       "vi": "Hai câu lệnh sau ra kết quả s là bao nhiêu?",
       "en": "What is the result of the following two statements?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String greetings = \"Hello\";\nString s = greetings.substring(0, 4); // Hell (từ index 0 đến 3)\nSystem.out.println(s);",
     "image": "images/de2_q40_b0ETKMQcuPLR0osMIrx79omfZb5lgGBSzYDVB2VK.png",
     "options": {
       "vi": [
@@ -4960,7 +4960,7 @@
       "vi": "Hai câu lệnh sau ra kết quả s là bao nhiêu?",
       "en": "What is the result of the following two statements?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String greetings = \"Hello\" // Thiếu dấu chấm phẩy ;\nString s = greetings.substring(0, 3);",
     "image": "images/de2_q41_QoaSf8elYfyswaCVfJ71sLK78eCisbJXBNDfnhs8.png",
     "options": {
       "vi": [
@@ -4993,7 +4993,7 @@
       "vi": "Trong hai câu lệnh sau, lệnh substring có tác dụng gì?",
       "en": "In the following two commands, what effect does the substring command have?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String greetings = \" Hello \";\nString s = greetings.substring(0, 3);\nSystem.out.println(s);",
     "image": "images/de2_q42_MobE9bOoDtUEvoNNC8GRq2VufB7jwuwPTKlDrtO6.png",
     "options": {
       "vi": [
@@ -5158,7 +5158,7 @@
       "vi": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 1?",
       "en": "What will be the result of the command block below if we enter income = 1?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int thu = 1;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
     "image": "images/de2_q47_0JpsasWJJUATZXDCeQ5bt9mAnnltXjGbgs6N6AZc.png",
     "options": {
       "vi": [
@@ -5191,7 +5191,7 @@
       "vi": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 2?",
       "en": "What will be the result of the command block below if we enter income = 2?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int thu = 2;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
     "image": "images/de2_q48_XzqSwoF3u6bQWzaCqGKgyKRXkkZrimxZzstSMAxJ.png",
     "options": {
       "vi": [
@@ -5224,7 +5224,7 @@
       "vi": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 3?",
       "en": "What will be the result of the command block below if we enter income = 3?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int thu = 3;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
     "image": "images/de2_q49_VR1kY3PTYcDdoazMlttXMJjwjihQVNBxB8MdSMKu.png",
     "options": {
       "vi": [
@@ -5257,7 +5257,7 @@
       "vi": "Nếu cho color = DEN thì đoạn lệnh dưới in kết quả là bao nhiêu?",
       "en": "If color = DEN, what is the result printed by the command below?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "enum mausac {\n    DEN,\n    LAM,\n    LUC,\n    TRANG\n}\n\nmausac color = mausac.DEN;\nString t;\nswitch (color) {\n    case DEN:\n        t = \"Mau trang\";\n        break;\n    case LAM:\n        t = \"Mau lam\";\n        break;\n    default:\n        t = \"Khong co trong danh sach mau\";\n        break;\n}\nSystem.out.println(t);",
     "image": "images/de2_q50_rWWE7Z90NIow9AFeN3eqT9nUNA6bKsR2tSXH4cQE.png",
     "options": {
       "vi": [
@@ -5290,7 +5290,7 @@
       "vi": "Khi thực hiện khối lệnh trên sẽ cho kết quả là bao nhiêu?",
       "en": "When executing the above command block, what will be the result?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int s = 0;\nfor (int i = 0; i < 10; i++) {\n    s += i;\n}\nSystem.out.println(s);",
     "image": "images/de3_q1_VbQy5PVoY3VeEzK2GPAgOUZ76PezGZSnckunAqzX.png",
     "options": {
       "vi": [
@@ -5323,7 +5323,7 @@
       "vi": "Khối lệnh thực hiện chuyện gì?",
       "en": "What does the command block do?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int[] mang = new int[10];\nint s = 0;\nfor (int i : mang) {\n    s += i;\n}\nSystem.out.println(\"S = \" + s);",
     "image": "images/de3_q2_FiTnBEJFej40C3QlJ3SgnFbLTmKBgKKPzapUINkc.png",
     "options": {
       "vi": [
@@ -5455,7 +5455,7 @@
       "vi": "Lệnh sau in ra cái gì?",
       "en": "What does the following command print?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "final int ARRAY_SIZE = 5;\nARRAY_SIZE = 10; // Lỗi ở dòng 2: không thể gán lại giá trị cho biến final\nSystem.out.println(\"size = \" + ARRAY_SIZE);",
     "image": "images/de3_q8_AaS5VXkh54euUl1OZZZcUDwYQlKTRnXOePFCRzeS.png",
     "options": {
       "vi": [
@@ -5488,7 +5488,7 @@
       "vi": "Chương trình sẽ in ra cái gì?",
       "en": "What will the program print?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class A {\n    final public int method1(int a, int b) {\n        return 0;\n    }\n}\n\nclass B extends A {\n    // Lỗi: Không thể ghi đè (override) phương thức final từ lớp cha\n    public int method1(int a, int b) {\n        return 1;\n    }\n}\n\npublic class Test {\n    public static void main(String args[]) {\n        B b = new B();\n        System.out.println(\"x = \" + b.method1(0, 1));\n    }\n}",
     "image": "images/de3_q9_0RLF0NmPAYll3T8YEwFXwCO2rHgUrkMecSItNa6f.png",
     "options": {
       "vi": [
@@ -5521,7 +5521,7 @@
       "vi": "Hãy cho biết kết quả khi chạy đoạn chương trình sau?",
       "en": "Please tell us the result when running the following program?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    public int getAge(int added) {\n        return super.getAge() + added;\n    }\n\n    public static void main(String[] args) {\n        Man s = new Man();\n        System.out.println(s.getAge());\n        System.out.println(s.getAge());\n    }\n}",
     "image": "images/de3_q10_CQ7idKhsfVBLh3mWmblJpECTezEqB5kewqg5FCdk.png",
     "options": {
       "vi": [
@@ -5554,7 +5554,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào?",
       "en": "Does the following code have any compilation errors?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public String name;\n}\n\npublic class Man extends Student {\n    private String name; // Ẩn trường (hiding field) hợp lệ trong Java\n}",
     "image": "images/de3_q11_LcyO4K9Pf4OwOQCQkFkmSOLDagtVpNc3HzFlq3lT.png",
     "options": {
       "vi": [
@@ -5587,7 +5587,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch nào sau?",
       "en": "Which of the following compilation errors does the following code have?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    protected String name;\n}\n\npublic class Man extends Student {\n    public static void main(String[] args) {\n        Man m = new Man();\n        m.name = \"John\";\n    }\n}",
     "image": "images/de3_q12_omnAdm0JSPuozyOT1HjFxM3GqIvCjuK8T9bxVqMD.png",
     "options": {
       "vi": [
@@ -5620,7 +5620,7 @@
       "vi": "Đoạn mã sau có kết quả như thế nào?",
       "en": "What is the result of the following code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    private String name;\n}\n\npublic class Man extends Student {\n    private String name;\n\n    public static void main(String[] args) {\n        Student m = new Student();\n        m.name = \"Peter\"; // Lỗi biên dịch: name has private access in Student\n    }\n}",
     "image": "images/de3_q13_4KD6IL08O0jfSLYLEBjXmWG5cnID7sPm7Hr0A0bO.png",
     "options": {
       "vi": [
@@ -5686,7 +5686,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch không? Nếu có là lỗi nào sau?",
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {}\n\npublic class Man extends Student {}",
     "image": "images/de3_q15_S6s1S9XwtsqC89oFJsjv05celTWBd2ndzdMFGPf6.png",
     "options": {
       "vi": [
@@ -5719,7 +5719,7 @@
       "vi": "Chương trình sẽ in ra kết quả gì khi thực thi đoạn mã sau?",
       "en": "What output will the program print when executing the following code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "package pac02;\npublic class ClassA {\n    protected int xA;\n    public String yA;\n}\n\npackage pac01;\nimport pac02.ClassA;\npublic class Test {\n    public static void main(String[] args) {\n        ClassA a = new ClassA();\n        a.xA = 12;\n        a.yA = \"Hello\";\n        System.out.println(\"a.xA = \" + a.xA + \"; a.yA = \" + a.yA);\n    }\n}",
     "image": "images/de3_q19_tpIwzUMYaG2DkBvyQX1MDuOyzr6kAKrC0jun0MqX.png",
     "options": {
       "vi": [
@@ -5752,7 +5752,7 @@
       "vi": "Cho hai lớp Student và Main như sau. Khi biên dịch lớp Main có lỗi biên dịch không? Nếu có là lỗi nào?",
       "en": "Given two classes Student and Main as follows. When compiling the Main class, is there a compilation error? If so, what error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "package java.school;\npublic class Student {}\n\npackage java.test;\npublic class Main {\n    public static void main(String[] args) {\n        java.school.Student s = new java.school.Student();\n    }\n}",
     "image": "images/de3_q20_tlx3EdLg9Cw17oskSWsKA0y1mbUxJZGkb9emIw1S.png",
     "options": {
       "vi": [
@@ -5785,7 +5785,7 @@
       "vi": "Khi biên dịch lớp Main có lỗi biên dịch không? Nếu có là lỗi nào?",
       "en": "When compiling the Main class, is there a compilation error? If so, what error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "package java.school;\npublic class Student {}\n\npackage java.test;\npublic class Main {\n    public static void main(String[] args) {\n        Student s = new Student(); // Lỗi: cannot find symbol Student (chưa import)\n    }\n}",
     "image": "images/de3_q22_Fu3Ut4Hg2anZXloYoDlljcG8OvTDgb0tDimYnNNA.png",
     "options": {
       "vi": [
@@ -5818,7 +5818,7 @@
       "vi": "Chương trình sau in ra mà hình xâu nào?",
       "en": "The following program prints which string image?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        names = new String[5]; // Cấp phát mảng mới các phần tử mặc định là null\n        System.out.println(names[2]);\n    }\n}",
     "image": "images/de3_q23_WZ2i2aq61CuKAINgd326WysrgpzAdg3zxWyxNyN7.png",
     "options": {
       "vi": [
@@ -5851,7 +5851,7 @@
       "vi": "Kết quả in ra của đoạn mã trên là gì?",
       "en": "What is the output of the above code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Delta {\n    static boolean foo(char c) {\n        System.out.print(c);\n        return true;\n    }\n\n    public static void main(String[] argv) {\n        int i = 0;\n        for (foo('A'); foo('B') && (i < 2); foo('C')) {\n            i++;\n            foo('D');\n        }\n    }\n}",
     "image": "images/de3_q25_ZILo2TJ7NKeTFAluRygvN5Ia7XghTJlBRyO1arfB.png",
     "options": {
       "vi": [
@@ -5884,7 +5884,7 @@
       "vi": "Trong đoạn mã trên x nhận giá trị bao nhiêu?",
       "en": "In the code above, what value does x receive?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "StringBuffer s = new StringBuffer(\"hello how are you how?\");\nint x = s.indexOf(\"ow\");\nSystem.out.println(x);",
     "image": "images/de3_q26_K5LZHw4PHklOf2rnntmrQrrER6AkzFEY2qJnlg4m.png",
     "options": {
       "vi": [
@@ -5917,7 +5917,7 @@
       "vi": "Lệnh sau in ra cái gì?",
       "en": "What does the following command print?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "final int ARRAY_SIZE = 5;\nARRAY_SIZE = 10; // Lỗi ở dòng 2: không thể gán lại biến final\nSystem.out.println(\"size = \" + ARRAY_SIZE);",
     "image": "images/de3_q28_vzeT1ueD01RZiktBuYpe4lov5HcJcwZsPfkvpmPH.png",
     "options": {
       "vi": [
@@ -5950,7 +5950,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch KHÔNG? Nếu có là lỗi nào sau?",
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public boolean isMan() {\n        return true;\n    }\n}",
     "image": "images/de3_q29_rc3zYE9uWnVPOwVDHzTHGAk0zOM6GMzfGWaGIzGV.png",
     "options": {
       "vi": [
@@ -5983,7 +5983,7 @@
       "vi": "Đoạn mã sau có lỗi biên dịch KHÔNG? Nêu KHÔNG thì in ra màn hình kết quả nào?",
       "en": "Does the following code have a compilation error? If NO, what result will be printed on the screen?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    // Không lỗi vì protected mở rộng quyền truy cập so với default\n    protected String sayHello() {\n        return \"man\";\n    }\n\n    public static void main(String[] args) {\n        Student s = new Man();\n        System.out.println(s.sayHello());\n    }\n}",
     "image": "images/de3_q30_qsxfIrYdtBUNhazL1H1EYDbBVpIGxjVnYd21kndN.png",
     "options": {
       "vi": [
@@ -6016,7 +6016,7 @@
       "vi": "Hãy cho biết kết quả khi chạy đoạn chương trình sau?",
       "en": "Please tell us the result when running the following program?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    public int getAge(int added) {\n        return super.getAge() + added;\n    }\n\n    public static void main(String[] args) {\n        Man s = new Man();\n        System.out.println(s.getAge());\n        System.out.println(s.getAge());\n    }\n}",
     "image": "images/de3_q31_AEjnkzJio8QB2vyU94mJzLMOY2ycYz0aSDvRmDFU.png",
     "options": {
       "vi": [
@@ -6049,7 +6049,7 @@
       "vi": "G/s đã khai báo lớp Student như sau. Đâu là cách tạo lớp Man là lớp con của Student?",
       "en": "G/s has declared the Student class as follows. What is the way to create class Man as a subclass of Student?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public String name;\n}\n\npublic class Man extends Student {}",
     "image": "images/de3_q32_DpZ5YFoC8eWxAAK9GuxHHOShtGyx77NdfPdOGMCn.png",
     "options": {
       "vi": [
@@ -6115,7 +6115,7 @@
       "vi": "Phương thức nào đưa vào dòng 6 sẽ sinh lỗi?",
       "en": "Which method inserted in line 6 will generate an error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Super {\n    public float getNum() {\n        return 3.0f;\n    }\n}\n\npublic class Sub extends Super {\n    // Phương thức đưa vào dòng 6 gây lỗi:\n    // public getNum() { } -> Thiếu kiểu dữ liệu trả về\n}",
     "image": "images/de3_q34_cfD6pzJ67jwBMeAGzGB7L0wBx9niBUwMomzku4Ro.png",
     "options": {
       "vi": [
@@ -6181,7 +6181,7 @@
       "vi": "Cho khai báo mảng sau. Lệnh trên in ra cái gì?",
       "en": "Given the following array declaration. What does the above command print?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String[] str = {\"lap\", \"trinh\", \"java\"};\nSystem.out.println(str[1][1]); // Lỗi: str là mảng 1 chiều, không thể truy cập str[1][1]",
     "image": "images/de3_q36_yCsNnQfkiz5kcpASQJAr0kxotXcrAhYdZkZvXr8y.png",
     "options": {
       "vi": [
@@ -6214,7 +6214,7 @@
       "vi": "Đoạn mã sau in ra màn hình xâu ký tự nào sau:",
       "en": "The following code snippet prints which of the following character strings to the screen:"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    public String sayHello() {\n        return super.sayHello();\n    }\n\n    public static void main(String[] args) {\n        Student m = new Student();\n        System.out.println(m.sayHello());\n    }\n}",
     "image": "images/de3_q37_ctSwZnAj2lxz1eXWQxdJcICqZyOGG33TiRVOqapH.png",
     "options": {
       "vi": [
@@ -6247,7 +6247,7 @@
       "vi": "Chương trình trên sai ở dòng nào?",
       "en": "Which line of the above program is wrong?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class BreakDemo {\n    public static void main(String[] args) {\n        int[] arrayOfInts = {\n            32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127\n        };\n        int searchFor = 12;\n        int i;\n        boolean foundIt = false;\n        for (i = 0; i < arrayOfInts.length; i++) {\n            if (arrayOfInts[i] == searchFor) {\n                foundIt = true;\n                break;\n            }\n        }\n        if (foundIt) {\n            System.out.println(\"Found \" + searchFor + \" at index \" + i);\n        } else {\n            System.out.println(searchFor + \" not in the array\");\n        }\n    }\n}",
     "image": "images/de3_q38_xH80lheZgYsY6UjzTjToA5xevvPzyDLssl8Wv19s.png",
     "options": {
       "vi": [
@@ -6280,7 +6280,7 @@
       "vi": "Chương trình thực hiện công việc gì?",
       "en": "What does the program do?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class BreakDemo {\n    public static void main(String[] args) {\n        int[] arrayOfInts = {\n            32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127\n        };\n        int searchFor = 12;\n        int i;\n        boolean foundIt = false;\n        for (i = 0; i < arrayOfInts.length; i++) {\n            if (arrayOfInts[i] == searchFor) {\n                foundIt = true;\n                break;\n            }\n        }\n        if (foundIt) {\n            System.out.println(\"Found \" + searchFor + \" at index \" + i);\n        } else {\n            System.out.println(searchFor + \" not in the array\");\n        }\n    }\n}",
     "image": "images/de3_q39_Ux48dWzCO9Yhi7EjtM49lq8YbO2SX71an4KEWPUX.png",
     "options": {
       "vi": [
@@ -6313,7 +6313,7 @@
       "vi": "Chương trình sau thực hiện công việc gì?",
       "en": "What does the following program do?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class ContinueDemo {\n    public static void main(String[] args) {\n        String searchMe = \"peter piper picked a peck of pickled peppers\";\n        int max = searchMe.length();\n        int numPs = 0;\n        for (int i = 0; i < max; i++) {\n            if (searchMe.charAt(i) != 'p') continue;\n            numPs++;\n        }\n        System.out.println(\"Found \" + numPs + \" p's in the string.\");\n    }\n}",
     "image": "images/de3_q40_NkGLZ4KA9gkqijoTpwaW0xRbi9HGNanVH0dPF7Pb.png",
     "options": {
       "vi": [
@@ -6346,7 +6346,7 @@
       "vi": "Chương trình sau ra kết quả là gì?",
       "en": "What is the result of the following program?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class ContinueDemo {\n    public static void main(String[] args) {\n        String searchMe = \"peter piper picked a peck of pickled peppers\";\n        int max = searchMe.length();\n        int numPs = 0;\n        for (int i = 0; i < max; i++) {\n            if (searchMe.charAt(i) != 'p') continue;\n            numPs++;\n        }\n        System.out.println(\"Found \" + numPs + \" p's in the string.\");\n    }\n}",
     "image": "images/de3_q41_vyjovq82a108LmCq1yRwGmf8Rn6EGsBUru4zpLWO.png",
     "options": {
       "vi": [
@@ -6544,7 +6544,7 @@
       "vi": "Trong đoạn mã trên x nhận giá trị bao nhiêu?",
       "en": "In the code above, what value does x receive?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "StringBuffer s = new StringBuffer(\"hello how are you?\");\nint x = s.charAt(6); // 'h' có mã ASCII là 104\nSystem.out.println(x);",
     "image": "images/de3_q47_1nlOgsBgZyJM3kJf9iD3QDNFDVsWBt5bas9r7o1A.png",
     "options": {
       "vi": [
@@ -6676,7 +6676,7 @@
       "vi": "Có bao nhiêu đổi tham chiếu của đối tượng mảng và biến tồn tại sau khi thực hiện khối lệnh?",
       "en": "How many dereferences of array objects and variables exist after executing the block of code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String[] students = new String[10];\nString studentName = \"Peter Parker\";\nstudents[0] = studentName;\nstudentName = null;",
     "image": "images/de4_q1_fReCipBSg38HSmKaJzDcAu5nloqexpdNpAGQ6hlR.png",
     "options": {
       "vi": [
@@ -6709,7 +6709,7 @@
       "vi": "Cho khối lệnh sau,giả thiết lớp Rectangle đ được định nghĩa và không sai. Khi chạy, chương trình báo lỗi là do:",
       "en": "For the following block of code, assume the Rectangle class has been defined and is not false. When running, the program reports an error due to:"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class SomeWrong {\n    public static void main(String[] args) {\n        Rectangle myRect; // Chưa khởi tạo bằng new Rectangle()\n        myRect.width = 40;\n        myRect.height = 50;\n        System.out.println(\"Dien tich hinh chu nhat: \" + myRect.area());\n    }\n}",
     "image": "images/de4_q2_AojV8jmLk4FUigPkAj26bEJt9dFZBiD6Eqnc0pxT.png",
     "options": {
       "vi": [
@@ -6841,7 +6841,7 @@
       "vi": "Biến message sau đây có kết quả gì?",
       "en": "What is the result of the following message variable?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String expletive = \"Expletive\";\nString PG13 = \"deleted\";\nString message = expletive.substring(1, 3) + PG13; // \"xp\" + \"deleted\" = \"xpldeleted\"\nSystem.out.println(message);",
     "image": "images/de4_q6_8MTfzlca9Yc6VWua9XqBBd3Skl7RZuqT91PydfNA.png",
     "options": {
       "vi": [
@@ -6874,7 +6874,7 @@
       "vi": "Câu lệnh sau in ra kết quả gì?",
       "en": "What result does the following command print?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int age = 13;\nString message = \"PG\" + age;\nSystem.out.println(message);",
     "image": "images/de4_q7_K1sXyG3nKwPIU3XVMmNfrzaV6HeyOqckT4NNk8Ip.png",
     "options": {
       "vi": [
@@ -6973,7 +6973,7 @@
       "vi": "Lệnh sau trả về kết quả là bao nhiêu?",
       "en": "What result does the following command return?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "String greetings = \"Hello\";\nchar letter = greetings.charAt(0);\nSystem.out.println(letter);",
     "image": "images/de4_q10_gmlhPOsetJVamQ47OEz7o4F1zqSA3MXD9u41snWL.png",
     "options": {
       "vi": [
@@ -7006,7 +7006,7 @@
       "vi": "Khối lệnh sau ra kết quả là bao nhiêu với a = 5, b = 8?",
       "en": "What is the result of the following block of commands with a = 5, b = 8?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "double a = 5, b = 8;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
     "image": "images/de4_q11_RQOyF2FFyVeT5XKkPKjWqk4RDtEqGCZuxPLxwo71.png",
     "options": {
       "vi": [
@@ -7039,7 +7039,7 @@
       "vi": "Khối lệnh sau ra kết quả là bao nhiêu với a = 0, b = 0?",
       "en": "What is the result of the following block of commands with a = 0, b = 0?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "double a = 0, b = 0;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
     "image": "images/de4_q12_kkbAgjXdcNrgnw1lrnBUzLL0z4WVS6eAl4lOJFz7.png",
     "options": {
       "vi": [
@@ -7072,7 +7072,7 @@
       "vi": "Khối lệnh sau ra kết quả là bao nhiêu với a = 0, b = 8?",
       "en": "What is the result of the following block of commands with a = 0, b = 8?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "double a = 0, b = 8;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
     "image": "images/de4_q13_EeEt7cQUKNJoPDollZZl2mBpEAnXLS3A1GohckPf.png",
     "options": {
       "vi": [
@@ -7996,7 +7996,7 @@
       "vi": "Kết quả in ra là gì?",
       "en": "What is the printed result?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class foo {\n    public static void main(String[] args) {\n        String s;\n        System.out.println(\"s=\" + s); // Lỗi ở dòng 4: biến cục bộ s chưa được khởi tạo\n    }\n}",
     "image": "images/de4_q41_ML0UHG6vGkiXHfHGCkNKeWYbDOaY4BsDO6P5ZW2f.png",
     "options": {
       "vi": [
@@ -8029,7 +8029,7 @@
       "vi": "Kết quả in ra của đoạn mã trên là gì?",
       "en": "What is the output of the above code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "int i = 1, j = 10;\ndo {\n    if (i++ > --j) continue;\n} while (i < 5);\nSystem.out.println(\"i = \" + i + \" and j = \" + j);",
     "image": "images/de4_q42_Jam3LItXMbPf5aw8l71dqrACkV83gObmm4B5kMvE.png",
     "options": {
       "vi": [
@@ -8062,7 +8062,7 @@
       "vi": "Làm thế nào để đoạn mã trên biên dịch thành công?",
       "en": "How does the above code compile successfully?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public abstract class Test {\n    public abstract void methodA();\n    public abstract void methodB() { // Lỗi: phương thức abstract không được có thân hàm {}\n        System.out.println(\"Hello\");\n    }\n}",
     "image": "images/de4_q44_MRT3PSQvD64OWJKwgwtLcAUh5FOIvctGNzdt7VuT.png",
     "options": {
       "vi": [
@@ -8128,7 +8128,7 @@
       "vi": "Chương trình sau in ra màn hình số mấy?",
       "en": "The following program prints what number on the screen?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names.length);\n    }\n}",
     "image": "images/de4_q46_OVTdw0815AWVuMWESe3J98kEE5CVZ9qypr8DknVw.png",
     "options": {
       "vi": [
@@ -8161,7 +8161,7 @@
       "vi": "Phương thức nào đưa vào dòng 6 sẽ sinh lỗi?",
       "en": "Which method inserted in line 6 will generate an error?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "class Super {\n    public float getNum() {\n        return 3.0f;\n    }\n}\n\npublic class Sub extends Super {\n    // Phương thức gây lỗi:\n    // public getNum() { }\n}",
     "image": "images/de4_q47_4NoxmxaK3njSTjTcCrhrYFmRcOl1KKQ6zwgGL8rP.png",
     "options": {
       "vi": [
@@ -8194,7 +8194,7 @@
       "vi": "Giá trị cuối cùng của i tại dòng 7 là bao nhiêu?",
       "en": "What is the final value of i in line 7?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Test {\n    public static void main(String args[]) {\n        int i = 0;\n        while (true) {\n            if (i == 4) break;\n            System.out.println(i);\n            i++;\n        }\n    }\n}",
     "image": "images/de4_q48_fAzRx1vcFOZoC1msHafvTfEMakli7wU1tZbwJgTL.png",
     "options": {
       "vi": [
@@ -8227,7 +8227,7 @@
       "vi": "Kết quả in ra của đoạn mã trên là gì?",
       "en": "What is the output of the above code?"
     },
-    "codeSnippet": null,
+    "codeSnippet": "public class Foo {\n    public static void main(String[] args) {\n        try {\n            return;\n        } finally {\n            System.out.println(\"Finally\");\n        }\n    }\n}",
     "image": "images/de4_q49_Pn0jEU5FG22TpOGJu7gxXFXbzCamSPTmd1NA0lWg.png",
     "options": {
       "vi": [

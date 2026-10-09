@@ -16,6 +16,7 @@ import { ResultPage } from './pages/ResultPage';
 import { ExamSetupModal } from './components/quiz/ExamSetupModal';
 import { ExamHistoryModal } from './components/history/ExamHistoryModal';
 import { CandidateNameModal } from './components/common/CandidateNameModal';
+import { RunCodeModal } from './components/common/RunCodeModal';
 import { Coffee, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from './components/common/Button';
 
@@ -50,6 +51,7 @@ const MainApp: React.FC = () => {
   const [isNameModalOpen, setIsNameModalOpen] = useState<boolean>(false);
   const [pendingActionAfterName, setPendingActionAfterName] = useState<'PRACTICE' | 'EXAM' | null>(null);
   const [practiceInitialTopicId, setPracticeInitialTopicId] = useState<string | undefined>(undefined);
+  const [isGlobalSandboxOpen, setIsGlobalSandboxOpen] = useState<boolean>(false);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -229,6 +231,8 @@ const MainApp: React.FC = () => {
           setPendingActionAfterName(null);
           setIsNameModalOpen(true);
         }}
+        onOpenSandbox={() => setIsGlobalSandboxOpen(true)}
+        isExamActive={view === 'EXAM'}
       />
 
       <main style={{ flex: 1 }}>
@@ -372,6 +376,20 @@ const MainApp: React.FC = () => {
         }}
         isMandatory={pendingActionAfterName !== null}
       />
+
+      {/* Global Java Sandbox Modal */}
+      {isGlobalSandboxOpen && (
+        <RunCodeModal
+          isOpen={isGlobalSandboxOpen}
+          onClose={() => setIsGlobalSandboxOpen(false)}
+          rawCode={`public class Main {
+    public static void main(String[] args) {
+        System.out.println("Xin chào! Bạn có thể tự do gõ và chạy thử code Java tại đây:");
+        
+    }
+}`}
+        />
+      )}
 
       <Footer />
     </div>

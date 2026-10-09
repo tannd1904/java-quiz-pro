@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Coffee, History, User } from 'lucide-react';
+import { Coffee, History, User, Terminal } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
@@ -10,6 +10,8 @@ interface NavbarProps {
   onOpenExamHistory?: () => void;
   historyCount?: number;
   onEditCandidateName?: () => void;
+  onOpenSandbox?: () => void;
+  isExamActive?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -17,6 +19,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenExamHistory,
   historyCount = 0,
   onEditCandidateName,
+  onOpenSandbox,
+  isExamActive = false,
 }) => {
   const { language, t } = useI18n();
   const [candidateName, setCandidateName] = useState<string>(() =>
@@ -173,6 +177,32 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {historyCount}
                 </span>
               )}
+            </button>
+          )}
+
+          {/* Quick Java Sandbox Runner Button (hidden in exam mode to prevent cheating) */}
+          {onOpenSandbox && !isExamActive && (
+            <button
+              type="button"
+              onClick={onOpenSandbox}
+              title={language === 'en' ? 'Open Java Sandbox & Runner' : 'Mở trình chạy thử code Java nhanh (Playground)'}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '6px 10px',
+                borderRadius: 'var(--radius-md)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                backgroundColor: 'var(--bg-surface-subtle)',
+                border: '1px solid var(--border-default)',
+                color: 'var(--brand-primary)',
+                cursor: 'pointer',
+                transition: 'all var(--transition-fast)',
+              }}
+            >
+              <Terminal size={15} />
+              <span className="hide-on-mobile">{language === 'en' ? 'Sandbox ⚡' : 'Chạy code ⚡'}</span>
             </button>
           )}
 
