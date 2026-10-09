@@ -1,13 +1,20 @@
 import React from 'react';
-import { Award, BookOpen, CheckCircle, Lock, ArrowRight } from 'lucide-react';
+import { Award, BookOpen, CheckCircle, Lock, ArrowRight, History } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 import { Button } from '../components/common/Button';
+import { ActiveExamSession } from '../types/quiz';
+import { ResumeExamCard } from '../components/exam/ResumeExamCard';
 
 interface HomePageProps {
   onOpenExamSetup: () => void;
   onStartPractice: () => void;
   isPracticeEnabled: boolean;
   totalQuestions: number;
+  activeExamSession?: ActiveExamSession | null;
+  onResumeExam?: () => void;
+  onDiscardExam?: () => void;
+  onOpenHistory?: () => void;
+  examHistoryCount?: number;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -15,14 +22,19 @@ export const HomePage: React.FC<HomePageProps> = ({
   onStartPractice,
   isPracticeEnabled,
   totalQuestions,
+  activeExamSession,
+  onResumeExam,
+  onDiscardExam,
+  onOpenHistory,
+  examHistoryCount = 0,
 }) => {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
 
   return (
     <div style={{ padding: 'clamp(20px, 4vw, 48px) 0 64px' }}>
       <div className="container" style={{ maxWidth: '1060px' }}>
         {/* Hero Section */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 48px)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(20px, 4vw, 40px)' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -59,7 +71,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               fontSize: 'clamp(0.92rem, 2.8vw, 1.1rem)',
               color: 'var(--text-secondary)',
               maxWidth: '680px',
-              margin: '0 auto',
+              margin: '0 auto 18px',
               lineHeight: 1.6,
             }}
           >
@@ -67,7 +79,46 @@ export const HomePage: React.FC<HomePageProps> = ({
             <strong style={{ color: 'var(--brand-primary)' }}>{totalQuestions}+</strong> câu hỏi
             chuyên sâu, bao quát từ Core Java, 4 tính chất OOP, Memory Model đến Collections Framework.
           </p>
+
+          {/* Quick History Button in Hero */}
+          {onOpenHistory && (
+            <div style={{ display: 'inline-flex', justifyContent: 'center' }}>
+              <Button
+                variant="outline"
+                size="sm"
+                icon={<History size={15} />}
+                onClick={onOpenHistory}
+                style={{ borderRadius: 'var(--radius-full)' }}
+              >
+                {language === 'en' ? 'View Exam History' : 'Lịch sử làm bài thi'}
+                {examHistoryCount > 0 && (
+                  <span
+                    style={{
+                      marginLeft: '4px',
+                      padding: '1px 7px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'var(--brand-primary-subtle)',
+                      color: 'var(--brand-primary)',
+                      fontWeight: 700,
+                      fontSize: '0.72rem',
+                    }}
+                  >
+                    {examHistoryCount}
+                  </span>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
+
+        {/* In-Progress Exam Banner if available */}
+        {activeExamSession && onResumeExam && onDiscardExam && (
+          <ResumeExamCard
+            session={activeExamSession}
+            onResume={onResumeExam}
+            onDiscard={onDiscardExam}
+          />
+        )}
 
         {/* 2 Primary Action Cards */}
         <div

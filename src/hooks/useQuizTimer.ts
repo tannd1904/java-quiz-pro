@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 interface UseQuizTimerProps {
   totalSeconds: number;
+  initialRemainingSeconds?: number;
   isRunning: boolean;
   onTimeout: () => void;
 }
@@ -16,10 +17,16 @@ interface UseQuizTimerResult {
 
 export function useQuizTimer({
   totalSeconds,
+  initialRemainingSeconds,
   isRunning,
   onTimeout,
 }: UseQuizTimerProps): UseQuizTimerResult {
-  const [remainingSeconds, setRemainingSeconds] = useState(totalSeconds);
+  const startRemaining =
+    typeof initialRemainingSeconds === 'number' && initialRemainingSeconds > 0
+      ? initialRemainingSeconds
+      : totalSeconds;
+
+  const [remainingSeconds, setRemainingSeconds] = useState(startRemaining);
   const onTimeoutRef = useRef(onTimeout);
   onTimeoutRef.current = onTimeout;
 
@@ -27,12 +34,16 @@ export function useQuizTimer({
   const hasTimedOutRef = useRef(false);
 
   useEffect(() => {
-    setRemainingSeconds(totalSeconds);
+    const initRemaining =
+      typeof initialRemainingSeconds === 'number' && initialRemainingSeconds > 0
+        ? initialRemainingSeconds
+        : totalSeconds;
+    setRemainingSeconds(initRemaining);
     hasTimedOutRef.current = false;
-    if (isRunning && totalSeconds > 0) {
-      endTimeRef.current = Date.now() + totalSeconds * 1000;
+    if (isRunning && initRemaining > 0) {
+      endTimeRef.current = Date.now() + initRemaining * 1000;
     }
-  }, [totalSeconds, isRunning]);
+  }, [totalSeconds, initialRemainingSeconds, isRunning]);
 
   useEffect(() => {
     if (!isRunning || totalSeconds <= 0) return;

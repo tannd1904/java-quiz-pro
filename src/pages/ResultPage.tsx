@@ -5,20 +5,22 @@ import { ScoreCard } from '../components/result/ScoreCard';
 import { MetricsGrid } from '../components/result/MetricsGrid';
 import { ReviewQuestionList } from '../components/result/ReviewQuestionList';
 import { Button } from '../components/common/Button';
-import { RotateCcw, Home } from 'lucide-react';
+import { RotateCcw, Home, History } from 'lucide-react';
 
 interface ResultPageProps {
   result: ExamResult;
   onRetakeExam: () => void;
   onNavigateHome: () => void;
+  onOpenHistory?: () => void;
 }
 
 export const ResultPage: React.FC<ResultPageProps> = ({
   result,
   onRetakeExam,
   onNavigateHome,
+  onOpenHistory,
 }) => {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
 
   return (
     <div style={{ padding: '36px 0 72px' }}>
@@ -49,6 +51,17 @@ export const ResultPage: React.FC<ResultPageProps> = ({
           >
             {t('result.retakeBtn')}
           </Button>
+
+          {onOpenHistory && (
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={onOpenHistory}
+              icon={<History size={18} />}
+            >
+              {language === 'en' ? 'Exam History' : 'Xem lịch sử thi'}
+            </Button>
+          )}
 
           <Button
             variant="secondary"

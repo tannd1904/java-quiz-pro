@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee, FileText, Lock, Unlock } from 'lucide-react';
+import { Coffee, FileText, Lock, Unlock, History } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
@@ -8,14 +8,18 @@ interface NavbarProps {
   isPracticeEnabled: boolean;
   onTogglePracticeLock: () => void;
   onNavigateHome: () => void;
+  onOpenExamHistory?: () => void;
+  historyCount?: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   isPracticeEnabled,
   onTogglePracticeLock,
   onNavigateHome,
+  onOpenExamHistory,
+  historyCount = 0,
 }) => {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
 
   return (
     <header
@@ -123,6 +127,46 @@ export const Navbar: React.FC<NavbarProps> = ({
               {isPracticeEnabled ? 'MỞ' : 'KHÓA'}
             </span>
           </button>
+
+          {/* Exam History Button */}
+          {onOpenExamHistory && (
+            <button
+              type="button"
+              onClick={onOpenExamHistory}
+              title={language === 'en' ? 'View Exam History' : 'Xem lịch sử làm bài thi'}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '6px 10px',
+                borderRadius: 'var(--radius-md)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                backgroundColor: 'var(--bg-surface-subtle)',
+                border: '1px solid var(--border-default)',
+                color: 'var(--text-secondary)',
+                cursor: 'pointer',
+                transition: 'all var(--transition-fast)',
+              }}
+            >
+              <History size={15} />
+              <span className="hide-on-mobile">{language === 'en' ? 'History' : 'Lịch sử thi'}</span>
+              {historyCount > 0 && (
+                <span
+                  style={{
+                    fontSize: '0.7rem',
+                    padding: '1px 5px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: 'var(--brand-primary-subtle)',
+                    color: 'var(--brand-primary)',
+                    fontWeight: 700,
+                  }}
+                >
+                  {historyCount}
+                </span>
+              )}
+            </button>
+          )}
 
           {/* PDF Summary Document Link */}
           <a

@@ -7,12 +7,14 @@ interface TopicSelectorProps {
   selectedTopicIds: string[];
   onChange: (ids: string[]) => void;
   questionCounts?: Record<string, number>;
+  completedCounts?: Record<string, number>;
 }
 
 export const TopicSelector: React.FC<TopicSelectorProps> = ({
   selectedTopicIds,
   onChange,
   questionCounts,
+  completedCounts,
 }) => {
   const { t } = useI18n();
 
@@ -144,6 +146,11 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
             count={
               questionCounts && Number.isFinite(Number(questionCounts[topic.id]))
                 ? Number(questionCounts[topic.id])
+                : undefined
+            }
+            completedCount={
+              completedCounts && Number.isFinite(Number(completedCounts[topic.id]))
+                ? Number(completedCounts[topic.id])
                 : undefined
             }
           />

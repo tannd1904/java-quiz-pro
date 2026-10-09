@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { ExamQuestionItem } from '../types/quiz';
+import React, { useState, useEffect } from 'react';
+import { ExamQuestionItem, ExamSetupConfig } from '../types/quiz';
 import { TopicConfig } from '../types/question';
 import { useI18n } from '../hooks/useI18n';
 import { useQuizTimer } from '../hooks/useQuizTimer';
+import { userProgressService } from '../services/userProgressService';
 import { TOPICS_CONFIG } from '../config/topics.config';
 import { AnswerOption } from '../components/quiz/AnswerOption';
 import { QuestionPalette } from '../components/quiz/QuestionPalette';
@@ -15,6 +16,10 @@ import { ArrowLeft, ArrowRight, Send, AlertTriangle, LayoutGrid, X } from 'lucid
 interface ExamPageProps {
   examItems: ExamQuestionItem[];
   timeMinutes: number;
+  examConfig?: ExamSetupConfig;
+  initialAnswers?: Record<string, number>;
+  initialCurrentIndex?: number;
+  initialRemainingSeconds?: number;
   onSubmit: (answers: Record<string, number>, remainingSeconds: number) => void;
   onCancel: () => void;
 }
@@ -22,13 +27,17 @@ interface ExamPageProps {
 export const ExamPage: React.FC<ExamPageProps> = ({
   examItems,
   timeMinutes,
+  examConfig,
+  initialAnswers,
+  initialCurrentIndex,
+  initialRemainingSeconds,
   onSubmit,
   onCancel,
 }) => {
   const { language, t } = useI18n();
 
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [currentIndex, setCurrentIndex] = useState<number>(initialCurrentIndex || 0);
+  const [answers, setAnswers] = useState<Record<string, number>>(initialAnswers || {});
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
   const [isTimeoutModalOpen, setIsTimeoutModalOpen] = useState<boolean>(false);
   const [isPaletteOpen, setIsPaletteOpen] = useState<boolean>(false);
@@ -37,11 +46,50 @@ export const ExamPage: React.FC<ExamPageProps> = ({
 
   const timer = useQuizTimer({
     totalSeconds,
+    initialRemainingSeconds,
     isRunning: !isTimeoutModalOpen,
     onTimeout: () => {
       setIsTimeoutModalOpen(true);
     },
   });
+
+  // Auto-save active exam session to localStorage
+  React.useEffect(() => {
+    if (!examConfig || examItems.length === 0) return;
+
+    if (timer.remainingSeconds > 0) {
+      userProgressService.saveActiveExamSession({
+        id: 'active-exam-session',
+        items: examItems,
+        config: examConfig,
+        answers,
+        currentIndex,
+        remainingSeconds: timer.remainingSeconds,
+        startedAt: Date.now(),
+        lastSavedAt: Date.now(),
+      });
+    }
+  }, [answers, currentIndex, timer.remainingSeconds, examConfig, examItems]);
+
+  // Save on page exit / unload
+  React.useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (examConfig && timer.remainingSeconds > 0) {
+        userProgressService.saveActiveExamSession({
+          id: 'active-exam-session',
+          items: examItems,
+          config: examConfig,
+          answers,
+          currentIndex,
+          remainingSeconds: timer.remainingSeconds,
+          startedAt: Date.now(),
+          lastSavedAt: Date.now(),
+        });
+      }
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [answers, currentIndex, timer.remainingSeconds, examConfig, examItems]);
 
   const currentItem = examItems[currentIndex];
   const questionIds = examItems.map((item) => item.question.id);
@@ -57,11 +105,13 @@ export const ExamPage: React.FC<ExamPageProps> = ({
   };
 
   const handleFinalSubmit = () => {
+    userProgressService.clearActiveExamSession();
     onSubmit(answers, timer.remainingSeconds);
   };
 
   const handleConfirmCancel = () => {
     if (window.confirm(t('exam.cancelConfirmMsg'))) {
+      userProgressService.clearActiveExamSession();
       onCancel();
     }
   };

@@ -38,3 +38,28 @@ export interface ExamResult {
   reviewList: ExamReviewItem[];
   selectedTopicIds: string[];
 }
+
+export interface ExamHistoryItem {
+  id: string;
+  timestamp: number;
+  config: ExamSetupConfig;
+  result: ExamResult;
+}
+
+export interface ActiveExamSession {
+  id: string;
+  items: ExamQuestionItem[];
+  config: ExamSetupConfig;
+  answers: Record<string, number>;
+  currentIndex: number;
+  remainingSeconds: number;
+  startedAt: number;
+  lastSavedAt: number;
+}
+
+export interface PracticeProgressItem {
+  questionId: string;
+  selectedOptionIdx: number;
+  isCorrect: boolean;
+  answeredAt: number;
+}

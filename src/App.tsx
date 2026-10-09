@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { AppView, ExamSetupConfig, ExamQuestionItem, ExamResult } from './types/quiz';
+import { AppView, ExamSetupConfig, ExamQuestionItem, ExamResult, ExamHistoryItem, ActiveExamSession } from './types/quiz';
 import { Question } from './types/question';
 import { APP_CONFIG } from './config/app.config';
 import { questionRepository } from './services/questionRepository';
 import { prepareExamSession, calculateExamResult } from './services/quizEngine';
+import { userProgressService } from './services/userProgressService';
 import { I18nProvider, useI18n } from './hooks/useI18n';
 import { ThemeProvider } from './hooks/useTheme';
 import { Navbar } from './components/navigation/Navbar';
@@ -13,6 +14,7 @@ import { PracticePage } from './pages/PracticePage';
 import { ExamPage } from './pages/ExamPage';
 import { ResultPage } from './pages/ResultPage';
 import { ExamSetupModal } from './components/quiz/ExamSetupModal';
+import { ExamHistoryModal } from './components/history/ExamHistoryModal';
 import { Coffee, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from './components/common/Button';
 
@@ -36,6 +38,20 @@ const MainApp: React.FC = () => {
   const [currentExamItems, setCurrentExamItems] = useState<ExamQuestionItem[]>([]);
   const [currentExamConfig, setCurrentExamConfig] = useState<ExamSetupConfig | null>(null);
   const [currentExamResult, setCurrentExamResult] = useState<ExamResult | null>(null);
+
+  // Exam History & In-Progress Exam State
+  const [examHistory, setExamHistory] = useState<ExamHistoryItem[]>(() => {
+    return userProgressService.getExamHistory();
+  });
+  const [activeExamSession, setActiveExamSession] = useState<ActiveExamSession | null>(() => {
+    return userProgressService.getActiveExamSession();
+  });
+  const [isExamHistoryModalOpen, setIsExamHistoryModalOpen] = useState<boolean>(false);
+  const [resumedSessionData, setResumedSessionData] = useState<{
+    answers: Record<string, number>;
+    currentIndex: number;
+    remainingSeconds: number;
+  } | null>(null);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -77,6 +93,10 @@ const MainApp: React.FC = () => {
 
   // Start exam flow
   const handleStartExam = (config: ExamSetupConfig) => {
+    userProgressService.clearActiveExamSession();
+    setActiveExamSession(null);
+    setResumedSessionData(null);
+
     const items = prepareExamSession(questions, config);
     if (items.length === 0) return;
 
@@ -85,6 +105,32 @@ const MainApp: React.FC = () => {
     setIsExamSetupModalOpen(false);
     setView('EXAM');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Resume in-progress exam flow
+  const handleResumeExam = () => {
+    const active = userProgressService.getActiveExamSession();
+    if (!active) {
+      setActiveExamSession(null);
+      return;
+    }
+
+    setCurrentExamItems(active.items);
+    setCurrentExamConfig(active.config);
+    setResumedSessionData({
+      answers: active.answers,
+      currentIndex: active.currentIndex,
+      remainingSeconds: active.remainingSeconds,
+    });
+    setView('EXAM');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Discard in-progress exam
+  const handleDiscardExam = () => {
+    userProgressService.clearActiveExamSession();
+    setActiveExamSession(null);
+    setResumedSessionData(null);
   };
 
   // Submit exam flow
@@ -99,6 +145,20 @@ const MainApp: React.FC = () => {
       currentExamConfig.selectedTopicIds
     );
 
+    // Persist to exam history
+    const historyItem: ExamHistoryItem = {
+      id: 'exam-' + Date.now(),
+      timestamp: Date.now(),
+      config: currentExamConfig,
+      result,
+    };
+    userProgressService.saveExamHistory(historyItem);
+    setExamHistory(userProgressService.getExamHistory());
+
+    userProgressService.clearActiveExamSession();
+    setActiveExamSession(null);
+    setResumedSessionData(null);
+
     setCurrentExamResult(result);
     setView('RESULT');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -106,6 +166,9 @@ const MainApp: React.FC = () => {
 
   // Cancel exam flow
   const handleCancelExam = () => {
+    userProgressService.clearActiveExamSession();
+    setActiveExamSession(null);
+    setResumedSessionData(null);
     setCurrentExamItems([]);
     setCurrentExamConfig(null);
     setView('HOME');
@@ -118,6 +181,7 @@ const MainApp: React.FC = () => {
   };
 
   const handleNavigateHome = () => {
+    setActiveExamSession(userProgressService.getActiveExamSession());
     setView('HOME');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -128,12 +192,33 @@ const MainApp: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Review past exam from history
+  const handleReviewHistoryItem = (item: ExamHistoryItem) => {
+    setCurrentExamResult(item.result);
+    setCurrentExamConfig(item.config);
+    setIsExamHistoryModalOpen(false);
+    setView('RESULT');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleDeleteHistoryItem = (id: string) => {
+    userProgressService.deleteExamHistoryItem(id);
+    setExamHistory(userProgressService.getExamHistory());
+  };
+
+  const handleClearAllHistory = () => {
+    userProgressService.clearExamHistory();
+    setExamHistory([]);
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar
         isPracticeEnabled={isPracticeEnabled}
         onTogglePracticeLock={handleTogglePracticeLock}
         onNavigateHome={handleNavigateHome}
+        onOpenExamHistory={() => setIsExamHistoryModalOpen(true)}
+        historyCount={examHistory.length}
       />
 
       <main style={{ flex: 1 }}>
@@ -164,7 +249,7 @@ const MainApp: React.FC = () => {
               <Coffee size={28} />
             </div>
             <p style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>
-              Đang tải ngân hàng 340+ câu hỏi trắc nghiệm Java...
+              Đang tải ngân hàng 900+ câu hỏi trắc nghiệm Java...
             </p>
           </div>
         )}
@@ -199,6 +284,11 @@ const MainApp: React.FC = () => {
                 onStartPractice={handleStartPractice}
                 isPracticeEnabled={isPracticeEnabled}
                 totalQuestions={questions.length}
+                activeExamSession={activeExamSession}
+                onResumeExam={handleResumeExam}
+                onDiscardExam={handleDiscardExam}
+                onOpenHistory={() => setIsExamHistoryModalOpen(true)}
+                examHistoryCount={examHistory.length}
               />
             )}
 
@@ -214,6 +304,10 @@ const MainApp: React.FC = () => {
               <ExamPage
                 examItems={currentExamItems}
                 timeMinutes={currentExamConfig.timeMinutes}
+                examConfig={currentExamConfig}
+                initialAnswers={resumedSessionData ? resumedSessionData.answers : undefined}
+                initialCurrentIndex={resumedSessionData ? resumedSessionData.currentIndex : undefined}
+                initialRemainingSeconds={resumedSessionData ? resumedSessionData.remainingSeconds : undefined}
                 onSubmit={handleSubmitExam}
                 onCancel={handleCancelExam}
               />
@@ -224,6 +318,7 @@ const MainApp: React.FC = () => {
                 result={currentExamResult}
                 onRetakeExam={handleRetakeExam}
                 onNavigateHome={handleNavigateHome}
+                onOpenHistory={() => setIsExamHistoryModalOpen(true)}
               />
             )}
           </>
@@ -237,6 +332,16 @@ const MainApp: React.FC = () => {
         onStartExam={handleStartExam}
         topicCounts={topicCounts}
         totalQuestions={questions.length}
+      />
+
+      {/* Exam History Modal */}
+      <ExamHistoryModal
+        isOpen={isExamHistoryModalOpen}
+        onClose={() => setIsExamHistoryModalOpen(false)}
+        historyList={examHistory}
+        onSelectReview={handleReviewHistoryItem}
+        onDeleteItem={handleDeleteHistoryItem}
+        onClearAll={handleClearAllHistory}
       />
 
       <Footer />
