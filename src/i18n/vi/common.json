@@ -4,8 +4,7 @@
     "brandSubtitle": "Luyện thi & Đánh giá năng lực",
     "practiceLocked": "🔒 Ôn tập: ĐANG KHÓA",
     "practiceUnlocked": "🟢 Ôn tập: ĐÃ MỞ",
-    "practiceLockTooltip": "Click để bật/tắt quyền truy cập chế độ Ôn tập",
-    "pdfSummary": "📄 Bản In PDF / Bảng Tổng Hợp"
+    "practiceLockTooltip": "Click để bật/tắt quyền truy cập chế độ Ôn tập"
   },
   "home": {
     "badge": "⚡ Nền tảng ôn thi trắc nghiệm Java chuyên sâu",

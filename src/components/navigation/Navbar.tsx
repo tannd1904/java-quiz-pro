@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee, FileText, History } from 'lucide-react';
+import { Coffee, History } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
@@ -134,29 +134,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           )}
 
-          {/* PDF Summary Document Link */}
-          <a
-            href="./Tong_hop_200_cau_trac_nghiem_Java.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Mở tài liệu bảng tổng hợp câu hỏi"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '5px',
-              padding: '6px 10px',
-              borderRadius: 'var(--radius-md)',
-              fontSize: '0.8rem',
-              fontWeight: 600,
-              backgroundColor: 'var(--bg-surface-subtle)',
-              border: '1px solid var(--border-default)',
-              color: 'var(--text-secondary)',
-              transition: 'all var(--transition-fast)',
-            }}
-          >
-            <FileText size={15} />
-            <span className="hide-on-mobile">{t('nav.pdfSummary')}</span>
-          </a>
 
           {/* Language Switcher */}
           <LanguageSwitcher />

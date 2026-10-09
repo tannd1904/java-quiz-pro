@@ -4,8 +4,7 @@
     "brandSubtitle": "Exam Prep & Competency Assessment",
     "practiceLocked": "🔒 Practice: LOCKED",
     "practiceUnlocked": "🟢 Practice: UNLOCKED",
-    "practiceLockTooltip": "Click to toggle access to Practice mode",
-    "pdfSummary": "📄 PDF Print / Summary Sheet"
+    "practiceLockTooltip": "Click to toggle access to Practice mode"
   },
   "home": {
     "badge": "⚡ Comprehensive Java Quiz & Assessment Platform",
