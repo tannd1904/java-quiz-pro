@@ -3253,39 +3253,6 @@ const QUIZ_DATA = [
     }
   },
   {
-    "id": "java-026",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de1_q26_JRgVBXTR3SCKhdPmoyjcAIHchdYxjyVULTCkLAko.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
-    }
-  },
-  {
     "id": "java-027",
     "topicId": "encapsulation",
     "category": {
@@ -3484,39 +3451,6 @@ const QUIZ_DATA = [
     }
   },
   {
-    "id": "java-033",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de1_q33_Iw8vp7ygUQ0GCbPzUom2n3XaRLBv2cYvBYbq7fnc.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
-    }
-  },
-  {
     "id": "java-035",
     "topicId": "arrays",
     "category": {
@@ -3679,39 +3613,6 @@ const QUIZ_DATA = [
     "explanation": {
       "vi": "Đáp án đúng là: **public class Cat{ String name; public Cat(){ String name = \"noname\"; }}**.",
       "en": "The correct answer is: **public class Cat{ String name; public Cat(){ String name = \"noname\"; }}**."
-    }
-  },
-  {
-    "id": "java-042",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de1_q42_QySdWfy1QEeqBW8Dcwx60qkjWbaASKIqhMhP4Yc8.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
     }
   },
   {
@@ -4735,72 +4636,6 @@ const QUIZ_DATA = [
     "explanation": {
       "vi": "Đáp án đúng là: **5**.",
       "en": "The correct answer is: **5**."
-    }
-  },
-  {
-    "id": "java-075",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de2_q25_5cqyi9H50bLsOIN79yRfz0qnFBpNdHsYUJo2n4l8.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch",
-        "name has private access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors",
-        "name has private access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch**.",
-      "en": "The correct answer is: **There is no compilation error**."
-    }
-  },
-  {
-    "id": "java-076",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de2_q26_x3a0SPofCfOJjjyCcIAP6QRrEopo0NFUOX4iAAwc.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 1,
-    "explanation": {
-      "vi": "Đáp án đúng là: **name has protected access.**.",
-      "en": "The correct answer is: **name has protected access.**."
     }
   },
   {
@@ -5992,105 +5827,6 @@ const QUIZ_DATA = [
     }
   },
   {
-    "id": "java-116",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de3_q16_10NKCN7MDlmoRQNxUzIvcIfT9OrqmWVlTERxcXqE.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 1,
-    "explanation": {
-      "vi": "Đáp án đúng là: **name has protected access.**.",
-      "en": "The correct answer is: **name has protected access.**."
-    }
-  },
-  {
-    "id": "java-117",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de3_q17_g5DhB3hgDUTyzsM9qJ8mqIdqdgG75ByffiTGi676.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has private access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has private access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
-    }
-  },
-  {
-    "id": "java-118",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de3_q18_ZLAYQQeqZCXQJbwxjNgdlMmg6pjkMGjixlCrNPxA.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has protected access.",
-        "age has protected access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
-    }
-  },
-  {
     "id": "java-119",
     "topicId": "io_scanner",
     "category": {
@@ -6154,39 +5890,6 @@ const QUIZ_DATA = [
     "explanation": {
       "vi": "Đáp án đúng là: **Có lỗi biên dịch:can not find symbol test.Student**.",
       "en": "The correct answer is: **There was a compilation error: can not find symbol test.Student**."
-    }
-  },
-  {
-    "id": "java-121",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Đoạn mã sau có lỗi biên dịch gì?",
-      "en": "What compilation error does the following code have?"
-    },
-    "codeSnippet": null,
-    "image": "images/de3_q21_HmrH9h2RyQ7M4jxCfBxCsfJPCktZLqw1RpJuz9M5.png",
-    "options": {
-      "vi": [
-        "Không có lỗi biên dịch.",
-        "name has private access.",
-        "\\ge has private access.",
-        "name has public access."
-      ],
-      "en": [
-        "There are no compilation errors.",
-        "name has private access.",
-        "\\ge has private access.",
-        "name has public access."
-      ]
-    },
-    "correctIndex": 0,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
     }
   },
   {

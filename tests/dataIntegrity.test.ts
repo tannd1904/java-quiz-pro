@@ -8,13 +8,13 @@ describe('Data Integrity (questions.json)', () => {
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
   const questions: Question[] = JSON.parse(rawData);
 
-  it('contains at least 505 unique questions (currently 581)', () => {
-    expect(questions.length).toBe(581);
+  it('contains at least 505 unique questions (currently 572)', () => {
+    expect(questions.length).toBe(572);
   });
 
   it('has unique question IDs without duplicates', () => {
     const idSet = new Set(questions.map(q => q.id));
-    expect(idSet.size).toBe(581);
+    expect(idSet.size).toBe(572);
   });
 
   it('ensures no duplicate questions exist in the bank', () => {
@@ -24,7 +24,7 @@ describe('Data Integrity (questions.json)', () => {
           `${q.type || 'SINGLE'}|${q.question.vi.trim().toLowerCase()}|${q.options.vi.join('|')}|${q.correctIndex}|${(q.correctIndices || []).join(',')}|${(q.acceptedAnswers || []).join(',')}|${q.image || ''}|${q.codeSnippet || ''}`
       )
     );
-    expect(questionFingerprints.size).toBe(581);
+    expect(questionFingerprints.size).toBe(572);
   });
 
   it('ensures all topics are represented with valid questions', () => {
@@ -102,7 +102,7 @@ describe('Data Integrity (questions.json)', () => {
 
   it('verifies all image references exist on disk', () => {
     const imageQuestions = questions.filter(q => q.image);
-    expect(imageQuestions.length).toBe(77);
+    expect(imageQuestions.length).toBe(68);
 
     imageQuestions.forEach(q => {
       const imgPath = path.resolve(__dirname, '../public', q.image!);
