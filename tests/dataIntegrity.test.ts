@@ -8,23 +8,23 @@ describe('Data Integrity (questions.json)', () => {
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
   const questions: Question[] = JSON.parse(rawData);
 
-  it('contains exactly 505 unique questions', () => {
-    expect(questions.length).toBe(505);
+  it('contains at least 505 unique questions (currently 519)', () => {
+    expect(questions.length).toBe(519);
   });
 
   it('has unique question IDs without duplicates', () => {
     const idSet = new Set(questions.map(q => q.id));
-    expect(idSet.size).toBe(505);
+    expect(idSet.size).toBe(519);
   });
 
   it('ensures no duplicate questions exist in the bank', () => {
     const questionFingerprints = new Set(
       questions.map(
         q =>
-          `${q.question.vi.trim().toLowerCase()}|${q.options.vi.join('|')}|${q.correctIndex}|${q.image || ''}|${q.codeSnippet || ''}`
+          `${q.type || 'SINGLE'}|${q.question.vi.trim().toLowerCase()}|${q.options.vi.join('|')}|${q.correctIndex}|${(q.correctIndices || []).join(',')}|${(q.acceptedAnswers || []).join(',')}|${q.image || ''}|${q.codeSnippet || ''}`
       )
     );
-    expect(questionFingerprints.size).toBe(505);
+    expect(questionFingerprints.size).toBe(519);
   });
 
   it('ensures all topics are represented with valid questions', () => {
@@ -46,12 +46,20 @@ describe('Data Integrity (questions.json)', () => {
     expect(topicCounts['inner_class'] || 0).toBeGreaterThanOrEqual(10);
   });
 
-  it('ensures each question has matching options in VI and EN', () => {
+  it('ensures each question has valid answer setup in VI and EN', () => {
     questions.forEach(q => {
+      if (q.type === 'FILL_BLANK') {
+        expect((q.acceptedAnswers || []).length).toBeGreaterThan(0);
+        return;
+      }
       expect(q.options.vi.length).toBeGreaterThan(1);
       expect(q.options.vi.length).toBe(q.options.en.length);
-      expect(q.correctIndex).toBeGreaterThanOrEqual(0);
-      expect(q.correctIndex).toBeLessThan(q.options.vi.length);
+      if (q.type === 'MULTIPLE_CHOICE') {
+        expect((q.correctIndices || []).length).toBeGreaterThan(1);
+      } else {
+        expect(q.correctIndex).toBeGreaterThanOrEqual(0);
+        expect(q.correctIndex).toBeLessThan(q.options.vi.length);
+      }
     });
   });
 
@@ -80,6 +88,16 @@ describe('Data Integrity (questions.json)', () => {
         expect(hasVietInOpt, `Question ID ${q.id} option ${idx} has untranslated Vietnamese in options.en`).toBe(false);
       });
     });
+  });
+
+  it('verifies presence and integrity of new question formats (MULTIPLE_CHOICE, FILL_BLANK, TRUE_FALSE)', () => {
+    const multi = questions.filter(q => q.type === 'MULTIPLE_CHOICE');
+    const fill = questions.filter(q => q.type === 'FILL_BLANK');
+    const tf = questions.filter(q => q.type === 'TRUE_FALSE');
+
+    expect(multi.length).toBeGreaterThanOrEqual(5);
+    expect(fill.length).toBeGreaterThanOrEqual(5);
+    expect(tf.length).toBeGreaterThanOrEqual(4);
   });
 
   it('verifies all image references exist on disk', () => {

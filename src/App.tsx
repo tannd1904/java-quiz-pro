@@ -116,7 +116,7 @@ const MainApp: React.FC = () => {
   };
 
   // Submit exam flow
-  const handleSubmitExam = (answers: Record<string, number>, remainingSeconds: number) => {
+  const handleSubmitExam = (answers: Record<string, any>, remainingSeconds: number) => {
     if (!currentExamConfig) return;
 
     const result = calculateExamResult(

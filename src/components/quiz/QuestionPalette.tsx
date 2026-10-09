@@ -3,7 +3,7 @@ import React from 'react';
 interface QuestionPaletteProps {
   totalQuestions: number;
   currentIndex: number;
-  answers: Record<string, number>;
+  answers: Record<string, any>;
   questionIds: string[];
   onSelectQuestion: (index: number) => void;
 }
@@ -28,7 +28,11 @@ export const QuestionPalette: React.FC<QuestionPaletteProps> = ({
     >
       {Array.from({ length: totalQuestions }).map((_, idx) => {
         const qId = questionIds[idx];
-        const isAnswered = qId !== undefined && answers[qId] !== undefined;
+        const ans = qId !== undefined ? answers[qId] : undefined;
+        const isAnswered =
+          ans !== undefined &&
+          ans !== null &&
+          (Array.isArray(ans) ? ans.length > 0 : typeof ans === 'string' ? ans.trim().length > 0 : true);
         const isCurrent = idx === currentIndex;
 
         let bg = 'var(--bg-surface-subtle)';

@@ -2,6 +2,8 @@ import { Question } from './question';
 
 export type AppView = 'HOME' | 'PRACTICE' | 'EXAM' | 'RESULT';
 
+export type UserAnswer = number | number[] | string;
+
 export interface ExamSetupConfig {
   selectedTopicIds: string[];
   questionCount: number;
@@ -13,15 +15,20 @@ export interface ExamSetupConfig {
 export interface ExamQuestionItem {
   question: Question;
   shuffledIndices: number[]; // maps shuffled option index -> original option index (0..n-1)
-  originalCorrectIndex: number;
+  originalCorrectIndex?: number;
+  originalCorrectIndices?: number[];
 }
 
 export interface ExamReviewItem {
   num: number;
   question: Question;
-  selectedShuffledIndex: number | null;
-  selectedOriginalIndex: number | null;
-  correctOriginalIndex: number;
+  userAnswer?: UserAnswer | null;
+  selectedShuffledIndex?: number | null;
+  selectedOriginalIndex?: number | null;
+  selectedOriginalIndices?: number[];
+  correctOriginalIndex?: number;
+  correctOriginalIndices?: number[];
+  acceptedAnswers?: string[];
   isCorrect: boolean;
 }
 
@@ -50,7 +57,7 @@ export interface ActiveExamSession {
   id: string;
   items: ExamQuestionItem[];
   config: ExamSetupConfig;
-  answers: Record<string, number>;
+  answers: Record<string, any>;
   currentIndex: number;
   remainingSeconds: number;
   startedAt: number;
@@ -59,8 +66,9 @@ export interface ActiveExamSession {
 
 export interface PracticeProgressItem {
   questionId: string;
-  selectedOptionIdx: number;
+  selectedOptionIdx?: number;
+  userAnswer?: UserAnswer;
   isCorrect: boolean;
   answeredAt: number;
-  wrongAttempts?: number[];
+  wrongAttempts?: (number | string)[];
 }

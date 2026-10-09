@@ -6,21 +6,22 @@ import { useQuizTimer } from '../hooks/useQuizTimer';
 import { userProgressService } from '../services/userProgressService';
 import { TOPICS_CONFIG } from '../config/topics.config';
 import { AnswerOption } from '../components/quiz/AnswerOption';
+import { FillBlankInput } from '../components/quiz/FillBlankInput';
 import { QuestionPalette } from '../components/quiz/QuestionPalette';
 import { QuizTimer } from '../components/quiz/QuizTimer';
 import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
 import { CodeBlock } from '../components/common/CodeBlock';
-import { ArrowLeft, ArrowRight, Send, AlertTriangle, LayoutGrid, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Send, AlertTriangle, LayoutGrid, X, CheckSquare, Edit3, HelpCircle } from 'lucide-react';
 
 interface ExamPageProps {
   examItems: ExamQuestionItem[];
   timeMinutes: number;
   examConfig?: ExamSetupConfig;
-  initialAnswers?: Record<string, number>;
+  initialAnswers?: Record<string, any>;
   initialCurrentIndex?: number;
   initialRemainingSeconds?: number;
-  onSubmit: (answers: Record<string, number>, remainingSeconds: number) => void;
+  onSubmit: (answers: Record<string, any>, remainingSeconds: number) => void;
   onCancel: () => void;
 }
 
@@ -37,7 +38,7 @@ export const ExamPage: React.FC<ExamPageProps> = ({
   const { language, t } = useI18n();
 
   const [currentIndex, setCurrentIndex] = useState<number>(initialCurrentIndex || 0);
-  const [answers, setAnswers] = useState<Record<string, number>>(initialAnswers || {});
+  const [answers, setAnswers] = useState<Record<string, any>>(initialAnswers || {});
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
   const [isTimeoutModalOpen, setIsTimeoutModalOpen] = useState<boolean>(false);
   const [isPaletteOpen, setIsPaletteOpen] = useState<boolean>(false);
@@ -93,7 +94,13 @@ export const ExamPage: React.FC<ExamPageProps> = ({
 
   const currentItem = examItems[currentIndex];
   const questionIds = examItems.map((item) => item.question.id);
-  const answeredCount = Object.keys(answers).length;
+  const answeredCount = examItems.filter((item) => {
+    const ans = answers[item.question.id];
+    if (ans === undefined || ans === null) return false;
+    if (Array.isArray(ans)) return ans.length > 0;
+    if (typeof ans === 'string') return ans.trim().length > 0;
+    return typeof ans === 'number';
+  }).length;
   const unansweredCount = examItems.length - answeredCount;
 
   const handleSelectOption = (shuffledOptIdx: number) => {
@@ -101,6 +108,28 @@ export const ExamPage: React.FC<ExamPageProps> = ({
     setAnswers((prev) => ({
       ...prev,
       [currentItem.question.id]: shuffledOptIdx,
+    }));
+  };
+
+  const handleToggleMultipleOption = (shuffledOptIdx: number) => {
+    if (!currentItem) return;
+    const currentList: number[] = Array.isArray(answers[currentItem.question.id])
+      ? answers[currentItem.question.id]
+      : [];
+    const nextList = currentList.includes(shuffledOptIdx)
+      ? currentList.filter((idx) => idx !== shuffledOptIdx)
+      : [...currentList, shuffledOptIdx].sort((a, b) => a - b);
+    setAnswers((prev) => ({
+      ...prev,
+      [currentItem.question.id]: nextList,
+    }));
+  };
+
+  const handleChangeBlankAnswer = (val: string) => {
+    if (!currentItem) return;
+    setAnswers((prev) => ({
+      ...prev,
+      [currentItem.question.id]: val,
     }));
   };
 
@@ -297,6 +326,65 @@ export const ExamPage: React.FC<ExamPageProps> = ({
                   </span>
                 </button>
 
+                {/* Question Type Badge */}
+                {q.type === 'MULTIPLE_CHOICE' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(59, 130, 246, 0.12)',
+                      border: '1px solid rgba(59, 130, 246, 0.35)',
+                      fontSize: '0.76rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-primary)',
+                    }}
+                  >
+                    <CheckSquare size={13} />
+                    <span>{language === 'en' ? 'Multiple Choice' : 'Chọn nhiều đáp án'}</span>
+                  </span>
+                )}
+                {q.type === 'FILL_BLANK' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(168, 85, 247, 0.12)',
+                      border: '1px solid rgba(168, 85, 247, 0.35)',
+                      fontSize: '0.76rem',
+                      fontWeight: 700,
+                      color: '#a855f7',
+                    }}
+                  >
+                    <Edit3 size={13} />
+                    <span>{language === 'en' ? 'Fill in the blank' : 'Điền vào chỗ trống'}</span>
+                  </span>
+                )}
+                {q.type === 'TRUE_FALSE' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                      border: '1px solid rgba(16, 185, 129, 0.35)',
+                      fontSize: '0.76rem',
+                      fontWeight: 700,
+                      color: 'var(--state-success)',
+                    }}
+                  >
+                    <HelpCircle size={13} />
+                    <span>{language === 'en' ? 'True / False' : 'Đúng / Sai'}</span>
+                  </span>
+                )}
+
                 {topicMeta && (
                   <span
                     style={{
@@ -352,30 +440,73 @@ export const ExamPage: React.FC<ExamPageProps> = ({
               </div>
             )}
 
-            {/* Options list */}
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '10px',
-                marginTop: '16px',
-              }}
-            >
-              {displayedOptions.map((optText: string, optIdx: number) => {
-                const letter = String.fromCharCode(65 + optIdx);
-                const isSelected = selectedShuffledIndex === optIdx;
+            {/* Question Body: Options or Fill Blank Input */}
+            {q.type === 'FILL_BLANK' ? (
+              <div style={{ marginTop: '20px' }}>
+                <FillBlankInput
+                  value={typeof answers[q.id] === 'string' ? answers[q.id] : ''}
+                  onChange={handleChangeBlankAnswer}
+                  placeholder={
+                    language === 'en' && q.blankPlaceholder?.en
+                      ? q.blankPlaceholder.en
+                      : (q.blankPlaceholder?.vi || (language === 'en' ? 'Type your answer here...' : 'Nhập câu trả lời của bạn vào đây...'))
+                  }
+                />
+              </div>
+            ) : q.type === 'MULTIPLE_CHOICE' ? (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  marginTop: '16px',
+                }}
+              >
+                <div style={{ fontSize: '0.85rem', color: 'var(--brand-primary)', fontWeight: 600, marginBottom: '2px' }}>
+                  ℹ️ {language === 'en' ? 'Choose all correct options:' : 'Chọn tất cả các phương án đúng:'}
+                </div>
+                {displayedOptions.map((optText: string, optIdx: number) => {
+                  const letter = String.fromCharCode(65 + optIdx);
+                  const selectedList: number[] = Array.isArray(answers[q.id]) ? answers[q.id] : [];
+                  const isSelected = selectedList.includes(optIdx);
 
-                return (
-                  <AnswerOption
-                    key={optIdx}
-                    letter={letter}
-                    text={optText}
-                    isSelected={isSelected}
-                    onClick={() => handleSelectOption(optIdx)}
-                  />
-                );
-              })}
-            </div>
+                  return (
+                    <AnswerOption
+                      key={optIdx}
+                      letter={letter}
+                      text={optText}
+                      isSelected={isSelected}
+                      isCheckbox={true}
+                      onClick={() => handleToggleMultipleOption(optIdx)}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  marginTop: '16px',
+                }}
+              >
+                {displayedOptions.map((optText: string, optIdx: number) => {
+                  const letter = String.fromCharCode(65 + optIdx);
+                  const isSelected = answers[q.id] === optIdx;
+
+                  return (
+                    <AnswerOption
+                      key={optIdx}
+                      letter={letter}
+                      text={optText}
+                      isSelected={isSelected}
+                      onClick={() => handleSelectOption(optIdx)}
+                    />
+                  );
+                })}
+              </div>
+            )}
 
             {/* Navigation buttons bar */}
             <div

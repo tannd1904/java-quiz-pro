@@ -62,24 +62,65 @@ export function prepareExamSession(
 
   // 4. Map questions with option indices (supporting option shuffle)
   return selected.map(q => {
-    const originalOptionCount = q.options.vi.length;
+    const originalOptionCount = q.options?.vi?.length || 0;
     let indices = Array.from({ length: originalOptionCount }, (_, i) => i);
 
-    if (config.shuffleOptions) {
+    if (config.shuffleOptions && originalOptionCount > 1 && q.type !== 'TRUE_FALSE') {
       indices = shuffleArray(indices);
     }
 
     return {
       question: q,
       shuffledIndices: indices,
-      originalCorrectIndex: q.correctIndex
+      originalCorrectIndex: q.correctIndex,
+      originalCorrectIndices: q.correctIndices,
     };
   });
 }
 
+export function evaluateUserAnswer(
+  item: ExamQuestionItem,
+  rawAnswer: any
+): { isAnswered: boolean; isCorrect: boolean } {
+  const q = item.question;
+  const qType = q.type || 'SINGLE_CHOICE';
+
+  if (rawAnswer === undefined || rawAnswer === null) {
+    return { isAnswered: false, isCorrect: false };
+  }
+
+  if (qType === 'FILL_BLANK') {
+    const text = String(rawAnswer).trim();
+    if (!text) return { isAnswered: false, isCorrect: false };
+    const accepted = (q.acceptedAnswers || []).map(a => a.trim().toLowerCase());
+    const isCorrect = accepted.includes(text.toLowerCase());
+    return { isAnswered: true, isCorrect };
+  }
+
+  if (qType === 'MULTIPLE_CHOICE') {
+    if (!Array.isArray(rawAnswer) || rawAnswer.length === 0) {
+      return { isAnswered: false, isCorrect: false };
+    }
+    const selectedOriginal = rawAnswer.map((sIdx: number) => item.shuffledIndices[sIdx]);
+    const expected = [...(q.correctIndices || [])].sort((a, b) => a - b);
+    const actual = [...selectedOriginal].sort((a, b) => a - b);
+    const isCorrect =
+      expected.length === actual.length && expected.every((val, idx) => val === actual[idx]);
+    return { isAnswered: true, isCorrect };
+  }
+
+  // SINGLE_CHOICE or TRUE_FALSE
+  if (typeof rawAnswer !== 'number') {
+    return { isAnswered: false, isCorrect: false };
+  }
+  const selectedOriginal = item.shuffledIndices[rawAnswer];
+  const isCorrect = selectedOriginal === q.correctIndex;
+  return { isAnswered: true, isCorrect };
+}
+
 export function calculateExamResult(
   examItems: ExamQuestionItem[],
-  answers: Record<string, number>, // { [questionId]: selectedShuffledIndex }
+  answers: Record<string, any>,
   totalTimeSeconds: number,
   remainingSeconds: number,
   selectedTopicIds: string[]
@@ -89,31 +130,41 @@ export function calculateExamResult(
   let skippedCount = 0;
 
   const reviewList: ExamReviewItem[] = examItems.map((item, idx) => {
-    const selectedShuffledIndex = answers[item.question.id];
-    const isAnswered = selectedShuffledIndex !== undefined && selectedShuffledIndex !== null;
+    const rawAnswer = answers[item.question.id];
+    const { isAnswered, isCorrect } = evaluateUserAnswer(item, rawAnswer);
 
+    let selectedShuffledIndex: number | null = null;
     let selectedOriginalIndex: number | null = null;
-    let isCorrect = false;
+    let selectedOriginalIndices: number[] | undefined = undefined;
 
     if (!isAnswered) {
       skippedCount++;
     } else {
-      selectedOriginalIndex = item.shuffledIndices[selectedShuffledIndex];
-      if (selectedOriginalIndex === item.originalCorrectIndex) {
+      if (isCorrect) {
         correctCount++;
-        isCorrect = true;
       } else {
         wrongCount++;
+      }
+
+      if (typeof rawAnswer === 'number') {
+        selectedShuffledIndex = rawAnswer;
+        selectedOriginalIndex = item.shuffledIndices[rawAnswer];
+      } else if (Array.isArray(rawAnswer)) {
+        selectedOriginalIndices = rawAnswer.map((sIdx: number) => item.shuffledIndices[sIdx]);
       }
     }
 
     return {
       num: idx + 1,
       question: item.question,
-      selectedShuffledIndex: isAnswered ? selectedShuffledIndex : null,
+      userAnswer: isAnswered ? rawAnswer : null,
+      selectedShuffledIndex,
       selectedOriginalIndex,
-      correctOriginalIndex: item.originalCorrectIndex,
-      isCorrect
+      selectedOriginalIndices,
+      correctOriginalIndex: item.question.correctIndex,
+      correctOriginalIndices: item.question.correctIndices,
+      acceptedAnswers: item.question.acceptedAnswers,
+      isCorrect,
     };
   });
 

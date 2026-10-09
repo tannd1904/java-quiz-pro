@@ -87,4 +87,119 @@ describe('quizEngine', () => {
     expect(result.score10).toBe(10);
     expect(result.isPassed).toBe(true);
   });
+
+  describe('new question types evaluation', () => {
+    it('evaluates MULTIPLE_CHOICE questions correctly', () => {
+      const multiQ: Question = {
+        id: 'multi-1',
+        topicId: 'interface',
+        type: 'MULTIPLE_CHOICE',
+        category: { vi: 'Interface', en: 'Interface' },
+        question: { vi: 'Chọn các đáp án đúng', en: 'Select all correct answers' },
+        codeSnippet: null,
+        image: null,
+        options: {
+          vi: ['Opt 0', 'Opt 1', 'Opt 2', 'Opt 3'],
+          en: ['Opt 0', 'Opt 1', 'Opt 2', 'Opt 3']
+        },
+        correctIndices: [0, 2], // 0 and 2 are correct
+        explanation: { vi: 'Giải thích', en: 'Explanation' }
+      };
+
+      const sessionItem = {
+        question: multiQ,
+        shuffledIndices: [2, 0, 1, 3] // shuffled 0 -> orig 2, shuffled 1 -> orig 0
+      };
+
+      // Shuffled indices [0, 1] map to original [2, 0] -> matches [0, 2]
+      const resCorrect = calculateExamResult([sessionItem], { 'multi-1': [0, 1] }, 600, 500, ['interface']);
+      expect(resCorrect.correctCount).toBe(1);
+      expect(resCorrect.reviewList[0].isCorrect).toBe(true);
+      expect(resCorrect.reviewList[0].selectedOriginalIndices).toEqual([2, 0]);
+
+      // Only partial selection [0] -> maps to orig [2] -> wrong
+      const resPartial = calculateExamResult([sessionItem], { 'multi-1': [0] }, 600, 500, ['interface']);
+      expect(resPartial.correctCount).toBe(0);
+      expect(resPartial.wrongCount).toBe(1);
+      expect(resPartial.reviewList[0].isCorrect).toBe(false);
+
+      // Extra incorrect selection [0, 1, 2] -> wrong
+      const resExtra = calculateExamResult([sessionItem], { 'multi-1': [0, 1, 2] }, 600, 500, ['interface']);
+      expect(resExtra.correctCount).toBe(0);
+      expect(resExtra.wrongCount).toBe(1);
+    });
+
+    it('evaluates FILL_BLANK questions with case-insensitivity and whitespace trimming', () => {
+      const blankQ: Question = {
+        id: 'blank-1',
+        topicId: 'polymorphism',
+        type: 'FILL_BLANK',
+        category: { vi: 'Đa Hình', en: 'Polymorphism' },
+        question: { vi: 'Output của đoạn code là gì?', en: 'What is the output?' },
+        codeSnippet: 'System.out.println("Hello");',
+        image: null,
+        options: { vi: [], en: [] },
+        acceptedAnswers: ['Hello', 'hello'],
+        explanation: { vi: 'In ra Hello', en: 'Prints Hello' }
+      };
+
+      const sessionItem = {
+        question: blankQ,
+        shuffledIndices: []
+      };
+
+      // Exact match
+      const resExact = calculateExamResult([sessionItem], { 'blank-1': 'Hello' }, 600, 500, ['polymorphism']);
+      expect(resExact.correctCount).toBe(1);
+      expect(resExact.reviewList[0].isCorrect).toBe(true);
+
+      // Case-insensitive & trimmed match
+      const resTrimmed = calculateExamResult([sessionItem], { 'blank-1': '  HELLO  ' }, 600, 500, ['polymorphism']);
+      expect(resTrimmed.correctCount).toBe(1);
+      expect(resTrimmed.reviewList[0].isCorrect).toBe(true);
+
+      // Wrong text
+      const resWrong = calculateExamResult([sessionItem], { 'blank-1': 'World' }, 600, 500, ['polymorphism']);
+      expect(resWrong.correctCount).toBe(0);
+      expect(resWrong.wrongCount).toBe(1);
+      expect(resWrong.reviewList[0].isCorrect).toBe(false);
+
+      // Empty text is counted as skipped
+      const resEmpty = calculateExamResult([sessionItem], { 'blank-1': '   ' }, 600, 500, ['polymorphism']);
+      expect(resEmpty.skippedCount).toBe(1);
+    });
+
+    it('evaluates TRUE_FALSE questions and ensures prepareExamSession does not shuffle them', () => {
+      const tfQ: Question = {
+        id: 'tf-1',
+        topicId: 'objects_classes',
+        type: 'TRUE_FALSE',
+        category: { vi: 'Objects & Classes', en: 'Objects & Classes' },
+        question: { vi: 'Java có hỗ trợ đa kế thừa lớp hay không?', en: 'Does Java support multiple class inheritance?' },
+        codeSnippet: null,
+        image: null,
+        options: {
+          vi: ['Đúng', 'Sai'],
+          en: ['True', 'False']
+        },
+        correctIndex: 1, // 'Sai' / 'False'
+        explanation: { vi: 'Java không hỗ trợ đa kế thừa lớp', en: 'Java does not support multiple class inheritance' }
+      };
+
+      const session = prepareExamSession([tfQ], {
+        selectedTopicIds: ['objects_classes'],
+        questionCount: 1,
+        timeMinutes: 10,
+        shuffleOptions: true,
+        shuffleQuestions: false
+      });
+
+      // Shuffled indices for TRUE_FALSE must remain [0, 1]
+      expect(session[0].shuffledIndices).toEqual([0, 1]);
+
+      const res = calculateExamResult(session, { 'tf-1': 1 }, 600, 500, ['objects_classes']);
+      expect(res.correctCount).toBe(1);
+      expect(res.reviewList[0].isCorrect).toBe(true);
+    });
+  });
 });

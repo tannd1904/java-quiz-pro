@@ -6,10 +6,11 @@ import { userProgressService } from '../services/userProgressService';
 import { PracticeProgressItem } from '../types/quiz';
 import { TopicSelector } from '../components/topic/TopicSelector';
 import { AnswerOption } from '../components/quiz/AnswerOption';
+import { FillBlankInput } from '../components/quiz/FillBlankInput';
 import { ExplanationDrawer } from '../components/quiz/ExplanationDrawer';
 import { CodeBlock } from '../components/common/CodeBlock';
 import { Button } from '../components/common/Button';
-import { Search, RotateCcw, Home, HelpCircle, CheckCircle2, XCircle, Clock, BookOpen, Filter, AlertCircle } from 'lucide-react';
+import { Search, RotateCcw, Home, HelpCircle, CheckCircle2, XCircle, Clock, BookOpen, Filter, AlertCircle, CheckSquare, Edit3, Send } from 'lucide-react';
 
 interface PracticePageProps {
   allQuestions: Question[];
@@ -36,19 +37,43 @@ export const PracticePage: React.FC<PracticePageProps> = ({
   });
 
   // Extract selected answers from progress
-  const [answers, setAnswers] = useState<Record<string, number>>(() => {
+  const [answers, setAnswers] = useState<Record<string, any>>(() => {
     const saved = userProgressService.getPracticeProgress();
-    const ans: Record<string, number> = {};
+    const ans: Record<string, any> = {};
     Object.keys(saved).forEach((qId) => {
-      ans[qId] = saved[qId].selectedOptionIdx;
+      ans[qId] = saved[qId].userAnswer !== undefined ? saved[qId].userAnswer : saved[qId].selectedOptionIdx;
     });
     return ans;
   });
 
-  // Track wrong attempt indices per question for visual feedback and allowing retries
-  const [wrongAttempts, setWrongAttempts] = useState<Record<string, number[]>>(() => {
+  // Local draft state for multiple-choice selections in practice mode
+  const [multiDrafts, setMultiDrafts] = useState<Record<string, number[]>>(() => {
     const saved = userProgressService.getPracticeProgress();
-    const map: Record<string, number[]> = {};
+    const drafts: Record<string, number[]> = {};
+    Object.keys(saved).forEach((qId) => {
+      if (Array.isArray(saved[qId].userAnswer)) {
+        drafts[qId] = saved[qId].userAnswer as number[];
+      }
+    });
+    return drafts;
+  });
+
+  // Local draft state for fill-blank inputs
+  const [blankDrafts, setBlankDrafts] = useState<Record<string, string>>(() => {
+    const saved = userProgressService.getPracticeProgress();
+    const drafts: Record<string, string> = {};
+    Object.keys(saved).forEach((qId) => {
+      if (typeof saved[qId].userAnswer === 'string') {
+        drafts[qId] = saved[qId].userAnswer as string;
+      }
+    });
+    return drafts;
+  });
+
+  // Track wrong attempt indices per question for visual feedback and allowing retries
+  const [wrongAttempts, setWrongAttempts] = useState<Record<string, any[]>>(() => {
+    const saved = userProgressService.getPracticeProgress();
+    const map: Record<string, any[]> = {};
     Object.keys(saved).forEach((qId) => {
       const item = saved[qId];
       if (item.wrongAttempts && Array.isArray(item.wrongAttempts)) {
@@ -133,7 +158,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     return { correct, wrong, totalAnswered: correct + wrong, totalInSelected };
   }, [allQuestions, selectedTopicIds, practiceProgress]);
 
-  // Handle selecting an option: allows retrying when wrong until user picks correctly
+  // Handle selecting an option for SINGLE_CHOICE / TRUE_FALSE
   const handleSelectOption = (questionId: string, optionIdx: number) => {
     const targetQ = allQuestions.find((q) => q.id === questionId);
     if (!targetQ) return;
@@ -165,6 +190,78 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     }
   };
 
+  // Toggle multi-choice checkbox draft
+  const handleToggleMultiDraft = (questionId: string, optionIdx: number) => {
+    if (practiceProgress[questionId]?.isCorrect) return;
+    setMultiDrafts((prev) => {
+      const current = prev[questionId] || [];
+      const updated = current.includes(optionIdx)
+        ? current.filter((i) => i !== optionIdx)
+        : [...current, optionIdx].sort((a, b) => a - b);
+      return { ...prev, [questionId]: updated };
+    });
+  };
+
+  // Submit and verify multiple-choice question
+  const handleCheckMultipleChoice = (questionId: string) => {
+    const targetQ = allQuestions.find((q) => q.id === questionId);
+    if (!targetQ) return;
+    const selected = (multiDrafts[questionId] || []).sort((a, b) => a - b);
+    if (selected.length === 0) return;
+
+    const expected = [...(targetQ.correctIndices || [])].sort((a, b) => a - b);
+    const isCorrect =
+      expected.length === selected.length &&
+      expected.every((val, idx) => val === selected[idx]);
+
+    const existingWrongs = wrongAttempts[questionId] || [];
+    const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
+
+    const record = userProgressService.savePracticeAnswer(
+      questionId,
+      selected,
+      isCorrect,
+      newWrongs
+    );
+
+    setPracticeProgress((prev) => ({ ...prev, [questionId]: record }));
+    setAnswers((prev) => ({ ...prev, [questionId]: selected }));
+    setWrongAttempts((prev) => ({ ...prev, [questionId]: newWrongs }));
+
+    if (isCorrect) {
+      setRevealedSolutions((prev) => ({ ...prev, [questionId]: true }));
+    }
+  };
+
+  // Check fill-in-the-blank answer
+  const handleCheckFillBlank = (questionId: string) => {
+    const targetQ = allQuestions.find((q) => q.id === questionId);
+    if (!targetQ) return;
+    const typed = (blankDrafts[questionId] || '').trim();
+    if (!typed) return;
+
+    const accepted = (targetQ.acceptedAnswers || []).map((a) => a.trim().toLowerCase());
+    const isCorrect = accepted.includes(typed.toLowerCase());
+
+    const existingWrongs = wrongAttempts[questionId] || [];
+    const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
+
+    const record = userProgressService.savePracticeAnswer(
+      questionId,
+      typed,
+      isCorrect,
+      newWrongs
+    );
+
+    setPracticeProgress((prev) => ({ ...prev, [questionId]: record }));
+    setAnswers((prev) => ({ ...prev, [questionId]: typed }));
+    setWrongAttempts((prev) => ({ ...prev, [questionId]: newWrongs }));
+
+    if (isCorrect) {
+      setRevealedSolutions((prev) => ({ ...prev, [questionId]: true }));
+    }
+  };
+
   // Reset a single question so user can start fresh
   const handleResetSingleQuestion = (questionId: string) => {
     userProgressService.deletePracticeAnswer(questionId);
@@ -184,6 +281,16 @@ export const PracticePage: React.FC<PracticePageProps> = ({
       return copy;
     });
     setRevealedSolutions((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
+    setMultiDrafts((prev) => {
+      const copy = { ...prev };
+      delete copy[questionId];
+      return copy;
+    });
+    setBlankDrafts((prev) => {
       const copy = { ...prev };
       delete copy[questionId];
       return copy;
@@ -543,6 +650,65 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                       #{idx + 1}
                     </span>
 
+                    {/* Question Type Badge */}
+                    {q.type === 'MULTIPLE_CHOICE' && (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '3px 8px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          backgroundColor: 'rgba(59, 130, 246, 0.12)',
+                          color: 'var(--brand-primary)',
+                          border: '1px solid rgba(59, 130, 246, 0.35)',
+                        }}
+                      >
+                        <CheckSquare size={12} />
+                        <span>{language === 'en' ? 'Multiple Choice' : 'Chọn nhiều đáp án'}</span>
+                      </span>
+                    )}
+                    {q.type === 'FILL_BLANK' && (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '3px 8px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          backgroundColor: 'rgba(168, 85, 247, 0.12)',
+                          color: '#a855f7',
+                          border: '1px solid rgba(168, 85, 247, 0.35)',
+                        }}
+                      >
+                        <Edit3 size={12} />
+                        <span>{language === 'en' ? 'Fill Blank' : 'Điền từ'}</span>
+                      </span>
+                    )}
+                    {q.type === 'TRUE_FALSE' && (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          padding: '3px 8px',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                          color: 'var(--state-success)',
+                          border: '1px solid rgba(16, 185, 129, 0.35)',
+                        }}
+                      >
+                        <HelpCircle size={12} />
+                        <span>{language === 'en' ? 'True / False' : 'Đúng / Sai'}</span>
+                      </span>
+                    )}
+
                     {/* Completion Status Badge */}
                     {isCompletedCorrect ? (
                       <span
@@ -686,38 +852,113 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                   </div>
                 )}
 
-                {/* Options List */}
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '8px',
-                    marginTop: '16px',
-                  }}
-                >
-                  {optionsList.map((optText: string, optIdx: number) => {
-                    const letter = String.fromCharCode(65 + optIdx);
-                    const isSelected = answers[q.id] === optIdx;
-                    const isThisOptWrong = currentWrongList.includes(optIdx);
-                    const isThisOptCorrect = isSolutionRevealed && optIdx === q.correctIndex;
-                    const isRevealed = isThisOptWrong || (isSolutionRevealed && isThisOptCorrect);
-                    const disabled = isCompletedCorrect || isThisOptWrong;
+                {/* Interactive Question Body: Options or Fill Blank Input */}
+                {q.type === 'FILL_BLANK' ? (
+                  <div style={{ marginTop: '18px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <div style={{ flex: 1 }}>
+                        <FillBlankInput
+                          value={blankDrafts[q.id] || (typeof answers[q.id] === 'string' ? answers[q.id] : '')}
+                          onChange={(val) => setBlankDrafts((prev) => ({ ...prev, [q.id]: val }))}
+                          onSubmit={() => handleCheckFillBlank(q.id)}
+                          placeholder={
+                            language === 'en' && q.blankPlaceholder?.en
+                              ? q.blankPlaceholder.en
+                              : (q.blankPlaceholder?.vi || (language === 'en' ? 'Type your answer and press Enter...' : 'Nhập câu trả lời và nhấn Enter...'))
+                          }
+                          disabled={isCompletedCorrect}
+                          isCorrect={isCompletedCorrect}
+                          isWrong={!isCompletedCorrect && currentWrongList.length > 0}
+                          acceptedAnswers={isSolutionRevealed ? q.acceptedAnswers : undefined}
+                        />
+                      </div>
+                      {!isCompletedCorrect && (
+                        <Button
+                          variant="primary"
+                          size="md"
+                          onClick={() => handleCheckFillBlank(q.id)}
+                          icon={<Send size={15} />}
+                        >
+                          {language === 'en' ? 'Submit' : 'Kiểm tra'}
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ) : q.type === 'MULTIPLE_CHOICE' ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px' }}>
+                    <div style={{ fontSize: '0.84rem', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                      ℹ️ {language === 'en' ? 'Select all correct answers, then click Verify:' : 'Chọn tất cả các đáp án đúng rồi bấm Kiểm tra:'}
+                    </div>
+                    {optionsList.map((optText: string, optIdx: number) => {
+                      const letter = String.fromCharCode(65 + optIdx);
+                      const currentSelected = multiDrafts[q.id] || (Array.isArray(answers[q.id]) ? answers[q.id] : []);
+                      const isSelected = currentSelected.includes(optIdx);
+                      const isThisOptExpected = isSolutionRevealed && (q.correctIndices || []).includes(optIdx);
+                      const isRevealed = isSolutionRevealed;
 
-                    return (
-                      <AnswerOption
-                        key={optIdx}
-                        letter={letter}
-                        text={optText}
-                        isSelected={isSelected}
-                        isCorrect={isThisOptCorrect}
-                        isWrong={isThisOptWrong}
-                        isRevealed={isRevealed}
-                        disabled={disabled}
-                        onClick={() => handleSelectOption(q.id, optIdx)}
-                      />
-                    );
-                  })}
-                </div>
+                      return (
+                        <AnswerOption
+                          key={optIdx}
+                          letter={letter}
+                          text={optText}
+                          isSelected={isSelected}
+                          isCorrect={isThisOptExpected}
+                          isWrong={isRevealed && isSelected && !isThisOptExpected}
+                          isRevealed={isRevealed}
+                          isCheckbox={true}
+                          disabled={isCompletedCorrect}
+                          onClick={() => handleToggleMultiDraft(q.id, optIdx)}
+                        />
+                      );
+                    })}
+
+                    {!isCompletedCorrect && (
+                      <div style={{ marginTop: '6px' }}>
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          onClick={() => handleCheckMultipleChoice(q.id)}
+                          disabled={(multiDrafts[q.id] || []).length === 0}
+                          icon={<CheckCircle2 size={15} />}
+                        >
+                          {language === 'en' ? 'Verify Answer' : 'Kiểm tra đáp án'}
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '8px',
+                      marginTop: '16px',
+                    }}
+                  >
+                    {optionsList.map((optText: string, optIdx: number) => {
+                      const letter = String.fromCharCode(65 + optIdx);
+                      const isSelected = answers[q.id] === optIdx;
+                      const isThisOptWrong = currentWrongList.includes(optIdx);
+                      const isThisOptCorrect = isSolutionRevealed && optIdx === q.correctIndex;
+                      const isRevealed = isThisOptWrong || (isSolutionRevealed && isThisOptCorrect);
+                      const disabled = isCompletedCorrect || isThisOptWrong;
+
+                      return (
+                        <AnswerOption
+                          key={optIdx}
+                          letter={letter}
+                          text={optText}
+                          isSelected={isSelected}
+                          isCorrect={isThisOptCorrect}
+                          isWrong={isThisOptWrong}
+                          isRevealed={isRevealed}
+                          disabled={disabled}
+                          onClick={() => handleSelectOption(q.id, optIdx)}
+                        />
+                      );
+                    })}
+                  </div>
+                )}
 
                 {/* Motivational Banner on wrong choice: encourages trying again or revealing explanation */}
                 {!isCompletedCorrect && currentWrongList.length > 0 && (

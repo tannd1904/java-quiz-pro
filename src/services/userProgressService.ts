@@ -1,4 +1,4 @@
-import { ExamHistoryItem, ActiveExamSession, PracticeProgressItem } from '../types/quiz';
+import { ExamHistoryItem, ActiveExamSession, PracticeProgressItem, UserAnswer } from '../types/quiz';
 import { Question } from '../types/question';
 
 const STORAGE_KEY_EXAM_HISTORY = 'java_quiz_exam_history';
@@ -122,13 +122,14 @@ class UserProgressService {
 
   public savePracticeAnswer(
     questionId: string,
-    selectedOptionIdx: number,
+    userAnswer: UserAnswer,
     isCorrect: boolean,
     wrongAttempts?: number[]
   ): PracticeProgressItem {
     const record: PracticeProgressItem = {
       questionId,
-      selectedOptionIdx,
+      userAnswer,
+      selectedOptionIdx: typeof userAnswer === 'number' ? userAnswer : undefined,
       isCorrect,
       answeredAt: Date.now(),
       wrongAttempts,

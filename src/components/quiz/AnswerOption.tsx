@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, CheckSquare, Square } from 'lucide-react';
 
 interface AnswerOptionProps {
   letter: string;
@@ -10,6 +10,7 @@ interface AnswerOptionProps {
   isRevealed?: boolean;
   disabled?: boolean;
   onClick: () => void;
+  isCheckbox?: boolean;
 }
 
 export const AnswerOption: React.FC<AnswerOptionProps> = ({
@@ -21,6 +22,7 @@ export const AnswerOption: React.FC<AnswerOptionProps> = ({
   isRevealed = false,
   disabled = false,
   onClick,
+  isCheckbox = false,
 }) => {
   let borderColor = 'var(--border-default)';
   let bg = 'var(--bg-surface-elevated)';
@@ -76,6 +78,20 @@ export const AnswerOption: React.FC<AnswerOptionProps> = ({
         position: 'relative',
       }}
     >
+      {/* Checkbox Icon if MULTIPLE_CHOICE */}
+      {isCheckbox && (
+        <span
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            color: isSelected ? 'var(--brand-primary)' : 'var(--text-muted)',
+            flexShrink: 0,
+          }}
+        >
+          {isSelected ? <CheckSquare size={20} /> : <Square size={20} />}
+        </span>
+      )}
+
       {/* Letter badge (A, B, C, D) */}
       <span
         style={{

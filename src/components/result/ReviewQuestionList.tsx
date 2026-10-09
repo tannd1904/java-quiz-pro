@@ -5,7 +5,7 @@ import { TOPICS_CONFIG } from '../../config/topics.config';
 import { AnswerOption } from '../quiz/AnswerOption';
 import { ExplanationDrawer } from '../quiz/ExplanationDrawer';
 import { CodeBlock } from '../common/CodeBlock';
-import { CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, AlertCircle, CheckSquare, Edit3, HelpCircle } from 'lucide-react';
 
 interface ReviewQuestionListProps {
   reviewList: ExamReviewItem[];
@@ -27,7 +27,14 @@ export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewLi
 
       {reviewList.map((item) => {
         const q = item.question;
-        const isAnswered = item.selectedOriginalIndex !== null;
+        const isAnswered =
+          item.userAnswer !== undefined &&
+          item.userAnswer !== null &&
+          (Array.isArray(item.userAnswer)
+            ? item.userAnswer.length > 0
+            : typeof item.userAnswer === 'string'
+            ? item.userAnswer.trim().length > 0
+            : true);
         const topicMeta = TOPICS_CONFIG.find((tc) => tc.id === q.topicId);
 
         const questionText = language === 'en' && q.question.en ? q.question.en : q.question.vi;
@@ -75,6 +82,65 @@ export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewLi
                 >
                   #{item.num}
                 </span>
+
+                {/* Question Type Badge */}
+                {q.type === 'MULTIPLE_CHOICE' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '3px 8px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(59, 130, 246, 0.12)',
+                      border: '1px solid rgba(59, 130, 246, 0.35)',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      color: 'var(--brand-primary)',
+                    }}
+                  >
+                    <CheckSquare size={12} />
+                    <span>{language === 'en' ? 'Multiple Choice' : 'Chọn nhiều đáp án'}</span>
+                  </span>
+                )}
+                {q.type === 'FILL_BLANK' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '3px 8px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(168, 85, 247, 0.12)',
+                      border: '1px solid rgba(168, 85, 247, 0.35)',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      color: '#a855f7',
+                    }}
+                  >
+                    <Edit3 size={12} />
+                    <span>{language === 'en' ? 'Fill Blank' : 'Điền từ'}</span>
+                  </span>
+                )}
+                {q.type === 'TRUE_FALSE' && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '3px 8px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                      border: '1px solid rgba(16, 185, 129, 0.35)',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      color: 'var(--state-success)',
+                    }}
+                  >
+                    <HelpCircle size={12} />
+                    <span>{language === 'en' ? 'True / False' : 'Đúng / Sai'}</span>
+                  </span>
+                )}
 
                 {topicMeta && (
                   <span
@@ -177,28 +243,121 @@ export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewLi
               </div>
             )}
 
-            {/* Options */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
-              {optionsList.map((optText, optIdx) => {
-                const letter = String.fromCharCode(65 + optIdx);
-                const isThisTheCorrectAnswer = optIdx === item.correctOriginalIndex;
-                const didUserChooseThis = item.selectedOriginalIndex === optIdx;
+            {/* Review Options / Answer display */}
+            {q.type === 'FILL_BLANK' ? (
+              <div
+                style={{
+                  marginTop: '16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  backgroundColor: 'var(--bg-surface-elevated)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '16px',
+                }}
+              >
+                <div>
+                  <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                    {language === 'en' ? 'Your Answer:' : 'Câu trả lời của bạn:'}{' '}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 700,
+                      fontSize: '0.98rem',
+                      color: !isAnswered
+                        ? 'var(--text-muted)'
+                        : item.isCorrect
+                        ? 'var(--state-success)'
+                        : 'var(--state-error)',
+                      padding: '2px 8px',
+                      borderRadius: 'var(--radius-sm)',
+                      backgroundColor: !isAnswered
+                        ? 'var(--bg-surface-subtle)'
+                        : item.isCorrect
+                        ? 'var(--state-success-subtle)'
+                        : 'var(--state-error-subtle)',
+                    }}
+                  >
+                    {isAnswered ? String(item.userAnswer) : (language === 'en' ? '(No answer)' : '(Chưa điền)')}
+                  </span>
+                </div>
 
-                return (
-                  <AnswerOption
-                    key={optIdx}
-                    letter={letter}
-                    text={optText}
-                    isSelected={didUserChooseThis}
-                    isCorrect={isThisTheCorrectAnswer}
-                    isWrong={didUserChooseThis && !isThisTheCorrectAnswer}
-                    isRevealed={true}
-                    disabled={true}
-                    onClick={() => {}}
-                  />
-                );
-              })}
-            </div>
+                <div>
+                  <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                    {language === 'en' ? 'Accepted Answers:' : 'Đáp án được chấp nhận:'}{' '}
+                  </span>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '4px' }}>
+                    {(item.acceptedAnswers || q.acceptedAnswers || []).map((ans, aIdx) => (
+                      <span
+                        key={aIdx}
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.86rem',
+                          fontWeight: 700,
+                          padding: '2px 8px',
+                          borderRadius: 'var(--radius-sm)',
+                          backgroundColor: 'var(--state-success-subtle)',
+                          border: '1px solid var(--state-success-border)',
+                          color: 'var(--state-success)',
+                        }}
+                      >
+                        {ans}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : q.type === 'MULTIPLE_CHOICE' ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  ℹ️ {language === 'en' ? 'Multiple choice question:' : 'Câu hỏi chọn nhiều đáp án:'}
+                </div>
+                {optionsList.map((optText, optIdx) => {
+                  const letter = String.fromCharCode(65 + optIdx);
+                  const isThisExpected = (item.correctOriginalIndices || q.correctIndices || []).includes(optIdx);
+                  const didUserPick = (item.selectedOriginalIndices || []).includes(optIdx);
+
+                  return (
+                    <AnswerOption
+                      key={optIdx}
+                      letter={letter}
+                      text={optText}
+                      isSelected={didUserPick}
+                      isCorrect={isThisExpected}
+                      isWrong={didUserPick && !isThisExpected}
+                      isRevealed={true}
+                      isCheckbox={true}
+                      disabled={true}
+                      onClick={() => {}}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+                {optionsList.map((optText, optIdx) => {
+                  const letter = String.fromCharCode(65 + optIdx);
+                  const isThisTheCorrectAnswer = optIdx === item.correctOriginalIndex;
+                  const didUserChooseThis = item.selectedOriginalIndex === optIdx;
+
+                  return (
+                    <AnswerOption
+                      key={optIdx}
+                      letter={letter}
+                      text={optText}
+                      isSelected={didUserChooseThis}
+                      isCorrect={isThisTheCorrectAnswer}
+                      isWrong={didUserChooseThis && !isThisTheCorrectAnswer}
+                      isRevealed={true}
+                      disabled={true}
+                      onClick={() => {}}
+                    />
+                  );
+                })}
+              </div>
+            )}
 
             {/* Explanation Drawer */}
             <ExplanationDrawer explanation={explanationText} />
