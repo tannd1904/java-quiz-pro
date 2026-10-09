@@ -1,8 +1,25 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Modal } from './Modal';
 import { Button } from './Button';
 import { useI18n } from '../../hooks/useI18n';
-import { Play, Copy, Check, ExternalLink, Terminal, Code2, Sparkles } from 'lucide-react';
+import { codeExecutionService, CodeExecutionResponse } from '../../services/codeExecutionService';
+import {
+  Play,
+  Copy,
+  Check,
+  ExternalLink,
+  Terminal,
+  Sparkles,
+  RotateCcw,
+  Clock,
+  HardDrive,
+  AlertCircle,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  Loader2,
+  Code2,
+} from 'lucide-react';
 
 interface RunCodeModalProps {
   isOpen: boolean;
@@ -17,7 +34,6 @@ export const prepareRunnableJavaCode = (snippet: string): string => {
 
   // If already complete with class and main method
   if (hasClass && hasMain) {
-    // If it has "public class Foo" where Foo != Main, online compilers usually require "Main"
     if (/\bpublic\s+class\s+(?!Main\b)\w+/.test(trimmed)) {
       return trimmed.replace(/\bpublic\s+class\s+\w+/, 'public class Main');
     }
@@ -57,16 +73,59 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
   rawCode,
 }) => {
   const { language } = useI18n();
+
+  const initialCode = useMemo(() => prepareRunnableJavaCode(rawCode), [rawCode]);
+  const [code, setCode] = useState<string>(initialCode);
+  const [stdin, setStdin] = useState<string>('');
+  const [showStdin, setShowStdin] = useState<boolean>(false);
+
+  const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [executionResult, setExecutionResult] = useState<CodeExecutionResponse | null>(null);
+
   const [copied, setCopied] = useState<boolean>(false);
   const [copiedService, setCopiedService] = useState<string | null>(null);
+  const [showExternalCompilers, setShowExternalCompilers] = useState<boolean>(false);
 
-  const runnableCode = useMemo(() => prepareRunnableJavaCode(rawCode), [rawCode]);
+  // Reset when opening or rawCode changes
+  useEffect(() => {
+    if (isOpen) {
+      const formatted = prepareRunnableJavaCode(rawCode);
+      setCode(formatted);
+      setStdin('');
+      setExecutionResult(null);
+      setIsRunning(false);
+      setCopied(false);
+      setCopiedService(null);
+    }
+  }, [isOpen, rawCode]);
 
   if (!isOpen) return null;
 
+  // Execute Code directly in browser
+  const handleExecuteCode = async () => {
+    if (isRunning) return;
+    setIsRunning(true);
+    setExecutionResult(null);
+
+    try {
+      const res = await codeExecutionService.executeJava({
+        code,
+        stdin,
+      });
+      setExecutionResult(res);
+    } finally {
+      setIsRunning(false);
+    }
+  };
+
+  const handleResetCode = () => {
+    setCode(prepareRunnableJavaCode(rawCode));
+    setExecutionResult(null);
+  };
+
   const handleCopyCode = async (serviceName?: string) => {
     try {
-      await navigator.clipboard.writeText(runnableCode);
+      await navigator.clipboard.writeText(code);
       if (serviceName) {
         setCopiedService(serviceName);
         setTimeout(() => setCopiedService(null), 3000);
@@ -74,9 +133,7 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }
-    } catch {
-      // Fallback
-    }
+    } catch {}
   };
 
   const handleLaunchCompiler = async (service: 'onecompiler' | 'jdoodle' | 'programiz') => {
@@ -102,7 +159,7 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      maxWidth="720px"
+      maxWidth="840px"
       title={
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <div
@@ -121,59 +178,79 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
           </div>
           <div>
             <span style={{ fontWeight: 800 }}>
-              {language === 'en' ? 'Run Java Code Online' : 'Chạy Thử Mã Nguồn Java Trực Tuyến'}
+              {language === 'en' ? 'Java In-Browser Sandbox Runner' : 'Thực Thi & Chạy Thử Java Trực Tiếp Trên Web'}
             </span>
           </div>
         </div>
       }
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {/* Intro Banner */}
+        {/* Subheader Toolbar */}
         <div
           style={{
-            padding: '12px 16px',
-            backgroundColor: 'var(--bg-surface-subtle)',
-            borderRadius: 'var(--radius-md)',
-            border: '1px solid var(--border-subtle)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '12px',
+            gap: '8px',
             flexWrap: 'wrap',
+            padding: '10px 14px',
+            backgroundColor: 'var(--bg-surface-subtle)',
+            borderRadius: 'var(--radius-md)',
+            border: '1px solid var(--border-subtle)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
             <Sparkles size={16} color="var(--brand-primary)" />
             <span>
               {language === 'en'
-                ? 'Code has been wrapped into a runnable class Main template.'
-                : 'Mã đã được tự động đóng gói sẵn vào class Main để chạy trực tiếp trên JVM.'}
+                ? 'Sandbox JVM (OpenJDK 13+). You can edit variables and test right here.'
+                : 'Môi trường JVM Sandbox. Bạn có thể sửa biến, thêm lệnh in và quan sát output.'}
             </span>
           </div>
 
-          <button
-            onClick={() => handleCopyCode()}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '6px 12px',
-              borderRadius: 'var(--radius-sm)',
-              backgroundColor: 'var(--bg-surface)',
-              border: '1px solid var(--border-default)',
-              color: copied ? 'var(--state-success)' : 'var(--text-primary)',
-              fontSize: '0.82rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-            }}
-          >
-            {copied ? <Check size={14} /> : <Copy size={14} />}
-            <span>{copied ? (language === 'en' ? 'Copied Code!' : 'Đã sao chép mã!') : (language === 'en' ? 'Copy Code' : 'Sao chép mã')}</span>
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button
+              onClick={handleResetCode}
+              title="Khôi phục mã ban đầu"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                padding: '5px 10px',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'transparent',
+                border: '1px solid var(--border-default)',
+                color: 'var(--text-secondary)',
+                fontSize: '0.78rem',
+                cursor: 'pointer',
+              }}
+            >
+              <RotateCcw size={13} />
+              <span>{language === 'en' ? 'Reset' : 'Đặt lại'}</span>
+            </button>
+
+            <button
+              onClick={() => handleCopyCode()}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                padding: '5px 10px',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'transparent',
+                border: '1px solid var(--border-default)',
+                color: copied ? 'var(--state-success)' : 'var(--text-secondary)',
+                fontSize: '0.78rem',
+                cursor: 'pointer',
+              }}
+            >
+              {copied ? <Check size={13} /> : <Copy size={13} />}
+              <span>{copied ? (language === 'en' ? 'Copied' : 'Đã sao chép') : (language === 'en' ? 'Copy' : 'Sao chép')}</span>
+            </button>
+          </div>
         </div>
 
-        {/* Code Preview Viewport */}
+        {/* Code Editor Viewport */}
         <div
           style={{
             position: 'relative',
@@ -196,172 +273,382 @@ export const RunCodeModal: React.FC<RunCodeModalProps> = ({
               fontFamily: 'var(--font-mono)',
             }}
           >
-            <span>Main.java</span>
-            <span>JAVA (JDK 17+)</span>
+            <span>Main.java (Editable)</span>
+            <span style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>OpenJDK 13+</span>
           </div>
 
-          <pre
+          <textarea
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            spellCheck={false}
+            rows={10}
             style={{
+              width: '100%',
               margin: 0,
-              padding: '14px 18px',
-              maxHeight: '260px',
-              overflowY: 'auto',
-              overflowX: 'auto',
-              fontSize: '0.86rem',
+              padding: '12px 16px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              outline: 'none',
+              resize: 'vertical',
+              fontSize: '0.88rem',
               lineHeight: 1.6,
               fontFamily: 'var(--font-mono)',
               color: 'var(--text-code)',
+              boxSizing: 'border-box',
             }}
-          >
-            <code>{runnableCode}</code>
-          </pre>
+          />
         </div>
 
-        {/* Success toast if opened compiler */}
-        {copiedService && (
-          <div
+        {/* Optional Stdin Accordion */}
+        <div>
+          <button
+            onClick={() => setShowStdin(!showStdin)}
             style={{
-              padding: '8px 14px',
-              backgroundColor: 'var(--state-success-subtle)',
-              border: '1px solid var(--state-success)',
-              borderRadius: 'var(--radius-sm)',
-              color: 'var(--state-success)',
-              fontSize: '0.84rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: 'var(--text-secondary)',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              padding: '2px 0',
             }}
           >
-            <Check size={16} />
+            {showStdin ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             <span>
               {language === 'en'
-                ? `Code copied! Switched to ${copiedService}. Press Ctrl+V (Cmd+V) to paste and run!`
-                : `Đã tự động sao chép mã! Bạn chỉ cần nhấn phím Ctrl+V (hoặc Cmd+V) vào ô soạn thảo ${copiedService} rồi bấm Run!`}
+                ? 'Standard Input (stdin - if using Scanner)'
+                : 'Dữ liệu đầu vào (stdin - nếu code có dùng Scanner/BufferedReader)'}
             </span>
+          </button>
+
+          {showStdin && (
+            <textarea
+              value={stdin}
+              onChange={(e) => setStdin(e.target.value)}
+              placeholder={language === 'en' ? 'Enter input values here, separated by space or newline...' : 'Nhập dữ liệu vào đây (ví dụ: 10 20)...'}
+              rows={2}
+              style={{
+                width: '100%',
+                marginTop: '6px',
+                padding: '8px 12px',
+                borderRadius: 'var(--radius-sm)',
+                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--bg-surface)',
+                color: 'var(--text-primary)',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.82rem',
+                boxSizing: 'border-box',
+              }}
+            />
+          )}
+        </div>
+
+        {/* Primary Action Button: Run on Web */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <Button
+            variant="primary"
+            size="md"
+            onClick={handleExecuteCode}
+            disabled={isRunning}
+            icon={isRunning ? <Loader2 size={16} className="spin" /> : <Play size={16} fill="currentColor" />}
+          >
+            {isRunning
+              ? language === 'en'
+                ? 'Compiling & Running...'
+                : 'Đang biên dịch & thực thi trên JVM...'
+              : language === 'en'
+              ? 'Run Code Directly on Web ⚡'
+              : 'Chạy code ngay trên Web ⚡'}
+          </Button>
+
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            {language === 'en'
+              ? 'Executes in isolated sandbox container within 0.1-1.0s.'
+              : 'Biên dịch & chạy trong sandbox cô lập tốc độ cao (0.1 - 1.0 giây).'}
+          </span>
+        </div>
+
+        {/* Output Console Window */}
+        {(isRunning || executionResult) && (
+          <div
+            style={{
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid var(--border-subtle)',
+              backgroundColor: '#070b14',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            {/* Terminal Header */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '8px 14px',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Terminal size={14} color="#94a3b8" />
+                <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#e2e8f0' }}>
+                  {language === 'en' ? 'Console Output' : 'Kết Quả Thực Thi (Console)'}
+                </span>
+
+                {executionResult && (
+                  <span
+                    style={{
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      padding: '2px 8px',
+                      borderRadius: 'var(--radius-xs)',
+                      backgroundColor: executionResult.success
+                        ? 'rgba(16, 185, 129, 0.2)'
+                        : 'rgba(239, 68, 68, 0.2)',
+                      color: executionResult.success ? '#34d399' : '#f87171',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                    }}
+                  >
+                    {executionResult.success ? (
+                      <CheckCircle2 size={12} />
+                    ) : (
+                      <AlertCircle size={12} />
+                    )}
+                    {executionResult.statusDescription}
+                  </span>
+                )}
+              </div>
+
+              {executionResult && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.74rem', color: '#94a3b8' }}>
+                  {executionResult.timeSpent && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                      <Clock size={12} /> {executionResult.timeSpent}
+                    </span>
+                  )}
+                  {executionResult.memoryUsedKb && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                      <HardDrive size={12} /> {executionResult.memoryUsedKb} KB
+                    </span>
+                  )}
+                  <button
+                    onClick={() => setExecutionResult(null)}
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                      color: '#94a3b8',
+                      cursor: 'pointer',
+                      fontSize: '0.74rem',
+                    }}
+                  >
+                    {language === 'en' ? 'Clear' : 'Xóa'}
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Terminal Body */}
+            <div
+              style={{
+                padding: '14px 16px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                maxHeight: '220px',
+                overflowY: 'auto',
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+              }}
+            >
+              {isRunning && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#38bdf8' }}>
+                  <Loader2 size={16} className="spin" />
+                  <span>Đang gửi code lên máy chủ sandbox và biên dịch...</span>
+                </div>
+              )}
+
+              {!isRunning && executionResult && (
+                <>
+                  {/* Compilation Error */}
+                  {executionResult.compileOutput && (
+                    <div style={{ color: '#f87171' }}>
+                      {executionResult.compileOutput}
+                    </div>
+                  )}
+
+                  {/* Standard Error (Runtime Exception) */}
+                  {executionResult.stderr && (
+                    <div style={{ color: '#f87171' }}>
+                      {executionResult.stderr}
+                    </div>
+                  )}
+
+                  {/* Standard Output (Success) */}
+                  {executionResult.stdout && (
+                    <div style={{ color: '#34d399' }}>
+                      {executionResult.stdout}
+                    </div>
+                  )}
+
+                  {/* Empty output case */}
+                  {!executionResult.compileOutput &&
+                    !executionResult.stderr &&
+                    !executionResult.stdout && (
+                      <div style={{ color: '#64748b', fontStyle: 'italic' }}>
+                        (Chương trình đã chạy thành công nhưng không in nội dung nào ra console)
+                      </div>
+                    )}
+                </>
+              )}
+            </div>
           </div>
         )}
 
-        {/* Online Compiler Launchers Grid */}
-        <div>
-          <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>
-            {language === 'en' ? 'Choose Online Java Compiler:' : 'Chọn trình biên dịch trực tuyến để thực thi:'}
-          </div>
-
-          <div
+        {/* Collapsible External Compilers */}
+        <div style={{ paddingTop: '4px', borderTop: '1px solid var(--border-subtle)' }}>
+          <button
+            onClick={() => setShowExternalCompilers(!showExternalCompilers)}
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+              backgroundColor: 'transparent',
+              border: 'none',
+              padding: '6px 0',
+              color: 'var(--text-secondary)',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              cursor: 'pointer',
             }}
           >
-            {/* OneCompiler */}
-            <button
-              onClick={() => handleLaunchCompiler('onecompiler')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '12px 14px',
-                borderRadius: 'var(--radius-md)',
-                backgroundColor: 'var(--bg-surface-elevated)',
-                border: '1px solid var(--border-default)',
-                color: 'var(--text-primary)',
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'all 0.15s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-default)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <div>
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--brand-primary)' }}>
-                  OneCompiler ⚡
-                </div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                  Khởi động siêu nhanh, JDK mới nhất
-                </div>
-              </div>
-              <ExternalLink size={16} color="var(--text-muted)" />
-            </button>
+            <span>
+              {language === 'en'
+                ? 'Or open in external Online Java Compilers (OneCompiler, JDoodle, Programiz)'
+                : 'Hoặc mở trên các trình biên dịch trực tuyến bên ngoài (OneCompiler, JDoodle, Programiz)'}
+            </span>
+            {showExternalCompilers ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
 
-            {/* JDoodle */}
-            <button
-              onClick={() => handleLaunchCompiler('jdoodle')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '12px 14px',
-                borderRadius: 'var(--radius-md)',
-                backgroundColor: 'var(--bg-surface-elevated)',
-                border: '1px solid var(--border-default)',
-                color: 'var(--text-primary)',
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'all 0.15s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-default)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <div>
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#10b981' }}>
-                  JDoodle ☕
+          {showExternalCompilers && (
+            <div style={{ marginTop: '10px' }}>
+              {copiedService && (
+                <div
+                  style={{
+                    padding: '8px 12px',
+                    marginBottom: '10px',
+                    backgroundColor: 'var(--state-success-subtle)',
+                    border: '1px solid var(--state-success)',
+                    borderRadius: 'var(--radius-sm)',
+                    color: 'var(--state-success)',
+                    fontSize: '0.82rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                  }}
+                >
+                  <Check size={14} />
+                  <span>
+                    {language === 'en'
+                      ? `Code copied! Switched to ${copiedService}. Press Ctrl+V to paste and run!`
+                      : `Đã tự động sao chép mã! Bạn chỉ cần nhấn phím Ctrl+V (Cmd+V) vào ô soạn thảo ${copiedService} rồi bấm Run!`}
+                  </span>
                 </div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                  Hỗ trợ tương tác Console stdin/out
-                </div>
-              </div>
-              <ExternalLink size={16} color="var(--text-muted)" />
-            </button>
+              )}
 
-            {/* Programiz */}
-            <button
-              onClick={() => handleLaunchCompiler('programiz')}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '12px 14px',
-                borderRadius: 'var(--radius-md)',
-                backgroundColor: 'var(--bg-surface-elevated)',
-                border: '1px solid var(--border-default)',
-                color: 'var(--text-primary)',
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'all 0.15s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-default)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <div>
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#f59e0b' }}>
-                  Programiz 🚀
-                </div>
-                <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                  Giao diện trực quan cho sinh viên
-                </div>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gap: '10px',
+                }}
+              >
+                <button
+                  onClick={() => handleLaunchCompiler('onecompiler')}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '10px 12px',
+                    borderRadius: 'var(--radius-md)',
+                    backgroundColor: 'var(--bg-surface-elevated)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--brand-primary)' }}>
+                      OneCompiler ⚡
+                    </div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      Khởi động nhanh, JDK mới
+                    </div>
+                  </div>
+                  <ExternalLink size={14} color="var(--text-muted)" />
+                </button>
+
+                <button
+                  onClick={() => handleLaunchCompiler('jdoodle')}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '10px 12px',
+                    borderRadius: 'var(--radius-md)',
+                    backgroundColor: 'var(--bg-surface-elevated)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: '0.88rem', color: '#10b981' }}>
+                      JDoodle ☕
+                    </div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      Tương tác Console stdin/out
+                    </div>
+                  </div>
+                  <ExternalLink size={14} color="var(--text-muted)" />
+                </button>
+
+                <button
+                  onClick={() => handleLaunchCompiler('programiz')}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '10px 12px',
+                    borderRadius: 'var(--radius-md)',
+                    backgroundColor: 'var(--bg-surface-elevated)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: '0.88rem', color: '#f59e0b' }}>
+                      Programiz 🚀
+                    </div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                      Dễ dùng cho sinh viên
+                    </div>
+                  </div>
+                  <ExternalLink size={14} color="var(--text-muted)" />
+                </button>
               </div>
-              <ExternalLink size={16} color="var(--text-muted)" />
-            </button>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </Modal>
