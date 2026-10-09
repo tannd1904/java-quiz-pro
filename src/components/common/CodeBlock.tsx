@@ -6,9 +6,14 @@ import { useI18n } from '../../hooks/useI18n';
 interface CodeBlockProps {
   code: string;
   language?: string;
+  allowRun?: boolean;
 }
 
-export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'java' }) => {
+export const CodeBlock: React.FC<CodeBlockProps> = ({
+  code,
+  language = 'java',
+  allowRun = true,
+}) => {
   const { language: uiLang } = useI18n();
   const [copied, setCopied] = useState(false);
   const [isRunModalOpen, setIsRunModalOpen] = useState(false);
@@ -22,6 +27,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'java' })
   };
 
   const isJava = language.toLowerCase() === 'java';
+  const canRun = isJava && allowRun;
 
   return (
     <>
@@ -52,7 +58,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'java' })
         >
           <span>{language}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {isJava && (
+            {canRun && (
               <button
                 onClick={() => setIsRunModalOpen(true)}
                 aria-label="Chạy thử code này trực tuyến"
@@ -115,7 +121,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'java' })
       </div>
 
       {/* Online Java Execution Modal */}
-      {isJava && (
+      {canRun && (
         <RunCodeModal
           isOpen={isRunModalOpen}
           onClose={() => setIsRunModalOpen(false)}

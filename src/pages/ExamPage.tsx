@@ -545,8 +545,8 @@ export const ExamPage: React.FC<ExamPageProps> = ({
               {questionText}
             </h3>
 
-            {/* Code Snippet if any */}
-            {q.codeSnippet && <CodeBlock code={q.codeSnippet} language="java" />}
+            {/* Code Snippet if any (disabled in Exam mode to prevent cheating) */}
+            {q.codeSnippet && <CodeBlock code={q.codeSnippet} language="java" allowRun={false} />}
 
             {/* Image if any */}
             {q.image && (
