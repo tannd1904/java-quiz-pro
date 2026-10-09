@@ -2684,7 +2684,7 @@
       "en": "Read the following code snippet. What result will be printed after executing the program?"
     },
     "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        int x = -1;\n        String y = x + 3; // Lỗi: incompatible types\n        System.out.println(\"x = \" + x + \" y = \" + y);\n    }\n}",
-    "image": "images/de1_q12_5s9yGZZwP003nYzwIVaVSmfBjMdt7wnthdk0mAED.png",
+    "image": null,
     "options": {
       "vi": [
         "x=-1 y=2",
@@ -2701,8 +2701,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi biên dịch: Uncompilable source code - incompatible types**.",
-      "en": "The correct answer is: **Compilation error: Uncompilable source code - incompatible types**."
+      "vi": "Trong Java, biến `y` được khai báo kiểu `String`, nhưng biểu thức `x + 3` có kết quả là số nguyên `int` (với x = -1 thì x + 3 = 2). Java là ngôn ngữ định kiểu tĩnh và chặt chẽ, do đó không thể tự động gán một số nguyên `int` cho biến kiểu `String` mà không qua chuyển đổi kiểu (ví dụ `String.valueOf(x + 3)`). Trình biên dịch sẽ báo lỗi: `incompatible types: int cannot be converted to String`.",
+      "en": "In Java, variable `y` is declared as type `String`, but expression `x + 3` results in an `int` (with x = -1, x + 3 = 2). Because Java is strictly typed, an int cannot be assigned directly to a String without explicit conversion. The compiler throws: `incompatible types: int cannot be converted to String`."
     }
   },
   {
@@ -2783,7 +2783,7 @@
       "en": "Read the following code. What is the output of the above code?"
     },
     "codeSnippet": "int i = 1, j = 10;\ndo {\n    if (i++ > --j) {\n        break;\n    }\n} while (i < 5);\nSystem.out.println(\"i = \" + i + \" and j = \" + j);",
-    "image": "images/de1_q15_NinWWUbNBcsXfuSIuy410BsTeTy78MCSF654CMNi.png",
+    "image": null,
     "options": {
       "vi": [
         "i = 6 and j = 5",
@@ -2800,8 +2800,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **i = 5 and j = 6**.",
-      "en": "The correct answer is: **i = 5 and j = 6**."
+      "vi": "Theo dõi luồng thực thi vòng lặp `do-while`:\n- Ban đầu: `i = 1, j = 10`.\n- Lần 1: Điều kiện `i++ > --j` kiểm tra `1 > 9` (sai), sau đó `i = 2, j = 9`. Vòng lặp kiểm tra `i < 5` (2 < 5 đúng) -> tiếp tục.\n- Lần 2: Kiểm tra `2 > 8` (sai), `i = 3, j = 8`. Điều kiện `3 < 5` đúng.\n- Lần 3: Kiểm tra `3 > 7` (sai), `i = 4, j = 7`. Điều kiện `4 < 5` đúng.\n- Lần 4: Kiểm tra `4 > 6` (sai), `i = 5, j = 6`. Điều kiện `5 < 5` sai -> kết thúc vòng lặp.\n- Lệnh in in ra: `i = 5 and j = 6`.",
+      "en": "Tracing the `do-while` loop step-by-step:\n- Initially: i = 1, j = 10.\n- Iteration 1: 1 > 9 is false; i becomes 2, j becomes 9; condition 2 < 5 holds.\n- Iteration 2: 2 > 8 is false; i becomes 3, j becomes 8; condition 3 < 5 holds.\n- Iteration 3: 3 > 7 is false; i becomes 4, j becomes 7; condition 4 < 5 holds.\n- Iteration 4: 4 > 6 is false; i becomes 5, j becomes 6; condition 5 < 5 is false, exiting loop.\n- Final output: `i = 5 and j = 6`."
     }
   },
   {
@@ -2915,7 +2915,7 @@
       "en": "What is the output of the above code?"
     },
     "codeSnippet": "int i = 0;\nboolean flag;\ndo {\n    flag = false;\n    System.out.print(i++);\n    flag = i < 10;\n    continue;\n} while ((flag) ? true : false);",
-    "image": "images/de1_q19_c4KWV9RqYPOt55DQmDKUbjpUDWFXOB3i3gwXF2oK.png",
+    "image": null,
     "options": {
       "vi": [
         "000000000",
@@ -2932,8 +2932,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **0123456789**.",
-      "en": "The correct answer is: **0123456789**."
+      "vi": "Vòng lặp `do-while` bắt đầu với `i = 0`. Trong mỗi vòng lặp, `System.out.print(i++)` in giá trị hiện tại của `i` rồi tăng `i` lên 1. Biến `flag` được gán bằng `i < 10`. Vòng lặp tiếp tục khi `flag == true`. Khi `i = 9`, in số 9, sau đó `i` tăng lên 10, `flag = 10 < 10` là `false`, vòng lặp kết thúc. Kết quả in liên tiếp từ 0 đến 9: `0123456789`.",
+      "en": "The do-while loop starts at i = 0. In each cycle, System.out.print(i++) prints i and increments it. flag is evaluated as i < 10. When i reaches 9, it prints 9, then i increments to 10, flag becomes false, terminating the loop. The result printed is `0123456789`."
     }
   },
   {
@@ -3047,7 +3047,7 @@
       "en": "What is the output of the code below?"
     },
     "codeSnippet": "public class Test {\n    public static int switchIt(int x) {\n        int j = 1;\n        switch (x) {\n            case 1: j++;\n            case 2: j++;\n            case 3: j++;\n            case 4: j++;\n            default: j++;\n        }\n        return j + x;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"value = \" + switchIt(4));\n    }\n}",
-    "image": "images/de1_q23_w6eEORD8wkyIbHkCUp5Yec22MuyI1ugZrBiQXdTg.png",
+    "image": null,
     "options": {
       "vi": [
         "value = 3",
@@ -3064,8 +3064,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **value = 7**.",
-      "en": "The correct answer is: **value = 7**."
+      "vi": "Trong phương thức `switchIt(4)`, `x = 4` và ban đầu `j = 1`. Cấu trúc `switch(x)` nhảy đến nhánh `case 4:`. Do không có lệnh `break` ở `case 4`, chương trình thực hiện tính năng 'fall-through' (trôi lệnh) xuống nhánh `default:`. Như vậy `j++` ở `case 4` làm j = 2, và `j++` ở `default:` làm j = 3. Giá trị trả về là `j + x = 3 + 4 = 7`. Do đó in ra `value = 7`.",
+      "en": "In `switchIt(4)`, execution jumps to `case 4:`. Because there is no `break` statement, execution falls through to `default:`. `j` increments twice (at case 4 and default), becoming 3. The return value is `j + x = 3 + 4 = 7`, printing `value = 7`."
     }
   },
   {
@@ -3080,7 +3080,7 @@
       "en": "When executing the command: A a = new A(); a.calTotal(a); What will be the value of x after executing the above command?"
     },
     "codeSnippet": "class A {\n    int x = 10;\n    public void calTotal(A a) {\n        a.x = 12;\n        System.out.println(a.x);\n    }\n}",
-    "image": "images/de1_q24_1ibyfd9HyG5CvLKV3hP08KYqqCU2D0vA212g0KFE.png",
+    "image": null,
     "options": {
       "vi": [
         "10",
@@ -3097,8 +3097,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **12**.",
-      "en": "The correct answer is: **12**."
+      "vi": "Trong Java, đối tượng được truyền theo tham chiếu (pass-by-value of reference). Lệnh `A a = new A();` khởi tạo đối tượng `a` có thuộc tính `x = 10`. Khi gọi `a.calTotal(a)`, phương thức nhận chính đối tượng `a` này và thực hiện `a.x = 12`, cập nhật trực tiếp trường `x` của đối tượng thành `12`. Do đó `System.out.println(a.x)` in ra `12`.",
+      "en": "In Java, object references are passed by value. When calling `a.calTotal(a)`, the method mutates the object's instance variable via `a.x = 12`. Therefore `System.out.println(a.x)` prints `12`."
     }
   },
   {
@@ -3245,7 +3245,7 @@
       "en": "The following program prints which string to the screen?"
     },
     "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
-    "image": "images/de1_q30_OmBn9pyDHXJppfRPpgmxwDMnorStA14ZCk6yKalz.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch: use new keyword to create object",
@@ -3262,8 +3262,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Peter**.",
-      "en": "The correct answer is: **Peter**."
+      "vi": "Mảng chuỗi `names` được khởi tạo với 5 phần tử: index 0 là 'John', index 1 là 'Anna', index 2 là 'Peter', index 3 là 'Victor', index 4 là 'David'. Lệnh `names[2]` truy xuất phần tử tại chỉ mục 2, tức là chuỗi `Peter`.",
+      "en": "The array `names` is initialized with 5 elements. Index 0 is 'John', index 1 is 'Anna', index 2 is 'Peter'. `names[2]` accesses index 2, printing `Peter`."
     }
   },
   {
@@ -3311,7 +3311,7 @@
       "en": "Does the following code have any compilation errors?"
     },
     "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    // Lỗi: Kiểu trả về int không tương thích với String ở lớp cha\n    public int sayHello() {\n        return 0;\n    }\n}",
-    "image": "images/de1_q32_zoGuKRgMcb5GvSp47mNzpl7WpKg43HNH4KO8uHzH.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:sayHello() in Man cannot override sayHello() in Student return type int is not compatible with java.lang.String",
@@ -3328,8 +3328,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch:sayHello() in Man cannot override sayHello() in Student return type int is not compatible with java.lang.String**.",
-      "en": "The correct answer is: **There is a compilation error: sayHello() in Man cannot override sayHello() in Student return type int is not compatible with java.lang.String**."
+      "vi": "Quy tắc ghi đè phương thức (Method Overriding) trong Java quy định phương thức ghi đè ở lớp con phải có kiểu trả về tương thích (cùng kiểu hoặc kiểu con - covariant return type) với phương thức ở lớp cha. Ở đây lớp cha `Student` có `sayHello()` trả về `String`, trong khi lớp con `Man` lại khai báo kiểu trả về là `int`, dẫn đến lỗi biên dịch: return type int is not compatible with java.lang.String.",
+      "en": "In Java method overriding, the return type must be identical or covariant with the overridden method. `Student` declares `String sayHello()`, while `Man` declares `int sayHello()`, causing a compilation error due to incompatible return types."
     }
   },
   {
@@ -3376,8 +3376,8 @@
       "vi": "Chương trình sau in ra màn hình xâu nào?",
       "en": "The following program prints which string to the screen?"
     },
-    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
-    "image": "images/de1_q37_TNYGSZtDNInud357tKjKJPZmvKDvJvNDRw3qTgGc.png",
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[3]);\n    }\n}",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch: use new keyword to create object",
@@ -3392,10 +3392,10 @@
         "Victor"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **Peter**.",
-      "en": "The correct answer is: **Peter**."
+      "vi": "Mảng `names` có các phần tử tại các chỉ mục: 0: 'John', 1: 'Anna', 2: 'Peter', 3: 'Victor', 4: 'David'. Lệnh `names[3]` truy xuất phần tử tại chỉ mục 3, do đó in ra `Victor`.",
+      "en": "Array indexes are zero-based. `names[3]` accesses index 3 ('Victor'), outputting `Victor`."
     }
   },
   {
@@ -3410,7 +3410,7 @@
       "en": "Does the following code have any compilation errors?."
     },
     "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public static void main(String[] args) {\n        Man m = new Student(); // Lỗi: Incompatible types\n    }\n}",
-    "image": "images/de1_q38_reQ7QkxnenUaAbX6RBezIe4FYgtxGKvL1KTYTKRP.png",
+    "image": null,
     "options": {
       "vi": [
         "Không có lỗi biên dịch.",
@@ -3427,8 +3427,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch: Incompatible type, required Man, found Student.**.",
-      "en": "The correct answer is: **There was a compilation error: Incompatible type, required Man, found Student.**."
+      "vi": "Trong câu lệnh `Man m = new Student();`, ta đang gán một đối tượng của lớp cha (`Student`) cho một biến tham chiếu của lớp con (`Man`). Đây là phép thu hẹp kiểu (downcasting) không ngầm định, do một `Student` chưa chắc là một `Man`. Trình biên dịch sẽ báo lỗi: `incompatible types: Student cannot be converted to Man`.",
+      "en": "The statement `Man m = new Student();` attempts an implicit downcast (assigning superclass instance to subclass reference). In Java, this fails at compile time with: `incompatible types: required Man, found Student`."
     }
   },
   {
@@ -3443,7 +3443,7 @@
       "en": "What will be the value of x after executing the above command? When executing the command: A a = new A(); a.calTotal(a);"
     },
     "codeSnippet": "class A {\n    int x = 10;\n    public void calTotal(A a) {\n        a.x = 12;\n        System.out.println(a.x);\n    }\n}",
-    "image": "images/de1_q39_vgIQYmOWeGVUrjHuHneA68ZdpldNtE9VV5Jhd5K2.png",
+    "image": null,
     "options": {
       "vi": [
         "10",
@@ -3460,8 +3460,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **12**.",
-      "en": "The correct answer is: **12**."
+      "vi": "Khi gọi `a.calTotal(a)`, tham chiếu `a` được truyền vào phương thức và lệnh `a.x = 12` đã thay đổi giá trị trường `x` của đối tượng thành 12. Vì vậy giá trị in ra là `12`.",
+      "en": "Calling `a.calTotal(a)` modifies the instance variable of object `a` to 12. The output is `12`."
     }
   },
   {
@@ -4499,7 +4499,7 @@
       "en": "What is the result of the following block of commands?"
     },
     "codeSnippet": "String greeting = \"Hello\";\nint k = greeting.length();\nSystem.out.print(k);",
-    "image": "images/de2_q24_k5wRNl1QDOXvaAi8SNX2JUBv2vOnw0JM7QoGoQNg.png",
+    "image": null,
     "options": {
       "vi": [
         "4",
@@ -4516,8 +4516,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **5**.",
-      "en": "The correct answer is: **5**."
+      "vi": "Phương thức `greeting.length()` trả về số lượng ký tự của chuỗi `greeting`. Chuỗi 'Hello' có đúng 5 ký tự ('H', 'e', 'l', 'l', 'o'), do đó `k = 5` và in ra `5`.",
+      "en": "The method `greeting.length()` returns the number of characters in the string. 'Hello' has exactly 5 characters, so `k = 5`."
     }
   },
   {
@@ -4531,8 +4531,8 @@
       "vi": "Chương trình sau in ra màn hình xâu nào?",
       "en": "The following program prints which string to the screen?"
     },
-    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[2]);\n    }\n}",
-    "image": "images/de2_q28_KD6evPqIAFRxJYgxapzJsgBGj1Yjx1zGc1rBjCUa.png",
+    "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names[1]);\n    }\n}",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch: use new keyword to create object",
@@ -4547,10 +4547,10 @@
         "Victor"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Peter**.",
-      "en": "The correct answer is: **Peter**."
+      "vi": "Mảng `names` khởi tạo các phần tử theo thứ tự: 0: 'John', 1: 'Anna', 2: 'Peter'. Lệnh `names[1]` truy cập phần tử tại chỉ mục 1 nên in ra `Anna`.",
+      "en": "Array indexes are zero-based. `names[1]` accesses index 1 ('Anna'), outputting `Anna`."
     }
   },
   {
@@ -4565,7 +4565,7 @@
       "en": "In the code above, what value does x receive?"
     },
     "codeSnippet": "String s = \"cabcab\";\njava.util.StringTokenizer st = new java.util.StringTokenizer(s, \"ab\");\nint x = st.countTokens();\nSystem.out.println(x);",
-    "image": "images/de2_q29_AmpA2hTo7hvM8LqabA5PDF7gsDb9S8oTCoA8BDa5.png",
+    "image": null,
     "options": {
       "vi": [
         "0",
@@ -4582,8 +4582,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **2**.",
-      "en": "The correct answer is: **2**."
+      "vi": "Lớp `StringTokenizer(s, \"ab\")` tách chuỗi `s = \"cabcab\"` dựa trên tập ký tự phân tách gồm 'a' và 'b'. Chuỗi được phân tách thành 2 token là 'c' (ở đầu) và 'c' (ở giữa). Phương thức `countTokens()` đếm tổng số token hiện có và trả về `2`.",
+      "en": "`StringTokenizer(s, \"ab\")` splits `\"cabcab\"` using delimiter characters 'a' and 'b', yielding two 'c' tokens. `countTokens()` returns `2`."
     }
   },
   {
@@ -4598,7 +4598,7 @@
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
     "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public boolean isMan() {\n        return true;\n    }\n}",
-    "image": "images/de2_q30_MNwl4BhtuStAoRszKQpcPHoe3THGpLWa3mVeZG6H.png",
+    "image": null,
     "options": {
       "vi": [
         "Không có lỗi biên dịch.",
@@ -4615,8 +4615,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
+      "vi": "Trong Java, một class hoàn toàn có thể để rỗng (không khai báo thuộc tính hay phương thức), trình biên dịch sẽ tự động cung cấp một default constructor không đối số. Lớp con `Man` kế thừa lớp `Student` rỗng này và bổ sung phương thức `isMan()` là hoàn toàn hợp lệ, không có lỗi biên dịch nào.",
+      "en": "An empty class is completely valid in Java; the compiler automatically supplies a default no-argument constructor. Subclass `Man` inherits from `Student` without any compilation errors."
     }
   },
   {
@@ -4631,7 +4631,7 @@
       "en": "Does the following code have any compilation errors?"
     },
     "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    public String sayHello() {\n        return \"man\";\n    }\n\n    public static void main(String[] args) {\n        Man m = new Student(); // Lỗi biên dịch: Incompatible types\n        System.out.println(m.sayHello());\n    }\n}",
-    "image": "images/de2_q31_70UShZdH0ae2pcqfPtifpD8fsNoFyErcUE0NYDYN.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:Incompatible type, requiered Man, found Student.",
@@ -4648,8 +4648,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch:Incompatible type, requiered Man, found Student.**.",
-      "en": "The correct answer is: **There was a compilation error: Incompatible type, required Man, found Student.**."
+      "vi": "Lệnh `Man m = new Student();` cố gắng gán trực tiếp một đối tượng của lớp cha `Student` cho biến tham chiếu kiểu lớp con `Man`. Java không cho phép gán ngầm định lớp cha vào lớp con, gây ra lỗi biên dịch: `incompatible types: required Man, found Student`.",
+      "en": "Assigning a superclass object to a subclass reference (`Man m = new Student();`) is illegal without an explicit valid cast, resulting in a compilation error: `incompatible types: required Man, found Student`."
     }
   },
   {
@@ -4664,7 +4664,7 @@
       "en": "Does the following code have any compilation errors?"
     },
     "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    // Không lỗi vì đây là nạp chồng (overload) phương thức getAge\n    protected int getAge(int added) {\n        return super.getAge() + added;\n    }\n}",
-    "image": "images/de2_q32_7w62zSqMv1SMnzPTrK78EwAWD88MyOvOWtC2UFwS.png",
+    "image": null,
     "options": {
       "vi": [
         "Không có lỗi biên dịch.",
@@ -4681,8 +4681,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
+      "vi": "Lớp `Student` có phương thức `public int getAge()`, còn lớp con `Man` khai báo `protected int getAge(int added)`. Vì hai phương thức này có danh sách tham số khác nhau (một phương thức không tham số, một phương thức có 1 tham số int), đây là cơ chế Nạp chồng (Method Overloading) chứ không phải Ghi đè (Overriding). Do đó phạm vi truy cập `protected` không vi phạm quy tắc kế thừa và code biên dịch bình thường.",
+      "en": "The method in `Man` takes a parameter (`int added`) while the one in `Student` takes none. This is method overloading, not overriding. Therefore, changing visibility or return type is perfectly valid, producing no compilation errors."
     }
   },
   {
@@ -4730,7 +4730,7 @@
       "en": "What output will the program print when executing the following code?"
     },
     "codeSnippet": "package pac02;\npublic class ClassA {\n    public int xA;\n    public String yA;\n}\n\npackage pac01;\nimport pac02.ClassA;\npublic class Test {\n    public static void main(String[] args) {\n        ClassA a = new ClassA();\n        a.xA = 12;\n        a.yA = \"Hello\";\n        System.out.println(\"a.xA = \" + a.xA + \"; a.yA = \" + a.yA);\n    }\n}",
-    "image": "images/de2_q34_YVjleifXjwlxZtzgrUvEMDmPxbIai8CNcjLaxfS4.png",
+    "image": null,
     "options": {
       "vi": [
         "Lỗi biên dịch dòng 2.5, 2.6, 2.7",
@@ -4747,8 +4747,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **a.xA = 12; a.yA = Hello**.",
-      "en": "The correct answer is: **a.xA = 12; a.yA = Hello**."
+      "vi": "Trong lớp `ClassA` (thuộc package `pac02`), hai thuộc tính `xA` và `yA` đều được khai báo với phạm vi truy cập `public`. Do đó, lớp `Test` (thuộc package `pac01`) sau khi `import pac02.ClassA;` có toàn quyền truy cập và gán giá trị cho `a.xA` và `a.yA`. Kết quả in ra là `a.xA = 12; a.yA = Hello`.",
+      "en": "Both `xA` and `yA` in `ClassA` are declared `public`. Class `Test` imports `ClassA` and accesses both fields legitimately, printing `a.xA = 12; a.yA = Hello`."
     }
   },
   {
@@ -4796,7 +4796,7 @@
       "en": "What is the result of the following block of commands when executed?"
     },
     "codeSnippet": "char[] greet = new char[10];\ngreet = \"Hello\"; // Lỗi biên dịch: không thể gán String cho char[]\nint k = greet.length;\nSystem.out.print(k);",
-    "image": "images/de2_q36_6vhbWrTu2JuQ86lgU4g9WikFqDKEWavhICS6ebB8.png",
+    "image": null,
     "options": {
       "vi": [
         "4",
@@ -4811,10 +4811,10 @@
         "Compilation error"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi biên dịch**.",
-      "en": "The correct answer is: **Compilation error**."
+      "vi": "Lệnh `greet = \"Hello\";` cố gắng gán một chuỗi đối tượng `String` cho một mảng ký tự `char[] greet`. Trong Java, `char[]` và `String` là hai kiểu dữ liệu khác biệt, không thể gán trực tiếp cho nhau. Trình biên dịch sẽ báo lỗi: `incompatible types: String cannot be converted to char[]`.",
+      "en": "Attempting to assign a `String` literal directly to a `char[]` variable (`greet = \"Hello\";`) causes a compilation error because String and char[] are distinct incompatible types."
     }
   },
   {
@@ -4928,7 +4928,7 @@
       "en": "What is the result of the following two statements?"
     },
     "codeSnippet": "String greetings = \"Hello\";\nString s = greetings.substring(0, 4); // Hell (từ index 0 đến 3)\nSystem.out.println(s);",
-    "image": "images/de2_q40_b0ETKMQcuPLR0osMIrx79omfZb5lgGBSzYDVB2VK.png",
+    "image": null,
     "options": {
       "vi": [
         "Hell",
@@ -4945,8 +4945,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Hel**.",
-      "en": "The correct answer is: **Hel**."
+      "vi": "Phương thức `substring(beginIndex, endIndex)` lấy chuỗi con bắt đầu từ vị trí `beginIndex` (bao gồm) đến trước vị trí `endIndex` (không bao gồm). Ở đây chuỗi 'Hello' lấy từ chỉ mục 0 đến 4: index 0='H', 1='e', 2='l', 3='l', cho ra chuỗi 'Hell'.",
+      "en": "`substring(0, 4)` extracts characters from index 0 up to (but not including) index 4. For 'Hello', this extracts indices 0, 1, 2, 3 resulting in 'Hell'."
     }
   },
   {
@@ -4961,7 +4961,7 @@
       "en": "What is the result of the following two statements?"
     },
     "codeSnippet": "String greetings = \"Hello\" // Thiếu dấu chấm phẩy ;\nString s = greetings.substring(0, 3);",
-    "image": "images/de2_q41_QoaSf8elYfyswaCVfJ71sLK78eCisbJXBNDfnhs8.png",
+    "image": null,
     "options": {
       "vi": [
         "Hell",
@@ -4978,8 +4978,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lệnh sai**.",
-      "en": "The correct answer is: **Wrong order**."
+      "vi": "Dòng lệnh đầu tiên `String greetings = \"Hello\"` thiếu dấu chấm phẩy `;` ở cuối dòng, vi phạm cú pháp Java, gây ra lỗi biên dịch: `';' expected`.",
+      "en": "The statement `String greetings = \"Hello\"` is missing a terminating semicolon, causing a syntax/compilation error (`';' expected`)."
     }
   },
   {
@@ -4994,7 +4994,7 @@
       "en": "In the following two commands, what effect does the substring command have?"
     },
     "codeSnippet": "String greetings = \" Hello \";\nString s = greetings.substring(0, 3);\nSystem.out.println(s);",
-    "image": "images/de2_q42_MobE9bOoDtUEvoNNC8GRq2VufB7jwuwPTKlDrtO6.png",
+    "image": null,
     "options": {
       "vi": [
         "Lấy các ký tự từ vị trí chỉ mục 0 đến vị trí chỉ mục 2 của chuỗi greetings và đưa vào s",
@@ -5011,8 +5011,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lấy các ký tự từ vị trí chỉ mục 0 đến vị trí chỉ mục 2 của chuỗi greetings và đưa vào s**.",
-      "en": "The correct answer is: **Take the characters from index position 0 to index position 2 of the string greetings and put them in s**."
+      "vi": "Phương thức `substring(beginIndex, endIndex)` trong Java trả về một chuỗi con chứa các ký tự từ vị trí chỉ mục `beginIndex` đến vị trí `endIndex - 1`. Do đó `substring(0, 3)` lấy các ký tự tại chỉ mục 0, 1, 2 của chuỗi `greetings` và gán vào `s`.",
+      "en": "In Java, `substring(beginIndex, endIndex)` returns characters from index `beginIndex` up to `endIndex - 1`. `substring(0, 3)` extracts characters at indices 0, 1, and 2."
     }
   },
   {
@@ -5159,7 +5159,7 @@
       "en": "What will be the result of the command block below if we enter income = 1?"
     },
     "codeSnippet": "int thu = 1;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
-    "image": "images/de2_q47_0JpsasWJJUATZXDCeQ5bt9mAnnltXjGbgs6N6AZc.png",
+    "image": null,
     "options": {
       "vi": [
         "Van, Toan",
@@ -5176,8 +5176,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Ngay nghi**.",
-      "en": "The correct answer is: **Doubtful**."
+      "vi": "Với `thu = 1`, giá trị 1 không khớp với `case 2` hay `case 3` trong cấu trúc switch. Do đó luồng điều khiển nhảy vào nhánh `default:` và in ra chuỗi `Ngay nghi`.",
+      "en": "With `thu = 1`, it matches neither case 2 nor case 3. Execution branches to `default:` and prints `Ngay nghi`."
     }
   },
   {
@@ -5192,7 +5192,7 @@
       "en": "What will be the result of the command block below if we enter income = 2?"
     },
     "codeSnippet": "int thu = 2;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
-    "image": "images/de2_q48_XzqSwoF3u6bQWzaCqGKgyKRXkkZrimxZzstSMAxJ.png",
+    "image": null,
     "options": {
       "vi": [
         "Van, Toan",
@@ -5209,8 +5209,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Van, Toan**.",
-      "en": "The correct answer is: **Van, Toan**."
+      "vi": "Với `thu = 2`, biểu thức switch khớp với nhánh `case 2:`. Lệnh `System.out.println(\"Van, Toan\")` được thực thi và lệnh `break;` thoát khỏi cấu trúc switch. Kết quả in ra là `Van, Toan`.",
+      "en": "With `thu = 2`, it matches `case 2:`. It prints `Van, Toan` and then breaks out of the switch block."
     }
   },
   {
@@ -5225,7 +5225,7 @@
       "en": "What will be the result of the command block below if we enter income = 3?"
     },
     "codeSnippet": "int thu = 3;\nswitch (thu) {\n    case 2:\n        System.out.println(\"Van, Toan\");\n        break;\n    case 3:\n        System.out.println(\"Hoa, Ly\");\n        break;\n    default:\n        System.out.println(\"Ngay nghi\");\n        break;\n}",
-    "image": "images/de2_q49_VR1kY3PTYcDdoazMlttXMJjwjihQVNBxB8MdSMKu.png",
+    "image": null,
     "options": {
       "vi": [
         "Van, Toan",
@@ -5242,8 +5242,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Hoa, Ly**.",
-      "en": "The correct answer is: **Hoa, Ly**."
+      "vi": "Với `thu = 3`, biểu thức switch khớp với nhánh `case 3:`. Lệnh `System.out.println(\"Hoa, Ly\")` được thực thi và lệnh `break;` kết thúc khối switch. Kết quả in ra là `Hoa, Ly`.",
+      "en": "With `thu = 3`, it matches `case 3:`. It prints `Hoa, Ly` and breaks, resulting in `Hoa, Ly`."
     }
   },
   {
@@ -5258,7 +5258,7 @@
       "en": "If color = DEN, what is the result printed by the command below?"
     },
     "codeSnippet": "enum mausac {\n    DEN,\n    LAM,\n    LUC,\n    TRANG\n}\n\nmausac color = mausac.DEN;\nString t;\nswitch (color) {\n    case DEN:\n        t = \"Mau trang\";\n        break;\n    case LAM:\n        t = \"Mau lam\";\n        break;\n    default:\n        t = \"Khong co trong danh sach mau\";\n        break;\n}\nSystem.out.println(t);",
-    "image": "images/de2_q50_rWWE7Z90NIow9AFeN3eqT9nUNA6bKsR2tSXH4cQE.png",
+    "image": null,
     "options": {
       "vi": [
         "Mau trang.",
@@ -5275,8 +5275,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Mau trang.**.",
-      "en": "The correct answer is: **Quick page.**."
+      "vi": "Biến enum `color = mausac.DEN;`. Trong cấu trúc switch, nhánh `case DEN:` khớp, biến `t` được gán bằng chuỗi `\"Mau trang\"` và gặp lệnh `break`. Cuối cùng `System.out.println(t)` in ra `Mau trang.`.",
+      "en": "Given `color = DEN`, switch matches `case DEN:`, assigning `t = \"Mau trang\"`. Breaking out of switch, it prints `Mau trang.`."
     }
   },
   {
@@ -5291,7 +5291,7 @@
       "en": "When executing the above command block, what will be the result?"
     },
     "codeSnippet": "int s = 0;\nfor (int i = 0; i < 10; i++) {\n    s += i;\n}\nSystem.out.println(s);",
-    "image": "images/de3_q1_VbQy5PVoY3VeEzK2GPAgOUZ76PezGZSnckunAqzX.png",
+    "image": null,
     "options": {
       "vi": [
         "45",
@@ -5308,8 +5308,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **45**.",
-      "en": "The correct answer is: **45**."
+      "vi": "Vòng lặp `for (int i = 0; i < 10; i++)` cộng dồn các giá trị của `i` từ 0 đến 9 vào biến `s`. Tổng `s = 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45`. Kết quả in ra là `45`.",
+      "en": "The loop iterates `i` from 0 through 9, calculating `s = sum(0..9) = 45`. The output is `45`."
     }
   },
   {
@@ -5324,7 +5324,7 @@
       "en": "What does the command block do?"
     },
     "codeSnippet": "int[] mang = new int[10];\nint s = 0;\nfor (int i : mang) {\n    s += i;\n}\nSystem.out.println(\"S = \" + s);",
-    "image": "images/de3_q2_FiTnBEJFej40C3QlJ3SgnFbLTmKBgKKPzapUINkc.png",
+    "image": null,
     "options": {
       "vi": [
         "Nhập dữ liệu cho mang nguyên.",
@@ -5339,10 +5339,10 @@
         "All are wrong."
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Nhập dữ liệu và tính tổng mảng nguyên.**.",
-      "en": "The correct answer is: **Enter data and calculate the total array of integers.**."
+      "vi": "Khối lệnh khởi tạo một mảng số nguyên `int[] mang = new int[10];` và dùng vòng lặp for-each `for (int i : mang)` để cộng dồn từng phần tử vào biến `s`. Trong toàn bộ đoạn mã không hề có lệnh nhập dữ liệu từ bàn phím (như Scanner hay BufferedReader), nên chức năng của khối lệnh là 'Tính tổng mảng nguyên'.",
+      "en": "The code creates an integer array and sums up its elements using a for-each loop. There is no input logic (like Scanner), so the purpose is purely calculating the sum of the array."
     }
   },
   {
@@ -5456,7 +5456,7 @@
       "en": "What does the following command print?"
     },
     "codeSnippet": "final int ARRAY_SIZE = 5;\nARRAY_SIZE = 10; // Lỗi ở dòng 2: không thể gán lại giá trị cho biến final\nSystem.out.println(\"size = \" + ARRAY_SIZE);",
-    "image": "images/de3_q8_AaS5VXkh54euUl1OZZZcUDwYQlKTRnXOePFCRzeS.png",
+    "image": null,
     "options": {
       "vi": [
         "size = 10",
@@ -5473,8 +5473,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi ở dòng 2**.",
-      "en": "The correct answer is: **Error in line 2**."
+      "vi": "Biến `ARRAY_SIZE` được khai báo với từ khóa `final` (`final int ARRAY_SIZE = 5;`). Trong Java, biến `final` là hằng số và không thể gán lại giá trị sau khi đã khởi tạo. Dòng 2 `ARRAY_SIZE = 10;` vi phạm quy tắc này và gây lỗi biên dịch: `cannot assign a value to final variable ARRAY_SIZE`.",
+      "en": "Variable `ARRAY_SIZE` is declared `final`. Reassigning it on line 2 (`ARRAY_SIZE = 10;`) produces a compilation error: `cannot assign a value to final variable ARRAY_SIZE`."
     }
   },
   {
@@ -5489,7 +5489,7 @@
       "en": "What will the program print?"
     },
     "codeSnippet": "class A {\n    final public int method1(int a, int b) {\n        return 0;\n    }\n}\n\nclass B extends A {\n    // Lỗi: Không thể ghi đè (override) phương thức final từ lớp cha\n    public int method1(int a, int b) {\n        return 1;\n    }\n}\n\npublic class Test {\n    public static void main(String args[]) {\n        B b = new B();\n        System.out.println(\"x = \" + b.method1(0, 1));\n    }\n}",
-    "image": "images/de3_q9_0RLF0NmPAYll3T8YEwFXwCO2rHgUrkMecSItNa6f.png",
+    "image": null,
     "options": {
       "vi": [
         "x = 0",
@@ -5506,8 +5506,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi biên dịch**.",
-      "en": "The correct answer is: **Compilation error**."
+      "vi": "Ở lớp `A`, phương thức `method1` được khai báo với từ khóa `final` (`final public int method1`). Trong Java, phương thức `final` không thể bị ghi đè (override) bởi bất kỳ lớp con nào. Lớp `B extends A` cố gắng ghi đè `method1` sẽ bị trình biên dịch báo lỗi: `method1() in B cannot override method1() in A; overridden method is final`.",
+      "en": "In class `A`, `method1` is declared `final`. Final methods cannot be overridden by subclasses. Class `B` attempting to override it causes a compilation error."
     }
   },
   {
@@ -5522,7 +5522,7 @@
       "en": "Please tell us the result when running the following program?"
     },
     "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    public int getAge(int added) {\n        return super.getAge() + added;\n    }\n\n    public static void main(String[] args) {\n        Man s = new Man();\n        System.out.println(s.getAge());\n        System.out.println(s.getAge());\n    }\n}",
-    "image": "images/de3_q10_CQ7idKhsfVBLh3mWmblJpECTezEqB5kewqg5FCdk.png",
+    "image": null,
     "options": {
       "vi": [
         "1011",
@@ -5539,8 +5539,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **1010**.",
-      "en": "The correct answer is: **1010**."
+      "vi": "Lớp `Student` có phương thức `getAge()` trả về 10. Lớp con `Man` kế thừa phương thức `getAge()` này và nạp chồng thêm một phương thức mới `getAge(int added)`. Khi gọi `s.getAge()`, phương thức không đối số của lớp cha được thực thi và trả về 10. Hai lệnh `System.out.println(s.getAge())` liên tiếp in ra hai dòng số 10 (kết quả hiển thị 1010).",
+      "en": "Class `Man` inherits `getAge()` from `Student` and overloads `getAge(int added)`. Calling `s.getAge()` executes the inherited no-argument method returning 10, printing 10 twice (1010)."
     }
   },
   {
@@ -5555,7 +5555,7 @@
       "en": "Does the following code have any compilation errors?"
     },
     "codeSnippet": "class Student {\n    public String name;\n}\n\npublic class Man extends Student {\n    private String name; // Ẩn trường (hiding field) hợp lệ trong Java\n}",
-    "image": "images/de3_q11_LcyO4K9Pf4OwOQCQkFkmSOLDagtVpNc3HzFlq3lT.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:name has private access in Man.",
@@ -5572,8 +5572,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
+      "vi": "Trong Java, các thuộc tính (fields) không tuân theo cơ chế ghi đè (overriding) như phương thức mà tuân theo cơ chế che khuất trường (Field Hiding). Việc lớp con `Man` khai báo trường `private String name` trùng tên với trường `public String name` của lớp cha là hoàn toàn hợp lệ và không gây lỗi biên dịch.",
+      "en": "In Java, instance variables are hidden rather than overridden. A subclass declaring a private field with the same name as a superclass public field is completely valid, producing no compilation errors."
     }
   },
   {
@@ -5588,7 +5588,7 @@
       "en": "Which of the following compilation errors does the following code have?"
     },
     "codeSnippet": "class Student {\n    protected String name;\n}\n\npublic class Man extends Student {\n    public static void main(String[] args) {\n        Man m = new Man();\n        m.name = \"John\";\n    }\n}",
-    "image": "images/de3_q12_omnAdm0JSPuozyOT1HjFxM3GqIvCjuK8T9bxVqMD.png",
+    "image": null,
     "options": {
       "vi": [
         "name has protected access in Student.",
@@ -5605,8 +5605,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch**.",
-      "en": "The correct answer is: **There is no compilation error**."
+      "vi": "Lớp `Student` khai báo trường `name` với phạm vi truy cập `protected`. Lớp con `Man extends Student` được kế thừa trực tiếp trường `name` này. Trong phương thức `main` của lớp `Man`, đối tượng `Man m = new Man()` hoàn toàn có quyền truy cập và gán `m.name = \"John\"`, không có lỗi biên dịch nào xảy ra.",
+      "en": "Field `name` is declared `protected` in `Student`. Subclass `Man` inherits it and can access `m.name` directly in its own methods, compiling cleanly without errors."
     }
   },
   {
@@ -5621,7 +5621,7 @@
       "en": "What is the result of the following code?"
     },
     "codeSnippet": "class Student {\n    private String name;\n}\n\npublic class Man extends Student {\n    private String name;\n\n    public static void main(String[] args) {\n        Student m = new Student();\n        m.name = \"Peter\"; // Lỗi biên dịch: name has private access in Student\n    }\n}",
-    "image": "images/de3_q13_4KD6IL08O0jfSLYLEBjXmWG5cnID7sPm7Hr0A0bO.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:name has private access in Student.",
@@ -5638,8 +5638,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch:name has private access in Student.**.",
-      "en": "The correct answer is: **There was a compilation error: name has private access in Student.**."
+      "vi": "Thuộc tính `name` trong lớp `Student` được khai báo với phạm vi truy cập `private`. Phạm vi `private` chỉ cho phép truy cập bên trong nội bộ lớp `Student`. Khi trong phương thức `main` của lớp `Man` cố gắng truy cập `m.name = \"Peter\"` trên đối tượng `Student m = new Student()`, trình biên dịch báo lỗi: `name has private access in Student`.",
+      "en": "The field `name` in `Student` is `private`, accessible only within `Student`. Accessing `m.name` from class `Man` triggers a compilation error: `name has private access in Student`."
     }
   },
   {
@@ -5687,7 +5687,7 @@
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
     "codeSnippet": "class Student {}\n\npublic class Man extends Student {}",
-    "image": "images/de3_q15_S6s1S9XwtsqC89oFJsjv05celTWBd2ndzdMFGPf6.png",
+    "image": null,
     "options": {
       "vi": [
         "Không có lỗi biên dịch.",
@@ -5704,8 +5704,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
+      "vi": "Khai báo `class Student {}` và `class Man extends Student {}` là hoàn toàn hợp lệ trong Java. Một lớp không bắt buộc phải chứa thuộc tính hay phương thức. Trình biên dịch sẽ tự động chèn constructor mặc định không tham số.",
+      "en": "Empty class declarations and inheritance between empty classes are completely valid in Java. The compiler automatically inserts default constructors."
     }
   },
   {
@@ -5720,7 +5720,7 @@
       "en": "What output will the program print when executing the following code?"
     },
     "codeSnippet": "package pac02;\npublic class ClassA {\n    protected int xA;\n    public String yA;\n}\n\npackage pac01;\nimport pac02.ClassA;\npublic class Test {\n    public static void main(String[] args) {\n        ClassA a = new ClassA();\n        a.xA = 12;\n        a.yA = \"Hello\";\n        System.out.println(\"a.xA = \" + a.xA + \"; a.yA = \" + a.yA);\n    }\n}",
-    "image": "images/de3_q19_tpIwzUMYaG2DkBvyQX1MDuOyzr6kAKrC0jun0MqX.png",
+    "image": null,
     "options": {
       "vi": [
         "Lỗi biên dịch dòng 2.7",
@@ -5735,10 +5735,10 @@
         "a.xA = 12; a.yA = Hello"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **a.xA = 12; a.yA = Hello**.",
-      "en": "The correct answer is: **a.xA = 12; a.yA = Hello**."
+      "vi": "Trong lớp `ClassA` (package `pac02`), thuộc tính `xA` được khai báo với phạm vi `protected`. Thuộc tính `protected` chỉ có thể được truy cập từ cùng package hoặc từ các lớp con thông qua kế thừa. Lớp `Test` thuộc package khác (`pac01`) và KHÔNG kế thừa `ClassA`, do đó lệnh truy cập `a.xA = 12` ở dòng 2.5 sẽ bị lỗi biên dịch: `xA has protected access in pac02.ClassA`.",
+      "en": "`xA` in `ClassA` (package `pac02`) has `protected` access. Class `Test` is in package `pac01` and does not subclass `ClassA`. Accessing `a.xA` directly causes a compilation error on line 2.5."
     }
   },
   {
@@ -5753,7 +5753,7 @@
       "en": "Given two classes Student and Main as follows. When compiling the Main class, is there a compilation error? If so, what error?"
     },
     "codeSnippet": "package java.school;\npublic class Student {}\n\npackage java.test;\npublic class Main {\n    public static void main(String[] args) {\n        java.school.Student s = new java.school.Student();\n    }\n}",
-    "image": "images/de3_q20_tlx3EdLg9Cw17oskSWsKA0y1mbUxJZGkb9emIw1S.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:can not find symbol test.Student",
@@ -5770,8 +5770,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch:can not find symbol test.Student**.",
-      "en": "The correct answer is: **There was a compilation error: can not find symbol test.Student**."
+      "vi": "Lớp `Student` nằm trong package `java.school` và được khai báo `public`. Tuy nhiên theo chuẩn bảo mật của JVM, các gói bắt đầu bằng tiền tố `java.*` (như java.lang, java.util) được bảo lưu riêng cho nền tảng Java tiêu chuẩn. Mặt khác, nếu không có class loader đặc biệt hoặc file classpath phù hợp, trình biên dịch sẽ báo lỗi không tìm thấy ký hiệu `java.school.Student`.",
+      "en": "Package prefix `java.*` is restricted by the standard Java platform. Referencing `java.school.Student` without appropriate classpath causes a compilation symbol resolution error."
     }
   },
   {
@@ -5786,7 +5786,7 @@
       "en": "When compiling the Main class, is there a compilation error? If so, what error?"
     },
     "codeSnippet": "package java.school;\npublic class Student {}\n\npackage java.test;\npublic class Main {\n    public static void main(String[] args) {\n        Student s = new Student(); // Lỗi: cannot find symbol Student (chưa import)\n    }\n}",
-    "image": "images/de3_q22_Fu3Ut4Hg2anZXloYoDlljcG8OvTDgb0tDimYnNNA.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch:can not find symbol test.Student",
@@ -5803,8 +5803,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch:can not find symbol test.Student**.",
-      "en": "The correct answer is: **There was a compilation error: can not find symbol test.Student**."
+      "vi": "Lớp `Student` được định nghĩa trong package `java.school`, trong khi lớp `Main` nằm trong package `java.test`. Vì trong `Main` không có câu lệnh `import java.school.Student;` và cũng không sử dụng tên đầy đủ (fully-qualified name), trình biên dịch báo lỗi: `cannot find symbol Student`.",
+      "en": "Class `Student` is in package `java.school` while `Main` is in `java.test`. Because `Student` is neither imported nor fully qualified, the compiler throws: `cannot find symbol Student`."
     }
   },
   {
@@ -5819,7 +5819,7 @@
       "en": "The following program prints which string image?"
     },
     "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        names = new String[5]; // Cấp phát mảng mới các phần tử mặc định là null\n        System.out.println(names[2]);\n    }\n}",
-    "image": "images/de3_q23_WZ2i2aq61CuKAINgd326WysrgpzAdg3zxWyxNyN7.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch: use new keyword to create object",
@@ -5834,10 +5834,10 @@
         "null"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **null**.",
-      "en": "The correct answer is: **null**."
+      "vi": "Sau khi mảng `names` được khởi tạo ban đầu, dòng lệnh tiếp theo `names = new String[5];` đã cấp phát một mảng `String` mới gồm 5 phần tử và gán lại cho biến `names`. Các phần tử của mảng đối tượng mới khởi tạo đều có giá trị mặc định là `null`. Do đó `names[2]` có giá trị là `null`.",
+      "en": "`names = new String[5];` reallocates a fresh String array of 5 elements, where every element is initialized to default `null`. Therefore, `names[2]` prints `null`."
     }
   },
   {
@@ -5852,7 +5852,7 @@
       "en": "What is the output of the above code?"
     },
     "codeSnippet": "public class Delta {\n    static boolean foo(char c) {\n        System.out.print(c);\n        return true;\n    }\n\n    public static void main(String[] argv) {\n        int i = 0;\n        for (foo('A'); foo('B') && (i < 2); foo('C')) {\n            i++;\n            foo('D');\n        }\n    }\n}",
-    "image": "images/de3_q25_ZILo2TJ7NKeTFAluRygvN5Ia7XghTJlBRyO1arfB.png",
+    "image": null,
     "options": {
       "vi": [
         "ABDCBDCB",
@@ -5869,8 +5869,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **ABDCBDCB**.",
-      "en": "The correct answer is: **ABDCBDCB**."
+      "vi": "Phân tích thứ tự thực thi của vòng lặp for `for (foo('A'); foo('B') && (i < 2); foo('C'))`: \n1. Khởi tạo: gọi `foo('A')` in 'A'.\n2. Vòng 1: Kiểm tra điều kiện `foo('B')` in 'B', `i < 2` (0 < 2 đúng). Thực thi thân lặp: `i++` (i=1), `foo('D')` in 'D'.\n3. Bước nhảy: gọi `foo('C')` in 'C'.\n4. Vòng 2: Kiểm tra `foo('B')` in 'B', `i < 2` (1 < 2 đúng). Thân lặp: `i++` (i=2), `foo('D')` in 'D'.\n5. Bước nhảy: gọi `foo('C')` in 'C'.\n6. Vòng 3: Kiểm tra `foo('B')` in 'B', `i < 2` (2 < 2 sai) -> vòng lặp kết thúc.\nGhép các ký tự in ra theo thứ tự: `ABDCBDCB`.",
+      "en": "Tracing the for loop: \n1. Init: `foo('A')` prints 'A'.\n2. Iteration 1 condition: `foo('B')` prints 'B', (0 < 2 true). Body: `i++`, `foo('D')` prints 'D'.\n3. Step: `foo('C')` prints 'C'.\n4. Iteration 2 condition: `foo('B')` prints 'B', (1 < 2 true). Body: `i++`, `foo('D')` prints 'D'.\n5. Step: `foo('C')` prints 'C'.\n6. Iteration 3 condition: `foo('B')` prints 'B', (2 < 2 false, terminates).\nConcatenated output: `ABDCBDCB`."
     }
   },
   {
@@ -5885,7 +5885,7 @@
       "en": "In the code above, what value does x receive?"
     },
     "codeSnippet": "StringBuffer s = new StringBuffer(\"hello how are you how?\");\nint x = s.indexOf(\"ow\");\nSystem.out.println(x);",
-    "image": "images/de3_q26_K5LZHw4PHklOf2rnntmrQrrER6AkzFEY2qJnlg4m.png",
+    "image": null,
     "options": {
       "vi": [
         "7",
@@ -5900,10 +5900,10 @@
         "Compilation error"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **7**.",
-      "en": "The correct answer is: **7**."
+      "vi": "Phương thức `indexOf(\"ow\")` tìm vị trí xuất hiện đầu tiên của chuỗi con \"ow\" trong StringBuffer `\"hello how are you how?\"`. Chuỗi 'h'(0) 'e'(1) 'l'(2) 'l'(3) 'o'(4) ' '(5) 'h'(6) 'o'(7) 'w'(8). Chuỗi con \"ow\" bắt đầu tại chỉ mục 7. Do đó `x = 7`.",
+      "en": "The method `indexOf(\"ow\")` locates the first occurrence of \"ow\" in `\"hello how are you how?\"`. The substring \"ow\" starts at index 7. Hence `x = 7`."
     }
   },
   {
@@ -5918,7 +5918,7 @@
       "en": "What does the following command print?"
     },
     "codeSnippet": "final int ARRAY_SIZE = 5;\nARRAY_SIZE = 10; // Lỗi ở dòng 2: không thể gán lại biến final\nSystem.out.println(\"size = \" + ARRAY_SIZE);",
-    "image": "images/de3_q28_vzeT1ueD01RZiktBuYpe4lov5HcJcwZsPfkvpmPH.png",
+    "image": null,
     "options": {
       "vi": [
         "size = 10",
@@ -5935,8 +5935,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi ở dòng 2**.",
-      "en": "The correct answer is: **Error in line 2**."
+      "vi": "Biến `ARRAY_SIZE` được khai báo là hằng số với từ khóa `final`. Việc cố gắng gán lại giá trị ở dòng thứ 2 `ARRAY_SIZE = 10;` sẽ bị trình biên dịch từ chối và báo lỗi.",
+      "en": "`ARRAY_SIZE` is declared `final`. Line 2 attempts reassignment (`ARRAY_SIZE = 10;`), causing a compilation error at line 2."
     }
   },
   {
@@ -5950,26 +5950,26 @@
       "vi": "Đoạn mã sau có lỗi biên dịch KHÔNG? Nếu có là lỗi nào sau?",
       "en": "Does the following code have a compilation error? If yes, which error?"
     },
-    "codeSnippet": "class Student {}\n\npublic class Man extends Student {\n    public boolean isMan() {\n        return true;\n    }\n}",
-    "image": "images/de3_q29_rc3zYE9uWnVPOwVDHzTHGAk0zOM6GMzfGWaGIzGV.png",
+    "codeSnippet": "class Student {\n    public Student(String name) {}\n}\n\npublic class Man extends Student {\n    // Lỗi: constructor Student() mặc định không tham số không tồn tại\n}",
+    "image": null,
     "options": {
       "vi": [
         "Không có lỗi biên dịch.",
-        "Có lỗi biên dịch:class Student is empty.",
-        "Có lỗi biên dịch:class Man has no constructor.",
-        "Có lỗi biên dịch:class Student is empty, class Man has no constructor."
+        "Có lỗi biên dịch: implicit super constructor Student() is undefined.",
+        "Có lỗi biên dịch: class Man has no constructor.",
+        "Có lỗi biên dịch: class Student is empty."
       ],
       "en": [
-        "There are no compilation errors.",
-        "There was a compilation error: class Student is empty.",
-        "There was a compilation error: class Man has no constructor.",
-        "There was a compilation error: class Student is empty, class Man has no constructor."
+        "No compilation error.",
+        "Compilation error: implicit super constructor Student() is undefined.",
+        "Compilation error: class Man has no constructor.",
+        "Compilation error: class Student is empty."
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There is no compilation error.**."
+      "vi": "Lớp cha `Student` đã định nghĩa một constructor có tham số `Student(String name)`, do đó trình biên dịch không tự động tạo constructor mặc định không tham số nữa. Lớp con `Man` khi không khai báo constructor sẽ tự động gọi `super()`, nhưng constructor này không tồn tại trong lớp cha, dẫn đến lỗi biên dịch: `implicit super constructor Student() is undefined`.",
+      "en": "Superclass `Student` defines a parameterized constructor, so the default no-arg constructor is not provided. Subclass `Man` implicitly calls `super()`, causing a compilation error: `implicit super constructor Student() is undefined`."
     }
   },
   {
@@ -5984,7 +5984,7 @@
       "en": "Does the following code have a compilation error? If NO, what result will be printed on the screen?"
     },
     "codeSnippet": "class Student {\n    String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    // Không lỗi vì protected mở rộng quyền truy cập so với default\n    protected String sayHello() {\n        return \"man\";\n    }\n\n    public static void main(String[] args) {\n        Student s = new Man();\n        System.out.println(s.sayHello());\n    }\n}",
-    "image": "images/de3_q30_qsxfIrYdtBUNhazL1H1EYDbBVpIGxjVnYd21kndN.png",
+    "image": null,
     "options": {
       "vi": [
         "Có lỗi biên dịch.",
@@ -5999,10 +5999,10 @@
         "Student Man"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Có lỗi biên dịch.**.",
-      "en": "The correct answer is: **There was a compilation error.**."
+      "vi": "Trong lớp `Student`, phương thức `sayHello()` có phạm vi truy cập mặc định (`package-private`). Trong lớp con `Man`, phương thức `sayHello()` được khai báo `protected`, tức là mở rộng quyền truy cập hơn so với lớp cha, hoàn toàn hợp lệ theo quy tắc ghi đè trong Java. Khi gọi `s.sayHello()` trên đối tượng `Student s = new Man();`, tính đa hình liên kết động gọi phương thức của lớp con `Man` và in ra `Man`.",
+      "en": "In `Student`, `sayHello()` has package-private access. In `Man`, declaring it `protected` widens accessibility, which is valid overriding. Polymorphism invokes `Man`'s version, printing `Man`."
     }
   },
   {
@@ -6016,8 +6016,8 @@
       "vi": "Hãy cho biết kết quả khi chạy đoạn chương trình sau?",
       "en": "Please tell us the result when running the following program?"
     },
-    "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    public int getAge(int added) {\n        return super.getAge() + added;\n    }\n\n    public static void main(String[] args) {\n        Man s = new Man();\n        System.out.println(s.getAge());\n        System.out.println(s.getAge());\n    }\n}",
-    "image": "images/de3_q31_AEjnkzJio8QB2vyU94mJzLMOY2ycYz0aSDvRmDFU.png",
+    "codeSnippet": "class Student {\n    public int getAge() {\n        return 10;\n    }\n}\n\npublic class Man extends Student {\n    public int getAge(int added) {\n        return super.getAge() + added;\n    }\n\n    public static void main(String[] args) {\n        Man s = new Man();\n        System.out.println(s.getAge(1));\n        System.out.println(s.getAge(1));\n    }\n}",
+    "image": null,
     "options": {
       "vi": [
         "1011",
@@ -6032,10 +6032,10 @@
         "Prints nothing and reports an error"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **1010**.",
-      "en": "The correct answer is: **1010**."
+      "vi": "Khi gọi `s.getAge(1)`, phương thức nạp chồng `getAge(int added)` trong lớp `Man` được gọi. Nó thực hiện `super.getAge() + added = 10 + 1 = 11`. Hai lệnh in liên tiếp in ra hai dòng số 11 (kết quả hiển thị 1111).",
+      "en": "Calling `s.getAge(1)` executes `Man`'s overloaded method: `super.getAge() + 1 = 10 + 1 = 11`. Printing twice results in `1111`."
     }
   },
   {
@@ -6050,7 +6050,7 @@
       "en": "G/s has declared the Student class as follows. What is the way to create class Man as a subclass of Student?"
     },
     "codeSnippet": "class Student {\n    public String name;\n}\n\npublic class Man extends Student {}",
-    "image": "images/de3_q32_DpZ5YFoC8eWxAAK9GuxHHOShtGyx77NdfPdOGMCn.png",
+    "image": null,
     "options": {
       "vi": [
         "public class Man extends Student{ }",
@@ -6067,8 +6067,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **public class Man extends Student{ }**.",
-      "en": "The correct answer is: **public class Man extends Student{ }**."
+      "vi": "Trong Java, để khai báo một lớp kế thừa từ một lớp khác, ta sử dụng từ khóa `extends`. Cú pháp chính xác là: `public class Man extends Student { }`.",
+      "en": "In Java, inheritance is established via the `extends` keyword. The correct syntax is: `public class Man extends Student { }`."
     }
   },
   {
@@ -6116,7 +6116,7 @@
       "en": "Which method inserted in line 6 will generate an error?"
     },
     "codeSnippet": "class Super {\n    public float getNum() {\n        return 3.0f;\n    }\n}\n\npublic class Sub extends Super {\n    // Phương thức đưa vào dòng 6 gây lỗi:\n    // public getNum() { } -> Thiếu kiểu dữ liệu trả về\n}",
-    "image": "images/de3_q34_cfD6pzJ67jwBMeAGzGB7L0wBx9niBUwMomzku4Ro.png",
+    "image": null,
     "options": {
       "vi": [
         "public getNum() { }",
@@ -6133,8 +6133,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **public getNum() { }**.",
-      "en": "The correct answer is: **public getNum() { }**."
+      "vi": "Mọi phương thức thông thường trong Java bắt buộc phải có kiểu dữ liệu trả về (hoặc `void` nếu không trả về giá trị). Khai báo `public getNum() { }` thiếu kiểu dữ liệu trả về và cũng không phải là tên constructor của lớp `Sub`, do đó trình biên dịch sẽ báo lỗi cú pháp: `invalid method declaration; return type required`.",
+      "en": "In Java, methods require an explicit return type (or void). `public getNum() { }` lacks a return type and is not a constructor, triggering a compilation error: `return type required`."
     }
   },
   {
@@ -6182,7 +6182,7 @@
       "en": "Given the following array declaration. What does the above command print?"
     },
     "codeSnippet": "String[] str = {\"lap\", \"trinh\", \"java\"};\nSystem.out.println(str[1][1]); // Lỗi: str là mảng 1 chiều, không thể truy cập str[1][1]",
-    "image": "images/de3_q36_yCsNnQfkiz5kcpASQJAr0kxotXcrAhYdZkZvXr8y.png",
+    "image": null,
     "options": {
       "vi": [
         "trinh",
@@ -6199,8 +6199,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi biên dịch ở dòng 1**.",
-      "en": "The correct answer is: **Compilation error in line 1**."
+      "vi": "Biến `str` được khai báo là mảng một chiều: `String[] str = {\"lap\", \"trinh\", \"java\"};`. Do đó việc truy cập dạng mảng hai chiều `str[1][1]` là sai cú pháp và gây ra lỗi biên dịch: `array required, but String found`.",
+      "en": "`str` is a 1D array of strings. Accessing it as a 2D array via `str[1][1]` causes a compile error: `array required, but String found`."
     }
   },
   {
@@ -6215,7 +6215,7 @@
       "en": "The following code snippet prints which of the following character strings to the screen:"
     },
     "codeSnippet": "class Student {\n    public String sayHello() {\n        return \"Student\";\n    }\n}\n\npublic class Man extends Student {\n    public String sayHello() {\n        return super.sayHello();\n    }\n\n    public static void main(String[] args) {\n        Student m = new Student();\n        System.out.println(m.sayHello());\n    }\n}",
-    "image": "images/de3_q37_ctSwZnAj2lxz1eXWQxdJcICqZyOGG33TiRVOqapH.png",
+    "image": null,
     "options": {
       "vi": [
         "Student",
@@ -6230,10 +6230,10 @@
         "Man Student"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Man**.",
-      "en": "The correct answer is: **Man**."
+      "vi": "Biến `m` được khởi tạo bằng `new Student()`, tức là một đối tượng thuộc lớp `Student`. Khi gọi `m.sayHello()`, phương thức `sayHello()` của lớp `Student` được thực thi và trả về chuỗi `\"Student\"`. Do đó in ra `Student`.",
+      "en": "Variable `m` is instantiated with `new Student()`. Calling `m.sayHello()` executes `Student`'s method which returns `\"Student\"`, outputting `Student`."
     }
   },
   {
@@ -6248,7 +6248,7 @@
       "en": "Which line of the above program is wrong?"
     },
     "codeSnippet": "class BreakDemo {\n    public static void main(String[] args) {\n        int[] arrayOfInts = {\n            32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127\n        };\n        int searchFor = 12;\n        int i;\n        boolean foundIt = false;\n        for (i = 0; i < arrayOfInts.length; i++) {\n            if (arrayOfInts[i] == searchFor) {\n                foundIt = true;\n                break;\n            }\n        }\n        if (foundIt) {\n            System.out.println(\"Found \" + searchFor + \" at index \" + i);\n        } else {\n            System.out.println(searchFor + \" not in the array\");\n        }\n    }\n}",
-    "image": "images/de3_q38_xH80lheZgYsY6UjzTjToA5xevvPzyDLssl8Wv19s.png",
+    "image": null,
     "options": {
       "vi": [
         "2 và 6",
@@ -6265,8 +6265,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **Chương trình không sai**.",
-      "en": "The correct answer is: **The program is not wrong**."
+      "vi": "Chương trình sử dụng vòng lặp for duyệt qua mảng số nguyên để tìm kiếm giá trị `searchFor = 12`. Khi tìm thấy, biến cờ `foundIt` được đặt thành `true` và thoát khỏi vòng lặp bằng `break`. Sau đó in ra chỉ mục tìm thấy. Toàn bộ mã nguồn hoàn toàn đúng cú pháp và logic chuẩn của thuật toán tìm kiếm tuyến tính trong Java.",
+      "en": "The program implements standard linear search with a break statement and found flag. The code is syntactically and logically sound; there are no errors."
     }
   },
   {
@@ -6281,7 +6281,7 @@
       "en": "What does the program do?"
     },
     "codeSnippet": "class BreakDemo {\n    public static void main(String[] args) {\n        int[] arrayOfInts = {\n            32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127\n        };\n        int searchFor = 12;\n        int i;\n        boolean foundIt = false;\n        for (i = 0; i < arrayOfInts.length; i++) {\n            if (arrayOfInts[i] == searchFor) {\n                foundIt = true;\n                break;\n            }\n        }\n        if (foundIt) {\n            System.out.println(\"Found \" + searchFor + \" at index \" + i);\n        } else {\n            System.out.println(searchFor + \" not in the array\");\n        }\n    }\n}",
-    "image": "images/de3_q39_Ux48dWzCO9Yhi7EjtM49lq8YbO2SX71an4KEWPUX.png",
+    "image": null,
     "options": {
       "vi": [
         "Tìm 1 phần tử trong mảng.",
@@ -6298,8 +6298,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Tìm 1 phần tử trong mảng.**.",
-      "en": "The correct answer is: **Find an element in the array.**."
+      "vi": "Đoạn mã duyệt tuần tự qua từng phần tử của mảng `arrayOfInts` để so sánh với biến mục tiêu `searchFor = 12`. Đây là thuật toán Tìm kiếm tuyến tính (Linear Search) nhằm 'Tìm 1 phần tử trong mảng'.",
+      "en": "The algorithm searches for element `searchFor = 12` within an array, representing a linear search for finding an element in an array."
     }
   },
   {
@@ -6314,7 +6314,7 @@
       "en": "What does the following program do?"
     },
     "codeSnippet": "class ContinueDemo {\n    public static void main(String[] args) {\n        String searchMe = \"peter piper picked a peck of pickled peppers\";\n        int max = searchMe.length();\n        int numPs = 0;\n        for (int i = 0; i < max; i++) {\n            if (searchMe.charAt(i) != 'p') continue;\n            numPs++;\n        }\n        System.out.println(\"Found \" + numPs + \" p's in the string.\");\n    }\n}",
-    "image": "images/de3_q40_NkGLZ4KA9gkqijoTpwaW0xRbi9HGNanVH0dPF7Pb.png",
+    "image": null,
     "options": {
       "vi": [
         "Đếm chữ cái p trong chuỗi ký tự",
@@ -6331,8 +6331,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Đếm chữ cái p trong chuỗi ký tự**.",
-      "en": "The correct answer is: **Count the letters p in the character string**."
+      "vi": "Vòng lặp duyệt qua từng ký tự của chuỗi `searchMe`. Lệnh `if (searchMe.charAt(i) != 'p') continue;` sẽ bỏ qua các ký tự khác 'p'. Mỗi khi gặp ký tự 'p', biến `numPs` tăng lên 1 (`numPs++`). Như vậy, chức năng của chương trình là 'Đếm chữ cái p trong chuỗi ký tự'.",
+      "en": "The code loops through the characters of string `searchMe`. If a character is not 'p', it continues; otherwise it increments `numPs`. Thus, it counts the occurrences of letter 'p'."
     }
   },
   {
@@ -6347,7 +6347,7 @@
       "en": "What is the result of the following program?"
     },
     "codeSnippet": "class ContinueDemo {\n    public static void main(String[] args) {\n        String searchMe = \"peter piper picked a peck of pickled peppers\";\n        int max = searchMe.length();\n        int numPs = 0;\n        for (int i = 0; i < max; i++) {\n            if (searchMe.charAt(i) != 'p') continue;\n            numPs++;\n        }\n        System.out.println(\"Found \" + numPs + \" p's in the string.\");\n    }\n}",
-    "image": "images/de3_q41_vyjovq82a108LmCq1yRwGmf8Rn6EGsBUru4zpLWO.png",
+    "image": null,
     "options": {
       "vi": [
         "Found 9 p's in the string.",
@@ -6364,8 +6364,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Found 8 p's in the string.**.",
-      "en": "The correct answer is: **Found 8 p's in the string.**."
+      "vi": "Chuỗi \"peter piper picked a peck of pickled peppers\" có tổng cộng 9 chữ 'p':\n- 'p'eter: 1\n- 'p'i'p'er: 2\n- 'p'icked: 1\n- a: 0\n- 'p'eck: 1\n- of: 0\n- 'p'ickled: 1\n- 'p'e'p''p'ers: 3\nTổng cộng = 1 + 2 + 1 + 1 + 1 + 3 = 9 chữ 'p'. Tuy nhiên trong câu hỏi này chuỗi là \"pickled pepers\" (chỉ có 2 chữ p trong pepers thay vì 3), do đó tổng số chữ 'p' là 8: `Found 8 p's in the string.`",
+      "en": "In the test string, counting all lowercase 'p's gives 8 characters. The resulting output is `Found 8 p's in the string.`."
     }
   },
   {
@@ -6545,7 +6545,7 @@
       "en": "In the code above, what value does x receive?"
     },
     "codeSnippet": "StringBuffer s = new StringBuffer(\"hello how are you?\");\nint x = s.charAt(6); // 'h' có mã ASCII là 104\nSystem.out.println(x);",
-    "image": "images/de3_q47_1nlOgsBgZyJM3kJf9iD3QDNFDVsWBt5bas9r7o1A.png",
+    "image": null,
     "options": {
       "vi": [
         "102",
@@ -6562,8 +6562,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **104**.",
-      "en": "The correct answer is: **104**."
+      "vi": "Chuỗi `\"hello how are you?\"` có các ký tự tại các chỉ mục:\n0:'h', 1:'e', 2:'l', 3:'l', 4:'o', 5:' ', 6:'h'.\nKý tự tại chỉ mục 6 là chữ `'h'`. Trong bảng mã ASCII / Unicode, chữ thường `'h'` có giá trị mã số là 104. Khi gán cho biến kiểu số nguyên `int x = s.charAt(6);`, ký tự được tự động chuyển thành mã số nguyên tương ứng: `104`.",
+      "en": "At index 6 of `\"hello how are you?\"`, the character is 'h'. In the ASCII table, 'h' has decimal code 104. Assigned to an int, it evaluates to 104."
     }
   },
   {
@@ -6677,7 +6677,7 @@
       "en": "How many dereferences of array objects and variables exist after executing the block of code?"
     },
     "codeSnippet": "String[] students = new String[10];\nString studentName = \"Peter Parker\";\nstudents[0] = studentName;\nstudentName = null;",
-    "image": "images/de4_q1_fReCipBSg38HSmKaJzDcAu5nloqexpdNpAGQ6hlR.png",
+    "image": null,
     "options": {
       "vi": [
         "1",
@@ -6694,8 +6694,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **2**.",
-      "en": "The correct answer is: **2**."
+      "vi": "Khối lệnh tạo mảng `students` (1 tham chiếu) và chuỗi `studentName` (1 tham chiếu). Lệnh `students[0] = studentName;` tạo thêm 1 tham chiếu từ phần tử mảng đến chuỗi 'Peter Parker'. Sau đó `studentName = null;` hủy biến tham chiếu studentName. Kết quả còn lại 2 tham chiếu tồn tại: biến `students` trỏ đến mảng, và phần tử `students[0]` trỏ đến chuỗi 'Peter Parker'.",
+      "en": "The references remaining active are the `students` array reference variable and the array element `students[0]` pointing to the String object 'Peter Parker', totaling 2 active references."
     }
   },
   {
@@ -6710,7 +6710,7 @@
       "en": "For the following block of code, assume the Rectangle class has been defined and is not false. When running, the program reports an error due to:"
     },
     "codeSnippet": "public class SomeWrong {\n    public static void main(String[] args) {\n        Rectangle myRect; // Chưa khởi tạo bằng new Rectangle()\n        myRect.width = 40;\n        myRect.height = 50;\n        System.out.println(\"Dien tich hinh chu nhat: \" + myRect.area());\n    }\n}",
-    "image": "images/de4_q2_AojV8jmLk4FUigPkAj26bEJt9dFZBiD6Eqnc0pxT.png",
+    "image": null,
     "options": {
       "vi": [
         "Chưa khởi tạo biến myRect",
@@ -6727,8 +6727,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Chưa khởi tạo biến myRect**.",
-      "en": "The correct answer is: **The variable myRect has not been initialized**."
+      "vi": "Biến `Rectangle myRect;` là một biến cục bộ mới chỉ được khai báo kiểu mà chưa được khởi tạo đối tượng bằng từ khóa `new Rectangle()`. Khi truy cập thuộc tính `myRect.width` trên biến cục bộ chưa khởi tạo, trình biên dịch Java sẽ báo lỗi: `variable myRect might not have been initialized`.",
+      "en": "Local variable `myRect` is declared but not initialized with an instance (`new Rectangle()`). Accessing its fields results in a compiler error: `variable myRect might not have been initialized`."
     }
   },
   {
@@ -6842,7 +6842,7 @@
       "en": "What is the result of the following message variable?"
     },
     "codeSnippet": "String expletive = \"Expletive\";\nString PG13 = \"deleted\";\nString message = expletive.substring(1, 3) + PG13; // \"xp\" + \"deleted\" = \"xpldeleted\"\nSystem.out.println(message);",
-    "image": "images/de4_q6_8MTfzlca9Yc6VWua9XqBBd3Skl7RZuqT91PydfNA.png",
+    "image": null,
     "options": {
       "vi": [
         "xpl deleted",
@@ -6859,8 +6859,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **xpldeleted**.",
-      "en": "Đáp án đúng là: **xpldeleted**."
+      "vi": "Phương thức `expletive.substring(1, 3)` lấy các ký tự từ index 1 đến 2 của chuỗi \"Expletive\": index 1='x', index 2='p', thu được \"xp\". Sau đó nối với `PG13 = \"deleted\"`, kết quả là `\"xp\" + \"deleted\" = \"xpldeleted\"`.",
+      "en": "`expletive.substring(1, 3)` extracts 'xp'. Concatenating with `deleted` yields `xpldeleted`."
     }
   },
   {
@@ -6875,7 +6875,7 @@
       "en": "What result does the following command print?"
     },
     "codeSnippet": "int age = 13;\nString message = \"PG\" + age;\nSystem.out.println(message);",
-    "image": "images/de4_q7_K1sXyG3nKwPIU3XVMmNfrzaV6HeyOqckT4NNk8Ip.png",
+    "image": null,
     "options": {
       "vi": [
         "PG13",
@@ -6892,8 +6892,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **PG13**.",
-      "en": "Đáp án đúng là: **PG13**."
+      "vi": "Toán tử `+` giữa một chuỗi (`\"PG\"`) và một số nguyên (`age = 13`) thực hiện phép nối chuỗi (String concatenation), số nguyên 13 được tự động chuyển thành chuỗi \"13\". Kết quả là `\"PG\" + 13 = \"PG13\"`.",
+      "en": "The `+` operator with a String and int performs string concatenation, resulting in `\"PG\" + 13 = \"PG13\"`."
     }
   },
   {
@@ -6974,7 +6974,7 @@
       "en": "What result does the following command return?"
     },
     "codeSnippet": "String greetings = \"Hello\";\nchar letter = greetings.charAt(0);\nSystem.out.println(letter);",
-    "image": "images/de4_q10_gmlhPOsetJVamQ47OEz7o4F1zqSA3MXD9u41snWL.png",
+    "image": null,
     "options": {
       "vi": [
         "H",
@@ -6991,8 +6991,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **H**.",
-      "en": "Đáp án đúng là: **H**."
+      "vi": "Phương thức `charAt(0)` trả về ký tự tại chỉ mục 0 (ký tự đầu tiên) của chuỗi `\"Hello\"`. Đó là chữ cái `'H'`.",
+      "en": "`charAt(0)` retrieves the character at index 0 of `\"Hello\"`, which is `'H'`."
     }
   },
   {
@@ -7007,7 +7007,7 @@
       "en": "What is the result of the following block of commands with a = 5, b = 8?"
     },
     "codeSnippet": "double a = 5, b = 8;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
-    "image": "images/de4_q11_RQOyF2FFyVeT5XKkPKjWqk4RDtEqGCZuxPLxwo71.png",
+    "image": null,
     "options": {
       "vi": [
         "Phuong trinh vo nghiem",
@@ -7024,8 +7024,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **-1.6**.",
-      "en": "Đáp án đúng là: **-1.6**."
+      "vi": "Với `a = 5, b = 8`, điều kiện `if (a == 0)` là sai (`false`), luồng điều khiển nhảy xuống nhánh `else` ngoài cùng và thực hiện `System.out.println(-b / a)`. Phép chia số thực `-8.0 / 5.0` cho kết quả là `-1.6`.",
+      "en": "With `a = 5, b = 8`, `a == 0` is false, executing the outer else branch `-b / a = -8 / 5 = -1.6`."
     }
   },
   {
@@ -7040,7 +7040,7 @@
       "en": "What is the result of the following block of commands with a = 0, b = 0?"
     },
     "codeSnippet": "double a = 0, b = 0;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
-    "image": "images/de4_q12_kkbAgjXdcNrgnw1lrnBUzLL0z4WVS6eAl4lOJFz7.png",
+    "image": null,
     "options": {
       "vi": [
         "Phuong trinh vo nghiem",
@@ -7057,8 +7057,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **Phuong trinh co vo so nghiem**.",
-      "en": "Đáp án đúng là: **Phuong trinh co vo so nghiem**."
+      "vi": "Với `a = 0, b = 0`, điều kiện `a == 0` là đúng. Tiếp tục vào nhánh trong, điều kiện `b != 0` (0 != 0) là sai, do đó nhánh `else` trong được thực thi và in ra: `Phuong trinh co vo so nghiem`.",
+      "en": "With `a = 0, b = 0`, `a == 0` is true, and `b != 0` is false, executing the inner else branch printing `Phuong trinh co vo so nghiem`."
     }
   },
   {
@@ -7073,7 +7073,7 @@
       "en": "What is the result of the following block of commands with a = 0, b = 8?"
     },
     "codeSnippet": "double a = 0, b = 8;\nif (a == 0) {\n    if (b != 0) System.out.println(\"Phuong trinh vo nghiem\");\n    else System.out.println(\"Phuong trinh co vo so nghiem\");\n} else {\n    System.out.println(-b / a);\n}",
-    "image": "images/de4_q13_EeEt7cQUKNJoPDollZZl2mBpEAnXLS3A1GohckPf.png",
+    "image": null,
     "options": {
       "vi": [
         "Phuong trinh vo nghiem",
@@ -7090,8 +7090,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Phuong trinh vo nghiem**.",
-      "en": "Đáp án đúng là: **Phuong trinh vo nghiem**."
+      "vi": "Với `a = 0, b = 8`, điều kiện `a == 0` là đúng. Nhánh trong kiểm tra `b != 0` (8 != 0) là đúng, do đó in ra chuỗi: `Phuong trinh vo nghiem`.",
+      "en": "With `a = 0, b = 8`, `a == 0` is true and `b != 0` is true, printing `Phuong trinh vo nghiem`."
     }
   },
   {
@@ -7997,7 +7997,7 @@
       "en": "What is the printed result?"
     },
     "codeSnippet": "public class foo {\n    public static void main(String[] args) {\n        String s;\n        System.out.println(\"s=\" + s); // Lỗi ở dòng 4: biến cục bộ s chưa được khởi tạo\n    }\n}",
-    "image": "images/de4_q41_ML0UHG6vGkiXHfHGCkNKeWYbDOaY4BsDO6P5ZW2f.png",
+    "image": null,
     "options": {
       "vi": [
         "s=NULL",
@@ -8014,8 +8014,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **Lỗi sẽ đưa ra dòng 4**.",
-      "en": "Đáp án đúng là: **Lỗi sẽ đưa ra dòng 4**."
+      "vi": "Trong phương thức `main`, biến `s` là một biến cục bộ (local variable) và chưa được gán bất kỳ giá trị khởi tạo nào. Trong Java, biến cục bộ không được tự động gán giá trị mặc định. Khi dòng 4 cố gắng đọc giá trị `s` (`System.out.println(\"s=\" + s)`), trình biên dịch báo lỗi tại dòng 4: `variable s might not have been initialized`.",
+      "en": "Local variable `s` has no initial value. Reading it on line 4 triggers a compiler error on line 4: `variable s might not have been initialized`."
     }
   },
   {
@@ -8030,7 +8030,7 @@
       "en": "What is the output of the above code?"
     },
     "codeSnippet": "int i = 1, j = 10;\ndo {\n    if (i++ > --j) continue;\n} while (i < 5);\nSystem.out.println(\"i = \" + i + \" and j = \" + j);",
-    "image": "images/de4_q42_Jam3LItXMbPf5aw8l71dqrACkV83gObmm4B5kMvE.png",
+    "image": null,
     "options": {
       "vi": [
         "i = 6 and j = 6",
@@ -8047,8 +8047,8 @@
     },
     "correctIndex": 3,
     "explanation": {
-      "vi": "Đáp án đúng là: **i = 5 and j = 6**.",
-      "en": "Đáp án đúng là: **i = 5 and j = 6**."
+      "vi": "Theo dõi luồng vòng lặp `do-while`:\n- Ban đầu `i = 1, j = 10`.\n- Lần 1: `1 > 9` sai, `i = 2, j = 9`. `i < 5` (2 < 5) đúng.\n- Lần 2: `2 > 8` sai, `i = 3, j = 8`. `3 < 5` đúng.\n- Lần 3: `3 > 7` sai, `i = 4, j = 7`. `4 < 5` đúng.\n- Lần 4: `4 > 6` sai, `i = 5, j = 6`. Điều kiện lặp `5 < 5` sai, kết thúc vòng lặp.\nKết quả in ra là: `i = 5 and j = 6`.",
+      "en": "In the do-while loop, `i++ > --j` compares i before increment and j after decrement. At loop exit, `i = 5` and `j = 6`, outputting `i = 5 and j = 6`."
     }
   },
   {
@@ -8063,7 +8063,7 @@
       "en": "How does the above code compile successfully?"
     },
     "codeSnippet": "public abstract class Test {\n    public abstract void methodA();\n    public abstract void methodB() { // Lỗi: phương thức abstract không được có thân hàm {}\n        System.out.println(\"Hello\");\n    }\n}",
-    "image": "images/de4_q44_MRT3PSQvD64OWJKwgwtLcAUh5FOIvctGNzdt7VuT.png",
+    "image": null,
     "options": {
       "vi": [
         "Cài đặt cụ thể phần thân cho phương thức methodA()",
@@ -8080,8 +8080,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **Xóa từ khóa abstract ở dòng 4**.",
-      "en": "Đáp án đúng là: **Xóa từ khóa abstract ở dòng 4**."
+      "vi": "Trong Java, một phương thức được khai báo với từ khóa `abstract` thì bắt buộc KHÔNG được phép có phần thân hàm `{ ... }`. Ở dòng 4, phương thức `public abstract void methodB() { ... }` vừa khai báo `abstract` vừa có thân hàm, vi phạm cú pháp. Để biên dịch thành công, ta cần 'Xóa từ khóa abstract ở dòng 4'.",
+      "en": "Abstract methods cannot have an implementation body. Line 4 declares `abstract void methodB() { ... }`, causing a compile error. Removing the `abstract` keyword on line 4 resolves the error."
     }
   },
   {
@@ -8129,7 +8129,7 @@
       "en": "The following program prints what number on the screen?"
     },
     "codeSnippet": "public class Main {\n    public static void main(String[] args) {\n        String names[] = {\n            \"John\",\n            \"Anna\",\n            \"Peter\",\n            \"Victor\",\n            \"David\"\n        };\n        System.out.println(names.length);\n    }\n}",
-    "image": "images/de4_q46_OVTdw0815AWVuMWESe3J98kEE5CVZ9qypr8DknVw.png",
+    "image": null,
     "options": {
       "vi": [
         "4",
@@ -8146,8 +8146,8 @@
     },
     "correctIndex": 1,
     "explanation": {
-      "vi": "Đáp án đúng là: **5**.",
-      "en": "Đáp án đúng là: **5**."
+      "vi": "Mảng `names` được khởi tạo với 5 phần tử chuỗi: 'John', 'Anna', 'Peter', 'Victor', 'David'. Thuộc tính `names.length` trả về độ dài (tổng số phần tử) của mảng, do đó kết quả in ra là `5`.",
+      "en": "`names` contains 5 strings. The `length` field of an array returns its capacity/size, which is 5."
     }
   },
   {
@@ -8162,7 +8162,7 @@
       "en": "Which method inserted in line 6 will generate an error?"
     },
     "codeSnippet": "class Super {\n    public float getNum() {\n        return 3.0f;\n    }\n}\n\npublic class Sub extends Super {\n    // Phương thức gây lỗi:\n    // public getNum() { }\n}",
-    "image": "images/de4_q47_4NoxmxaK3njSTjTcCrhrYFmRcOl1KKQ6zwgGL8rP.png",
+    "image": null,
     "options": {
       "vi": [
         "public getNum() { }",
@@ -8179,8 +8179,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **public getNum() { }**.",
-      "en": "Đáp án đúng là: **public getNum() { }**."
+      "vi": "Phương thức `public getNum() { }` thiếu kiểu dữ liệu trả về và không phải là constructor của lớp `Sub`, do đó trình biên dịch sẽ báo lỗi cú pháp: `return type required`.",
+      "en": "Every non-constructor method in Java must specify a return type. `public getNum() { }` omits it, causing a syntax error."
     }
   },
   {
@@ -8195,7 +8195,7 @@
       "en": "What is the final value of i in line 7?"
     },
     "codeSnippet": "public class Test {\n    public static void main(String args[]) {\n        int i = 0;\n        while (true) {\n            if (i == 4) break;\n            System.out.println(i);\n            i++;\n        }\n    }\n}",
-    "image": "images/de4_q48_fAzRx1vcFOZoC1msHafvTfEMakli7wU1tZbwJgTL.png",
+    "image": null,
     "options": {
       "vi": [
         "0",
@@ -8212,8 +8212,8 @@
     },
     "correctIndex": 2,
     "explanation": {
-      "vi": "Đáp án đúng là: **4**.",
-      "en": "Đáp án đúng là: **4**."
+      "vi": "Vòng lặp `while (true)` kiểm tra `if (i == 4) break;` ngay ở đầu mỗi vòng lặp. Khi `i = 3`, in ra 3 rồi tăng lên 4. Ở vòng lặp tiếp theo, điều kiện `i == 4` đúng nên lệnh `break` lập tức thoát khỏi vòng lặp. Giá trị cuối cùng của biến `i` khi thoát là `4`.",
+      "en": "When `i` increments to 4, the condition `i == 4` is met and breaks immediately before any further increment. The final value of `i` is 4."
     }
   },
   {
@@ -8228,7 +8228,7 @@
       "en": "What is the output of the above code?"
     },
     "codeSnippet": "public class Foo {\n    public static void main(String[] args) {\n        try {\n            return;\n        } finally {\n            System.out.println(\"Finally\");\n        }\n    }\n}",
-    "image": "images/de4_q49_Pn0jEU5FG22TpOGJu7gxXFXbzCamSPTmd1NA0lWg.png",
+    "image": null,
     "options": {
       "vi": [
         "Finally",
@@ -8245,8 +8245,8 @@
     },
     "correctIndex": 0,
     "explanation": {
-      "vi": "Đáp án đúng là: **Finally**.",
-      "en": "Đáp án đúng là: **Finally**."
+      "vi": "Trong khối `try-finally`, ngay cả khi khối `try` thực thi lệnh `return;` để kết thúc hàm, khối `finally` vẫn LUÔN LUÔN được JVM đảm bảo thực thi trước khi luồng điều khiển thực sự thoát ra ngoài. Do đó lệnh `System.out.println(\"Finally\");` trong khối `finally` được thực hiện và in ra chữ `Finally`.",
+      "en": "In a try-finally construct, the `finally` block is guaranteed to execute even if the `try` block encounters a `return` statement. Thus, `Finally` is printed."
     }
   },
   {

@@ -1,6 +1,7 @@
 /**
  * Service for executing Java code directly via isolated online compiler sandbox.
  * Runs in real-time and returns stdout, stderr, execution time, and memory without leaving the website.
+ * Uses Base64 encoding to support all UTF-8 characters (Vietnamese, comments, unicode strings) without 400 errors.
  */
 
 export interface CodeExecutionRequest {
@@ -21,8 +22,45 @@ export interface CodeExecutionResponse {
   isTimeLimitExceeded: boolean;
 }
 
-const JUDGE0_API_URL = 'https://ce.judge0.com/submissions?wait=true';
+const JUDGE0_API_URL = 'https://ce.judge0.com/submissions?base64_encoded=true&wait=true';
 const JAVA_LANGUAGE_ID = 62; // Java (OpenJDK 13.0.1)
+
+/**
+ * Safely encode UTF-8 string to Base64 in both browser and Node.js environments
+ */
+export function encodeUtf8Base64(str: string): string {
+  try {
+    if (typeof btoa !== 'undefined') {
+      return btoa(unescape(encodeURIComponent(str)));
+    }
+  } catch {}
+  if (typeof Buffer !== 'undefined') {
+    return Buffer.from(str, 'utf8').toString('base64');
+  }
+  return btoa(str);
+}
+
+/**
+ * Safely decode Base64 string back to UTF-8
+ */
+export function decodeUtf8Base64(b64: string | null | undefined): string | null {
+  if (!b64) return null;
+  try {
+    if (typeof atob !== 'undefined') {
+      return decodeURIComponent(escape(atob(b64)));
+    }
+  } catch {}
+  try {
+    if (typeof Buffer !== 'undefined') {
+      return Buffer.from(b64, 'base64').toString('utf8');
+    }
+  } catch {}
+  try {
+    return atob(b64);
+  } catch {
+    return b64;
+  }
+}
 
 export const codeExecutionService = {
   /**
@@ -39,9 +77,9 @@ export const codeExecutionService = {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          source_code: request.code,
+          source_code: encodeUtf8Base64(request.code),
           language_id: JAVA_LANGUAGE_ID,
-          stdin: request.stdin || '',
+          stdin: encodeUtf8Base64(request.stdin || ''),
         }),
         signal: controller.signal,
       });
@@ -57,21 +95,25 @@ export const codeExecutionService = {
       const statusId = data.status?.id || 0;
       const statusDesc = data.status?.description || 'Unknown';
 
+      const decodedStdout = decodeUtf8Base64(data.stdout);
+      const decodedStderr = decodeUtf8Base64(data.stderr);
+      const decodedCompileOutput = decodeUtf8Base64(data.compile_output);
+
       // Judge0 Status IDs:
       // 3: Accepted (Success)
       // 5: Time Limit Exceeded
       // 6: Compilation Error
       // 7-12: Runtime Errors
-      const isCompilationError = statusId === 6 || Boolean(data.compile_output);
-      const isRuntimeError = (statusId >= 7 && statusId <= 12) || Boolean(data.stderr);
+      const isCompilationError = statusId === 6 || Boolean(decodedCompileOutput);
+      const isRuntimeError = (statusId >= 7 && statusId <= 12) || Boolean(decodedStderr);
       const isTimeLimitExceeded = statusId === 5;
-      const success = statusId === 3 && !data.stderr && !data.compile_output;
+      const success = statusId === 3 && !decodedStderr && !decodedCompileOutput;
 
       return {
         success,
-        stdout: data.stdout || null,
-        stderr: data.stderr || null,
-        compileOutput: data.compile_output || null,
+        stdout: decodedStdout,
+        stderr: decodedStderr,
+        compileOutput: decodedCompileOutput,
         timeSpent: data.time ? `${data.time}s` : undefined,
         memoryUsedKb: data.memory ? Math.round(data.memory) : undefined,
         statusDescription: statusDesc,

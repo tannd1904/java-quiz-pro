@@ -100,10 +100,8 @@ describe('Data Integrity (questions.json)', () => {
     expect(tf.length).toBeGreaterThanOrEqual(20);
   });
 
-  it('verifies all image references exist on disk', () => {
+  it('verifies all image references exist on disk if present', () => {
     const imageQuestions = questions.filter(q => q.image);
-    expect(imageQuestions.length).toBe(68);
-
     imageQuestions.forEach(q => {
       const imgPath = path.resolve(__dirname, '../public', q.image!);
       expect(fs.existsSync(imgPath)).toBe(true);

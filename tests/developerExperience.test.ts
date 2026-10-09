@@ -65,7 +65,7 @@ describe('Developer Experience - Code Execution Service', () => {
   it('handles successful API execution response', async () => {
     const fakeResponse = {
       status: { id: 3, description: 'Accepted' },
-      stdout: 'Result = 42\n',
+      stdout: Buffer.from('Result = 42\n').toString('base64'),
       stderr: null,
       compile_output: null,
       time: '0.045',
@@ -93,7 +93,7 @@ describe('Developer Experience - Code Execution Service', () => {
       status: { id: 6, description: 'Compilation Error' },
       stdout: null,
       stderr: null,
-      compile_output: 'Main.java:1: error: semicolon expected',
+      compile_output: Buffer.from('Main.java:1: error: semicolon expected').toString('base64'),
       time: null,
       memory: null,
     };
