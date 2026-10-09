@@ -233,17 +233,6 @@ export const TOPICS_CONFIG: TopicConfig[] = [
 
 export const TOPIC_PRESETS = {
   ALL: TOPICS_CONFIG.map(t => t.id),
-  OOP_MIDTERM_CO_HAI: [
-    'objects_classes',
-    'encapsulation',
-    'inheritance',
-    'polymorphism',
-    'abstraction',
-    'interface',
-    'lambda',
-    'inner_class',
-    'exception'
-  ],
   CORE_OOP_6: ['encapsulation', 'inheritance', 'polymorphism', 'abstraction', 'interface', 'constructor'],
   OOP_4: ['encapsulation', 'inheritance', 'polymorphism', 'abstraction'],
   ADVANCED_JVM: ['static_final', 'exception', 'memory_jvm', 'collections', 'design_patterns'],
