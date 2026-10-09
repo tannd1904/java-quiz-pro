@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { AppView, ExamSetupConfig, ExamQuestionItem, ExamResult, ExamHistoryItem, ActiveExamSession } from './types/quiz';
 import { Question } from './types/question';
-import { APP_CONFIG } from './config/app.config';
 import { questionRepository } from './services/questionRepository';
 import { prepareExamSession, calculateExamResult } from './services/quizEngine';
 import { userProgressService } from './services/userProgressService';
@@ -26,14 +25,6 @@ const MainApp: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const [view, setView] = useState<AppView>('HOME');
-  const [isPracticeEnabled, setIsPracticeEnabled] = useState<boolean>(() => {
-    try {
-      const saved = localStorage.getItem('java_quiz_practice_enabled');
-      if (saved !== null) return saved === 'true';
-    } catch {}
-    return APP_CONFIG.ENABLE_PRACTICE_MODE;
-  });
-
   const [isExamSetupModalOpen, setIsExamSetupModalOpen] = useState<boolean>(false);
   const [currentExamItems, setCurrentExamItems] = useState<ExamQuestionItem[]>([]);
   const [currentExamConfig, setCurrentExamConfig] = useState<ExamSetupConfig | null>(null);
@@ -80,16 +71,7 @@ const MainApp: React.FC = () => {
     return counts;
   }, [questions]);
 
-  // Toggle admin practice lock
-  const handleTogglePracticeLock = () => {
-    setIsPracticeEnabled((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem('java_quiz_practice_enabled', String(next));
-      } catch {}
-      return next;
-    });
-  };
+
 
   // Start exam flow
   const handleStartExam = (config: ExamSetupConfig) => {
@@ -187,7 +169,6 @@ const MainApp: React.FC = () => {
   };
 
   const handleStartPractice = () => {
-    if (!isPracticeEnabled) return;
     setView('PRACTICE');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -214,8 +195,6 @@ const MainApp: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar
-        isPracticeEnabled={isPracticeEnabled}
-        onTogglePracticeLock={handleTogglePracticeLock}
         onNavigateHome={handleNavigateHome}
         onOpenExamHistory={() => setIsExamHistoryModalOpen(true)}
         historyCount={examHistory.length}
@@ -282,7 +261,6 @@ const MainApp: React.FC = () => {
               <HomePage
                 onOpenExamSetup={() => setIsExamSetupModalOpen(true)}
                 onStartPractice={handleStartPractice}
-                isPracticeEnabled={isPracticeEnabled}
                 totalQuestions={questions.length}
                 activeExamSession={activeExamSession}
                 onResumeExam={handleResumeExam}

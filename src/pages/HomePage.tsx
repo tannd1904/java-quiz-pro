@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, BookOpen, CheckCircle, Lock, ArrowRight, History } from 'lucide-react';
+import { Award, BookOpen, CheckCircle, ArrowRight, History } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 import { Button } from '../components/common/Button';
 import { ActiveExamSession } from '../types/quiz';
@@ -8,7 +8,6 @@ import { ResumeExamCard } from '../components/exam/ResumeExamCard';
 interface HomePageProps {
   onOpenExamSetup: () => void;
   onStartPractice: () => void;
-  isPracticeEnabled: boolean;
   totalQuestions: number;
   activeExamSession?: ActiveExamSession | null;
   onResumeExam?: () => void;
@@ -20,7 +19,6 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({
   onOpenExamSetup,
   onStartPractice,
-  isPracticeEnabled,
   totalQuestions,
   activeExamSession,
   onResumeExam,
@@ -220,7 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div
             style={{
               backgroundColor: 'var(--bg-surface)',
-              border: `1px solid ${!isPracticeEnabled ? 'var(--state-warning-border)' : 'var(--border-default)'}`,
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-lg)',
               padding: 'clamp(20px, 4vw, 36px) clamp(16px, 4vw, 32px)',
               display: 'flex',
@@ -228,33 +226,9 @@ export const HomePage: React.FC<HomePageProps> = ({
               boxShadow: 'var(--shadow-md)',
               position: 'relative',
               overflow: 'hidden',
-              opacity: !isPracticeEnabled ? 0.9 : 1,
+              transition: 'transform var(--transition-fast), border-color var(--transition-fast)',
             }}
           >
-            {/* Locked Ribbon */}
-            {!isPracticeEnabled && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '18px',
-                  right: '18px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '4px 10px',
-                  borderRadius: 'var(--radius-full)',
-                  backgroundColor: 'var(--state-warning-subtle)',
-                  border: '1px solid var(--state-warning-border)',
-                  color: 'var(--state-warning)',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                }}
-              >
-                <Lock size={13} />
-                <span>{t('home.lockedRibbon')}</span>
-              </div>
-            )}
-
             <div
               style={{
                 width: '56px',
@@ -316,42 +290,16 @@ export const HomePage: React.FC<HomePageProps> = ({
               ))}
             </div>
 
-            {isPracticeEnabled ? (
-              <Button
-                variant="secondary"
-                size="lg"
-                fullWidth
-                onClick={onStartPractice}
-                icon={<ArrowRight size={19} />}
-                iconPosition="right"
-              >
-                {t('home.startPracticeBtn')}
-              </Button>
-            ) : (
-              <div>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  fullWidth
-                  disabled
-                  icon={<Lock size={18} />}
-                  iconPosition="left"
-                  style={{ color: 'var(--state-warning)', borderColor: 'var(--state-warning-border)' }}
-                >
-                  {t('home.lockedPracticeBtn')}
-                </Button>
-                <p
-                  style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
-                    marginTop: '8px',
-                    textAlign: 'center',
-                  }}
-                >
-                  {t('home.lockedNotice')}
-                </p>
-              </div>
-            )}
+            <Button
+              variant="secondary"
+              size="lg"
+              fullWidth
+              onClick={onStartPractice}
+              icon={<ArrowRight size={19} />}
+              iconPosition="right"
+            >
+              {t('home.startPracticeBtn')}
+            </Button>
           </div>
         </div>
       </div>

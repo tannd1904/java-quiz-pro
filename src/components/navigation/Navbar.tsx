@@ -1,20 +1,16 @@
 import React from 'react';
-import { Coffee, FileText, Lock, Unlock, History } from 'lucide-react';
+import { Coffee, FileText, History } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
 
 interface NavbarProps {
-  isPracticeEnabled: boolean;
-  onTogglePracticeLock: () => void;
   onNavigateHome: () => void;
   onOpenExamHistory?: () => void;
   historyCount?: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  isPracticeEnabled,
-  onTogglePracticeLock,
   onNavigateHome,
   onOpenExamHistory,
   historyCount = 0,
@@ -97,36 +93,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Tools */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
-          {/* Admin Practice Lock Toggle Badge */}
-          <button
-            onClick={onTogglePracticeLock}
-            title={t('nav.practiceLockTooltip')}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '4px',
-              padding: '5px 10px',
-              borderRadius: 'var(--radius-full)',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'all var(--transition-fast)',
-              border: `1px solid ${isPracticeEnabled ? 'var(--state-success-border)' : 'var(--state-warning-border)'}`,
-              backgroundColor: isPracticeEnabled ? 'var(--state-success-subtle)' : 'var(--state-warning-subtle)',
-              color: isPracticeEnabled ? 'var(--state-success)' : 'var(--state-warning)',
-            }}
-          >
-            {isPracticeEnabled ? <Unlock size={13} /> : <Lock size={13} />}
-            <span className="hide-on-mobile">
-              {isPracticeEnabled ? t('nav.practiceUnlocked') : t('nav.practiceLocked')}
-            </span>
-            <span
-              style={{ display: 'none' }}
-              className="mobile-only"
-            >
-              {isPracticeEnabled ? 'MỞ' : 'KHÓA'}
-            </span>
-          </button>
 
           {/* Exam History Button */}
           {onOpenExamHistory && (

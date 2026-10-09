@@ -21,7 +21,7 @@ export interface AppConfig {
 }
 
 export const APP_CONFIG: AppConfig = {
-  ENABLE_PRACTICE_MODE: false,
+  ENABLE_PRACTICE_MODE: true,
   DEFAULT_LANGUAGE: 'vi',
   DEFAULT_THEME: 'dark',
   EXAM_QUESTION_COUNT: 40,
