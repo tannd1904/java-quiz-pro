@@ -61,21 +61,30 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     return questionReportService.getUserReportedQuestionIds();
   });
 
-  // Session Telemetry Tracking (Silent)
+  // Session Telemetry Tracking (Silent & In-Depth)
   const sessionStartTimeRef = useRef<number>(Date.now());
   const sessionAnsweredQIds = useRef<Set<string>>(new Set());
-  const sessionCorrectQIds = useRef<Set<string>>(new Set());
+  const sessionFirstTryCorrectQIds = useRef<Set<string>>(new Set());
+  const sessionRetryCorrectQIds = useRef<Set<string>>(new Set());
   const sessionWrongQIds = useRef<Set<string>>(new Set());
+  const sessionRevealedSolutionsQIds = useRef<Set<string>>(new Set());
   const hasDispatchedTelemetry = useRef<boolean>(false);
 
-  const recordSessionAnswer = (questionId: string, isCorrect: boolean) => {
+  const recordSessionAnswer = (questionId: string, isCorrect: boolean, hadWrongAttemptBefore: boolean) => {
+    const isFirstTimeInSession = !sessionAnsweredQIds.current.has(questionId);
     sessionAnsweredQIds.current.add(questionId);
+
     if (isCorrect) {
-      sessionCorrectQIds.current.add(questionId);
+      if (isFirstTimeInSession && !hadWrongAttemptBefore) {
+        sessionFirstTryCorrectQIds.current.add(questionId);
+      } else {
+        sessionRetryCorrectQIds.current.add(questionId);
+      }
       sessionWrongQIds.current.delete(questionId);
     } else {
       sessionWrongQIds.current.add(questionId);
-      sessionCorrectQIds.current.delete(questionId);
+      sessionFirstTryCorrectQIds.current.delete(questionId);
+      sessionRetryCorrectQIds.current.delete(questionId);
     }
     hasDispatchedTelemetry.current = false;
   };
@@ -85,12 +94,40 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     if (sessionAnsweredQIds.current.size === 0) return;
 
     const timeSpentSeconds = Math.max(1, Math.round((Date.now() - sessionStartTimeRef.current) / 1000));
+
+    // Topic breakdown summary
+    const topicAnsweredCounts: Record<string, { correct: number; total: number }> = {};
+    sessionAnsweredQIds.current.forEach((qId) => {
+      const q = allQuestions.find((item) => item.id === qId);
+      if (!q) return;
+      const topicCfg = TOPICS_CONFIG.find((t) => t.id === q.topicId);
+      const tName = topicCfg ? (topicCfg.shortName.vi || topicCfg.id) : q.topicId;
+      if (!topicAnsweredCounts[tName]) {
+        topicAnsweredCounts[tName] = { correct: 0, total: 0 };
+      }
+      topicAnsweredCounts[tName].total += 1;
+      if (sessionFirstTryCorrectQIds.current.has(qId) || sessionRetryCorrectQIds.current.has(qId)) {
+        topicAnsweredCounts[tName].correct += 1;
+      }
+    });
+
+    const topicBreakdown = Object.entries(topicAnsweredCounts)
+      .map(([tName, stats]) => `${tName} (${stats.correct}/${stats.total})`)
+      .join(', ');
+
+    const totalBankCompleted = Object.values(practiceProgress).filter((p) => p.isCorrect).length;
+
     examTelemetryService.sendPracticeSummary({
       answeredCount: sessionAnsweredQIds.current.size,
-      correctCount: sessionCorrectQIds.current.size,
+      correctCount: sessionFirstTryCorrectQIds.current.size + sessionRetryCorrectQIds.current.size,
       wrongCount: sessionWrongQIds.current.size,
+      firstTryCorrectCount: sessionFirstTryCorrectQIds.current.size,
+      retryCorrectCount: sessionRetryCorrectQIds.current.size,
+      revealedSolutionsCount: sessionRevealedSolutionsQIds.current.size,
+      totalBankCompleted,
+      totalBankQuestions: allQuestions.length,
       timeSpentSeconds,
-      topicsSummary: selectedTopicIds.join(', '),
+      topicsSummary: topicBreakdown || selectedTopicIds.join(', '),
       wrongQuestionIds: Array.from(sessionWrongQIds.current),
     });
     hasDispatchedTelemetry.current = true;
@@ -276,7 +313,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     const isCorrect = optionIdx === targetQ.correctIndex;
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, optionIdx];
 
-    recordSessionAnswer(questionId, isCorrect);
+    recordSessionAnswer(questionId, isCorrect, existingWrongs.length > 0);
 
     // Save persistent answer
     const record = userProgressService.savePracticeAnswer(
@@ -322,7 +359,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     const existingWrongs = wrongAttempts[questionId] || [];
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
 
-    recordSessionAnswer(questionId, isCorrect);
+    recordSessionAnswer(questionId, isCorrect, existingWrongs.length > 0);
 
     const record = userProgressService.savePracticeAnswer(
       questionId,
@@ -353,7 +390,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
     const existingWrongs = wrongAttempts[questionId] || [];
     const newWrongs = isCorrect ? existingWrongs : [...existingWrongs, 999];
 
-    recordSessionAnswer(questionId, isCorrect);
+    recordSessionAnswer(questionId, isCorrect, existingWrongs.length > 0);
 
     const record = userProgressService.savePracticeAnswer(
       questionId,
@@ -1193,7 +1230,10 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                     {!isSolutionRevealed && (
                       <button
                         type="button"
-                        onClick={() => setRevealedSolutions((prev) => ({ ...prev, [q.id]: true }))}
+                        onClick={() => {
+                          sessionRevealedSolutionsQIds.current.add(q.id);
+                          setRevealedSolutions((prev) => ({ ...prev, [q.id]: true }));
+                        }}
                         style={{
                           background: 'none',
                           border: 'none',

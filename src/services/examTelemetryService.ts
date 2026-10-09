@@ -332,12 +332,17 @@ class ExamTelemetryService {
   }
 
   /**
-   * Silently tracks practice mode session when user finishes or exits practice.
+   * Silently tracks practice mode session with in-depth learning metrics.
    */
   public async sendPracticeSummary(params: {
     answeredCount: number;
     correctCount: number;
     wrongCount: number;
+    firstTryCorrectCount?: number;
+    retryCorrectCount?: number;
+    revealedSolutionsCount?: number;
+    totalBankCompleted?: number;
+    totalBankQuestions?: number;
     timeSpentSeconds: number;
     topicsSummary?: string;
     wrongQuestionIds?: string[];
@@ -354,9 +359,23 @@ class ExamTelemetryService {
       const mins = Math.floor(params.timeSpentSeconds / 60);
       const secs = params.timeSpentSeconds % 60;
       const formattedTime = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      const avgPace = Math.round(params.timeSpentSeconds / Math.max(1, params.answeredCount));
 
       const score10 = Number(((params.correctCount / params.answeredCount) * 10).toFixed(1));
       const percentage = Math.round((params.correctCount / params.answeredCount) * 100);
+
+      // Cumulative bank progress text for the 'Kết quả' column
+      let cumulativeText = 'LUYỆN TẬP';
+      if (params.totalBankCompleted != null && params.totalBankQuestions) {
+        const bankPct = ((params.totalBankCompleted / params.totalBankQuestions) * 100).toFixed(1);
+        cumulativeText = `LUYỆN TẬP (Lũy kế: ${params.totalBankCompleted}/${params.totalBankQuestions} câu - ${bankPct}%)`;
+      }
+
+      // Detailed learning behaviors
+      const firstTry = params.firstTryCorrectCount || 0;
+      const retryOk = params.retryCorrectCount || 0;
+      const revealed = params.revealedSolutionsCount || 0;
+      const behaviorDetails = `Đúng lần đầu: ${firstTry} | Sửa đúng: ${retryOk} | Xem giải: ${revealed}`;
 
       const payload = {
         timestamp: new Date().toLocaleString('vi-VN'),
@@ -368,14 +387,14 @@ class ExamTelemetryService {
         wrongCount: params.wrongCount,
         skippedCount: 0,
         totalQuestions: params.answeredCount,
-        isPassed: 'LUYỆN TẬP',
-        timeSpent: formattedTime,
+        isPassed: cumulativeText,
+        timeSpent: `${formattedTime} (~${avgPace}s/câu)`,
         topicsSummary: params.topicsSummary || 'Tự do ôn luyện',
         wrongQuestions:
           params.wrongQuestionIds && params.wrongQuestionIds.length > 0
             ? params.wrongQuestionIds.join(', ')
             : 'Không có',
-        skippedQuestions: 'Không có',
+        skippedQuestions: behaviorDetails,
         ip: network.ip,
         location: network.location,
         isp: network.isp,
