@@ -17244,5 +17244,2126 @@ const QUIZ_DATA = [
       "vi": "Sai. Static nested class hoạt động như một top-level class độc lập và không giữ tham chiếu ẩn đến instance của outer class, do đó không thể truy cập trực tiếp các thành viên non-static của outer class.",
       "en": "False. A static nested class behaves like a top-level class and does not hold an implicit reference to an enclosing instance, so it cannot access non-static outer members directly."
     }
+  },
+  {
+    "id": "mc-oop-006",
+    "topicId": "objects_classes",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Khi khởi tạo một đối tượng lớp con (Subclass) kế thừa từ lớp cha (Superclass), những bước nào sau đây diễn ra theo đúng thứ tự khởi tạo của Java?",
+      "en": "When initializing a subclass instance inheriting from a superclass, which of the following steps occur in the correct Java initialization order?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Khối static của Superclass chạy trước khối static của Subclass",
+        "Khối instance initializer và constructor của Superclass chạy trước của Subclass",
+        "Constructor của Subclass chạy trước constructor của Superclass",
+        "Khối static chỉ chạy một lần duy nhất khi class được load vào JVM"
+      ],
+      "en": [
+        "Superclass static blocks execute before subclass static blocks",
+        "Superclass instance initializers and constructor execute before subclass initializers and constructor",
+        "Subclass constructor executes before superclass constructor",
+        "Static blocks execute only once when the class is first loaded into JVM"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      3
+    ],
+    "explanation": {
+      "vi": "Thứ tự khởi tạo Java: 1. Static của cha -> 2. Static của con -> 3. Instance block & constructor của cha -> 4. Instance block & constructor của con. Static blocks chỉ chạy 1 lần.",
+      "en": "Java initialization order: 1. Super static -> 2. Sub static -> 3. Super instance blocks & constructor -> 4. Sub instance blocks & constructor. Static blocks execute only once."
+    }
+  },
+  {
+    "id": "mc-oop-007",
+    "topicId": "polymorphism",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Những phát biểu nào sau đây là ĐÚNG về Covariant Return Type (kiểu trả về đồng biến) trong Java?",
+      "en": "Which of the following statements are TRUE regarding Covariant Return Types in Java?"
+    },
+    "codeSnippet": "class Parent { Object get() { return null; } }\nclass Child extends Parent { String get() { return \"hi\"; } }",
+    "image": null,
+    "options": {
+      "vi": [
+        "Phương thức ở lớp con có thể có kiểu trả về là lớp con (subtype) của kiểu trả về ở lớp cha",
+        "Covariant return type chỉ áp dụng cho kiểu tham chiếu (reference types), không áp dụng cho kiểu nguyên thủy (primitive types)",
+        "Covariant return type làm thay đổi signature của phương thức và bị coi là overloading",
+        "Được hỗ trợ chính thức từ phiên bản Java 5 trở lên"
+      ],
+      "en": [
+        "A subclass method can have a return type that is a subtype of the return type declared in the parent method",
+        "Covariant return types apply only to reference types, not to primitive types",
+        "Covariant return type alters the method signature and is treated as overloading",
+        "It has been officially supported since Java 5"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      3
+    ],
+    "explanation": {
+      "vi": "Covariant return type cho phép phương thức override trả về subtype của kiểu cha (ví dụ String thay vì Object). Không áp dụng cho primitive type (int không thể thành long khi override) và là overriding chứ không phải overloading.",
+      "en": "Covariant return types allow an overriding method to return a subtype of the parent method's return type. It does not apply to primitives and is valid overriding, not overloading."
+    }
+  },
+  {
+    "id": "mc-oop-008",
+    "topicId": "encapsulation",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Encapsulation",
+      "en": "Encapsulation"
+    },
+    "question": {
+      "vi": "Để xây dựng một lớp bất biến hoàn chỉnh (Immutable Class) trong Java, cần tuân thủ những quy tắc nào sau đây?",
+      "en": "To create a fully Immutable Class in Java, which of the following rules must be followed?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Khai báo lớp là final (hoặc dùng private constructor) để ngăn chặn kế thừa",
+        "Tất cả các trường (fields) đều phải là private và final",
+        "Không cung cấp bất kỳ phương thức setter nào làm thay đổi trạng thái",
+        "Thực hiện defensive copy (sao chép phòng thủ) đối với mọi trường tham chiếu kiểu mutable trong constructor và getter"
+      ],
+      "en": [
+        "Declare class as final (or use private constructor) to prevent subclassing",
+        "Make all fields private and final",
+        "Do not provide any setter methods that modify internal state",
+        "Perform defensive copying for any mutable reference fields in constructors and getters"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Tất cả 4 quy tắc trên đều bắt buộc để tạo class Immutable chuẩn như String hay Integer trong Java.",
+      "en": "All 4 rules are required to create a robust immutable class in Java, such as String or Integer."
+    }
+  },
+  {
+    "id": "mc-oop-009",
+    "topicId": "interface",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Khi một lớp kế thừa hai interface có cùng một default method (xung đột Diamond Problem), những quy tắc nào sau đây áp dụng?",
+      "en": "When a class implements two interfaces containing identical default method signatures, which rules apply?"
+    },
+    "codeSnippet": "interface A { default void show() { System.out.print(\"A\"); } }\ninterface B { default void show() { System.out.print(\"B\"); } }\nclass C implements A, B { /* ... */ }",
+    "image": null,
+    "options": {
+      "vi": [
+        "Lớp C bắt buộc phải override lại phương thức show() để giải quyết xung đột biên dịch",
+        "Lớp C có thể tái sử dụng triển khai của interface A bằng cú pháp A.super.show()",
+        "Nếu một lớp cha của C có phương thức show() cụ thể (concrete), phương thức của lớp cha sẽ luôn được ưu tiên (Classes win rule)",
+        "Trình biên dịch sẽ tự động chọn ngẫu nhiên phương thức của interface A hoặc B"
+      ],
+      "en": [
+        "Class C must override the show() method to resolve the compile-time conflict",
+        "Class C can explicitly invoke interface A implementation using A.super.show()",
+        "If a superclass of C provides a concrete show() method, the superclass method always wins (Classes win rule)",
+        "The compiler randomly chooses between interface A and interface B"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Khi xung đột default method: lớp con bắt buộc phải override, có thể gọi Interface.super.method(), và quy tắc 'Classes win' luôn ưu tiên method từ lớp cha cụ thể trước interface.",
+      "en": "In default method conflicts: subclass must override, can invoke Interface.super.method(), and superclass concrete methods always win over interface default methods."
+    }
+  },
+  {
+    "id": "mc-oop-010",
+    "topicId": "exception",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Những đặc điểm nào sau đây là ĐÚNG đối với cú pháp try-with-resources trong Java 7+?",
+      "en": "Which of the following characteristics are TRUE regarding try-with-resources in Java 7+?"
+    },
+    "codeSnippet": "try (BufferedReader br = new BufferedReader(new FileReader(\"test.txt\"))) {\n    System.out.println(br.readLine());\n}",
+    "image": null,
+    "options": {
+      "vi": [
+        "Các tài nguyên khai báo phải implement giao diện java.lang.AutoCloseable hoặc java.io.Closeable",
+        "Các tài nguyên được tự động đóng theo thứ tự NGƯỢC LẠI so với thứ tự khai báo",
+        "Phương thức close() được gọi trước khi bất kỳ khối catch hoặc finally nào được thực thi",
+        "Các biến tài nguyên khai báo trong try(...) là ngầm định final và không thể gán lại"
+      ],
+      "en": [
+        "Declared resources must implement java.lang.AutoCloseable or java.io.Closeable",
+        "Resources are automatically closed in REVERSE order of their declaration",
+        "The close() method is called before any associated catch or finally blocks execute",
+        "Resource variables declared in try(...) are implicitly final and cannot be reassigned"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Cả 4 phát biểu đều chính xác: yêu cầu AutoCloseable, đóng ngược thứ tự khai báo, close() chạy trước catch/finally, và biến resource là effectively final.",
+      "en": "All 4 statements are correct: requires AutoCloseable, closes in reverse declaration order, close() runs prior to catch/finally, and resource variables are implicitly final."
+    }
+  },
+  {
+    "id": "mc-oop-011",
+    "topicId": "lambda",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Quy tắc bắt biến (Variable Capture) nào sau đây áp dụng khi sử dụng biến bên ngoài trong biểu thức Lambda?",
+      "en": "Which of the following variable capture rules apply when referencing outer variables inside a Lambda expression?"
+    },
+    "codeSnippet": "int factor = 2;\nFunction<Integer, Integer> multiplier = x -> x * factor;",
+    "image": null,
+    "options": {
+      "vi": [
+        "Biến local bên ngoài được sử dụng trong lambda bắt buộc phải là final hoặc effectively final",
+        "Lambda có thể đọc và thay đổi trực tiếp giá trị của biến instance field hoặc static field",
+        "Nếu gán lại giá trị cho biến factor sau định nghĩa lambda (factor = 3), trình biên dịch sẽ báo lỗi",
+        "Biểu thức lambda tạo ra một phạm vi scope mới hoàn toàn độc lập nên được phép khai báo tham số trùng tên với biến local bên ngoài"
+      ],
+      "en": [
+        "Outer local variables referenced in lambda must be final or effectively final",
+        "Lambda can read and directly modify instance fields or static fields",
+        "Reassigning factor after the lambda definition (factor = 3) causes a compile-time error",
+        "Lambda expressions introduce a completely new scope and can declare parameters with the same name as outer local variables"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Biến local phải là effectively final (không được gán lại). Instance/static field có thể sửa được. Lambda không tạo scope riêng cho biến nên không được đặt tên tham số trùng biến local bên ngoài.",
+      "en": "Local variables must be effectively final. Instance and static fields can be modified. Lambda shares the enclosing scope so parameter names cannot collide with enclosing local variables."
+    }
+  },
+  {
+    "id": "mc-oop-012",
+    "topicId": "inner_class",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "Những đặc điểm nào sau đây là ĐÚNG đối với Anonymous Inner Class (Lớp nặc danh) trong Java?",
+      "en": "Which of the following characteristics are TRUE for Anonymous Inner Classes in Java?"
+    },
+    "codeSnippet": "Runnable r = new Runnable() {\n    @Override public void run() { System.out.println(\"Running\"); }\n};",
+    "image": null,
+    "options": {
+      "vi": [
+        "Không thể khai báo constructor tường minh vì lớp không có tên",
+        "Có thể đồng thời kế thừa một lớp cha và hiện thực hóa một interface",
+        "Có thể sử dụng khối instance initializer block {} để thay thế cho constructor",
+        "Chỉ có thể kế thừa từ ĐÚNG MỘT lớp cha HOẶC hiện thực hóa ĐÚNG MỘT interface"
+      ],
+      "en": [
+        "Cannot declare an explicit constructor because it has no name",
+        "Can simultaneously extend a class and implement an interface",
+        "Can use an instance initializer block {} to perform initialization logic",
+        "Can extend EXACTLY ONE class OR implement EXACTLY ONE interface"
+      ]
+    },
+    "correctIndices": [
+      0,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Anonymous class không có tên nên không thể viết constructor (dùng instance initializer thay thế). Nó chỉ có thể hoặc extends 1 class, hoặc implements 1 interface, không thể làm cả hai cùng lúc.",
+      "en": "Anonymous classes cannot declare constructors (use instance initializers instead). They can extend exactly one class OR implement exactly one interface, never both."
+    }
+  },
+  {
+    "id": "mc-oop-013",
+    "topicId": "constructor",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Constructors",
+      "en": "Constructors"
+    },
+    "question": {
+      "vi": "Những quy tắc nào sau đây là BẮT BUỘC đối với Constructor trong Java?",
+      "en": "Which of the following rules are MANDATORY for Constructors in Java?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Tên constructor phải trùng khớp hoàn toàn với tên của class và không có kiểu trả về",
+        "Lời gọi this() hoặc super() bắt buộc phải là câu lệnh đầu tiên trong thân constructor",
+        "Không thể gọi đồng thời cả this() và super() trong cùng một constructor",
+        "Nếu lớp đã định nghĩa bất kỳ constructor nào, Java sẽ KHÔNG tự động tạo default constructor không đối số"
+      ],
+      "en": [
+        "Constructor name must exactly match the class name and have no return type",
+        "A this() or super() call must always be the first statement in the constructor body",
+        "Both this() and super() cannot be called simultaneously in the same constructor",
+        "If any constructor is explicitly declared, Java will NOT generate a default no-argument constructor"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Tất cả các quy tắc trên đều là quy tắc bắt buộc của trình biên dịch Java đối với constructor.",
+      "en": "All the above rules are strictly enforced by the Java compiler for constructors."
+    }
+  },
+  {
+    "id": "mc-oop-014",
+    "topicId": "abstraction",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Abstraction",
+      "en": "Abstraction"
+    },
+    "question": {
+      "vi": "So sánh giữa Abstract Class và Interface từ Java 8 trở lên, những khẳng định nào sau đây là ĐÚNG?",
+      "en": "Comparing Abstract Classes and Interfaces in Java 8+, which of the following assertions are TRUE?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Abstract class có thể chứa các biến instance (non-final state), trong khi interface chỉ chứa public static final constants",
+        "Abstract class có thể có constructor, trong khi interface không thể có constructor",
+        "Một lớp có thể implements nhiều interface nhưng chỉ có thể kế thừa tối đa một abstract class",
+        "Abstract class có thể chứa các phương thức với access modifier protected hoặc default, trong khi phương thức của interface ngầm định là public (hoặc private từ Java 9)"
+      ],
+      "en": [
+        "Abstract class can maintain instance state (non-final fields), whereas interface fields are always public static final",
+        "Abstract class can define constructors, whereas interface cannot have constructors",
+        "A class can implement multiple interfaces but extend at most one abstract class",
+        "Abstract class methods can have protected or package-private visibility, whereas interface methods are public (or private from Java 9)"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Cả 4 điểm so sánh đều hoàn toàn chính xác về sự khác biệt giữa Abstract class và Interface trong Java hiện đại.",
+      "en": "All 4 points accurately highlight key distinctions between abstract classes and interfaces in modern Java."
+    }
+  },
+  {
+    "id": "mc-oop-015",
+    "topicId": "polymorphism",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Về sự khác nhau giữa Static Method Hiding và Method Overriding:",
+      "en": "Regarding the difference between Static Method Hiding and Method Overriding:"
+    },
+    "codeSnippet": "class Parent { static void f() {} void g() {} }\nclass Child extends Parent { static void f() {} void g() {} }",
+    "image": null,
+    "options": {
+      "vi": [
+        "Phương thức static không bị override mà bị hide (che giấu)",
+        "Lời gọi static method được gắn kết tại compile-time dựa theo kiểu của biến tham chiếu",
+        "Lời gọi non-static method được gắn kết tại runtime dựa theo kiểu của đối tượng thực tế",
+        "Trình biên dịch cho phép override một phương thức static thành non-static nếu có cùng tên và tham số"
+      ],
+      "en": [
+        "Static methods are hidden rather than overridden",
+        "Static method calls are resolved at compile-time based on reference type",
+        "Non-static method calls are dynamically bound at runtime based on the actual object type",
+        "The compiler allows overriding a static method into a non-static method with the same signature"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Static method bị che giấu (method hiding) và bind tại compile-time. Không thể biến một static method thành instance method hoặc ngược lại khi kế thừa.",
+      "en": "Static methods are hidden and resolved at compile time. A static method cannot be overridden by an instance method or vice-versa."
+    }
+  },
+  {
+    "id": "mc-oop-016",
+    "topicId": "exception",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Những hành vi nào sau đây là ĐÚNG về khối finally và lệnh return trong Java?",
+      "en": "Which of the following behaviors are TRUE regarding the finally block and return statements in Java?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Lệnh return nằm trong khối finally sẽ ghi đè (override) bất kỳ giá trị return nào của khối try hoặc catch",
+        "Lệnh return nằm trong khối finally có thể nuốt (suppress) ngoại lệ chưa bắt được ném ra từ khối try",
+        "Khối finally luôn được thực thi ngay cả khi khối catch ném tiếp một ngoại lệ mới",
+        "Khối finally sẽ không chạy nếu máy tính bị mất điện hoặc JVM bị tắt đột ngột bởi System.exit()"
+      ],
+      "en": [
+        "A return statement inside finally overrides any return value from try or catch blocks",
+        "A return statement inside finally can swallow unhandled exceptions thrown in try",
+        "The finally block always executes even if the catch block throws a new exception",
+        "The finally block does not execute if power is lost or JVM is halted via System.exit()"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Khối finally có quyền tối thượng: luôn chạy (trừ khi System.exit()), và lệnh return trong finally sẽ ghi đè giá trị hoặc dập tắt exception từ try/catch.",
+      "en": "Finally block always runs (unless System.exit()), and returning from finally overrides prior return values and suppresses exceptions."
+    }
+  },
+  {
+    "id": "mc-oop-017",
+    "topicId": "inheritance",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Inheritance",
+      "en": "Inheritance"
+    },
+    "question": {
+      "vi": "Những phát biểu nào sau đây là ĐÚNG về từ khóa 'final' trong lập trình hướng đối tượng Java?",
+      "en": "Which of the following statements are TRUE regarding the 'final' keyword in Java OOP?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Một final class không thể có bất kỳ lớp con nào kế thừa nó",
+        "Một final method không thể bị ghi đè (override) bởi các lớp con",
+        "Một final variable kiểu đối tượng ngăn chặn việc gán tham chiếu sang đối tượng khác, nhưng trạng thái bên trong đối tượng vẫn có thể thay đổi",
+        "Một interface có thể được khai báo với từ khóa final"
+      ],
+      "en": [
+        "A final class cannot be extended by any subclass",
+        "A final method cannot be overridden by subclasses",
+        "A final reference variable cannot be reassigned to another object, but internal state can still be modified",
+        "An interface can be declared with the final keyword"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Final class chống kế thừa, final method chống override, final reference biến tham chiếu thành hằng tham chiếu. Interface KHÔNG BAO GIỜ được là final vì interface sinh ra là để implement.",
+      "en": "Final prevents inheritance and overriding, and locks reference variables. An interface can NEVER be final because it must be implemented."
+    }
+  },
+  {
+    "id": "mc-oop-018",
+    "topicId": "objects_classes",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Hợp đồng (contract) giữa phương thức equals() và hashCode() trong lớp Object quy định điều gì?",
+      "en": "What does the contract between equals() and hashCode() in java.lang.Object dictate?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Nếu a.equals(b) trả về true thì bắt buộc a.hashCode() phải bằng b.hashCode()",
+        "Nếu a.hashCode() bằng b.hashCode() thì a.equals(b) KHÔNG BẮT BUỘC phải trả về true (xảy ra xung đột hash/collision)",
+        "Khi override phương thức equals(), lập trình viên luôn luôn nên override đồng thời phương thức hashCode()",
+        "Nếu a.equals(b) trả về false thì a.hashCode() bắt buộc phải khác b.hashCode()"
+      ],
+      "en": [
+        "If a.equals(b) is true, then a.hashCode() MUST equal b.hashCode()",
+        "If a.hashCode() equals b.hashCode(), a.equals(b) is NOT required to be true (hash collision)",
+        "When overriding equals(), you should always override hashCode() simultaneously",
+        "If a.equals(b) is false, then a.hashCode() must be different from b.hashCode()"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Hai đối tượng equals bằng nhau thì hash code phải bằng nhau. Ngược lại, hash code bằng nhau có thể do đụng độ hash nên không bắt buộc equals phải true.",
+      "en": "Equal objects must have equal hash codes. Equal hash codes do not guarantee object equality due to hash collisions."
+    }
+  },
+  {
+    "id": "mc-oop-019",
+    "topicId": "lambda",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Những ánh xạ nào sau đây giữa Functional Interface và phương thức trừu tượng của nó là CHÍNH XÁC trong gói java.util.function?",
+      "en": "Which of the following mappings between Functional Interfaces and their abstract methods are CORRECT in java.util.function?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Predicate<T> có phương thức boolean test(T t)",
+        "Consumer<T> có phương thức void accept(T t)",
+        "Supplier<T> có phương thức T get()",
+        "Function<T, R> có phương thức R apply(T t)"
+      ],
+      "en": [
+        "Predicate<T> has boolean test(T t)",
+        "Consumer<T> has void accept(T t)",
+        "Supplier<T> has T get()",
+        "Function<T, R> has R apply(T t)"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Cả 4 Functional Interface cốt lõi này đều có phương thức trừu tượng tương ứng chính xác như trên.",
+      "en": "All 4 core Functional Interfaces accurately map to their specified abstract methods."
+    }
+  },
+  {
+    "id": "mc-oop-020",
+    "topicId": "inner_class",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "So sánh giữa Member Inner Class (non-static) và Static Nested Class, những nhận định nào sau đây là ĐÚNG?",
+      "en": "Comparing Member Inner Class (non-static) and Static Nested Class, which statements are TRUE?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Member Inner Class lưu trữ một tham chiếu ngầm định đến đối tượng của Outer Class bao bọc nó",
+        "Static Nested Class có thể được khởi tạo trực tiếp mà không cần tạo đối tượng Outer Class",
+        "Static Nested Class không thể truy cập trực tiếp các biến instance non-static của Outer Class",
+        "Member Inner Class có thể được khởi tạo bằng cú pháp: outerObj.new InnerClass()"
+      ],
+      "en": [
+        "Member Inner Class holds an implicit reference to its enclosing Outer Class instance",
+        "Static Nested Class can be instantiated directly without creating an Outer Class instance",
+        "Static Nested Class cannot directly access non-static instance fields of the Outer Class",
+        "Member Inner Class can be instantiated using syntax: outerObj.new InnerClass()"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Cả 4 phát biểu đều đúng. Inner class gắn chặt với instance của Outer, còn Static Nested class độc lập với instance.",
+      "en": "All 4 assertions are correct. Non-static inner classes require an enclosing outer instance, while static nested classes do not."
+    }
+  },
+  {
+    "id": "mc-oop-021",
+    "topicId": "encapsulation",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Encapsulation",
+      "en": "Encapsulation"
+    },
+    "question": {
+      "vi": "Về phạm vi truy cập của các Access Modifiers trong Java:",
+      "en": "Regarding the scope of Access Modifiers in Java:"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Thứ tự từ rộng nhất đến hẹp nhất: public > protected > default > private",
+        "Thành viên protected có thể truy cập được từ bất kỳ class nào nằm trong cùng package",
+        "Thành viên protected có thể truy cập được từ subclass nằm ở package khác",
+        "Thành viên default (không ghi modifier) có thể truy cập được từ subclass nằm ở package khác"
+      ],
+      "en": [
+        "Scope ordered from widest to narrowest: public > protected > default > private",
+        "Protected members are accessible from any class within the same package",
+        "Protected members are accessible from subclasses located in different packages",
+        "Default (package-private) members are accessible from subclasses located in different packages"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Default modifier chỉ cho phép truy cập trong cùng package, các subclass ở package khác KHÔNG THỂ truy cập được thành viên default.",
+      "en": "Default (package-private) access strictly forbids cross-package access even for subclasses."
+    }
+  },
+  {
+    "id": "mc-oop-022",
+    "topicId": "polymorphism",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Về toán tử instanceof và việc ép kiểu đối tượng (Type Casting) trong Java:",
+      "en": "Regarding the instanceof operator and Object Type Casting in Java:"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Upcasting (ép kiểu từ con lên cha) diễn ra ngầm định và an toàn",
+        "Downcasting (ép kiểu từ cha xuống con) có thể ném ClassCastException tại runtime nếu đối tượng thực tế không phải là kiểu con đó",
+        "Nếu biến tham chiếu mang giá trị null, toán tử instanceof luôn trả về false",
+        "Toán tử instanceof có thể kiểm tra cả lớp cụ thể và interface"
+      ],
+      "en": [
+        "Upcasting (subclass to superclass) occurs implicitly and is always safe",
+        "Downcasting (superclass to subclass) can throw ClassCastException at runtime if actual type does not match",
+        "If the reference variable is null, the instanceof operator always evaluates to false",
+        "The instanceof operator can test against both classes and interfaces"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Cả 4 phát biểu đều đúng. null instanceof AnyType luôn trả về false mà không gây NullPointerException.",
+      "en": "All 4 statements are true. null instanceof AnyType always safely evaluates to false without throwing NPE."
+    }
+  },
+  {
+    "id": "mc-oop-023",
+    "topicId": "interface",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Những quy tắc nào sau đây là ĐÚNG đối với các trường dữ liệu (fields) được khai báo trong một Interface?",
+      "en": "Which of the following rules are TRUE for fields declared within an Interface?"
+    },
+    "codeSnippet": "interface Config {\n    int TIMEOUT = 5000;\n}",
+    "image": null,
+    "options": {
+      "vi": [
+        "Mọi biến trong interface ngầm định là public, static và final",
+        "Biến trong interface bắt buộc phải được khởi tạo giá trị ngay tại dòng khai báo",
+        "Không thể khai báo biến với từ khóa private hoặc protected trong interface",
+        "Lớp con có thể thay đổi giá trị của biến interface thông qua phép gán"
+      ],
+      "en": [
+        "Every field in an interface is implicitly public, static, and final",
+        "Fields in an interface must be initialized with a value at declaration",
+        "Fields cannot be declared with private or protected modifiers in interfaces",
+        "Subclasses can reassign the value of interface fields via assignment"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Trường trong interface luôn là public static final constant, phải gán giá trị ngay, và không thể thay đổi giá trị (final).",
+      "en": "Interface fields are implicitly public static final constants that cannot be reassigned."
+    }
+  },
+  {
+    "id": "mc-oop-024",
+    "topicId": "objects_classes",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Về cơ chế nhân bản đối tượng clone() trong Java:",
+      "en": "Regarding object cloning via clone() in Java:"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Lớp muốn sử dụng super.clone() phải implement marker interface java.lang.Cloneable",
+        "Nếu không implement Cloneable mà gọi super.clone(), Java sẽ ném CloneNotSupportedException",
+        "Phương thức Object.clone() mặc định thực hiện Shallow Copy (sao chép nông)",
+        "Shallow Copy sẽ tự động nhân bản độc lập các đối tượng tham chiếu lồng nhau bên trong"
+      ],
+      "en": [
+        "A class wishing to invoke super.clone() must implement java.lang.Cloneable",
+        "Invoking super.clone() without implementing Cloneable throws CloneNotSupportedException",
+        "Object.clone() performs a Shallow Copy by default",
+        "Shallow Copy automatically creates independent duplicates of nested referenced objects"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Shallow Copy chỉ copy giá trị nguyên thủy và địa chỉ tham chiếu, không clone đối tượng lồng nhau (muốn clone đối tượng lồng phải tự viết Deep Copy).",
+      "en": "Shallow copy only duplicates primitives and reference addresses; deep copying requires manual cloning of nested references."
+    }
+  },
+  {
+    "id": "mc-oop-025",
+    "topicId": "exception",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Những quy tắc nào sau đây là BẮT BUỘC khi viết nhiều khối catch (Multiple catch blocks)?",
+      "en": "Which of the following rules are MANDATORY when writing multiple catch blocks?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Khối catch bắt ngoại lệ con (subclass) phải đứng TRƯỚC khối catch bắt ngoại lệ cha (superclass)",
+        "Đặt khối catch ngoại lệ cha trước ngoại lệ con sẽ gây lỗi biên dịch 'unreachable code'",
+        "Trong cú pháp multi-catch (catch (A | B e)), biến ngoại lệ e là ngầm định final",
+        "Trong cú pháp multi-catch (catch (A | B e)), A và B không được có quan hệ kế thừa cha-con trực tiếp với nhau"
+      ],
+      "en": [
+        "Catch blocks for subclasses must appear BEFORE catch blocks for superclasses",
+        "Placing superclass catch before subclass catch causes an 'unreachable code' compile error",
+        "In multi-catch syntax (catch (A | B e)), the exception variable e is implicitly final",
+        "In multi-catch syntax (catch (A | B e)), classes A and B cannot have an inheritance relationship"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Tất cả các quy tắc trên đều là bắt buộc của trình biên dịch Java nhằm tránh khối catch không thể tiếp cận.",
+      "en": "All these rules are strictly enforced by the Java compiler to prevent unreachable catch handlers."
+    }
+  },
+  {
+    "id": "mc-oop-026",
+    "topicId": "lambda",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Các dạng Method Reference (tham chiếu phương thức) hợp lệ trong Java 8 gồm những loại nào?",
+      "en": "Which of the following are valid forms of Method References in Java 8?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Tham chiếu phương thức static: ClassName::staticMethodName",
+        "Tham chiếu phương thức instance của một đối tượng cụ thể: instance::instanceMethodName",
+        "Tham chiếu phương thức instance của một đối tượng tùy ý của kiểu cho trước: ClassName::instanceMethodName",
+        "Tham chiếu đến constructor: ClassName::new"
+      ],
+      "en": [
+        "Static method reference: ClassName::staticMethodName",
+        "Instance method reference of a specific object: instance::instanceMethodName",
+        "Instance method reference of an arbitrary object of a given type: ClassName::instanceMethodName",
+        "Constructor reference: ClassName::new"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": {
+      "vi": "Java 8 hỗ trợ cả 4 loại tham chiếu phương thức trên với toán tử ::",
+      "en": "Java 8 supports all 4 forms of method references utilizing the :: double colon operator."
+    }
+  },
+  {
+    "id": "mc-oop-027",
+    "topicId": "inheritance",
+    "type": "MULTIPLE_CHOICE",
+    "category": {
+      "vi": "Inheritance",
+      "en": "Inheritance"
+    },
+    "question": {
+      "vi": "Về hiện tượng che giấu trường (Field Hiding / Shadowing) trong kế thừa:",
+      "en": "Regarding Field Hiding (Shadowing) in Java inheritance:"
+    },
+    "codeSnippet": "class Parent { int x = 10; }\nclass Child extends Parent { int x = 20; }",
+    "image": null,
+    "options": {
+      "vi": [
+        "Biến x trong Child che giấu biến x của Parent chứ không hề override biến x",
+        "Truy cập trường phụ thuộc vào kiểu của biến tham chiếu tại compile-time, không phụ thuộc vào đối tượng thực tế tại runtime",
+        "Có thể truy cập biến của Parent từ bên trong Child bằng cú pháp super.x",
+        "Khai báo Parent p = new Child(); thì p.x sẽ mang giá trị 20"
+      ],
+      "en": [
+        "Field x in Child hides field x in Parent rather than overriding it",
+        "Field access is resolved at compile time based on the reference type, not runtime object type",
+        "Parent's hidden field can be accessed inside Child using super.x",
+        "Parent p = new Child(); evaluates p.x as 20"
+      ]
+    },
+    "correctIndices": [
+      0,
+      1,
+      2
+    ],
+    "explanation": {
+      "vi": "Fields không có tính đa hình. Khi Parent p = new Child(); thì p.x được giải quyết theo kiểu Parent nên mang giá trị 10, không phải 20.",
+      "en": "Fields are not polymorphic. Parent p = new Child(); evaluates p.x as 10 according to reference type Parent."
+    }
+  },
+  {
+    "id": "fb-oop-006",
+    "topicId": "polymorphism",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Cho đoạn code sau, hãy cho biết kết quả in ra màn hình console là gì?",
+      "en": "Given the following code snippet, what is printed to the console?"
+    },
+    "codeSnippet": "class A {\n    int x = 10;\n    int getX() { return x; }\n}\nclass B extends A {\n    int x = 20;\n    int getX() { return x; }\n}\npublic class Test {\n    public static void main(String[] args) {\n        A obj = new B();\n        System.out.print(obj.x + \" \" + obj.getX());\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "10 20",
+      "10  20"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: 10 20",
+      "en": "e.g. 10 20"
+    },
+    "explanation": {
+      "vi": "obj.x truy cập trực tiếp biến (field binding theo kiểu A -> 10). obj.getX() là lời gọi phương thức đa hình (dynamic dispatch theo đối tượng B -> 20). Kết quả: '10 20'.",
+      "en": "obj.x is bound at compile time to A.x (10). obj.getX() uses dynamic dispatch executing B.getX() (20). Output is '10 20'."
+    }
+  },
+  {
+    "id": "fb-oop-007",
+    "topicId": "constructor",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Constructors",
+      "en": "Constructors"
+    },
+    "question": {
+      "vi": "Cho đoạn mã sau, kết quả in ra màn hình console là gì?",
+      "en": "What is the output printed to the console from the following code?"
+    },
+    "codeSnippet": "class Base {\n    Base() { System.out.print(\"B\"); }\n}\nclass Derived extends Base {\n    Derived() { System.out.print(\"D\"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new Derived();\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "BD",
+      "\"BD\""
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: BD",
+      "en": "e.g. BD"
+    },
+    "explanation": {
+      "vi": "Constructor của Derived tự động chèn ngầm định super() ở dòng đầu tiên, nên Base() chạy trước in 'B', sau đó Derived() in 'D' -> 'BD'.",
+      "en": "Derived constructor implicitly calls super(), so Base constructor prints 'B' first followed by Derived printing 'D' -> 'BD'."
+    }
+  },
+  {
+    "id": "fb-oop-008",
+    "topicId": "exception",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Giá trị số nguyên in ra màn hình console của đoạn mã sau là bao nhiêu?",
+      "en": "What integer value is printed to the console by the following code?"
+    },
+    "codeSnippet": "public class Test {\n    static int compute() {\n        try {\n            return 1;\n        } finally {\n            return 2;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(compute());\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "2"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập số nguyên kết quả (ví dụ: 2)",
+      "en": "Enter integer result (e.g. 2)"
+    },
+    "explanation": {
+      "vi": "Lệnh return 2 trong khối finally luôn được thực thi sau cùng và ghi đè giá trị return 1 của khối try. Kết quả in ra 2.",
+      "en": "The return 2 statement in the finally block overrides the return 1 statement in the try block. Output is 2."
+    }
+  },
+  {
+    "id": "fb-oop-009",
+    "topicId": "interface",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Từ khóa nào trong Java 8 cho phép định nghĩa phương thức có sẵn phần thân triển khai mặc định trong interface?",
+      "en": "Which keyword introduced in Java 8 allows defining methods with concrete default implementation bodies in interfaces?"
+    },
+    "codeSnippet": "public interface Walkable {\n    ____ void walk() {\n        System.out.println(\"Walking...\");\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "default"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: default)",
+      "en": "Enter keyword (e.g. default)"
+    },
+    "explanation": {
+      "vi": "Từ khóa default được sử dụng để định nghĩa default method trong interface từ Java 8.",
+      "en": "The default keyword specifies a default interface method body starting in Java 8."
+    }
+  },
+  {
+    "id": "fb-oop-010",
+    "topicId": "objects_classes",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Cho đoạn mã sau, kết quả in ra màn hình console là gì?",
+      "en": "Given the following code snippet, what is printed to the console?"
+    },
+    "codeSnippet": "class Sample {\n    static { System.out.print(\"S\"); }\n    { System.out.print(\"I\"); }\n    Sample() { System.out.print(\"C\"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new Sample();\n        new Sample();\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "SICIC"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: SICIC",
+      "en": "e.g. SICIC"
+    },
+    "explanation": {
+      "vi": "Khối static chỉ chạy 1 lần duy nhất khi nạp lớp ('S'). Mỗi lần new Sample() thì instance block ('I') chạy trước constructor ('C'). Do đó 2 lần tạo đối tượng in ra: 'S' + 'IC' + 'IC' = 'SICIC'.",
+      "en": "Static block executes once on class load ('S'). Each instantiation triggers instance block ('I') followed by constructor ('C') -> 'SICIC'."
+    }
+  },
+  {
+    "id": "fb-oop-011",
+    "topicId": "lambda",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Annotation nào được đặt trước khai báo interface để đảm bảo compiler kiểm tra interface đó chỉ có đúng 1 abstract method?",
+      "en": "Which annotation is placed above an interface declaration to ensure the compiler verifies it has exactly one abstract method?"
+    },
+    "codeSnippet": "____\npublic interface StringTransformer {\n    String transform(String s);\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "@FunctionalInterface",
+      "FunctionalInterface"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: @FunctionalInterface",
+      "en": "e.g. @FunctionalInterface"
+    },
+    "explanation": {
+      "vi": "@FunctionalInterface giúp trình biên dịch kiểm tra tính hợp lệ của functional interface và báo lỗi nếu có nhiều hơn 1 abstract method.",
+      "en": "@FunctionalInterface instructs the compiler to verify single abstract method compliance."
+    }
+  },
+  {
+    "id": "fb-oop-012",
+    "topicId": "encapsulation",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Encapsulation",
+      "en": "Encapsulation"
+    },
+    "question": {
+      "vi": "Từ khóa nào được đặt trước biến để đảm bảo biến đó chỉ có thể được gán giá trị một lần duy nhất và trở thành hằng số?",
+      "en": "Which keyword ensures a variable can only be assigned once and effectively becomes a constant?"
+    },
+    "codeSnippet": "public static ____ double PI = 3.14159265359;",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "final"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: final)",
+      "en": "Enter keyword (e.g. final)"
+    },
+    "explanation": {
+      "vi": "Từ khóa final ngăn chặn việc gán lại giá trị cho biến.",
+      "en": "The final keyword prevents re-assignment of a variable."
+    }
+  },
+  {
+    "id": "fb-oop-013",
+    "topicId": "inner_class",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "Từ khóa nào còn thiếu ở dòng code dưới đây để khởi tạo một Member Inner Class từ đối tượng Outer?",
+      "en": "Which keyword is missing below to instantiate an inner member class using an outer instance?"
+    },
+    "codeSnippet": "Outer outer = new Outer();\nOuter.Inner inner = outer.____ Inner();",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "new"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: new)",
+      "en": "Enter keyword (e.g. new)"
+    },
+    "explanation": {
+      "vi": "Cú pháp khởi tạo non-static inner class từ bên ngoài là: outerInstance.new InnerClass().",
+      "en": "The syntax to create an inner class instance from outside is outerInstance.new InnerClass()."
+    }
+  },
+  {
+    "id": "fb-oop-014",
+    "topicId": "polymorphism",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Đoạn code sau in ra ký tự gì trên console ('L' hay 'I')?",
+      "en": "What character does the following code print to console ('L' or 'I')?"
+    },
+    "codeSnippet": "public class Test {\n    static void print(long x) { System.out.print(\"L\"); }\n    static void print(Integer x) { System.out.print(\"I\"); }\n    public static void main(String[] args) {\n        int n = 5;\n        print(n);\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "L",
+      "\"L\""
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập L hoặc I",
+      "en": "Enter L or I"
+    },
+    "explanation": {
+      "vi": "Quy tắc nạp chồng của Java ưu tiên Widening nguyên thủy (int -> long) trước Autoboxing (int -> Integer). Vì vậy print(long) được gọi và in 'L'.",
+      "en": "Primitive widening (int -> long) takes precedence over autoboxing (int -> Integer) in method overloading resolution, printing 'L'."
+    }
+  },
+  {
+    "id": "fb-oop-015",
+    "topicId": "exception",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Tên loại ngoại lệ RuntimeException ném ra khi downcasting sai kiểu đối tượng (ví dụ: ép kiểu một đối tượng Animal thực chất là Cat sang Dog)?",
+      "en": "What is the class name of the RuntimeException thrown when downcasting an object to an incompatible type?"
+    },
+    "codeSnippet": "Object s = Integer.valueOf(42);\nString str = (String) s; // Ném ngoại lệ gì tại runtime?",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "ClassCastException",
+      "java.lang.ClassCastException"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: ClassCastException",
+      "en": "e.g. ClassCastException"
+    },
+    "explanation": {
+      "vi": "ClassCastException được ném ra tại runtime khi ép kiểu đối tượng sang một lớp con không hợp lệ.",
+      "en": "ClassCastException is thrown at runtime when an invalid downcast is attempted."
+    }
+  },
+  {
+    "id": "fb-oop-016",
+    "topicId": "inheritance",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Inheritance",
+      "en": "Inheritance"
+    },
+    "question": {
+      "vi": "Từ khóa nào được dùng trong lớp con để gọi tường minh phương thức của lớp cha khi phương thức đó bị ghi đè?",
+      "en": "Which keyword is used inside a subclass to explicitly invoke an overridden method of its superclass?"
+    },
+    "codeSnippet": "class Child extends Parent {\n    @Override void draw() {\n        ____.draw(); // Goi ham draw cua Parent\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "super"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: super)",
+      "en": "Enter keyword (e.g. super)"
+    },
+    "explanation": {
+      "vi": "Từ khóa super cho phép truy cập phương thức hoặc thuộc tính của lớp cha trực tiếp.",
+      "en": "The super keyword references members of the immediate parent class."
+    }
+  },
+  {
+    "id": "fb-oop-017",
+    "topicId": "abstraction",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Abstraction",
+      "en": "Abstraction"
+    },
+    "question": {
+      "vi": "Một phương thức trừu tượng (abstract method) có được phép chứa phần thân cài đặt cặp ngoặc nhọn {} không? (Điền: có hoặc không)",
+      "en": "Is an abstract method permitted to contain an implementation body block {}? (Answer: yes or no)"
+    },
+    "codeSnippet": "abstract void process();",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "không",
+      "khong",
+      "no",
+      "false"
+    ],
+    "blankPlaceholder": {
+      "vi": "Điền 'có' hoặc 'không'",
+      "en": "Enter 'yes' or 'no'"
+    },
+    "explanation": {
+      "vi": "Phương thức abstract kết thúc bằng dấu chấm phẩy ';' và tuyệt đối không được có cặp ngoặc nhọn phần thân {}.",
+      "en": "Abstract methods terminate with a semicolon and cannot have curly brace body blocks."
+    }
+  },
+  {
+    "id": "fb-oop-018",
+    "topicId": "objects_classes",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Tên lớp cha gốc cao nhất của mọi lớp trong Java là gì?",
+      "en": "What is the name of the root superclass of all classes in Java?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "Object",
+      "java.lang.Object"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: Object",
+      "en": "e.g. Object"
+    },
+    "explanation": {
+      "vi": "java.lang.Object là lớp cơ sở cao nhất của cây phân cấp lớp trong Java.",
+      "en": "java.lang.Object is the ultimate root class of the Java class hierarchy."
+    }
+  },
+  {
+    "id": "fb-oop-019",
+    "topicId": "lambda",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Kết quả boolean in ra màn hình console của đoạn code sau là gì (true hay false)?",
+      "en": "What boolean value is printed to the console by the following code (true or false)?"
+    },
+    "codeSnippet": "import java.util.function.Predicate;\npublic class Test {\n    public static void main(String[] args) {\n        Predicate<Integer> isPositive = x -> x > 0;\n        System.out.print(isPositive.test(10));\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "true"
+    ],
+    "blankPlaceholder": {
+      "vi": "true hoặc false",
+      "en": "true or false"
+    },
+    "explanation": {
+      "vi": "10 > 0 trả về true, phương thức test() của Predicate trả về true.",
+      "en": "Predicate.test(10) evaluates 10 > 0 yielding true."
+    }
+  },
+  {
+    "id": "fb-oop-020",
+    "topicId": "exception",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Từ khóa nào được đặt ở phần khai báo phương thức (method signature) để thông báo các ngoại lệ checked mà phương thức có thể ném ra?",
+      "en": "Which keyword is used in a method declaration signature to declare checked exceptions it might throw?"
+    },
+    "codeSnippet": "public void readFile(String path) ____ IOException, FileNotFoundException {\n    // ...\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "throws"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: throws",
+      "en": "e.g. throws"
+    },
+    "explanation": {
+      "vi": "Từ khóa throws dùng trong khai báo phương thức, còn throw dùng để ném đối tượng exception trong thân hàm.",
+      "en": "The throws keyword declares exception types on a method signature, contrasting with throw inside the method body."
+    }
+  },
+  {
+    "id": "fb-oop-021",
+    "topicId": "inner_class",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "Một Local Inner Class trong phương thức chỉ có thể truy cập các biến cục bộ nếu biến đó là final hoặc mang tính chất ________ final?",
+      "en": "A Local Inner class inside a method can only access local variables if they are final or ________ final?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "effectively",
+      "effectively final"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: effectively)",
+      "en": "e.g. effectively"
+    },
+    "explanation": {
+      "vi": "Từ Java 8, biến không cần khai báo tường minh final nhưng không được gán lại giá trị sau đó (gọi là effectively final).",
+      "en": "Since Java 8, variables accessed by inner classes or lambdas must be explicitly final or effectively final."
+    }
+  },
+  {
+    "id": "fb-oop-022",
+    "topicId": "polymorphism",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Đoạn code sau in ra ký tự gì trên console ('P' hay 'C')?",
+      "en": "What character does the following code print to console ('P' or 'C')?"
+    },
+    "codeSnippet": "class Parent {\n    static void print() { System.out.print(\"P\"); }\n}\nclass Child extends Parent {\n    static void print() { System.out.print(\"C\"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Parent obj = new Child();\n        obj.print();\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "P",
+      "\"P\""
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập P hoặc C",
+      "en": "Enter P or C"
+    },
+    "explanation": {
+      "vi": "Static method không có tính đa hình (chỉ bị method hiding) và được bind tại compile-time dựa theo kiểu tham chiếu Parent. Kết quả in ra 'P'.",
+      "en": "Static methods are hidden, not overridden, and resolve statically based on reference type Parent, printing 'P'."
+    }
+  },
+  {
+    "id": "fb-oop-023",
+    "topicId": "interface",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Từ phiên bản Java 9, access modifier nào được cho phép dùng cho phương thức có thân hàm bên trong interface để tái sử dụng mã nội bộ?",
+      "en": "From Java 9 onwards, which access modifier is permitted for methods with bodies in interfaces to share internal logic?"
+    },
+    "codeSnippet": "public interface Service {\n    default void execute() { log(); }\n    ____ void log() { System.out.println(\"logging\"); }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "private"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: private",
+      "en": "e.g. private"
+    },
+    "explanation": {
+      "vi": "Java 9 cho phép khai báo private method (cả static và non-static) trong interface nhằm chia sẻ mã giữa các default method.",
+      "en": "Java 9 permits private methods in interfaces to share private helper logic across default methods."
+    }
+  },
+  {
+    "id": "fb-oop-024",
+    "topicId": "constructor",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Constructors",
+      "en": "Constructors"
+    },
+    "question": {
+      "vi": "Khi đã định nghĩa một constructor có tham số như MyClass(int a), câu lệnh new MyClass() có biên dịch thành công không? (Điền: có hoặc không)",
+      "en": "When a parameterized constructor like MyClass(int a) is defined, does new MyClass() compile successfully? (Answer: yes or no)"
+    },
+    "codeSnippet": "class MyClass {\n    MyClass(int a) {}\n}\n// new MyClass();",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "không",
+      "khong",
+      "no",
+      "false"
+    ],
+    "blankPlaceholder": {
+      "vi": "Điền 'có' hoặc 'không'",
+      "en": "Enter 'yes' or 'no'"
+    },
+    "explanation": {
+      "vi": "Khi lớp đã có bất kỳ constructor nào, compiler sẽ không tự sinh default no-arg constructor nữa, do đó gọi new MyClass() sẽ báo lỗi biên dịch.",
+      "en": "Declaring any constructor suppresses automatic generation of the default no-argument constructor, causing compilation failure."
+    }
+  },
+  {
+    "id": "fb-oop-025",
+    "topicId": "encapsulation",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Encapsulation",
+      "en": "Encapsulation"
+    },
+    "question": {
+      "vi": "Kỹ thuật sao chép một đối tượng tham chiếu mutable khi nhận vào constructor hoặc trả ra qua getter để bảo vệ tính đóng gói được gọi là ________ copying?",
+      "en": "The technique of copying a mutable object in constructors or getters to protect encapsulation is called ________ copying?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "defensive",
+      "defensive copying"
+    ],
+    "blankPlaceholder": {
+      "vi": "Nhập từ khóa (ví dụ: defensive)",
+      "en": "e.g. defensive"
+    },
+    "explanation": {
+      "vi": "Defensive copying (sao chép phòng thủ) ngăn đối tượng bên ngoài can thiệp làm thay đổi trạng thái nội bộ của class.",
+      "en": "Defensive copying creates isolated clones to safeguard internal state from external tampering."
+    }
+  },
+  {
+    "id": "fb-oop-026",
+    "topicId": "lambda",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Cú pháp Method Reference tương đương với biểu thức lambda (s) -> System.out.println(s) là gì?",
+      "en": "What is the Method Reference syntax equivalent to the lambda expression (s) -> System.out.println(s)?"
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "System.out::println"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: System.out::println",
+      "en": "e.g. System.out::println"
+    },
+    "explanation": {
+      "vi": "System.out::println là tham chiếu phương thức instance println trên đối tượng tĩnh System.out.",
+      "en": "System.out::println references the println instance method of the PrintStream instance System.out."
+    }
+  },
+  {
+    "id": "fb-oop-027",
+    "topicId": "objects_classes",
+    "type": "FILL_BLANK",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Đoạn mã sau in ra kết quả gì trên console?",
+      "en": "What is printed to the console by the following code?"
+    },
+    "codeSnippet": "public class Test {\n    public static void main(String[] args) {\n        String s1 = new String(\"Java\");\n        String s2 = new String(\"Java\");\n        System.out.print((s1 == s2) + \" \" + s1.equals(s2));\n    }\n}",
+    "image": null,
+    "options": {
+      "vi": [],
+      "en": []
+    },
+    "acceptedAnswers": [
+      "false true"
+    ],
+    "blankPlaceholder": {
+      "vi": "Ví dụ: false true",
+      "en": "e.g. false true"
+    },
+    "explanation": {
+      "vi": "s1 == s2 so sánh 2 địa chỉ vùng nhớ heap khác nhau -> false. s1.equals(s2) so sánh nội dung chuỗi 'Java' giống nhau -> true. Kết quả: 'false true'.",
+      "en": "s1 == s2 compares distinct heap addresses (false). s1.equals(s2) compares character sequences (true) -> 'false true'."
+    }
+  },
+  {
+    "id": "tf-oop-005",
+    "topicId": "polymorphism",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Trong Java, một phương thức được khai báo với từ khóa 'private' hoặc 'final' trong lớp cha có thể bị ghi đè (override) bởi lớp con.",
+      "en": "In Java, a method declared with 'private' or 'final' in a parent class can be overridden by a subclass."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Phương thức private không được kế thừa nên không thể override. Phương thức final ngăn cấm hoàn toàn việc override ở lớp con.",
+      "en": "False. Private methods are not inherited, and final methods explicitly forbid overriding."
+    }
+  },
+  {
+    "id": "tf-oop-006",
+    "topicId": "objects_classes",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Toán tử '==' trong Java khi dùng để so sánh hai đối tượng sẽ tự động so sánh giá trị nội dung các trường bên trong hai đối tượng đó.",
+      "en": "The '==' operator in Java automatically compares internal field values when comparing two objects."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Toán tử == so sánh địa chỉ tham chiếu vùng nhớ. Để so sánh giá trị logic nội dung bắt buộc phải dùng phương thức equals().",
+      "en": "False. The == operator checks reference memory addresses. Logical content equality requires the equals() method."
+    }
+  },
+  {
+    "id": "tf-oop-007",
+    "topicId": "interface",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Một interface trong Java có thể kế thừa (extends) đồng thời từ nhiều interface khác.",
+      "en": "An interface in Java can extend multiple interfaces simultaneously."
+    },
+    "codeSnippet": "interface C extends A, B { }",
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Java cấm đa kế thừa class nhưng cho phép đa kế thừa interface (interface C extends A, B).",
+      "en": "True. While Java forbids multiple class inheritance, multiple interface inheritance is fully supported."
+    }
+  },
+  {
+    "id": "tf-oop-008",
+    "topicId": "exception",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Nếu phương thức ở lớp cha ném ngoại lệ checked là IOException, phương thức ghi đè ở lớp con có thể khai báo ném Exception rộng hơn.",
+      "en": "If a superclass method declares throws IOException, an overriding subclass method can declare throws Exception."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Phương thức ghi đè không được phép ném checked exception rộng hơn phương thức cha (chỉ được ném cùng kiểu hoặc kiểu con hẹp hơn, hoặc không ném).",
+      "en": "False. An overriding method cannot declare broader checked exceptions than the overridden parent method."
+    }
+  },
+  {
+    "id": "tf-oop-009",
+    "topicId": "constructor",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Constructors",
+      "en": "Constructors"
+    },
+    "question": {
+      "vi": "Constructor của một lớp có thể được khai báo với các từ khóa bổ nghĩa như 'abstract', 'static' hoặc 'final'.",
+      "en": "A class constructor can be declared with modifiers such as 'abstract', 'static', or 'final'."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Constructor không thể là abstract, static, hay final. Chỉ có access modifier (public, protected, default, private) được phép dùng cho constructor.",
+      "en": "False. Constructors cannot be abstract, static, or final. Only access modifiers are allowed."
+    }
+  },
+  {
+    "id": "tf-oop-010",
+    "topicId": "abstraction",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Abstraction",
+      "en": "Abstraction"
+    },
+    "question": {
+      "vi": "Một abstract class trong Java bắt buộc phải chứa ít nhất một abstract method.",
+      "en": "An abstract class in Java is strictly required to contain at least one abstract method."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Một abstract class hoàn toàn có thể không chứa abstract method nào nhưng vẫn ngăn không cho phép khởi tạo trực tiếp bằng toán tử new.",
+      "en": "False. An abstract class can have zero abstract methods while still prohibiting direct instantiation via new."
+    }
+  },
+  {
+    "id": "tf-oop-011",
+    "topicId": "inner_class",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "Một Anonymous Inner Class (lớp lồng nặc danh) có thể định nghĩa constructor tường minh để nhận tham số khởi tạo.",
+      "en": "An Anonymous Inner Class can declare an explicit constructor to accept initialization parameters."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Anonymous class không có tên nên không thể viết constructor; việc khởi tạo phải sử dụng instance initializer block.",
+      "en": "False. Anonymous inner classes have no name and therefore cannot declare constructors."
+    }
+  },
+  {
+    "id": "tf-oop-012",
+    "topicId": "lambda",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Biểu thức Lambda có thể sửa đổi và gán lại giá trị cho một biến cục bộ (local variable) nằm ở phương thức bao bọc nó.",
+      "en": "A Lambda expression can reassign and modify the value of a local variable declared in its enclosing method."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Biến cục bộ bên ngoài được lambda capture bắt buộc phải là final hoặc effectively final (không được gán lại giá trị).",
+      "en": "False. Captured local variables must be effectively final and cannot be modified."
+    }
+  },
+  {
+    "id": "tf-oop-013",
+    "topicId": "encapsulation",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Encapsulation",
+      "en": "Encapsulation"
+    },
+    "question": {
+      "vi": "Access modifier 'protected' cho phép các lớp con (subclasses) nằm ở package khác truy cập được thành viên của lớp cha.",
+      "en": "The 'protected' access modifier allows subclasses located in a different package to access superclass members."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. 'protected' mở rộng phạm vi cho phép tất cả các subclass truy cập bất kể nằm ở package nào, cùng với các class trong cùng package.",
+      "en": "True. Protected members are accessible within the same package and by any subclass in other packages."
+    }
+  },
+  {
+    "id": "tf-oop-014",
+    "topicId": "inheritance",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Inheritance",
+      "en": "Inheritance"
+    },
+    "question": {
+      "vi": "Các thành viên private của lớp cha vẫn tồn tại trong vùng nhớ của đối tượng lớp con, dù lớp con không thể truy cập trực tiếp bằng tên biến.",
+      "en": "Private fields of a parent class still exist in the memory allocated for a child instance, even though the child cannot access them directly by name."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Đối tượng con chứa đầy đủ các trường của cha trong bộ nhớ heap; trường private chỉ bị hạn chế tầm nhìn (visibility) và có thể đọc qua getter của cha.",
+      "en": "True. Subclass heap allocations include all inherited fields; private restricts visibility, not memory inclusion."
+    }
+  },
+  {
+    "id": "tf-oop-015",
+    "topicId": "polymorphism",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Polymorphism",
+      "en": "Polymorphism"
+    },
+    "question": {
+      "vi": "Nạp chồng phương thức (Method Overloading) chỉ cần khác nhau về kiểu dữ liệu trả về (return type) là đã hợp lệ trong Java.",
+      "en": "Method Overloading in Java is valid if two methods differ solely by their return types."
+    },
+    "codeSnippet": "int compute(int x) { return x; }\ndouble compute(int x) { return x; } // Co hop le?",
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Method Overloading bắt buộc phải khác nhau về danh sách tham số (số lượng, kiểu dữ liệu hoặc thứ tự). Khác mỗi return type sẽ bị báo lỗi biên dịch.",
+      "en": "False. Overloading requires different parameter lists. Differing only by return type is a compile-time error."
+    }
+  },
+  {
+    "id": "tf-oop-016",
+    "topicId": "exception",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Khối lệnh 'finally' sẽ không bao giờ được thực thi nếu trong khối try hoặc catch gọi lệnh System.exit(0).",
+      "en": "The 'finally' block will never execute if System.exit(0) is invoked inside the try or catch block."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. System.exit(0) lập tức chấm dứt tiến trình JVM, do đó khối finally bị bỏ qua và không chạy.",
+      "en": "True. System.exit(0) terminates the JVM process immediately, bypassing the finally block."
+    }
+  },
+  {
+    "id": "tf-oop-017",
+    "topicId": "objects_classes",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Biến static chỉ được cấp phát một vùng nhớ duy nhất trong JVM và được chia sẻ chung cho mọi đối tượng thuộc lớp đó.",
+      "en": "A static variable is allocated only once in JVM memory and is shared across all instances of that class."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Biến static gắn liền với Class trong Metaspace/Heap và dùng chung cho mọi instances.",
+      "en": "True. Static fields belong to the class and are shared across all instances."
+    }
+  },
+  {
+    "id": "tf-oop-018",
+    "topicId": "interface",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Interfaces",
+      "en": "Interfaces"
+    },
+    "question": {
+      "vi": "Nếu một lớp implements hai interface mà cả hai đều có default method trùng tên và trùng tham số, mã nguồn vẫn tự động biên dịch mà không cần lập trình viên can thiệp.",
+      "en": "If a class implements two interfaces containing identical default methods, the code compiles automatically without developer intervention."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Đây là xung đột Diamond Problem; compiler báo lỗi và bắt buộc lớp con phải override phương thức đó để chỉ rõ cách xử lý.",
+      "en": "False. This creates a compiler error requiring the implementing class to explicitly override the conflicting method."
+    }
+  },
+  {
+    "id": "tf-oop-019",
+    "topicId": "abstraction",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Abstraction",
+      "en": "Abstraction"
+    },
+    "question": {
+      "vi": "Một concrete subclass kế thừa từ một abstract class bắt buộc phải cài đặt (implement) tất cả các abstract methods của lớp cha.",
+      "en": "A concrete subclass extending an abstract class must implement all abstract methods inherited from the parent."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Nếu concrete subclass không override hết các abstract methods của cha thì bản thân lớp con đó cũng phải khai báo là abstract class.",
+      "en": "True. A non-abstract subclass must provide concrete implementations for all inherited abstract methods."
+    }
+  },
+  {
+    "id": "tf-oop-020",
+    "topicId": "constructor",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Constructors",
+      "en": "Constructors"
+    },
+    "question": {
+      "vi": "Trong một constructor, câu lệnh gọi this(...) để gọi constructor khác cùng lớp có thể được đặt ở bất kỳ dòng nào bên trong thân constructor.",
+      "en": "Inside a constructor, a this(...) call invoking another constructor can be placed on any line of the constructor body."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Lời gọi this(...) hoặc super(...) bắt buộc phải là câu lệnh đầu tiên trong thân constructor.",
+      "en": "False. Calls to this(...) or super(...) must always be the very first statement."
+    }
+  },
+  {
+    "id": "tf-oop-021",
+    "topicId": "lambda",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Lambda & Functional Interface",
+      "en": "Lambda & Functional Interface"
+    },
+    "question": {
+      "vi": "Biểu thức Lambda thực chất là cú pháp viết gọn để tạo ra một instance của một Functional Interface.",
+      "en": "A Lambda expression is essentially a concise syntax for instantiating a Functional Interface."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Lambda cung cấp cách triển khai inline ngắn gọn cho phương thức trừu tượng duy nhất của Functional Interface.",
+      "en": "True. Lambdas represent inline implementations of single abstract method interfaces."
+    }
+  },
+  {
+    "id": "tf-oop-022",
+    "topicId": "inner_class",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Inner Class",
+      "en": "Inner Class"
+    },
+    "question": {
+      "vi": "Một Member Inner Class thông thường (non-static) có thể được khởi tạo trực tiếp mà không cần tồn tại đối tượng của Outer Class bao bọc nó.",
+      "en": "A regular non-static Member Inner Class can be directly instantiated without an existing enclosing Outer Class instance."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. Non-static inner class luôn gắn với một instance của outer class (cần outerObj.new Inner()).",
+      "en": "False. Non-static member classes require an enclosing outer class instance to exist."
+    }
+  },
+  {
+    "id": "tf-oop-023",
+    "topicId": "objects_classes",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Objects & Classes",
+      "en": "Objects & Classes"
+    },
+    "question": {
+      "vi": "Phương thức finalize() trong lớp Object được đảm bảo chắc chắn sẽ được Garbage Collector gọi ngay khi đối tượng không còn tham chiếu.",
+      "en": "The finalize() method in Object is guaranteed to be invoked promptly by the Garbage Collector once an object loses references."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 1,
+    "explanation": {
+      "vi": "Sai. GC không có cam kết về thời điểm chạy và finalize() đã bị deprecated từ Java 9 vì không đoán trước được và tiềm ẩn nguy hiểm.",
+      "en": "False. GC gives no timing guarantees, and finalize() was deprecated in Java 9 due to unpredictability and resource risks."
+    }
+  },
+  {
+    "id": "tf-oop-024",
+    "topicId": "exception",
+    "type": "TRUE_FALSE",
+    "category": {
+      "vi": "Exception Handling",
+      "en": "Exception Handling"
+    },
+    "question": {
+      "vi": "Các lớp ngoại lệ kế thừa từ java.lang.Error (như OutOfMemoryError, StackOverflowError) thuộc nhóm Unchecked và ứng dụng thông thường không nên cố gắng bắt bằng khối catch.",
+      "en": "Exceptions inheriting from java.lang.Error (such as OutOfMemoryError, StackOverflowError) are unchecked and should generally not be caught by applications."
+    },
+    "codeSnippet": null,
+    "image": null,
+    "options": {
+      "vi": [
+        "Đúng",
+        "Sai"
+      ],
+      "en": [
+        "True",
+        "False"
+      ]
+    },
+    "correctIndex": 0,
+    "explanation": {
+      "vi": "Đúng. Error đại diện cho các lỗi hệ thống nghiêm trọng của JVM mà ứng dụng không nên và không thể phục hồi an toàn.",
+      "en": "True. Errors indicate severe JVM system problems from which applications typically cannot recover."
+    }
   }
 ];

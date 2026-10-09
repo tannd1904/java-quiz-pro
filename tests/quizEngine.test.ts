@@ -201,5 +201,47 @@ describe('quizEngine', () => {
       expect(res.correctCount).toBe(1);
       expect(res.reviewList[0].isCorrect).toBe(true);
     });
+
+    it('guarantees balanced representation of new question types in prepareExamSession', () => {
+      const mixedPool: Question[] = [
+        ...mockQuestions, // 2 single choice in polymorphism & constructor
+        {
+          id: 'multi-x',
+          topicId: 'constructor',
+          type: 'MULTIPLE_CHOICE',
+          category: { vi: 'C', en: 'C' },
+          question: { vi: 'Q1', en: 'Q1' },
+          codeSnippet: null,
+          image: null,
+          options: { vi: ['A', 'B'], en: ['A', 'B'] },
+          correctIndices: [0, 1],
+          explanation: { vi: 'E', en: 'E' }
+        },
+        {
+          id: 'fb-x',
+          topicId: 'constructor',
+          type: 'FILL_BLANK',
+          category: { vi: 'C', en: 'C' },
+          question: { vi: 'Q2', en: 'Q2' },
+          codeSnippet: null,
+          image: null,
+          options: { vi: [], en: [] },
+          acceptedAnswers: ['ans'],
+          explanation: { vi: 'E', en: 'E' }
+        }
+      ];
+
+      const session = prepareExamSession(mixedPool, {
+        selectedTopicIds: ['constructor'],
+        questionCount: 2,
+        timeMinutes: 10,
+        shuffleOptions: false,
+        shuffleQuestions: false
+      });
+
+      expect(session.length).toBe(2);
+      const specialCount = session.filter(s => s.question.type && s.question.type !== 'SINGLE_CHOICE').length;
+      expect(specialCount).toBeGreaterThanOrEqual(1);
+    });
   });
 });

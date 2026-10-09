@@ -49,16 +49,36 @@ export function prepareExamSession(
 ): ExamQuestionItem[] {
   // 1. Filter pool by topics
   let pool = filterQuestionsByTopics(allQuestions, config.selectedTopicIds);
+  if (pool.length === 0) return [];
 
-  // 2. Shuffle question order if enabled
-  if (config.shuffleQuestions) {
-    pool = shuffleArray(pool);
-  }
-
-  // 3. Slice to desired count
+  // 2. Slice count with balanced representation for new question types
   const parsedCount = Number(config.questionCount);
   const count = Number.isFinite(parsedCount) && parsedCount > 0 ? Math.min(parsedCount, pool.length) : pool.length;
-  const selected = pool.slice(0, count);
+
+  let selected: Question[] = [];
+  const specialPool = pool.filter(q => q.type && q.type !== 'SINGLE_CHOICE');
+  const standardPool = pool.filter(q => !q.type || q.type === 'SINGLE_CHOICE');
+
+  if (specialPool.length > 0 && count < pool.length) {
+    // Ensure ~35% of exam questions come from the new formats (MULTIPLE_CHOICE, FILL_BLANK, TRUE_FALSE)
+    const targetSpecial = Math.min(specialPool.length, Math.max(1, Math.round(count * 0.35)));
+    const targetStandard = count - targetSpecial;
+
+    const sampledSpecial = config.shuffleQuestions ? shuffleArray(specialPool) : specialPool;
+    const sampledStandard = config.shuffleQuestions ? shuffleArray(standardPool) : standardPool;
+
+    selected = [
+      ...sampledSpecial.slice(0, targetSpecial),
+      ...sampledStandard.slice(0, targetStandard)
+    ];
+
+    if (config.shuffleQuestions) {
+      selected = shuffleArray(selected);
+    }
+  } else {
+    const shuffled = config.shuffleQuestions ? shuffleArray(pool) : pool;
+    selected = shuffled.slice(0, count);
+  }
 
   // 4. Map questions with option indices (supporting option shuffle)
   return selected.map(q => {

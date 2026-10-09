@@ -8,13 +8,13 @@ describe('Data Integrity (questions.json)', () => {
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
   const questions: Question[] = JSON.parse(rawData);
 
-  it('contains at least 505 unique questions (currently 519)', () => {
-    expect(questions.length).toBe(519);
+  it('contains at least 505 unique questions (currently 583)', () => {
+    expect(questions.length).toBe(583);
   });
 
   it('has unique question IDs without duplicates', () => {
     const idSet = new Set(questions.map(q => q.id));
-    expect(idSet.size).toBe(519);
+    expect(idSet.size).toBe(583);
   });
 
   it('ensures no duplicate questions exist in the bank', () => {
@@ -24,7 +24,7 @@ describe('Data Integrity (questions.json)', () => {
           `${q.type || 'SINGLE'}|${q.question.vi.trim().toLowerCase()}|${q.options.vi.join('|')}|${q.correctIndex}|${(q.correctIndices || []).join(',')}|${(q.acceptedAnswers || []).join(',')}|${q.image || ''}|${q.codeSnippet || ''}`
       )
     );
-    expect(questionFingerprints.size).toBe(519);
+    expect(questionFingerprints.size).toBe(583);
   });
 
   it('ensures all topics are represented with valid questions', () => {
@@ -95,9 +95,9 @@ describe('Data Integrity (questions.json)', () => {
     const fill = questions.filter(q => q.type === 'FILL_BLANK');
     const tf = questions.filter(q => q.type === 'TRUE_FALSE');
 
-    expect(multi.length).toBeGreaterThanOrEqual(5);
-    expect(fill.length).toBeGreaterThanOrEqual(5);
-    expect(tf.length).toBeGreaterThanOrEqual(4);
+    expect(multi.length).toBeGreaterThanOrEqual(25);
+    expect(fill.length).toBeGreaterThanOrEqual(25);
+    expect(tf.length).toBeGreaterThanOrEqual(20);
   });
 
   it('verifies all image references exist on disk', () => {
