@@ -3194,7 +3194,7 @@
         "Both sentences are wrong [Incorrect]"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": {
       "vi": "Đáp án đúng là: **Câu 1 đúng, câu 2 sai**.",
       "en": "The correct answer is: **Sentence 1 is correct, sentence 2 is incorrect**."
@@ -3399,39 +3399,6 @@
     }
   },
   {
-    "id": "java-034",
-    "topicId": "encapsulation",
-    "category": {
-      "vi": "Phạm Vi Truy Cập (Access Modifiers)",
-      "en": "Access Modifiers"
-    },
-    "question": {
-      "vi": "Một thành viên của một lớp được khai báo là private không những không thể được truy xuất từ bên trong lớp mà còn không nơi nào bên ngoài lớp.",
-      "en": "A member of a class declared private cannot only be accessed from within the class but also nowhere outside the class."
-    },
-    "codeSnippet": null,
-    "image": null,
-    "options": {
-      "vi": [
-        "Câu 1 sai, câu 2 đúng",
-        "Câu 1 đúng, câu 2 sai",
-        "Cả 2 câu cùng đúng",
-        "Cả 2 câu cùng sai"
-      ],
-      "en": [
-        "Sentence 1 is wrong, sentence 2 is correct",
-        "Sentence 1 is correct, sentence 2 is wrong",
-        "Both sentences are correct",
-        "Both sentences are wrong"
-      ]
-    },
-    "correctIndex": 1,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Câu 1 đúng, câu 2 sai**.",
-      "en": "The correct answer is: **Sentence 1 is correct, sentence 2 is incorrect**."
-    }
-  },
-  {
     "id": "java-035",
     "topicId": "arrays",
     "category": {
@@ -3627,39 +3594,6 @@
     "explanation": {
       "vi": "Đáp án đúng là: **Không có lỗi biên dịch.**.",
       "en": "The correct answer is: **There is no compilation error.**."
-    }
-  },
-  {
-    "id": "java-043",
-    "topicId": "inheritance",
-    "category": {
-      "vi": "Kế Thừa (Inheritance)",
-      "en": "Inheritance"
-    },
-    "question": {
-      "vi": "Câu 1: Một thành viên protected của một lớp có thể được truy xuất từ bất kỳ lớp nào trong cùng một gói và từ một lớp con nằm bên ngoài gói nếu lớp bên ngoài đó là lớp con. Câu 2:Một thành viên của một lớp được khai báo là private không những không thể được truy xuất từ bên trong lớp mà còn không nơi nào bên ngoài lớp.",
-      "en": "Question 1: A protected member of a class can be accessed from any class in the same package and from a subclass outside the package if that outer class is a subclass. Question 2: A member of a class declared private can not only be accessed from within the class but also nowhere outside the class."
-    },
-    "codeSnippet": null,
-    "image": null,
-    "options": {
-      "vi": [
-        "Câu 1 sai, câu 2 đúng",
-        "Câu 1 đúng, câu 2 sai",
-        "Cả 2 câu cùng đúng",
-        "Cả 2 câu cùng sai"
-      ],
-      "en": [
-        "Sentence 1 is wrong, sentence 2 is correct",
-        "Sentence 1 is correct, sentence 2 is wrong",
-        "Both sentences are correct",
-        "Both sentences are wrong"
-      ]
-    },
-    "correctIndex": 1,
-    "explanation": {
-      "vi": "Đáp án đúng là: **Câu 1 đúng, câu 2 sai**.",
-      "en": "The correct answer is: **Sentence 1 is correct, sentence 2 is incorrect**."
     }
   },
   {

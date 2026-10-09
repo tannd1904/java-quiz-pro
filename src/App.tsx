@@ -14,8 +14,6 @@ import { ExamPage } from './pages/ExamPage';
 import { ResultPage } from './pages/ResultPage';
 import { ExamSetupModal } from './components/quiz/ExamSetupModal';
 import { ExamHistoryModal } from './components/history/ExamHistoryModal';
-import { ReportedQuestionsAdminModal } from './components/admin/ReportedQuestionsAdminModal';
-import { questionReportService, EVENT_REPORTS_UPDATED } from './services/questionReportService';
 import { Coffee, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from './components/common/Button';
 
@@ -45,40 +43,6 @@ const MainApp: React.FC = () => {
     currentIndex: number;
     remainingSeconds: number;
   } | null>(null);
-
-  // Admin Reports Modal & Notification State
-  const [isAdmin, setIsAdmin] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('admin') === 'true' || window.location.hash === '#admin') {
-        localStorage.setItem('java_quiz_is_admin', 'true');
-        return true;
-      }
-      return localStorage.getItem('java_quiz_is_admin') === 'true';
-    }
-    return false;
-  });
-
-  const handleToggleAdmin = () => {
-    setIsAdmin((prev) => {
-      const next = !prev;
-      localStorage.setItem('java_quiz_is_admin', String(next));
-      return next;
-    });
-  };
-
-  const [isReportsAdminModalOpen, setIsReportsAdminModalOpen] = useState<boolean>(false);
-  const [pendingReportCount, setPendingReportCount] = useState<number>(() => {
-    return questionReportService.getPendingCount();
-  });
-
-  useEffect(() => {
-    const handleReportsUpdate = () => {
-      setPendingReportCount(questionReportService.getPendingCount());
-    };
-    window.addEventListener(EVENT_REPORTS_UPDATED, handleReportsUpdate);
-    return () => window.removeEventListener(EVENT_REPORTS_UPDATED, handleReportsUpdate);
-  }, []);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -234,9 +198,6 @@ const MainApp: React.FC = () => {
         onNavigateHome={handleNavigateHome}
         onOpenExamHistory={() => setIsExamHistoryModalOpen(true)}
         historyCount={examHistory.length}
-        isAdmin={isAdmin}
-        onOpenReports={() => setIsReportsAdminModalOpen(true)}
-        pendingReportCount={pendingReportCount}
       />
 
       <main style={{ flex: 1 }}>
@@ -361,14 +322,7 @@ const MainApp: React.FC = () => {
         onClearAll={handleClearAllHistory}
       />
 
-      {/* Reported Questions Admin Modal */}
-      <ReportedQuestionsAdminModal
-        isOpen={isReportsAdminModalOpen}
-        onClose={() => setIsReportsAdminModalOpen(false)}
-        allQuestions={questions}
-      />
-
-      <Footer isAdmin={isAdmin} onToggleAdmin={handleToggleAdmin} />
+      <Footer />
     </div>
   );
 };

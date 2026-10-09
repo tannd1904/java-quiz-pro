@@ -159,6 +159,10 @@ class QuestionReportService {
         vi: 'Sai đáp án được chỉ định',
         en: 'Incorrect marked answer',
       },
+      DUPLICATE_QUESTION: {
+        vi: 'Câu hỏi bị trùng lặp',
+        en: 'Duplicate question',
+      },
       TYPO_TRANSLATION: {
         vi: 'Lỗi chính tả / dịch thuật',
         en: 'Typo / translation error',

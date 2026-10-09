@@ -46,6 +46,14 @@ export const ReportQuestionModal: React.FC<ReportQuestionModalProps> = ({
       },
     },
     {
+      id: 'DUPLICATE_QUESTION',
+      title: { vi: 'Câu hỏi bị trùng lặp', en: 'Duplicate question' },
+      desc: {
+        vi: 'Câu hỏi này bị lặp lại nội dung hoặc giống hệt một câu hỏi khác trong ngân hàng đề.',
+        en: 'This question repeats content or is identical to another question in the bank.',
+      },
+    },
+    {
       id: 'TYPO_TRANSLATION',
       title: { vi: 'Lỗi chính tả / dịch thuật', en: 'Typo or translation error' },
       desc: {

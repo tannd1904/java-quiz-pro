@@ -95,5 +95,18 @@ describe('QuestionReportService', () => {
     expect(questionReportService.getUserReportedQuestionIds()).toContain('q-101');
     expect(questionReportService.isQuestionReportedByUser('q-101')).toBe(true);
   });
+
+  it('supports DUPLICATE_QUESTION reason correctly', () => {
+    const report = questionReportService.submitReport({
+      questionId: 'q-dup-1',
+      questionTitle: 'Question duplicate',
+      reason: 'DUPLICATE_QUESTION',
+      comment: 'Trùng với câu khác',
+    });
+
+    expect(report.reason).toBe('DUPLICATE_QUESTION');
+    expect(questionReportService.getReasonLabel('DUPLICATE_QUESTION', 'vi')).toBe('Câu hỏi bị trùng lặp');
+    expect(questionReportService.getReasonLabel('DUPLICATE_QUESTION', 'en')).toBe('Duplicate question');
+  });
 });
 

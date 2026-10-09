@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee, History, Flag } from 'lucide-react';
+import { Coffee, History } from 'lucide-react';
 import { useI18n } from '../../hooks/useI18n';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageSwitcher } from '../common/LanguageSwitcher';
@@ -8,18 +8,12 @@ interface NavbarProps {
   onNavigateHome: () => void;
   onOpenExamHistory?: () => void;
   historyCount?: number;
-  isAdmin?: boolean;
-  onOpenReports?: () => void;
-  pendingReportCount?: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onNavigateHome,
   onOpenExamHistory,
   historyCount = 0,
-  isAdmin = false,
-  onOpenReports,
-  pendingReportCount = 0,
 }) => {
   const { language, t } = useI18n();
 
@@ -139,54 +133,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
           )}
-
-          {/* Admin Reports Button (Only shown in Admin mode) */}
-          {isAdmin && onOpenReports && (
-            <button
-              type="button"
-              onClick={onOpenReports}
-              title={
-                language === 'en'
-                  ? 'Question Issue Reports (Admin)'
-                  : 'Quản lý Báo cáo câu hỏi sai (Quản trị viên)'
-              }
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                padding: '6px 10px',
-                borderRadius: 'var(--radius-md)',
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                backgroundColor:
-                  pendingReportCount > 0 ? 'rgba(239, 68, 68, 0.1)' : 'var(--bg-surface-subtle)',
-                border: `1px solid ${
-                  pendingReportCount > 0 ? 'rgba(239, 68, 68, 0.4)' : 'var(--border-default)'
-                }`,
-                color: pendingReportCount > 0 ? '#ef4444' : 'var(--text-secondary)',
-                cursor: 'pointer',
-                transition: 'all var(--transition-fast)',
-              }}
-            >
-              <Flag size={14} />
-              <span className="hide-on-mobile">{language === 'en' ? 'Reports' : 'Báo lỗi'}</span>
-              {pendingReportCount > 0 && (
-                <span
-                  style={{
-                    fontSize: '0.7rem',
-                    padding: '1px 5px',
-                    borderRadius: 'var(--radius-full)',
-                    backgroundColor: '#ef4444',
-                    color: '#ffffff',
-                    fontWeight: 700,
-                  }}
-                >
-                  {pendingReportCount}
-                </span>
-              )}
-            </button>
-          )}
-
 
           {/* Language Switcher */}
           <LanguageSwitcher />

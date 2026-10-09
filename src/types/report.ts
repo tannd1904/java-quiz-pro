@@ -1,5 +1,6 @@
 export type ReportReason =
   | 'WRONG_ANSWER'
+  | 'DUPLICATE_QUESTION'
   | 'TYPO_TRANSLATION'
   | 'UNCLEAR_EXPLANATION'
   | 'OUTDATED_OR_OTHER';
