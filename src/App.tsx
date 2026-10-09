@@ -14,6 +14,8 @@ import { ExamPage } from './pages/ExamPage';
 import { ResultPage } from './pages/ResultPage';
 import { ExamSetupModal } from './components/quiz/ExamSetupModal';
 import { ExamHistoryModal } from './components/history/ExamHistoryModal';
+import { ReportedQuestionsAdminModal } from './components/admin/ReportedQuestionsAdminModal';
+import { questionReportService, EVENT_REPORTS_UPDATED } from './services/questionReportService';
 import { Coffee, AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from './components/common/Button';
 
@@ -43,6 +45,20 @@ const MainApp: React.FC = () => {
     currentIndex: number;
     remainingSeconds: number;
   } | null>(null);
+
+  // Admin Reports Modal & Notification State
+  const [isReportsAdminModalOpen, setIsReportsAdminModalOpen] = useState<boolean>(false);
+  const [pendingReportCount, setPendingReportCount] = useState<number>(() => {
+    return questionReportService.getPendingCount();
+  });
+
+  useEffect(() => {
+    const handleReportsUpdate = () => {
+      setPendingReportCount(questionReportService.getPendingCount());
+    };
+    window.addEventListener(EVENT_REPORTS_UPDATED, handleReportsUpdate);
+    return () => window.removeEventListener(EVENT_REPORTS_UPDATED, handleReportsUpdate);
+  }, []);
 
   // Load question bank on mount
   const loadData = async () => {
@@ -198,6 +214,8 @@ const MainApp: React.FC = () => {
         onNavigateHome={handleNavigateHome}
         onOpenExamHistory={() => setIsExamHistoryModalOpen(true)}
         historyCount={examHistory.length}
+        onOpenReports={() => setIsReportsAdminModalOpen(true)}
+        pendingReportCount={pendingReportCount}
       />
 
       <main style={{ flex: 1 }}>
@@ -320,6 +338,13 @@ const MainApp: React.FC = () => {
         onSelectReview={handleReviewHistoryItem}
         onDeleteItem={handleDeleteHistoryItem}
         onClearAll={handleClearAllHistory}
+      />
+
+      {/* Reported Questions Admin Modal */}
+      <ReportedQuestionsAdminModal
+        isOpen={isReportsAdminModalOpen}
+        onClose={() => setIsReportsAdminModalOpen(false)}
+        allQuestions={questions}
       />
 
       <Footer />

@@ -359,4 +359,33 @@ describe('userProgressService', () => {
       expect(userProgressService.getPracticeProgress()).toEqual({});
     });
   });
+
+  describe('Bookmarks (Flagged Questions)', () => {
+    it('returns empty array when no bookmarks exist', () => {
+      expect(userProgressService.getBookmarks()).toEqual([]);
+    });
+
+    it('toggles bookmarks correctly', () => {
+      const added = userProgressService.toggleBookmark('q-bm-1');
+      expect(added).toBe(true);
+      expect(userProgressService.isBookmarked('q-bm-1')).toBe(true);
+      expect(userProgressService.getBookmarks()).toEqual(['q-bm-1']);
+
+      const added2 = userProgressService.toggleBookmark('q-bm-2');
+      expect(added2).toBe(true);
+      expect(userProgressService.getBookmarks()).toEqual(['q-bm-1', 'q-bm-2']);
+
+      const removed = userProgressService.toggleBookmark('q-bm-1');
+      expect(removed).toBe(false);
+      expect(userProgressService.isBookmarked('q-bm-1')).toBe(false);
+      expect(userProgressService.getBookmarks()).toEqual(['q-bm-2']);
+    });
+
+    it('clears all bookmarks', () => {
+      userProgressService.toggleBookmark('q-bm-1');
+      userProgressService.clearBookmarks();
+      expect(userProgressService.getBookmarks()).toEqual([]);
+    });
+  });
 });
+

@@ -16990,8 +16990,8 @@ const QUIZ_DATA = [
       "private;"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa access modifier (ví dụ: private)",
-      "en": "Enter access modifier keyword (e.g. private)"
+      "vi": "Nhập từ khóa access modifier...",
+      "en": "Enter access modifier keyword..."
     },
     "explanation": {
       "vi": "Từ khóa private hạn chế phạm vi truy cập chỉ trong nội bộ lớp, buộc bên ngoài phải thông qua các phương thức getter/setter hợp lệ.",
@@ -17022,8 +17022,8 @@ const QUIZ_DATA = [
       "\"Child\""
     ],
     "blankPlaceholder": {
-      "vi": "Nhập output chính xác của console (ví dụ: Child)",
-      "en": "Enter exact console output (e.g. Child)"
+      "vi": "Nhập kết quả output của console...",
+      "en": "Enter console output..."
     },
     "explanation": {
       "vi": "Nhờ tính đa hình động (Dynamic Method Dispatch), phương thức show() của đối tượng thực tế tại runtime (Child) sẽ được thực thi và in ra Child.",
@@ -17054,8 +17054,8 @@ const QUIZ_DATA = [
       "super();"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: super)",
-      "en": "Enter keyword (e.g. super)"
+      "vi": "Nhập từ khóa gọi constructor lớp cha...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa super() được dùng để gọi constructor của lớp cha và bắt buộc phải nằm ở dòng đầu tiên trong constructor của lớp con.",
@@ -17086,8 +17086,8 @@ const QUIZ_DATA = [
       "khoi finally"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa khối lệnh (ví dụ: finally)",
-      "en": "Enter block keyword (e.g. finally)"
+      "vi": "Nhập từ khóa khối lệnh dọn dẹp...",
+      "en": "Enter block keyword..."
     },
     "explanation": {
       "vi": "Khối finally luôn được chạy sau try/catch để đảm bảo các tài nguyên như file, connection được đóng an toàn, trừ khi JVM bị cưỡng chế tắt bởi System.exit().",
@@ -17117,8 +17117,8 @@ const QUIZ_DATA = [
       "abstract class"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: abstract)",
-      "en": "Enter keyword (e.g. abstract)"
+      "vi": "Nhập từ khóa khai báo...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa abstract dùng để khai báo abstract class. Abstract class không thể tạo instance trực tiếp bằng new Shape(), mà cần lớp con kế thừa.",
@@ -18114,8 +18114,8 @@ const QUIZ_DATA = [
       "10  20"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: 10 20",
-      "en": "e.g. 10 20"
+      "vi": "Nhập kết quả output của console...",
+      "en": "Enter console output..."
     },
     "explanation": {
       "vi": "obj.x truy cập trực tiếp biến (field binding theo kiểu A -> 10). obj.getX() là lời gọi phương thức đa hình (dynamic dispatch theo đối tượng B -> 20). Kết quả: '10 20'.",
@@ -18145,8 +18145,8 @@ const QUIZ_DATA = [
       "\"BD\""
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: BD",
-      "en": "e.g. BD"
+      "vi": "Nhập chuỗi kết quả in ra...",
+      "en": "Enter output sequence..."
     },
     "explanation": {
       "vi": "Constructor của Derived tự động chèn ngầm định super() ở dòng đầu tiên, nên Base() chạy trước in 'B', sau đó Derived() in 'D' -> 'BD'.",
@@ -18175,8 +18175,8 @@ const QUIZ_DATA = [
       "2"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập số nguyên kết quả (ví dụ: 2)",
-      "en": "Enter integer result (e.g. 2)"
+      "vi": "Nhập số nguyên kết quả...",
+      "en": "Enter integer result..."
     },
     "explanation": {
       "vi": "Lệnh return 2 trong khối finally luôn được thực thi sau cùng và ghi đè giá trị return 1 của khối try. Kết quả in ra 2.",
@@ -18205,8 +18205,8 @@ const QUIZ_DATA = [
       "default"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: default)",
-      "en": "Enter keyword (e.g. default)"
+      "vi": "Nhập từ khóa phương thức mặc định...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa default được sử dụng để định nghĩa default method trong interface từ Java 8.",
@@ -18235,8 +18235,8 @@ const QUIZ_DATA = [
       "SICIC"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: SICIC",
-      "en": "e.g. SICIC"
+      "vi": "Nhập thứ tự các khối code chạy...",
+      "en": "Enter execution order..."
     },
     "explanation": {
       "vi": "Khối static chỉ chạy 1 lần duy nhất khi nạp lớp ('S'). Mỗi lần new Sample() thì instance block ('I') chạy trước constructor ('C'). Do đó 2 lần tạo đối tượng in ra: 'S' + 'IC' + 'IC' = 'SICIC'.",
@@ -18266,8 +18266,8 @@ const QUIZ_DATA = [
       "FunctionalInterface"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: @FunctionalInterface",
-      "en": "e.g. @FunctionalInterface"
+      "vi": "Nhập tên annotation...",
+      "en": "Enter annotation name..."
     },
     "explanation": {
       "vi": "@FunctionalInterface giúp trình biên dịch kiểm tra tính hợp lệ của functional interface và báo lỗi nếu có nhiều hơn 1 abstract method.",
@@ -18296,8 +18296,8 @@ const QUIZ_DATA = [
       "final"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: final)",
-      "en": "Enter keyword (e.g. final)"
+      "vi": "Nhập từ khóa ngăn kế thừa/ghi đè...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa final ngăn chặn việc gán lại giá trị cho biến.",
@@ -18326,8 +18326,8 @@ const QUIZ_DATA = [
       "new"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: new)",
-      "en": "Enter keyword (e.g. new)"
+      "vi": "Nhập từ khóa khởi tạo đối tượng...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Cú pháp khởi tạo non-static inner class từ bên ngoài là: outerInstance.new InnerClass().",
@@ -18357,8 +18357,8 @@ const QUIZ_DATA = [
       "\"L\""
     ],
     "blankPlaceholder": {
-      "vi": "Nhập L hoặc I",
-      "en": "Enter L or I"
+      "vi": "Nhập câu trả lời của bạn...",
+      "en": "Enter your answer..."
     },
     "explanation": {
       "vi": "Quy tắc nạp chồng của Java ưu tiên Widening nguyên thủy (int -> long) trước Autoboxing (int -> Integer). Vì vậy print(long) được gọi và in 'L'.",
@@ -18388,8 +18388,8 @@ const QUIZ_DATA = [
       "java.lang.ClassCastException"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: ClassCastException",
-      "en": "e.g. ClassCastException"
+      "vi": "Nhập tên Exception runtime ném ra...",
+      "en": "Enter runtime exception name..."
     },
     "explanation": {
       "vi": "ClassCastException được ném ra tại runtime khi ép kiểu đối tượng sang một lớp con không hợp lệ.",
@@ -18418,8 +18418,8 @@ const QUIZ_DATA = [
       "super"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: super)",
-      "en": "Enter keyword (e.g. super)"
+      "vi": "Nhập từ khóa đại diện tham chiếu cha...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa super cho phép truy cập phương thức hoặc thuộc tính của lớp cha trực tiếp.",
@@ -18451,8 +18451,8 @@ const QUIZ_DATA = [
       "false"
     ],
     "blankPlaceholder": {
-      "vi": "Điền 'có' hoặc 'không'",
-      "en": "Enter 'yes' or 'no'"
+      "vi": "Nhập câu trả lời của bạn...",
+      "en": "Enter your answer..."
     },
     "explanation": {
       "vi": "Phương thức abstract kết thúc bằng dấu chấm phẩy ';' và tuyệt đối không được có cặp ngoặc nhọn phần thân {}.",
@@ -18482,8 +18482,8 @@ const QUIZ_DATA = [
       "java.lang.Object"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: Object",
-      "en": "e.g. Object"
+      "vi": "Nhập tên lớp cha gốc...",
+      "en": "Enter class name..."
     },
     "explanation": {
       "vi": "java.lang.Object là lớp cơ sở cao nhất của cây phân cấp lớp trong Java.",
@@ -18512,8 +18512,8 @@ const QUIZ_DATA = [
       "true"
     ],
     "blankPlaceholder": {
-      "vi": "true hoặc false",
-      "en": "true or false"
+      "vi": "Nhập true hoặc false...",
+      "en": "Enter true or false..."
     },
     "explanation": {
       "vi": "10 > 0 trả về true, phương thức test() của Predicate trả về true.",
@@ -18542,8 +18542,8 @@ const QUIZ_DATA = [
       "throws"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: throws",
-      "en": "e.g. throws"
+      "vi": "Nhập từ khóa khai báo ném ngoại lệ...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ khóa throws dùng trong khai báo phương thức, còn throw dùng để ném đối tượng exception trong thân hàm.",
@@ -18573,8 +18573,8 @@ const QUIZ_DATA = [
       "effectively final"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: effectively)",
-      "en": "e.g. effectively"
+      "vi": "Nhập từ khóa tính chất biến...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Từ Java 8, biến không cần khai báo tường minh final nhưng không được gán lại giá trị sau đó (gọi là effectively final).",
@@ -18604,8 +18604,8 @@ const QUIZ_DATA = [
       "\"P\""
     ],
     "blankPlaceholder": {
-      "vi": "Nhập P hoặc C",
-      "en": "Enter P or C"
+      "vi": "Nhập câu trả lời của bạn...",
+      "en": "Enter your answer..."
     },
     "explanation": {
       "vi": "Static method không có tính đa hình (chỉ bị method hiding) và được bind tại compile-time dựa theo kiểu tham chiếu Parent. Kết quả in ra 'P'.",
@@ -18634,8 +18634,8 @@ const QUIZ_DATA = [
       "private"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: private",
-      "en": "e.g. private"
+      "vi": "Nhập access modifier...",
+      "en": "Enter access modifier..."
     },
     "explanation": {
       "vi": "Java 9 cho phép khai báo private method (cả static và non-static) trong interface nhằm chia sẻ mã giữa các default method.",
@@ -18667,8 +18667,8 @@ const QUIZ_DATA = [
       "false"
     ],
     "blankPlaceholder": {
-      "vi": "Điền 'có' hoặc 'không'",
-      "en": "Enter 'yes' or 'no'"
+      "vi": "Nhập câu trả lời của bạn...",
+      "en": "Enter your answer..."
     },
     "explanation": {
       "vi": "Khi lớp đã có bất kỳ constructor nào, compiler sẽ không tự sinh default no-arg constructor nữa, do đó gọi new MyClass() sẽ báo lỗi biên dịch.",
@@ -18698,8 +18698,8 @@ const QUIZ_DATA = [
       "defensive copying"
     ],
     "blankPlaceholder": {
-      "vi": "Nhập từ khóa (ví dụ: defensive)",
-      "en": "e.g. defensive"
+      "vi": "Nhập từ khóa kỹ thuật...",
+      "en": "Enter keyword..."
     },
     "explanation": {
       "vi": "Defensive copying (sao chép phòng thủ) ngăn đối tượng bên ngoài can thiệp làm thay đổi trạng thái nội bộ của class.",
@@ -18728,8 +18728,8 @@ const QUIZ_DATA = [
       "System.out::println"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: System.out::println",
-      "en": "e.g. System.out::println"
+      "vi": "Nhập cú pháp method reference...",
+      "en": "Enter method reference syntax..."
     },
     "explanation": {
       "vi": "System.out::println là tham chiếu phương thức instance println trên đối tượng tĩnh System.out.",
@@ -18758,8 +18758,8 @@ const QUIZ_DATA = [
       "false true"
     ],
     "blankPlaceholder": {
-      "vi": "Ví dụ: false true",
-      "en": "e.g. false true"
+      "vi": "Nhập kết quả output của console...",
+      "en": "Enter console output..."
     },
     "explanation": {
       "vi": "s1 == s2 so sánh 2 địa chỉ vùng nhớ heap khác nhau -> false. s1.equals(s2) so sánh nội dung chuỗi 'Java' giống nhau -> true. Kết quả: 'false true'.",
@@ -19367,3 +19367,8 @@ const QUIZ_DATA = [
     }
   }
 ];
+
+if (typeof window !== 'undefined') {
+  window.TOPICS_CONFIG = TOPICS_CONFIG;
+  window.QUIZ_DATA = QUIZ_DATA;
+}

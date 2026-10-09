@@ -10,7 +10,24 @@ import { FillBlankInput } from '../components/quiz/FillBlankInput';
 import { ExplanationDrawer } from '../components/quiz/ExplanationDrawer';
 import { CodeBlock } from '../components/common/CodeBlock';
 import { Button } from '../components/common/Button';
-import { Search, RotateCcw, Home, HelpCircle, CheckCircle2, XCircle, Clock, BookOpen, Filter, AlertCircle, CheckSquare, Edit3, Send } from 'lucide-react';
+import { ReportQuestionModal } from '../components/quiz/ReportQuestionModal';
+import {
+  Search,
+  RotateCcw,
+  Home,
+  HelpCircle,
+  CheckCircle2,
+  XCircle,
+  Clock,
+  BookOpen,
+  Filter,
+  AlertCircle,
+  CheckSquare,
+  Edit3,
+  Send,
+  Bookmark,
+  Flag,
+} from 'lucide-react';
 
 interface PracticePageProps {
   allQuestions: Question[];
@@ -18,7 +35,7 @@ interface PracticePageProps {
   onNavigateHome: () => void;
 }
 
-type PracticeStatusFilter = 'ALL' | 'UNANSWERED' | 'CORRECT' | 'WRONG';
+type PracticeStatusFilter = 'ALL' | 'UNANSWERED' | 'CORRECT' | 'WRONG' | 'BOOKMARKED';
 
 export const PracticePage: React.FC<PracticePageProps> = ({
   allQuestions,
@@ -30,6 +47,17 @@ export const PracticePage: React.FC<PracticePageProps> = ({
   const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>(TOPIC_PRESETS.ALL);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<PracticeStatusFilter>('ALL');
+
+  // Bookmarked questions state
+  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>(() => {
+    return userProgressService.getBookmarks();
+  });
+  const [reportingQuestion, setReportingQuestion] = useState<Question | null>(null);
+
+  const handleToggleBookmark = (questionId: string) => {
+    userProgressService.toggleBookmark(questionId);
+    setBookmarkedIds(userProgressService.getBookmarks());
+  };
 
   // Load persistent practice progress from localStorage
   const [practiceProgress, setPracticeProgress] = useState<Record<string, PracticeProgressItem>>(() => {
@@ -119,6 +147,8 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         if (!p || !p.isCorrect) return false;
       } else if (statusFilter === 'WRONG') {
         if (!p || p.isCorrect) return false;
+      } else if (statusFilter === 'BOOKMARKED') {
+        if (!bookmarkedIds.includes(q.id)) return false;
       }
 
       if (!query) return true;
@@ -137,7 +167,14 @@ export const PracticePage: React.FC<PracticePageProps> = ({
         optsEn.includes(query)
       );
     });
-  }, [allQuestions, selectedTopicIds, searchQuery, statusFilter, practiceProgress]);
+  }, [allQuestions, selectedTopicIds, searchQuery, statusFilter, practiceProgress, bookmarkedIds]);
+
+  // Count bookmarked questions in selected topics
+  const bookmarkedInSelectedCount = useMemo(() => {
+    return allQuestions.filter(
+      (q) => selectedTopicIds.includes(q.topicId) && bookmarkedIds.includes(q.id)
+    ).length;
+  }, [allQuestions, selectedTopicIds, bookmarkedIds]);
 
   // Performance stats for practice session within selected topics
   const stats = useMemo(() => {
@@ -442,6 +479,7 @@ export const PracticePage: React.FC<PracticePageProps> = ({
               { id: 'UNANSWERED', labelVi: '⏳ Chưa học', labelEn: '⏳ Unstudied', count: stats.totalInSelected - stats.totalAnswered },
               { id: 'CORRECT', labelVi: '✅ Đã học đúng', labelEn: '✅ Correct', count: stats.correct },
               { id: 'WRONG', labelVi: '❌ Đã học sai', labelEn: '❌ Incorrect', count: stats.wrong },
+              { id: 'BOOKMARKED', labelVi: '⭐ Đã đánh dấu', labelEn: '⭐ Bookmarked', count: bookmarkedInSelectedCount },
             ].map((tab) => {
               const isActive = statusFilter === tab.id;
               return (
@@ -797,27 +835,97 @@ export const PracticePage: React.FC<PracticePageProps> = ({
                     )}
                   </div>
 
-                  {topicMeta && (
-                    <span
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    {/* Bookmark Question Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleToggleBookmark(q.id)}
+                      title={
+                        bookmarkedIds.includes(q.id)
+                          ? (language === 'en' ? 'Remove bookmark' : 'Bỏ đánh dấu câu hỏi')
+                          : (language === 'en' ? 'Bookmark question' : 'Đánh dấu câu hỏi')
+                      }
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '6px',
+                        gap: '4px',
+                        padding: '4px 10px',
+                        borderRadius: 'var(--radius-full)',
+                        backgroundColor: bookmarkedIds.includes(q.id)
+                          ? 'rgba(245, 158, 11, 0.15)'
+                          : 'var(--bg-surface-subtle)',
+                        border: `1px solid ${
+                          bookmarkedIds.includes(q.id) ? '#f59e0b' : 'var(--border-default)'
+                        }`,
+                        color: bookmarkedIds.includes(q.id) ? '#d97706' : 'var(--text-secondary)',
+                        fontSize: '0.76rem',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        transition: 'all var(--transition-fast)',
+                      }}
+                    >
+                      <Bookmark
+                        size={13}
+                        fill={bookmarkedIds.includes(q.id) ? '#f59e0b' : 'none'}
+                        color={bookmarkedIds.includes(q.id) ? '#f59e0b' : 'currentColor'}
+                      />
+                      <span>
+                        {bookmarkedIds.includes(q.id)
+                          ? (language === 'en' ? 'Bookmarked' : 'Đã đánh dấu')
+                          : (language === 'en' ? 'Bookmark' : 'Đánh dấu')}
+                      </span>
+                    </button>
+
+                    {/* Report Question Button */}
+                    <button
+                      type="button"
+                      onClick={() => setReportingQuestion(q)}
+                      title={
+                        language === 'en'
+                          ? 'Report issue with this question'
+                          : 'Báo lỗi câu hỏi này cho Quản trị viên'
+                      }
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
                         padding: '4px 10px',
                         borderRadius: 'var(--radius-full)',
                         backgroundColor: 'var(--bg-surface-subtle)',
                         border: '1px solid var(--border-default)',
-                        fontSize: '0.78rem',
+                        color: 'var(--text-muted)',
+                        fontSize: '0.76rem',
                         fontWeight: 600,
-                        color: 'var(--text-secondary)',
+                        cursor: 'pointer',
+                        transition: 'all var(--transition-fast)',
                       }}
                     >
-                      <span>{topicMeta.icon}</span>
-                      <span>
-                        {language === 'en' ? topicMeta.shortName.en : topicMeta.shortName.vi}
+                      <Flag size={12} />
+                      <span>{language === 'en' ? 'Report' : 'Báo lỗi'}</span>
+                    </button>
+
+                    {topicMeta && (
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          padding: '4px 10px',
+                          borderRadius: 'var(--radius-full)',
+                          backgroundColor: 'var(--bg-surface-subtle)',
+                          border: '1px solid var(--border-default)',
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          color: 'var(--text-secondary)',
+                        }}
+                      >
+                        <span>{topicMeta.icon}</span>
+                        <span>
+                          {language === 'en' ? topicMeta.shortName.en : topicMeta.shortName.vi}
+                        </span>
                       </span>
-                    </span>
-                  )}
+                    )}
+                  </div>
                 </div>
 
                 {/* Question Text */}
@@ -1013,6 +1121,14 @@ export const PracticePage: React.FC<PracticePageProps> = ({
           })}
         </div>
       </div>
+
+      {/* Report Question Modal */}
+      <ReportQuestionModal
+        isOpen={Boolean(reportingQuestion)}
+        question={reportingQuestion}
+        onClose={() => setReportingQuestion(null)}
+      />
     </div>
   );
 };
+

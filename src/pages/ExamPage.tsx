@@ -12,7 +12,20 @@ import { QuizTimer } from '../components/quiz/QuizTimer';
 import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
 import { CodeBlock } from '../components/common/CodeBlock';
-import { ArrowLeft, ArrowRight, Send, AlertTriangle, LayoutGrid, X, CheckSquare, Edit3, HelpCircle } from 'lucide-react';
+import { ReportQuestionModal } from '../components/quiz/ReportQuestionModal';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Send,
+  AlertTriangle,
+  LayoutGrid,
+  X,
+  CheckSquare,
+  Edit3,
+  HelpCircle,
+  Bookmark,
+  Flag,
+} from 'lucide-react';
 
 interface ExamPageProps {
   examItems: ExamQuestionItem[];
@@ -42,6 +55,17 @@ export const ExamPage: React.FC<ExamPageProps> = ({
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
   const [isTimeoutModalOpen, setIsTimeoutModalOpen] = useState<boolean>(false);
   const [isPaletteOpen, setIsPaletteOpen] = useState<boolean>(false);
+
+  // Bookmarks & reporting state
+  const [bookmarkedQuestionIds, setBookmarkedQuestionIds] = useState<string[]>(() => {
+    return userProgressService.getBookmarks();
+  });
+  const [reportingQuestion, setReportingQuestion] = useState<any | null>(null);
+
+  const handleToggleBookmark = (questionId: string) => {
+    userProgressService.toggleBookmark(questionId);
+    setBookmarkedQuestionIds(userProgressService.getBookmarks());
+  };
 
   const totalSeconds = timeMinutes * 60;
 
@@ -385,6 +409,68 @@ export const ExamPage: React.FC<ExamPageProps> = ({
                   </span>
                 )}
 
+                {/* Bookmark button */}
+                <button
+                  type="button"
+                  onClick={() => handleToggleBookmark(q.id)}
+                  title={
+                    bookmarkedQuestionIds.includes(q.id)
+                      ? (language === 'en' ? 'Remove bookmark' : 'Bỏ đánh dấu xem lại')
+                      : (language === 'en' ? 'Flag / Bookmark for review' : 'Đánh dấu xem lại sau')
+                  }
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '3px 9px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: bookmarkedQuestionIds.includes(q.id)
+                      ? 'rgba(245, 158, 11, 0.15)'
+                      : 'var(--bg-surface-subtle)',
+                    border: `1px solid ${
+                      bookmarkedQuestionIds.includes(q.id) ? '#f59e0b' : 'var(--border-default)'
+                    }`,
+                    color: bookmarkedQuestionIds.includes(q.id) ? '#d97706' : 'var(--text-secondary)',
+                    fontSize: '0.74rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Bookmark
+                    size={12}
+                    fill={bookmarkedQuestionIds.includes(q.id) ? '#f59e0b' : 'none'}
+                    color={bookmarkedQuestionIds.includes(q.id) ? '#f59e0b' : 'currentColor'}
+                  />
+                  <span>
+                    {bookmarkedQuestionIds.includes(q.id)
+                      ? (language === 'en' ? 'Flagged' : 'Đã đánh dấu')
+                      : (language === 'en' ? 'Flag' : 'Đánh dấu')}
+                  </span>
+                </button>
+
+                {/* Report button */}
+                <button
+                  type="button"
+                  onClick={() => setReportingQuestion(q)}
+                  title={language === 'en' ? 'Report question error' : 'Báo lỗi câu hỏi'}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '3px 9px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: 'var(--bg-surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-muted)',
+                    fontSize: '0.74rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Flag size={12} />
+                  <span>{language === 'en' ? 'Report' : 'Báo lỗi'}</span>
+                </button>
+
                 {topicMeta && (
                   <span
                     style={{
@@ -627,6 +713,7 @@ export const ExamPage: React.FC<ExamPageProps> = ({
                 currentIndex={currentIndex}
                 answers={answers}
                 questionIds={questionIds}
+                bookmarkedQuestionIds={bookmarkedQuestionIds}
                 onSelectQuestion={handlePaletteSelect}
               />
             </div>
@@ -737,6 +824,13 @@ export const ExamPage: React.FC<ExamPageProps> = ({
           {t('exam.timeoutMsg')}
         </p>
       </Modal>
+
+      {/* Report Question Modal */}
+      <ReportQuestionModal
+        isOpen={Boolean(reportingQuestion)}
+        question={reportingQuestion ? reportingQuestion.question : null}
+        onClose={() => setReportingQuestion(null)}
+      />
     </div>
   );
 };

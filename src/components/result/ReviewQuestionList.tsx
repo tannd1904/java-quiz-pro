@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExamReviewItem } from '../../types/quiz';
 import { useI18n } from '../../hooks/useI18n';
+import { userProgressService } from '../../services/userProgressService';
 import { TOPICS_CONFIG } from '../../config/topics.config';
 import { AnswerOption } from '../quiz/AnswerOption';
 import { ExplanationDrawer } from '../quiz/ExplanationDrawer';
+import { ReportQuestionModal } from '../quiz/ReportQuestionModal';
 import { CodeBlock } from '../common/CodeBlock';
-import { CheckCircle2, XCircle, AlertCircle, CheckSquare, Edit3, HelpCircle } from 'lucide-react';
+import {
+  CheckCircle2,
+  XCircle,
+  AlertCircle,
+  CheckSquare,
+  Edit3,
+  HelpCircle,
+  Bookmark,
+  Flag,
+} from 'lucide-react';
 
 interface ReviewQuestionListProps {
   reviewList: ExamReviewItem[];
@@ -13,6 +24,16 @@ interface ReviewQuestionListProps {
 
 export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewList }) => {
   const { language, t } = useI18n();
+
+  const [bookmarkedIds, setBookmarkedIds] = React.useState<string[]>(() => {
+    return userProgressService.getBookmarks();
+  });
+  const [reportingQuestion, setReportingQuestion] = React.useState<any | null>(null);
+
+  const handleToggleBookmark = (questionId: string) => {
+    userProgressService.toggleBookmark(questionId);
+    setBookmarkedIds(userProgressService.getBookmarks());
+  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -163,8 +184,70 @@ export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewLi
                 )}
               </div>
 
-              {/* Status pill */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              {/* Status pill & Actions */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                {/* Bookmark button */}
+                <button
+                  type="button"
+                  onClick={() => handleToggleBookmark(q.id)}
+                  title={
+                    bookmarkedIds.includes(q.id)
+                      ? (language === 'en' ? 'Remove bookmark' : 'Bỏ đánh dấu')
+                      : (language === 'en' ? 'Bookmark for review' : 'Đánh dấu để học lại')
+                  }
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '3px 9px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: bookmarkedIds.includes(q.id)
+                      ? 'rgba(245, 158, 11, 0.15)'
+                      : 'var(--bg-surface-subtle)',
+                    border: `1px solid ${
+                      bookmarkedIds.includes(q.id) ? '#f59e0b' : 'var(--border-default)'
+                    }`,
+                    color: bookmarkedIds.includes(q.id) ? '#d97706' : 'var(--text-secondary)',
+                    fontSize: '0.74rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Bookmark
+                    size={12}
+                    fill={bookmarkedIds.includes(q.id) ? '#f59e0b' : 'none'}
+                    color={bookmarkedIds.includes(q.id) ? '#f59e0b' : 'currentColor'}
+                  />
+                  <span>
+                    {bookmarkedIds.includes(q.id)
+                      ? (language === 'en' ? 'Bookmarked' : 'Đã đánh dấu')
+                      : (language === 'en' ? 'Bookmark' : 'Đánh dấu')}
+                  </span>
+                </button>
+
+                {/* Report button */}
+                <button
+                  type="button"
+                  onClick={() => setReportingQuestion(q)}
+                  title={language === 'en' ? 'Report issue' : 'Báo lỗi câu hỏi'}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '3px 9px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: 'var(--bg-surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-muted)',
+                    fontSize: '0.74rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Flag size={12} />
+                  <span>{language === 'en' ? 'Report' : 'Báo lỗi'}</span>
+                </button>
+
                 {!isAnswered ? (
                   <span
                     style={{
@@ -364,6 +447,13 @@ export const ReviewQuestionList: React.FC<ReviewQuestionListProps> = ({ reviewLi
           </div>
         );
       })}
+
+      {/* Report Question Modal */}
+      <ReportQuestionModal
+        isOpen={Boolean(reportingQuestion)}
+        question={reportingQuestion}
+        onClose={() => setReportingQuestion(null)}
+      />
     </div>
   );
 };

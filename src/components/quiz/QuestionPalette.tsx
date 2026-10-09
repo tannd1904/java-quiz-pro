@@ -5,6 +5,7 @@ interface QuestionPaletteProps {
   currentIndex: number;
   answers: Record<string, any>;
   questionIds: string[];
+  bookmarkedQuestionIds?: string[];
   onSelectQuestion: (index: number) => void;
 }
 
@@ -13,6 +14,7 @@ export const QuestionPalette: React.FC<QuestionPaletteProps> = ({
   currentIndex,
   answers,
   questionIds,
+  bookmarkedQuestionIds = [],
   onSelectQuestion,
 }) => {
   return (
@@ -34,6 +36,7 @@ export const QuestionPalette: React.FC<QuestionPaletteProps> = ({
           ans !== null &&
           (Array.isArray(ans) ? ans.length > 0 : typeof ans === 'string' ? ans.trim().length > 0 : true);
         const isCurrent = idx === currentIndex;
+        const isBookmarked = Boolean(qId && bookmarkedQuestionIds.includes(qId));
 
         let bg = 'var(--bg-surface-subtle)';
         let border = 'var(--border-default)';
@@ -54,11 +57,14 @@ export const QuestionPalette: React.FC<QuestionPaletteProps> = ({
             key={idx}
             type="button"
             onClick={() => onSelectQuestion(idx)}
-            title={`Câu ${idx + 1}${isAnswered ? ' (Đã làm)' : ' (Chưa làm)'}`}
+            title={`Câu ${idx + 1}${isAnswered ? ' (Đã làm)' : ' (Chưa làm)'}${
+              isBookmarked ? ' ⭐ (Đã đánh dấu)' : ''
+            }`}
             style={{
+              position: 'relative',
               height: '38px',
               borderRadius: 'var(--radius-sm)',
-              border,
+              border: isBookmarked && !isCurrent ? '1.5px solid #f59e0b' : border,
               backgroundColor: bg,
               color: text,
               fontWeight: isCurrent || isAnswered ? 700 : 500,
@@ -71,6 +77,20 @@ export const QuestionPalette: React.FC<QuestionPaletteProps> = ({
             }}
           >
             {idx + 1}
+            {isBookmarked && (
+              <span
+                style={{
+                  position: 'absolute',
+                  top: '3px',
+                  right: '3px',
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  backgroundColor: '#f59e0b',
+                  boxShadow: '0 0 4px #f59e0b',
+                }}
+              />
+            )}
           </button>
         );
       })}

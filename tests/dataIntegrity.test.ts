@@ -109,4 +109,16 @@ describe('Data Integrity (questions.json)', () => {
       expect(fs.existsSync(imgPath)).toBe(true);
     });
   });
+
+  it('ensures fill-in-the-blank placeholders do not reveal hints or answers', () => {
+    const fillQuestions = questions.filter(q => q.type === 'FILL_BLANK');
+    expect(fillQuestions.length).toBeGreaterThan(0);
+    fillQuestions.forEach(q => {
+      const phVi = (q.blankPlaceholder?.vi || '').toLowerCase();
+      const phEn = (q.blankPlaceholder?.en || '').toLowerCase();
+      expect(phVi.includes('ví dụ')).toBe(false);
+      expect(phEn.includes('e.g.')).toBe(false);
+    });
+  });
 });
+

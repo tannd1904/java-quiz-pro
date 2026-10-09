@@ -4,6 +4,7 @@ import { Question } from '../types/question';
 const STORAGE_KEY_EXAM_HISTORY = 'java_quiz_exam_history';
 const STORAGE_KEY_ACTIVE_EXAM = 'java_quiz_active_exam_session';
 const STORAGE_KEY_PRACTICE_PROGRESS = 'java_quiz_practice_progress';
+const STORAGE_KEY_BOOKMARKS = 'java_quiz_bookmarked_questions';
 
 const MAX_HISTORY_ITEMS = 50;
 
@@ -194,6 +195,52 @@ class UserProgressService {
     });
 
     return topicStats;
+  }
+
+  // =========================================================================
+  // 4. BOOKMARKS (FLAGGED QUESTIONS)
+  // =========================================================================
+
+  public getBookmarks(): string[] {
+    try {
+      const data = localStorage.getItem(STORAGE_KEY_BOOKMARKS);
+      if (!data) return [];
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    } catch (err) {
+      console.warn('Failed to load bookmarks from localStorage:', err);
+    }
+    return [];
+  }
+
+  public isBookmarked(questionId: string): boolean {
+    const list = this.getBookmarks();
+    return list.includes(questionId);
+  }
+
+  public toggleBookmark(questionId: string): boolean {
+    try {
+      const current = this.getBookmarks();
+      const exists = current.includes(questionId);
+      const updated = exists
+        ? current.filter((id) => id !== questionId)
+        : [...current, questionId];
+      localStorage.setItem(STORAGE_KEY_BOOKMARKS, JSON.stringify(updated));
+      return !exists;
+    } catch (err) {
+      console.warn('Failed to toggle bookmark in localStorage:', err);
+      return false;
+    }
+  }
+
+  public clearBookmarks(): void {
+    try {
+      localStorage.removeItem(STORAGE_KEY_BOOKMARKS);
+    } catch (err) {
+      console.warn('Failed to clear bookmarks from localStorage:', err);
+    }
   }
 }
 
