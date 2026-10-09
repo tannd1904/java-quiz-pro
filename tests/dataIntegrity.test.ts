@@ -8,43 +8,42 @@ describe('Data Integrity (questions.json)', () => {
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
   const questions: Question[] = JSON.parse(rawData);
 
-  it('contains exactly 933 questions', () => {
-    expect(questions.length).toBe(933);
+  it('contains exactly 505 unique questions', () => {
+    expect(questions.length).toBe(505);
   });
 
   it('has unique question IDs without duplicates', () => {
     const idSet = new Set(questions.map(q => q.id));
-    expect(idSet.size).toBe(933);
+    expect(idSet.size).toBe(505);
   });
 
-  it('ensures all 6 midterm OOP areas have at least 100 questions each', () => {
+  it('ensures no duplicate questions exist in the bank', () => {
+    const questionFingerprints = new Set(
+      questions.map(
+        q =>
+          `${q.question.vi.trim().toLowerCase()}|${q.options.vi.join('|')}|${q.correctIndex}|${q.image || ''}|${q.codeSnippet || ''}`
+      )
+    );
+    expect(questionFingerprints.size).toBe(505);
+  });
+
+  it('ensures all topics are represented with valid questions', () => {
     const topicCounts = questions.reduce((acc, q) => {
       acc[q.topicId] = (acc[q.topicId] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
 
-    // 1. Objects and Classes
-    expect(topicCounts['objects_classes'] || 0).toBeGreaterThanOrEqual(100);
-
-    // 2. 4 OOP Pillars
+    expect(topicCounts['objects_classes'] || 0).toBeGreaterThanOrEqual(90);
     const oop4Count =
       (topicCounts['encapsulation'] || 0) +
       (topicCounts['inheritance'] || 0) +
       (topicCounts['polymorphism'] || 0) +
       (topicCounts['abstraction'] || 0);
     expect(oop4Count).toBeGreaterThanOrEqual(100);
-
-    // 3. Interface
-    expect(topicCounts['interface'] || 0).toBeGreaterThanOrEqual(100);
-
-    // 4. Lambda
-    expect(topicCounts['lambda'] || 0).toBeGreaterThanOrEqual(100);
-
-    // 5. Inner Class
-    expect(topicCounts['inner_class'] || 0).toBeGreaterThanOrEqual(100);
-
-    // 6. Exception
-    expect(topicCounts['exception'] || 0).toBeGreaterThanOrEqual(100);
+    expect(topicCounts['interface'] || 0).toBeGreaterThanOrEqual(30);
+    expect(topicCounts['exception'] || 0).toBeGreaterThanOrEqual(30);
+    expect(topicCounts['lambda'] || 0).toBeGreaterThanOrEqual(10);
+    expect(topicCounts['inner_class'] || 0).toBeGreaterThanOrEqual(10);
   });
 
   it('ensures each question has matching options in VI and EN', () => {

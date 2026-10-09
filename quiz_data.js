@@ -1,4 +1,4 @@
-// NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM JAVA ONLINE (TỔNG HỢP 933 CÂU)
+// NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM JAVA ONLINE (TỔNG HỢP 505 CÂU)
 const TOPICS_CONFIG = [
   {
     "id": "encapsulation",
@@ -206,7 +206,7 @@ const QUIZ_DATA = [
     "bank_id": "oop-05",
     "category": "Từ Khóa Final",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Khi một biến tham chiếu đối tượng được đánh dấu bằng từ khóa `final`, điều nào sau đây là ĐÚNG?",
@@ -248,9 +248,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-07",
     "category": "Quản Lý Bộ Nhớ (JVM Memory)",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Trong cấu trúc bộ nhớ của Java Virtual Machine (JVM), các đối tượng (Objects) và biến thực thể (Instance variables) được cấp phát ở đâu?",
     "codeSnippet": null,
     "image": null,
@@ -269,7 +269,7 @@ const QUIZ_DATA = [
     "bank_id": "oop-08",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Phát biểu nào sau đây là ĐÚNG về phương thức static trong một lớp Java?",
@@ -332,9 +332,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-11",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cấu trúc dữ liệu nào trong Java Collections đảm bảo các phần tử là DUY NHẤT (không trùng lặp) và KHÔNG duy trì thứ tự chèn?",
     "codeSnippet": null,
     "image": null,
@@ -353,9 +353,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-12",
     "category": "Equals và HashCode",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Khi bạn ghi đè (Override) phương thức `equals(Object o)` trong một Class, hợp đồng (contract) của Java yêu cầu bạn PHẢI đồng thời ghi đè phương thức nào?",
     "codeSnippet": null,
     "image": null,
@@ -437,9 +437,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-16",
     "category": "String & Immutability",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Đoạn mã sau sẽ in ra kết quả gì trên màn hình Console?",
     "codeSnippet": "String s1 = \"Hello\";\nString s2 = new String(\"Hello\");\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2));",
     "image": null,
@@ -458,9 +458,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-17",
     "category": "Garbage Collection (GC)",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khi nào một đối tượng trong bộ nhớ Heap của Java đủ điều kiện để trình thu gom rác (Garbage Collector) thu hồi bộ nhớ?",
     "codeSnippet": null,
     "image": null,
@@ -479,8 +479,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-18",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Downcasting (ép kiểu từ kiểu lớp cha xuống lớp con) không an toàn có thể gây ra ngoại lệ (exception) nào tại thời điểm runtime?",
     "codeSnippet": "Object obj = \"Hello Java\";\nInteger num = (Integer) obj; // Lỗi gì lúc chạy?",
@@ -500,7 +500,7 @@ const QUIZ_DATA = [
     "bank_id": "oop-19",
     "category": "Design Patterns Căn Bản",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Design pattern nào thuộc nhóm Creational đảm bảo rằng một lớp chỉ có DUY NHẤT một thể hiện (instance) trong toàn bộ ứng dụng và cung cấp một điểm truy cập toàn cục tới nó?",
@@ -542,9 +542,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-21",
     "category": "Cơ Chế Truyền Tham Số",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Java sử dụng cơ chế truyền tham số nào khi truyền một đối tượng vào một phương thức?",
     "codeSnippet": "void modify(Person p) {\n    p.setName(\"Bob\");\n    p = new Person(\"Alice\");\n}",
     "image": null,
@@ -647,9 +647,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-26",
     "category": "String & Immutability",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Tại sao lớp `String` trong Java lại được thiết kế là Bất biến (Immutable) và khai báo với từ khóa `final`?",
     "codeSnippet": null,
     "image": null,
@@ -668,9 +668,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-27",
     "category": "String & Immutability",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Điểm khác biệt quan trọng nhất giữa `StringBuilder` và `StringBuffer` trong Java là gì?",
     "codeSnippet": null,
     "image": null,
@@ -689,9 +689,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-28",
     "category": "String & Immutability",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Phương thức `s.intern()` của lớp String có tác dụng gì?",
     "codeSnippet": "String s1 = new String(\"Java\");\nString s2 = s1.intern();\nString s3 = \"Java\";\nSystem.out.println(s2 == s3);",
     "image": null,
@@ -710,9 +710,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-29",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Trong Java 8 trở đi, cấu trúc dữ liệu bên trong một thùng (bucket) của `HashMap` sẽ chuyển từ Danh sách liên kết sang Cây Đỏ-Đen (Red-Black Tree) khi số phần tử trong thùng đó đạt ngưỡng nào?",
     "codeSnippet": null,
     "image": null,
@@ -731,9 +731,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-30",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Tại sao `ConcurrentHashMap` lại có hiệu năng đa luồng vượt trội hơn nhiều so với `Hashtable` hoặc `Collections.synchronizedMap()`?",
     "codeSnippet": null,
     "image": null,
@@ -752,9 +752,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-31",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Để sắp xếp danh sách đối tượng, khi nào nên sử dụng `Comparable` và khi nào nên dùng `Comparator`?",
     "codeSnippet": null,
     "image": null,
@@ -773,9 +773,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-32",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Thao tác truy xuất phần tử theo chỉ số index (`get(i)`) trên `ArrayList` có độ phức tạp thời gian là bao nhiêu so với `LinkedList`?",
     "codeSnippet": null,
     "image": null,
@@ -794,9 +794,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-33",
     "category": "Generics",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cơ chế 'Type Erasure' trong Java Generics có nghĩa là gì?",
     "codeSnippet": "List<String> list1 = new ArrayList<>();\nList<Integer> list2 = new ArrayList<>();\nSystem.out.println(list1.getClass() == list2.getClass()); // true hay false?",
     "image": null,
@@ -815,9 +815,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-34",
     "category": "Generics",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Nguyên lý 'PECS' (Producer Extends, Consumer Super) trong Java Generics hướng dẫn điều gì khi sử dụng Wildcards?",
     "codeSnippet": null,
     "image": null,
@@ -899,7 +899,7 @@ const QUIZ_DATA = [
     "bank_id": "oop-38",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Điều gì xảy ra khi lớp con định nghĩa một phương thức static có cùng tên và chữ ký (signature) với một phương thức static ở lớp cha?",
@@ -962,9 +962,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-41",
     "category": "Quản Lý Bộ Nhớ (JVM Memory)",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Lỗi `StackOverflowError` trong Java thường xuất phát từ nguyên nhân nào?",
     "codeSnippet": null,
     "image": null,
@@ -983,9 +983,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-42",
     "category": "Quản Lý Bộ Nhớ (JVM Memory)",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Tình trạng rò rỉ bộ nhớ (Memory Leak) trong ứng dụng Java thường xảy ra do đâu, mặc dù đã có Garbage Collector?",
     "codeSnippet": null,
     "image": null,
@@ -1214,9 +1214,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-53",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Bộ lặp (Iterator) dạng 'Fail-Fast' (như của ArrayList, HashMap) phản ứng như thế nào nếu cấu trúc danh sách bị thay đổi (thêm/xóa phần tử) trong lúc đang duyệt?",
     "codeSnippet": null,
     "image": null,
@@ -1235,9 +1235,9 @@ const QUIZ_DATA = [
     "bank_id": "oop-54",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cấu trúc dữ liệu nào duy trì các phần tử được sắp xếp theo thứ tự tự nhiên (hoặc theo Comparator) và không chứa phần tử trùng lặp?",
     "codeSnippet": null,
     "image": null,
@@ -1340,8 +1340,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-59",
     "category": "Nguyên Lý Thiết Kế SOLID",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Nguyên lý 'Single Responsibility Principle' (SRP) trong bộ nguyên lý SOLID phát biểu điều gì?",
     "codeSnippet": null,
@@ -1361,8 +1361,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-60",
     "category": "Nguyên Lý Thiết Kế SOLID",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Nguyên lý 'Open/Closed Principle' (OCP) yêu cầu kiến trúc phần mềm phải như thế nào?",
     "codeSnippet": null,
@@ -1382,8 +1382,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-61",
     "category": "Nguyên Lý Thiết Kế SOLID",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Nguyên lý 'Liskov Substitution Principle' (LSP) trong kế thừa OOP quy định điều gì?",
     "codeSnippet": null,
@@ -1403,8 +1403,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-62",
     "category": "Nguyên Lý Thiết Kế SOLID",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Nguyên lý 'Interface Segregation Principle' (ISP) khuyên lập trình viên nên làm gì khi thiết kế giao diện?",
     "codeSnippet": null,
@@ -1424,8 +1424,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-63",
     "category": "Nguyên Lý Thiết Kế SOLID",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Nguyên lý 'Dependency Inversion Principle' (DIP) hướng dẫn điều gì về mối quan hệ giữa các module trong phần mềm?",
     "codeSnippet": null,
@@ -1445,8 +1445,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-64",
     "category": "Design Patterns",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Design pattern nào thuộc nhóm Creational cho phép xây dựng các đối tượng phức tạp từng bước một (step-by-step) và giải quyết vấn đề hàm tạo có quá nhiều tham số (Telescoping Constructor)?",
     "codeSnippet": "User user = new User.Builder(\"John\")\n    .age(30)\n    .email(\"john@example.com\")\n    .build();",
@@ -1466,8 +1466,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-65",
     "category": "Design Patterns",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Khi muốn định nghĩa mối quan hệ một-nhiều (one-to-many) giữa các đối tượng sao cho khi một đối tượng thay đổi trạng thái, tất cả các đối tượng phụ thuộc đều được tự động thông báo và cập nhật, ta dùng Pattern nào?",
     "codeSnippet": null,
@@ -1487,8 +1487,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-66",
     "category": "Design Patterns",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Design Pattern nào cho phép gắn thêm các hành vi và trách nhiệm mới vào một đối tượng một cách linh hoạt tại thời điểm runtime mà không cần sửa đổi mã nguồn lớp gốc hay sử dụng kế thừa?",
     "codeSnippet": "InputStream is = new BufferedInputStream(new FileInputStream(\"file.txt\"));",
@@ -1508,8 +1508,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-67",
     "category": "Design Patterns",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Design pattern nào cung cấp một giao diện (interface) đơn giản, thống nhất để che giấu sự phức tạp của một hệ thống con (subsystem) gồm nhiều lớp bên trong?",
     "codeSnippet": null,
@@ -1529,8 +1529,8 @@ const QUIZ_DATA = [
     "bank_id": "oop-68",
     "category": "Design Patterns",
     "topicId": "design_patterns",
-    "topicName": "Design Patterns & SOLID Principles",
-    "topicShortName": "Design Patterns & SOLID",
+    "topicName": "Java Design Patterns Cơ Bản (OOP)",
+    "topicShortName": "Design Patterns",
     "topicIcon": "📐",
     "question": "Design pattern nào cho phép định nghĩa một họ các thuật toán, đóng gói từng thuật toán lại và làm cho chúng có thể hoán đổi cho nhau linh hoạt tại runtime?",
     "codeSnippet": "cart.setPaymentStrategy(new CreditCardPayment());\ncart.checkout();",
@@ -1634,7 +1634,7 @@ const QUIZ_DATA = [
     "bank_id": "java-003",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Trong câu lệnh sau: public static void main(String[] agrs) thì phần tử agrs[0] chứa giá trị gì?",
@@ -1655,9 +1655,9 @@ const QUIZ_DATA = [
     "bank_id": "java-004",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Phương thức next() của lớp Scanner dùng để làm gì?",
     "codeSnippet": null,
     "image": null,
@@ -1676,9 +1676,9 @@ const QUIZ_DATA = [
     "bank_id": "java-005",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Muốn chạy được chương trình java, chỉ cần cài phần mền nào sau đây?",
     "codeSnippet": null,
     "image": null,
@@ -1697,8 +1697,8 @@ const QUIZ_DATA = [
     "bank_id": "java-006",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Gói nào trong java chứa lớp Scanner dùng để nhập dữ liệu từ bàn phím?",
     "codeSnippet": null,
@@ -1718,9 +1718,9 @@ const QUIZ_DATA = [
     "bank_id": "java-007",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Phương thức nextLine() thuộc lớp nào ?",
     "codeSnippet": null,
     "image": null,
@@ -1823,8 +1823,8 @@ const QUIZ_DATA = [
     "bank_id": "java-012",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Đọc đoạn mã lệnh sau. Sau khi thực thi chương trình sẽ in ra kết quả gì ?",
     "codeSnippet": null,
@@ -1886,8 +1886,8 @@ const QUIZ_DATA = [
     "bank_id": "java-015",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Đọc đoạn mã sau. Kết quả in ra của đoạn mã trên là gì?",
     "codeSnippet": null,
@@ -1928,9 +1928,9 @@ const QUIZ_DATA = [
     "bank_id": "java-017",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Lựa chọn đáp án phù hợp: (a) byte (1) 256 (b) char (2) 5000 (c)int (3) 4899.99 (d) short (4)126 (e) double (5) 'F'",
     "codeSnippet": null,
     "image": null,
@@ -1949,9 +1949,9 @@ const QUIZ_DATA = [
     "bank_id": "java-018",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Kiểu dữ liệu nào trong Java chứa giá trị bao gồm cả chữ và số?",
     "codeSnippet": null,
     "image": null,
@@ -1970,8 +1970,8 @@ const QUIZ_DATA = [
     "bank_id": "java-019",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Kết quả in ra của đoạn mã trên là gì?",
     "codeSnippet": null,
@@ -2054,8 +2054,8 @@ const QUIZ_DATA = [
     "bank_id": "java-023",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Kết quả in ra của đoạn mã bên dưới là gì?",
     "codeSnippet": null,
@@ -2159,8 +2159,8 @@ const QUIZ_DATA = [
     "bank_id": "java-028",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Trong các khai báo sau đâu là khai báo không hợp lệ?",
     "codeSnippet": null,
@@ -2180,8 +2180,8 @@ const QUIZ_DATA = [
     "bank_id": "java-029",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Phát biểu nào sau đây là đúng:",
     "codeSnippet": null,
@@ -2201,8 +2201,8 @@ const QUIZ_DATA = [
     "bank_id": "java-030",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sau in ra màn hình xâu nào?",
     "codeSnippet": null,
@@ -2306,8 +2306,8 @@ const QUIZ_DATA = [
     "bank_id": "java-035",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Trong các khai báo sau đâu là khai báo không hợp lệ?",
     "codeSnippet": null,
@@ -2324,32 +2324,11 @@ const QUIZ_DATA = [
   },
   {
     "id": 106,
-    "bank_id": "java-036",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Phát biểu nào sau đây là đúng:",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Mảng có thể lưu giữ các phần tử thuộc nhiều kiểu dữ liệu khác nhau",
-      "Chỉ số của mảng có thể sử dụng kiểu số thực (float, double)",
-      "Biểu thức array.length được sử dụng để trả về số phần tử trong mảng",
-      "Một phần tử của mảng không thể truyền vào trong một phương thức."
-    ],
-    "correctIndex": 2,
-    "correct_text": "Biểu thức array.length được sử dụng để trả về số phần tử trong mảng",
-    "explanation": "Đáp án đúng là: **Biểu thức array.length được sử dụng để trả về số phần tử trong mảng**."
-  },
-  {
-    "id": 107,
     "bank_id": "java-037",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sau in ra màn hình xâu nào?",
     "codeSnippet": null,
@@ -2365,7 +2344,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Peter**."
   },
   {
-    "id": 108,
+    "id": 107,
     "bank_id": "java-038",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2386,7 +2365,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch: Incompatible type, required Man, found Student.**."
   },
   {
-    "id": 109,
+    "id": 108,
     "bank_id": "java-039",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2407,28 +2386,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **12**."
   },
   {
-    "id": 110,
-    "bank_id": "java-040",
-    "category": "Phạm Vi Truy Cập (Access Modifiers)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Đâu là khai báo đúng về lớp Cat?",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Class Cat{}",
-      "class public Cat(){}",
-      "class Cat{}",
-      "public Cat class{}"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Class Cat{}",
-    "explanation": "Đáp án đúng là: **class Cat{}**."
-  },
-  {
-    "id": 111,
+    "id": 109,
     "bank_id": "java-041",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -2449,7 +2407,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public class Cat{ String name; public Cat(){ String name = \"noname\"; }}**."
   },
   {
-    "id": 112,
+    "id": 110,
     "bank_id": "java-042",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -2470,7 +2428,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 113,
+    "id": 111,
     "bank_id": "java-043",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2491,13 +2449,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Câu 1 đúng, câu 2 sai**."
   },
   {
-    "id": 114,
+    "id": 112,
     "bank_id": "java-044",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "File chứa mã nguồn java sau khi được biên dịch có đuôi là gì?",
     "codeSnippet": null,
     "image": null,
@@ -2512,13 +2470,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **.class**."
   },
   {
-    "id": 115,
+    "id": 113,
     "bank_id": "java-045",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Java platform gồm mấy thành phần?",
     "codeSnippet": null,
     "image": null,
@@ -2533,13 +2491,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **2**."
   },
   {
-    "id": 116,
+    "id": 114,
     "bank_id": "java-046",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Java Virtual Machine là gì?",
     "codeSnippet": null,
     "image": null,
@@ -2554,7 +2512,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Là một thành phần của Java platform dùng để đọc mã bytecode trong file .class**."
   },
   {
-    "id": 117,
+    "id": 115,
     "bank_id": "java-047",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2575,7 +2533,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tất cả các đáp án đều đúng.**."
   },
   {
-    "id": 118,
+    "id": 116,
     "bank_id": "java-048",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -2596,7 +2554,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Là thư viện chứa các thành phần phần mềm tạo sẵn cung cấp các chức năng cho chương trình Java.**."
   },
   {
-    "id": 119,
+    "id": 117,
     "bank_id": "java-049",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -2617,7 +2575,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tất cả đáp án trên**."
   },
   {
-    "id": 120,
+    "id": 118,
     "bank_id": "java-050",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2638,11 +2596,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **3**."
   },
   {
-    "id": 121,
+    "id": 119,
     "bank_id": "java-051",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Thứ tự các từ khóa public và static khi khai bao như thế nào?",
@@ -2659,11 +2617,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Thứ tự bất kỳ nhưng thông thường public đứng trước**."
   },
   {
-    "id": 122,
+    "id": 120,
     "bank_id": "java-052",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Câu lệnh khai báo chuẩn cho cách main như thế nào?",
@@ -2680,7 +2638,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public static void main(String[] a) {}**."
   },
   {
-    "id": 123,
+    "id": 121,
     "bank_id": "java-053",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2701,7 +2659,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **/* chú thích**."
   },
   {
-    "id": 124,
+    "id": 122,
     "bank_id": "java-054",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -2722,7 +2680,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Đường dẫn chương trình sai.**."
   },
   {
-    "id": 125,
+    "id": 123,
     "bank_id": "java-055",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2743,7 +2701,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Là các đối tượng được biểu diễn trong phần mềm gồm có 2 thuộc tính trường dữ liệu và các cách xử lý dữ liệu.**."
   },
   {
-    "id": 126,
+    "id": 124,
     "bank_id": "java-056",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -2764,7 +2722,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **final class outer {}**."
   },
   {
-    "id": 127,
+    "id": 125,
     "bank_id": "java-057",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2785,7 +2743,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tất cả đều sai.**."
   },
   {
-    "id": 128,
+    "id": 126,
     "bank_id": "java-058",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -2806,7 +2764,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **4**."
   },
   {
-    "id": 129,
+    "id": 127,
     "bank_id": "java-059",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2827,7 +2785,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **1**."
   },
   {
-    "id": 130,
+    "id": 128,
     "bank_id": "java-060",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2848,7 +2806,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Vô số**."
   },
   {
-    "id": 131,
+    "id": 129,
     "bank_id": "java-061",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2869,7 +2827,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **class Xedap1 extends Xedap {}**."
   },
   {
-    "id": 132,
+    "id": 130,
     "bank_id": "java-062",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2890,7 +2848,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Là một kiểu tham chiếu, tương tự như class, chỉ có thể chứa hằng giá trị, khai báo cách và kiểu lồng.**."
   },
   {
-    "id": 133,
+    "id": 131,
     "bank_id": "java-063",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -2911,7 +2869,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **class Xedap1 implements Xedap {}**."
   },
   {
-    "id": 134,
+    "id": 132,
     "bank_id": "java-064",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -2932,7 +2890,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **4**."
   },
   {
-    "id": 135,
+    "id": 133,
     "bank_id": "java-065",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -2953,7 +2911,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Biến thay mặt và biến lớp**."
   },
   {
-    "id": 136,
+    "id": 134,
     "bank_id": "java-066",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -2974,11 +2932,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Biến cục bộ và Tham số**."
   },
   {
-    "id": 137,
+    "id": 135,
     "bank_id": "java-067",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Biến f nào sau đây là biến đại diện?",
@@ -2995,11 +2953,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **float f;**."
   },
   {
-    "id": 138,
+    "id": 136,
     "bank_id": "java-068",
     "category": "Từ Khóa Static",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Khai báo nào sau đây là khai báo biến lớp?",
@@ -3016,11 +2974,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **private static id;**."
   },
   {
-    "id": 139,
+    "id": 137,
     "bank_id": "java-069",
     "category": "Từ Khóa Final",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Cách đặt tên nào sau đây là không chính xác?",
@@ -3037,7 +2995,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **final**."
   },
   {
-    "id": 140,
+    "id": 138,
     "bank_id": "java-070",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -3058,7 +3016,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **8**."
   },
   {
-    "id": 141,
+    "id": 139,
     "bank_id": "java-071",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3079,7 +3037,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **4**."
   },
   {
-    "id": 142,
+    "id": 140,
     "bank_id": "java-072",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -3100,7 +3058,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **1**."
   },
   {
-    "id": 143,
+    "id": 141,
     "bank_id": "java-073",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -3121,7 +3079,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Mọi cách thực hiện tác vụ sau khi khởi tạo phải chèn lên cách start. start() bắt đầu việc thực thi của applet.**."
   },
   {
-    "id": 144,
+    "id": 142,
     "bank_id": "java-074",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3142,7 +3100,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **5**."
   },
   {
-    "id": 145,
+    "id": 143,
     "bank_id": "java-075",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -3163,7 +3121,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch**."
   },
   {
-    "id": 146,
+    "id": 144,
     "bank_id": "java-076",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -3184,33 +3142,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **name has protected access.**."
   },
   {
-    "id": 147,
-    "bank_id": "java-077",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Trong các khai báo sau đâu là khai báo không hợp lệ?",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "int a1[][] = new int[][3];",
-      "int a2[][] = new int[2][3];",
-      "int a3[][] = new int[2][];",
-      "int a4[][] = {{}, {}, {}};"
-    ],
-    "correctIndex": 0,
-    "correct_text": "int a1[][] = new int[][3];",
-    "explanation": "Đáp án đúng là: **int a1[][] = new int[][3];**."
-  },
-  {
-    "id": 148,
+    "id": 145,
     "bank_id": "java-078",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sau in ra màn hình xâu nào?",
     "codeSnippet": null,
@@ -3226,7 +3163,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Peter**."
   },
   {
-    "id": 149,
+    "id": 146,
     "bank_id": "java-079",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3247,7 +3184,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **2**."
   },
   {
-    "id": 150,
+    "id": 147,
     "bank_id": "java-080",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -3268,12 +3205,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 151,
+    "id": 148,
     "bank_id": "java-081",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Đoạn mã sau có lỗi biên dịch nào?",
     "codeSnippet": null,
@@ -3289,7 +3226,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch:Incompatible type, requiered Man, found Student.**."
   },
   {
-    "id": 152,
+    "id": 149,
     "bank_id": "java-082",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -3310,13 +3247,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 153,
+    "id": 150,
     "bank_id": "java-083",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khai báo lớp Student trong package java.class sau có lỗi biên dịch hay không, nếu có thì là lỗi gì? package java.class; class Student {}",
     "codeSnippet": null,
     "image": null,
@@ -3331,12 +3268,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịchincorrect package**."
   },
   {
-    "id": 154,
+    "id": 151,
     "bank_id": "java-084",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sẽ in ra kết quả gì khi thực thi đoạn mã sau?",
     "codeSnippet": null,
@@ -3352,13 +3289,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **a.xA = 12; a.yA = Hello**."
   },
   {
-    "id": 155,
+    "id": 152,
     "bank_id": "java-085",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Lệnh str.charat(n) có tác dụng gì?",
     "codeSnippet": null,
     "image": null,
@@ -3373,13 +3310,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lệnh này**."
   },
   {
-    "id": 156,
+    "id": 153,
     "bank_id": "java-086",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khối lệnh sau có kết quả bao nhiêu khi thực hiện?",
     "codeSnippet": null,
     "image": "images/de2_q36_6vhbWrTu2JuQ86lgU4g9WikFqDKEWavhICS6ebB8.png",
@@ -3394,7 +3331,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi biên dịch**."
   },
   {
-    "id": 157,
+    "id": 154,
     "bank_id": "java-087",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3415,13 +3352,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Cả 3 giá trị trên**."
   },
   {
-    "id": 158,
+    "id": 155,
     "bank_id": "java-088",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Trong Java, kiểu char biểu diễn bộ mã code nào dưới đây?",
     "codeSnippet": null,
     "image": null,
@@ -3436,13 +3373,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **UTF-16**."
   },
   {
-    "id": 159,
+    "id": 156,
     "bank_id": "java-089",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Giá trị mặc định của một biến kiểu char là?",
     "codeSnippet": null,
     "image": null,
@@ -3457,7 +3394,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **u0000**."
   },
   {
-    "id": 160,
+    "id": 157,
     "bank_id": "java-090",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3478,7 +3415,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Hel**."
   },
   {
-    "id": 161,
+    "id": 158,
     "bank_id": "java-091",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3499,13 +3436,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lệnh sai**."
   },
   {
-    "id": 162,
+    "id": 159,
     "bank_id": "java-092",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Trong hai câu lệnh sau, lệnh substring có tác dụng gì?",
     "codeSnippet": null,
     "image": "images/de2_q42_MobE9bOoDtUEvoNNC8GRq2VufB7jwuwPTKlDrtO6.png",
@@ -3520,11 +3457,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lấy các ký tự từ vị trí chỉ mục 0 đến vị trí chỉ mục 2 của chuỗi greetings và đưa vào s**."
   },
   {
-    "id": 163,
+    "id": 160,
     "bank_id": "java-093",
     "category": "Từ Khóa Final",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Kiểu enum là gì?",
@@ -3541,7 +3478,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Là kiểu dữ liệu gồm các trường chứa một tập hợp cố định các hằng số.**."
   },
   {
-    "id": 164,
+    "id": 161,
     "bank_id": "java-094",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -3562,7 +3499,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Chỉ có thể truy cập từ các phương thức khác trong class đó.**."
   },
   {
-    "id": 165,
+    "id": 162,
     "bank_id": "java-095",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -3583,7 +3520,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có thể được truy cập từ các lớp trong cùng package và lớp con nằm trong package khác.**."
   },
   {
-    "id": 166,
+    "id": 163,
     "bank_id": "java-096",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -3604,12 +3541,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có thể được truy cập từ bất kỳ vị trí nào trong chương trình.**."
   },
   {
-    "id": 167,
+    "id": 164,
     "bank_id": "java-097",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 1?",
     "codeSnippet": null,
@@ -3625,12 +3562,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Ngay nghi**."
   },
   {
-    "id": 168,
+    "id": 165,
     "bank_id": "java-098",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 2?",
     "codeSnippet": null,
@@ -3646,12 +3583,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Van, Toan**."
   },
   {
-    "id": 169,
+    "id": 166,
     "bank_id": "java-099",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Khối lệnh dưới sẽ cho kết quả là bao nhiêu nếu ta nhập thu = 3?",
     "codeSnippet": null,
@@ -3667,7 +3604,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Hoa, Ly**."
   },
   {
-    "id": 170,
+    "id": 167,
     "bank_id": "java-100",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3688,7 +3625,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Mau trang.**."
   },
   {
-    "id": 171,
+    "id": 168,
     "bank_id": "java-101",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3709,12 +3646,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **45**."
   },
   {
-    "id": 172,
+    "id": 169,
     "bank_id": "java-102",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Khối lệnh thực hiện chuyện gì?",
     "codeSnippet": null,
@@ -3730,13 +3667,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Nhập dữ liệu và tính tổng mảng nguyên.**."
   },
   {
-    "id": 173,
+    "id": 170,
     "bank_id": "java-103",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Cho xâu kí tự s=”ABCDEF”. Để lấy kỳ tự thứ ‘E’ của xâu ký tự s(String) dùng câu lệnh nào sau đây?",
     "codeSnippet": null,
     "image": null,
@@ -3751,54 +3688,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **s.charAt(4)**."
   },
   {
-    "id": 174,
-    "bank_id": "java-104",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Phát biểu nào sau đây là đúng:",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Mảng có thể lưu giữ các phần tử thuộc nhiều kiểu dữ liệu khác nhau",
-      "Chỉ số của mảng có thể sử dụng kiểu số thực (float, double)",
-      "Biểu thức array.length được sử dụng để trả về số phần tử trong mảng",
-      "Một phần tử của mảng không thể truyền vào trong một phương thức."
-    ],
-    "correctIndex": 2,
-    "correct_text": "Biểu thức array.length được sử dụng để trả về số phần tử trong mảng",
-    "explanation": "Đáp án đúng là: **Biểu thức array.length được sử dụng để trả về số phần tử trong mảng**."
-  },
-  {
-    "id": 175,
-    "bank_id": "java-105",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Trong các khai báo sau đâu là khai báo không hợp lệ?",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "int a1[][] = new int[][3];",
-      "int a2[][] = new int[2][3];",
-      "int a3[][] = new int[2][];",
-      "int a4[][] = {{}, {}, {}}"
-    ],
-    "correctIndex": 0,
-    "correct_text": "int a1[][] = new int[][3];",
-    "explanation": "Đáp án đúng là: **int a1[][] = new int[][3];**."
-  },
-  {
-    "id": 176,
+    "id": 171,
     "bank_id": "java-106",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Câu 1: Nếu 2 đối tượng bằng nhau trong cùng một mảng và mảng đó được sắp xếp, các phần tử bằng nhau không thể thay đối thứ tự của chúng? Câu 2: Chỉ số mảng bắt đầu từ 1",
     "codeSnippet": null,
@@ -3814,12 +3709,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Cả hai câu đều sai**."
   },
   {
-    "id": 177,
+    "id": 172,
     "bank_id": "java-107",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Phát biểu sau nào là SAI",
     "codeSnippet": null,
@@ -3835,12 +3730,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Mảng là cấu trúc dữ liệu có khả năng lưu trữ nhiều thành phần (phần tử) dữ liệu với kiểu khác nhau**."
   },
   {
-    "id": 178,
+    "id": 173,
     "bank_id": "java-108",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Lệnh sau in ra cái gì?",
     "codeSnippet": null,
@@ -3856,12 +3751,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi ở dòng 2**."
   },
   {
-    "id": 179,
+    "id": 174,
     "bank_id": "java-109",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sẽ in ra cái gì?",
     "codeSnippet": null,
@@ -3877,7 +3772,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi biên dịch**."
   },
   {
-    "id": 180,
+    "id": 175,
     "bank_id": "java-110",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -3898,7 +3793,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **1010**."
   },
   {
-    "id": 181,
+    "id": 176,
     "bank_id": "java-111",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -3919,7 +3814,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 182,
+    "id": 177,
     "bank_id": "java-112",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -3940,7 +3835,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch**."
   },
   {
-    "id": 183,
+    "id": 178,
     "bank_id": "java-113",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -3961,7 +3856,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch:name has private access in Student.**."
   },
   {
-    "id": 184,
+    "id": 179,
     "bank_id": "java-114",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -3982,13 +3877,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **class Z { public Z(int) {} }class A extends Z { }**."
   },
   {
-    "id": 185,
+    "id": 180,
     "bank_id": "java-115",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Đoạn mã sau có lỗi biên dịch không? Nếu có là lỗi nào sau?",
     "codeSnippet": null,
     "image": "images/de3_q15_S6s1S9XwtsqC89oFJsjv05celTWBd2ndzdMFGPf6.png",
@@ -4003,7 +3898,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 186,
+    "id": 181,
     "bank_id": "java-116",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -4024,7 +3919,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **name has protected access.**."
   },
   {
-    "id": 187,
+    "id": 182,
     "bank_id": "java-117",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -4045,7 +3940,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 188,
+    "id": 183,
     "bank_id": "java-118",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -4066,12 +3961,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 189,
+    "id": 184,
     "bank_id": "java-119",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sẽ in ra kết quả gì khi thực thi đoạn mã sau?",
     "codeSnippet": null,
@@ -4087,7 +3982,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **a.xA = 12; a.yA = Hello**."
   },
   {
-    "id": 190,
+    "id": 185,
     "bank_id": "java-120",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -4108,7 +4003,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch:can not find symbol test.Student**."
   },
   {
-    "id": 191,
+    "id": 186,
     "bank_id": "java-121",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -4129,7 +4024,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 192,
+    "id": 187,
     "bank_id": "java-122",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -4150,12 +4045,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch:can not find symbol test.Student**."
   },
   {
-    "id": 193,
+    "id": 188,
     "bank_id": "java-123",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sau in ra mà hình xâu nào?",
     "codeSnippet": null,
@@ -4171,33 +4066,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **null**."
   },
   {
-    "id": 194,
-    "bank_id": "java-124",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Câu 1: Nếu 2 đối tượng bằng nhau trong cùng một mảng và mảng đó được sắp xếp, các phần tử bằng nhau không thể thay đối thứ tự của chúng? Câu 2: Chỉ số mảng bắt đầu từ 1",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Cả hai câu đều đúng",
-      "Cả hai câu đều sai",
-      "Câu 1 đúng, câu 2 sai",
-      "Câu 2 đúng, câu 1 sai"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Cả hai câu đều sai",
-    "explanation": "Đáp án đúng là: **Cả hai câu đều sai**."
-  },
-  {
-    "id": 195,
+    "id": 189,
     "bank_id": "java-125",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Kết quả in ra của đoạn mã trên là gì?",
     "codeSnippet": null,
@@ -4213,13 +4087,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **ABDCBDCB**."
   },
   {
-    "id": 196,
+    "id": 190,
     "bank_id": "java-126",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Trong đoạn mã trên x nhận giá trị bao nhiêu?",
     "codeSnippet": null,
     "image": "images/de3_q26_K5LZHw4PHklOf2rnntmrQrrER6AkzFEY2qJnlg4m.png",
@@ -4234,33 +4108,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **7**."
   },
   {
-    "id": 197,
-    "bank_id": "java-127",
-    "category": "Mảng Dữ Liệu (Arrays)",
-    "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
-    "topicIcon": "📊",
-    "question": "Phát biểu sau nào là SAI",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Mảng có kích thước không đổi trong toàn bộ chương trình",
-      "Mảng là cấu trúc dữ liệu có khả năng lưu trữ nhiều thành phần (phần tử) dữ liệu với kiểu khác nhau",
-      "Mảng N phần tử được đánh chỉ số từ 0 đến N - 1",
-      "Chỉ số mảng bắt đầu bằng 0"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Mảng là cấu trúc dữ liệu có khả năng lưu trữ nhiều thành phần (phần tử) dữ liệu với kiểu khác nhau",
-    "explanation": "Đáp án đúng là: **Mảng là cấu trúc dữ liệu có khả năng lưu trữ nhiều thành phần (phần tử) dữ liệu với kiểu khác nhau**."
-  },
-  {
-    "id": 198,
+    "id": 191,
     "bank_id": "java-128",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Lệnh sau in ra cái gì?",
     "codeSnippet": null,
@@ -4276,7 +4129,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi ở dòng 2**."
   },
   {
-    "id": 199,
+    "id": 192,
     "bank_id": "java-129",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -4297,12 +4150,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không có lỗi biên dịch.**."
   },
   {
-    "id": 200,
+    "id": 193,
     "bank_id": "java-130",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Đoạn mã sau có lỗi biên dịch KHÔNG? Nêu KHÔNG thì in ra màn hình kết quả nào?",
     "codeSnippet": null,
@@ -4318,7 +4171,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Có lỗi biên dịch.**."
   },
   {
-    "id": 201,
+    "id": 194,
     "bank_id": "java-131",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -4339,7 +4192,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **1010**."
   },
   {
-    "id": 202,
+    "id": 195,
     "bank_id": "java-132",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -4360,7 +4213,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public class Man extends Student{ }**."
   },
   {
-    "id": 203,
+    "id": 196,
     "bank_id": "java-133",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -4381,7 +4234,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **class Z { public Z(int) {} }class A extends Z { }**."
   },
   {
-    "id": 204,
+    "id": 197,
     "bank_id": "java-134",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -4402,7 +4255,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public getNum() { }**."
   },
   {
-    "id": 205,
+    "id": 198,
     "bank_id": "java-135",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -4423,12 +4276,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **interface Summable {}interface Eatable {}class Math implements Summable,Eatable{}**."
   },
   {
-    "id": 206,
+    "id": 199,
     "bank_id": "java-136",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Cho khai báo mảng sau. Lệnh trên in ra cái gì?",
     "codeSnippet": null,
@@ -4444,12 +4297,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi biên dịch ở dòng 1**."
   },
   {
-    "id": 207,
+    "id": 200,
     "bank_id": "java-137",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Đoạn mã sau in ra màn hình xâu ký tự nào sau:",
     "codeSnippet": null,
@@ -4465,7 +4318,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Man**."
   },
   {
-    "id": 208,
+    "id": 201,
     "bank_id": "java-138",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -4486,12 +4339,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Chương trình không sai**."
   },
   {
-    "id": 209,
+    "id": 202,
     "bank_id": "java-139",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Chương trình thực hiện công việc gì?",
     "codeSnippet": null,
@@ -4507,13 +4360,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tìm 1 phần tử trong mảng.**."
   },
   {
-    "id": 210,
+    "id": 203,
     "bank_id": "java-140",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Chương trình sau thực hiện công việc gì?",
     "codeSnippet": null,
     "image": "images/de3_q40_NkGLZ4KA9gkqijoTpwaW0xRbi9HGNanVH0dPF7Pb.png",
@@ -4528,13 +4381,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Đếm chữ cái p trong chuỗi ký tự**."
   },
   {
-    "id": 211,
+    "id": 204,
     "bank_id": "java-141",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Chương trình sau ra kết quả là gì?",
     "codeSnippet": null,
     "image": "images/de3_q41_vyjovq82a108LmCq1yRwGmf8Rn6EGsBUru4zpLWO.png",
@@ -4549,13 +4402,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Found 8 p's in the string.**."
   },
   {
-    "id": 212,
+    "id": 205,
     "bank_id": "java-142",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Phương thức nào của class String trả về index của chuỗi ký tự con xuất hiện đầu tiên trong chuỗi ký tự char \"",
     "codeSnippet": null,
     "image": null,
@@ -4570,13 +4423,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **indexOf()**."
   },
   {
-    "id": 213,
+    "id": 206,
     "bank_id": "java-143",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Phương thức nào dùng để tìm kiếm một chuỗi trong một chuỗi khác trong class String của Java?",
     "codeSnippet": null,
     "image": null,
@@ -4591,12 +4444,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **lastIndexOf()**."
   },
   {
-    "id": 214,
+    "id": 207,
     "bank_id": "java-144",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Trong Java, kiểu dữ liệu nào là một địa chỉ của đối tượng hoặc một mảng được tạo ra trong bộ nhớ?",
     "codeSnippet": null,
@@ -4612,13 +4465,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Kiểu reference**."
   },
   {
-    "id": 215,
+    "id": 208,
     "bank_id": "java-145",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Chức năng của vòng lặp while là gi?",
     "codeSnippet": null,
     "image": null,
@@ -4633,13 +4486,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lặp lại khối lệnh chứng nào điều kiện là đúng**."
   },
   {
-    "id": 216,
+    "id": 209,
     "bank_id": "java-146",
     "category": "Cấu Trúc Rẽ Nhánh",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Java cung cấp một số câu lệnh làm thay đổi dòng điều khiển dựa trên các điều kiện. Lệnh nào dừng việc hoạt động của vòng lòng trong cùng và bắt đầu câu lệnh tiếp theo ngay sau khối lệnh?",
     "codeSnippet": null,
     "image": null,
@@ -4654,13 +4507,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **break**."
   },
   {
-    "id": 217,
+    "id": 210,
     "bank_id": "java-147",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Trong đoạn mã trên x nhận giá trị bao nhiêu?",
     "codeSnippet": null,
     "image": "images/de3_q47_1nlOgsBgZyJM3kJf9iD3QDNFDVsWBt5bas9r7o1A.png",
@@ -4675,7 +4528,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **104**."
   },
   {
-    "id": 218,
+    "id": 211,
     "bank_id": "java-148",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -4696,7 +4549,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public interface MyInterface {}**."
   },
   {
-    "id": 219,
+    "id": 212,
     "bank_id": "java-149",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -4717,13 +4570,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Nếu condition là true thì result = value1, nếu condition là false thì result = value2**."
   },
   {
-    "id": 220,
+    "id": 213,
     "bank_id": "java-150",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Lệnh nào ngừng vòng lặp hiện thời và bắt đầu vòng lặp tiếp theo?",
     "codeSnippet": null,
     "image": null,
@@ -4738,12 +4591,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **continue**."
   },
   {
-    "id": 221,
+    "id": 214,
     "bank_id": "java-151",
     "category": "Mảng Dữ Liệu (Arrays)",
     "topicId": "arrays",
-    "topicName": "Arrays (Mảng Dữ Liệu)",
-    "topicShortName": "Arrays",
+    "topicName": "Mảng Trong Java (Arrays)",
+    "topicShortName": "Mảng (Arrays)",
     "topicIcon": "📊",
     "question": "Có bao nhiêu đổi tham chiếu của đối tượng mảng và biến tồn tại sau khi thực hiện khối lệnh?",
     "codeSnippet": null,
@@ -4759,7 +4612,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **2**."
   },
   {
-    "id": 222,
+    "id": 215,
     "bank_id": "java-152",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -4780,7 +4633,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Chưa khởi tạo biến myRect**."
   },
   {
-    "id": 223,
+    "id": 216,
     "bank_id": "java-153",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -4801,13 +4654,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **!**."
   },
   {
-    "id": 224,
+    "id": 217,
     "bank_id": "java-154",
     "category": "Cấu Trúc Rẽ Nhánh",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Lệnh if CONDITION { Khối lệnh } có tác dụng gì?",
     "codeSnippet": null,
     "image": null,
@@ -4822,13 +4675,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Nếu CONDITION đúng thì thực hiện Khối lệnh, nếu sai thì bỏ qua**."
   },
   {
-    "id": 225,
+    "id": 218,
     "bank_id": "java-155",
     "category": "Cấu Trúc Rẽ Nhánh",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Lệnh if CONDITION {Khối lệnh 1} else {Khối lệnh 2} có tác dụng gì?",
     "codeSnippet": null,
     "image": null,
@@ -4843,7 +4696,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Nếu CONDITION đúng thì thực hiện Khối lệnh 1, nếu sai thì thực hiện Khối lệnh 2**."
   },
   {
-    "id": 226,
+    "id": 219,
     "bank_id": "java-156",
     "category": "Kiểu Dữ Liệu & Biến",
     "topicId": "core_java",
@@ -4864,12 +4717,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **xpldeleted**."
   },
   {
-    "id": 227,
+    "id": 220,
     "bank_id": "java-157",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Câu lệnh sau in ra kết quả gì?",
     "codeSnippet": null,
@@ -4885,13 +4738,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **PG13**."
   },
   {
-    "id": 228,
+    "id": 221,
     "bank_id": "java-158",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Để kiểm tra 2 chuỗi có bằng nhau hay không, sử dụng phương thức nào?",
     "codeSnippet": null,
     "image": null,
@@ -4906,13 +4759,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **string1.equals(string2)**."
   },
   {
-    "id": 229,
+    "id": 222,
     "bank_id": "java-159",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Lệnh charAt(n) có tác dụng gì?",
     "codeSnippet": null,
     "image": null,
@@ -4927,7 +4780,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Trả về ký tự có vị trí chỉ mục n**."
   },
   {
-    "id": 230,
+    "id": 223,
     "bank_id": "java-160",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -4948,13 +4801,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **H**."
   },
   {
-    "id": 231,
+    "id": 224,
     "bank_id": "java-161",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khối lệnh sau ra kết quả là bao nhiêu với a = 5, b = 8?",
     "codeSnippet": null,
     "image": "images/de4_q11_RQOyF2FFyVeT5XKkPKjWqk4RDtEqGCZuxPLxwo71.png",
@@ -4969,13 +4822,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **-1.6**."
   },
   {
-    "id": 232,
+    "id": 225,
     "bank_id": "java-162",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khối lệnh sau ra kết quả là bao nhiêu với a = 0, b = 0?",
     "codeSnippet": null,
     "image": "images/de4_q12_kkbAgjXdcNrgnw1lrnBUzLL0z4WVS6eAl4lOJFz7.png",
@@ -4990,13 +4843,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Phuong trinh co vo so nghiem**."
   },
   {
-    "id": 233,
+    "id": 226,
     "bank_id": "java-163",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Khối lệnh sau ra kết quả là bao nhiêu với a = 0, b = 8?",
     "codeSnippet": null,
     "image": "images/de4_q13_EeEt7cQUKNJoPDollZZl2mBpEAnXLS3A1GohckPf.png",
@@ -5011,7 +4864,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Phuong trinh vo nghiem**."
   },
   {
-    "id": 234,
+    "id": 227,
     "bank_id": "java-164",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5032,13 +4885,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi kết thúc một chương trình**."
   },
   {
-    "id": 235,
+    "id": 228,
     "bank_id": "java-165",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong Javascript sự kiện Onblur thực hiện khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5053,13 +4906,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi một đối tượng trong form mất focus**."
   },
   {
-    "id": 236,
+    "id": 229,
     "bank_id": "java-166",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong Javascript sự kiện OnMouseOver thực hiện khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5074,13 +4927,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi di chuyển con chuột qua một đối tượng trong form**."
   },
   {
-    "id": 237,
+    "id": 230,
     "bank_id": "java-167",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong Javascript sự kiện Onclick xảy ra khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5095,13 +4948,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi click chuột vào nút lệnh**."
   },
   {
-    "id": 238,
+    "id": 231,
     "bank_id": "java-168",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong Javascript sự kiện Onchange thực hiện khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5116,12 +4969,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Xảy ra khi giá trị của một trường trong form được người dùng thay đổi**."
   },
   {
-    "id": 239,
+    "id": 232,
     "bank_id": "java-169",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Thẻ <textarea ></texterea> dùng để làm gì?",
     "codeSnippet": null,
@@ -5137,12 +4990,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tạo một textbox cho phép nhập liệu nhiều dòng**."
   },
   {
-    "id": 240,
+    "id": 233,
     "bank_id": "java-170",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Thẻ <input type=”Submit” dùng để làm gì?",
     "codeSnippet": null,
@@ -5158,12 +5011,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tạo một nút lệnh dùng để gửi tin trong form đi**."
   },
   {
-    "id": 241,
+    "id": 234,
     "bank_id": "java-171",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Thẻ <input type=”Radio” …> dùng để làm gì?",
     "codeSnippet": null,
@@ -5179,12 +5032,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tạo một nhóm đối tượng chọn nhưng chọn duy nhất**."
   },
   {
-    "id": 242,
+    "id": 235,
     "bank_id": "java-172",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Thẻ <input type=”checkbox” …> dùng để làm gì?",
     "codeSnippet": null,
@@ -5200,12 +5053,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tạo một nhóm đối tượng chọn được nhiều đối tượng**."
   },
   {
-    "id": 243,
+    "id": 236,
     "bank_id": "java-173",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Thẻ <input type=”button” …> dùng để làm gì?",
     "codeSnippet": null,
@@ -5221,13 +5074,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Tạo một nút lệnh lên trên form**."
   },
   {
-    "id": 244,
+    "id": 237,
     "bank_id": "java-174",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Lệnh lặp for có dạng như thế nào?",
     "codeSnippet": null,
     "image": null,
@@ -5242,13 +5095,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **for ( biến = Giá trị đầu; Giá trị tăng; điều kiện)**."
   },
   {
-    "id": 245,
+    "id": 238,
     "bank_id": "java-175",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Vòng lặp While là dạng vòng lặp?",
     "codeSnippet": null,
     "image": null,
@@ -5263,13 +5116,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không xác định và xét điều kiện rồi mới lặp**."
   },
   {
-    "id": 246,
+    "id": 239,
     "bank_id": "java-176",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Vòng lặp (Do.. while) là dạng vòng lặp?",
     "codeSnippet": null,
     "image": null,
@@ -5284,13 +5137,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không xác định và lặp rồi mới xét điều kiện**."
   },
   {
-    "id": 247,
+    "id": 240,
     "bank_id": "java-177",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Lệnh break kết hợp với vòng for dùng để?",
     "codeSnippet": null,
     "image": null,
@@ -5305,12 +5158,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Ngưng vòng for nếu gặp lệnh này**."
   },
   {
-    "id": 248,
+    "id": 241,
     "bank_id": "java-178",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Hàm alert() dùng để làm gì?",
     "codeSnippet": null,
@@ -5326,7 +5179,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Dùng để hiện một thông điệp**."
   },
   {
-    "id": 249,
+    "id": 242,
     "bank_id": "java-179",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5347,7 +5200,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Dùng để chia trang web ra nhiều phần theo cột**."
   },
   {
-    "id": 250,
+    "id": 243,
     "bank_id": "java-180",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5368,7 +5221,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Dùng để chia trang web ra nhiều phần theo dòng**."
   },
   {
-    "id": 251,
+    "id": 244,
     "bank_id": "java-181",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5389,12 +5242,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Dùng để lấy dữ liệu từ một trang khác**."
   },
   {
-    "id": 252,
+    "id": 245,
     "bank_id": "java-182",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Hàm prompt(…) trong JavaScript dùng để làm gì?",
     "codeSnippet": null,
@@ -5410,13 +5263,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Hiển thị thông báo nhập thông tin**."
   },
   {
-    "id": 253,
+    "id": 246,
     "bank_id": "java-183",
     "category": "Chuỗi Ký Tự (String)",
     "topicId": "string",
-    "topicName": "String & Immutability (Chuỗi Ký Tự)",
+    "topicName": "String, StringBuilder & StringBuffer",
     "topicShortName": "String",
-    "topicIcon": "🔤",
+    "topicIcon": "📝",
     "question": "Trong JavaScript hàm parseInt() dùng để làm gì?",
     "codeSnippet": null,
     "image": null,
@@ -5431,13 +5284,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Chuyển một chuỗi thành số nguyên**."
   },
   {
-    "id": 254,
+    "id": 247,
     "bank_id": "java-184",
     "category": "Cấu Trúc Rẽ Nhánh",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Thực hiện kiểm tra nếu biến “i” không bằng 5, câu lệnh nào là đúng?",
     "codeSnippet": null,
     "image": null,
@@ -5452,13 +5305,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **if (i != 5)**."
   },
   {
-    "id": 255,
+    "id": 248,
     "bank_id": "java-185",
     "category": "Cấu Trúc Rẽ Nhánh",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Cách viết câu lệnh IF nào sau đây là đúng?",
     "codeSnippet": null,
     "image": null,
@@ -5473,7 +5326,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **if (i == 5)**."
   },
   {
-    "id": 256,
+    "id": 249,
     "bank_id": "java-186",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5494,13 +5347,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Cả hai dạng viết tệp riêng hoặc viết trong trang HTML**."
   },
   {
-    "id": 257,
+    "id": 250,
     "bank_id": "java-187",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong JavaScript sự kiện OnMouseOver xảy ra khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5515,13 +5368,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi di chuyển con chuột qua một đối tượng trong form**."
   },
   {
-    "id": 258,
+    "id": 251,
     "bank_id": "java-188",
     "category": "Cấu Trúc Vòng Lặp",
     "topicId": "control_flow",
-    "topicName": "Control Flow (Vòng Lặp & Rẽ Nhánh)",
-    "topicShortName": "Control Flow",
-    "topicIcon": "🔁",
+    "topicName": "Cấu Trúc Điều Khiển (if-else, switch, loops)",
+    "topicShortName": "Điều Khiển",
+    "topicIcon": "🔄",
     "question": "Trong JavaScript sự kiện Onclick xảy ra khi nào?",
     "codeSnippet": null,
     "image": null,
@@ -5536,7 +5389,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Khi click chuột vào nút lệnh**."
   },
   {
-    "id": 259,
+    "id": 252,
     "bank_id": "java-189",
     "category": "Lập Trình Hướng Đối Tượng",
     "topicId": "core_java",
@@ -5557,7 +5410,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Không dấu được vì các kịch bản chạy phía client**."
   },
   {
-    "id": 260,
+    "id": 253,
     "bank_id": "java-190",
     "category": "Hàm Tạo (Constructor)",
     "topicId": "constructor",
@@ -5578,12 +5431,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **array2 = array4;**."
   },
   {
-    "id": 261,
+    "id": 254,
     "bank_id": "java-191",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Kết quả in ra là gì?",
     "codeSnippet": null,
@@ -5599,12 +5452,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Lỗi sẽ đưa ra dòng 4**."
   },
   {
-    "id": 262,
+    "id": 255,
     "bank_id": "java-192",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Kết quả in ra của đoạn mã trên là gì?",
     "codeSnippet": null,
@@ -5620,28 +5473,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **i = 5 and j = 6**."
   },
   {
-    "id": 263,
-    "bank_id": "java-193",
-    "category": "Lập Trình Hướng Đối Tượng",
-    "topicId": "core_java",
-    "topicName": "Core Java (Căn Bản & Tổng Hợp)",
-    "topicShortName": "Core Java",
-    "topicIcon": "☕",
-    "question": "Có mấy cách để truyền tham số vào cho một phương thức?",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "2",
-      "1",
-      "3",
-      "4"
-    ],
-    "correctIndex": 0,
-    "correct_text": "2",
-    "explanation": "Đáp án đúng là: **2**."
-  },
-  {
-    "id": 264,
+    "id": 256,
     "bank_id": "java-194",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -5662,7 +5494,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Xóa từ khóa abstract ở dòng 4**."
   },
   {
-    "id": 265,
+    "id": 257,
     "bank_id": "java-195",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -5683,12 +5515,12 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **abstract**."
   },
   {
-    "id": 266,
+    "id": 258,
     "bank_id": "java-196",
     "category": "Nhập Xuất & Lớp Scanner",
     "topicId": "io_scanner",
-    "topicName": "I/O & Scanner (Nhập Xuất Dữ Liệu)",
-    "topicShortName": "I/O & Scanner",
+    "topicName": "Java I/O & Scanner (Nhập Xuất Dữ Liệu)",
+    "topicShortName": "Java I/O",
     "topicIcon": "⌨️",
     "question": "Chương trình sau in ra màn hình số mấy?",
     "codeSnippet": null,
@@ -5704,7 +5536,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **5**."
   },
   {
-    "id": 267,
+    "id": 259,
     "bank_id": "java-197",
     "category": "Phạm Vi Truy Cập (Access Modifiers)",
     "topicId": "encapsulation",
@@ -5725,13 +5557,13 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **public getNum() { }**."
   },
   {
-    "id": 268,
+    "id": 260,
     "bank_id": "java-198",
     "category": "Kiến Trúc JVM & Nền Tảng Java",
     "topicId": "memory_jvm",
-    "topicName": "Memory Model & GC (JVM, Stack vs Heap)",
-    "topicShortName": "Memory & JVM",
-    "topicIcon": "💾",
+    "topicName": "Bộ Nhớ Java (Heap, Stack, Garbage Collector)",
+    "topicShortName": "Bộ Nhớ & JVM",
+    "topicIcon": "🧠",
     "question": "Giá trị cuối cùng của i tại dòng 7 là bao nhiêu?",
     "codeSnippet": null,
     "image": "images/de4_q48_fAzRx1vcFOZoC1msHafvTfEMakli7wU1tZbwJgTL.png",
@@ -5746,11 +5578,11 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **4**."
   },
   {
-    "id": 269,
+    "id": 261,
     "bank_id": "java-199",
     "category": "Từ Khóa Final",
     "topicId": "static_final",
-    "topicName": "Static & Final (Từ Khóa Tĩnh & Bất Biến)",
+    "topicName": "Từ Khóa Static & Final Trong Java",
     "topicShortName": "Static & Final",
     "topicIcon": "⚡",
     "question": "Kết quả in ra của đoạn mã trên là gì?",
@@ -5767,7 +5599,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **Finally**."
   },
   {
-    "id": 270,
+    "id": 262,
     "bank_id": "java-200",
     "category": "Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -5787,7 +5619,7 @@ const QUIZ_DATA = [
     "explanation": "Đáp án đúng là: **No error**."
   },
   {
-    "id": 271,
+    "id": 263,
     "bank_id": "poly-01",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5808,7 +5640,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, tính đa hình (Dynamic Method Dispatch) chỉ áp dụng cho các PHƯƠNG THỨC thể hiện (instance methods). Các THUỘC TÍNH (variables) KHÔNG bị ghi đè mà chỉ bị che khuất (Shadowing/Hiding). Do đó, khi truy xuất `p.x`, máy ảo sẽ dựa vào KIỂU KHAI BÁO của biến tham chiếu lúc biên dịch (`Parent`), in ra giá trị `10`."
   },
   {
-    "id": 272,
+    "id": 264,
     "bank_id": "poly-02",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5829,7 +5661,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `static` liên kết với Class lúc biên dịch (Static Binding / Compile-time resolution), KHÔNG tham gia vào cơ chế đa hình lúc runtime (Virtual Method Invocation). Hiện tượng này gọi là Method Hiding. Vì biến `obj` được khai báo kiểu `A`, lời gọi `obj.print()` được compiler gắn tĩnh với `A.print()`, in ra 'A'."
   },
   {
-    "id": 273,
+    "id": 265,
     "bank_id": "poly-03",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5850,7 +5682,7 @@ const QUIZ_DATA = [
     "explanation": "Theo quy tắc phân giải Overloading của Java, nếu đối số khớp với nhiều phương thức, trình biên dịch sẽ luôn ưu tiên phương thức có kiểu tham số 'cụ thể nhất' (most specific type). Vì `String` là lớp con trực tiếp kế thừa từ `Object`, `String` cụ thể hơn `Object` nên compiler chọn `show(String)` và in ra 'String'."
   },
   {
-    "id": 274,
+    "id": 266,
     "bank_id": "poly-04",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5871,7 +5703,7 @@ const QUIZ_DATA = [
     "explanation": "Pattern Matching for `instanceof` loại bỏ sự phiền toái của việc phải viết lệnh ép kiểu thủ công `String s = (String) obj;` sau khi kiểm tra. Nếu `obj` là thể hiện của `String`, Java tự động ép kiểu và gán vào biến mẫu `s` trong cùng phạm vi."
   },
   {
-    "id": 275,
+    "id": 267,
     "bank_id": "poly-05",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5892,7 +5724,7 @@ const QUIZ_DATA = [
     "explanation": "Mảng trong Java có tính chất đồng biến (Array Covariance: `String[]` là kiểu con của `Object[]`). Về mặt biên dịch, gán `Integer` vào `Object[]` là hợp lệ. Tuy nhiên, lúc runtime, JVM phát hiện mảng thực tế trên Heap là `String[]` và đối tượng được gán là `Integer`, do đó ném `java.lang.ArrayStoreException`."
   },
   {
-    "id": 276,
+    "id": 268,
     "bank_id": "poly-06",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5913,7 +5745,7 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc cơ bản của tính Đa hình và Overriding trong Java: Phương thức ghi đè ở lớp con KHÔNG ĐƯỢC thu hẹp quyền truy cập (không được hạn chế hơn lớp cha). Do lớp cha là `protected`, lớp con chỉ có thể giữ nguyên `protected` hoặc mở rộng hơn thành `public`."
   },
   {
-    "id": 277,
+    "id": 269,
     "bank_id": "poly-07",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5934,7 +5766,7 @@ const QUIZ_DATA = [
     "explanation": "Khi `new Child()` chạy: constructor của `Parent` được gọi trước. Trong constructor `Parent`, lệnh gọi `print()` sử dụng Dynamic Method Dispatch nên gọi phương thức `Child.print()`. Tuy nhiên, lúc này các trường của `Child` chưa được khởi tạo (`value` vẫn mang giá trị mặc định là 0), in ra 'Child=0 '. Đây là 'anti-pattern' nguy hiểm trong Java!"
   },
   {
-    "id": 278,
+    "id": 270,
     "bank_id": "poly-08",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5955,7 +5787,7 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc ưu tiên của Java compiler khi tìm phương thức nạp chồng: 1. Widening primitive types (ví dụ int -> long) 2. Autoboxing/Unboxing (int -> Integer) 3. Varargs (int... args). Compiler luôn chọn giải pháp tương thích cũ (trước Java 5) trước khi dùng tính năng mới."
   },
   {
-    "id": 279,
+    "id": 271,
     "bank_id": "poly-09",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5976,7 +5808,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `Derived.test(double)` KHÔNG PHẢI là Overriding của `Base.test(int)` vì danh sách tham số khác nhau (đây là Overloading). Khi gọi `b.test(5)`, kiểu tham chiếu của `b` là `Base`, chỉ có phương thức `test(int)`, nên JVM gọi `Base.test(int)` và in ra 'Base '."
   },
   {
-    "id": 280,
+    "id": 272,
     "bank_id": "poly-10",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -5997,7 +5829,7 @@ const QUIZ_DATA = [
     "explanation": "JVM duy trì một bảng `vtable` (Virtual Method Table) cho mỗi class được nạp. Vtable chứa các con trỏ trỏ tới địa chỉ các phương thức thực tế trên bộ nhớ. Khi lệnh `invokevirtual` được thực thi, JVM tra cứu con trỏ hàm trong vtable của đối tượng cụ thể tại thời điểm chạy."
   },
   {
-    "id": 281,
+    "id": 273,
     "bank_id": "poly-11",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -6018,7 +5850,7 @@ const QUIZ_DATA = [
     "explanation": "Theo nguyên lý đa hình, phương thức ghi đè ở lớp con không được phép ném các Checked Exception mới hoặc rộng hơn (broader) so với phương thức ở lớp cha. Lớp con có thể ném cùng loại exception, exception con (thu hẹp lại), hoặc không ném ngoại lệ nào cả."
   },
   {
-    "id": 282,
+    "id": 274,
     "bank_id": "poly-12",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -6039,7 +5871,7 @@ const QUIZ_DATA = [
     "explanation": "Đây là phép Downcasting không an toàn. Biến `v` trỏ tới đối tượng thực sự là `Vehicle` trên Heap. Đối tượng này không phải là thể hiện của `Car`. Trình biên dịch cho phép qua vì `Car` là lớp con của `Vehicle`, nhưng lúc chạy JVM kiểm tra kiểu thực tế và ném `ClassCastException`."
   },
   {
-    "id": 283,
+    "id": 275,
     "bank_id": "poly-13",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -6060,7 +5892,7 @@ const QUIZ_DATA = [
     "explanation": "Từ khóa `final` áp dụng cho phương thức dùng để ngăn chặn hoàn toàn việc ghi đè (Override) ở bất kỳ lớp con nào. Trình biên dịch sẽ báo lỗi 'Cannot override the final method from A'."
   },
   {
-    "id": 284,
+    "id": 276,
     "bank_id": "poly-14",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -6081,7 +5913,7 @@ const QUIZ_DATA = [
     "explanation": "Khi một lớp con override một phương thức generic hoặc thay đổi kiểu trả về (Covariant return), Type Erasure sẽ làm mất tính tương thích chữ ký ở mức Bytecode. Java compiler tự động sinh ra một 'Bridge Method' (có cờ synthetic) để chuyển hướng lời gọi đa hình từ chữ ký cũ sang phương thức mới."
   },
   {
-    "id": 285,
+    "id": 277,
     "bank_id": "poly-15",
     "category": "Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -6102,7 +5934,7 @@ const QUIZ_DATA = [
     "explanation": "Kiểu tham chiếu của `obj` là `X`. Tại thời điểm biên dịch, compiler chỉ tìm thấy phương thức `execute(Object)` trong class `X`. Do `Y.execute(String)` là Overload chứ không phải Override `X.execute(Object)`, nên lúc runtime JVM thực thi phương thức của class `X`, in ra 'X-Object '."
   },
   {
-    "id": 286,
+    "id": 278,
     "bank_id": "abs-01",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6123,7 +5955,7 @@ const QUIZ_DATA = [
     "explanation": "Abstract Class hoàn toàn có thể có constructor. Mặc dù không thể dùng `new` trực tiếp với lớp trừu tượng, nhưng constructor của nó được triệu gọi thông qua `super(...)` từ constructor của các lớp con cụ thể để khởi tạo các trường thuộc tính dùng chung."
   },
   {
-    "id": 287,
+    "id": 279,
     "bank_id": "abs-02",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6144,7 +5976,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `abstract` bắt buộc phải được ghi đè ở lớp con. Do đó nó KHÔNG THỂ là: `private` (lớp con không thấy được), `final` (ngăn cấm ghi đè), hoặc `static` (gắn liền với class chứ không gắn với đối tượng đa hình)."
   },
   {
-    "id": 288,
+    "id": 280,
     "bank_id": "abs-03",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6165,7 +5997,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, một class có thể khai báo là `abstract` ngay cả khi tất cả các phương thức của nó đều có phần thân thực thi hoàn chỉnh. Mục đích là ngăn không cho bất kỳ ai khởi tạo đối tượng trực tiếp qua `new Utility()`, bắt buộc phải kế thừa."
   },
   {
-    "id": 289,
+    "id": 281,
     "bank_id": "abs-04",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6186,7 +6018,7 @@ const QUIZ_DATA = [
     "explanation": "Nếu một lớp con kế thừa từ abstract class mà bản thân lớp con đó cũng là `abstract`, nó KHÔNG BẮT BUỘC phải cài đặt tất cả các abstract method của lớp cha. Trách nhiệm cài đặt phương thức còn lại (`step2()`) được chuyển tiếp cho lớp con cụ thể đầu tiên kế thừa từ `Intermediate`."
   },
   {
-    "id": 290,
+    "id": 282,
     "bank_id": "abs-05",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6207,7 +6039,7 @@ const QUIZ_DATA = [
     "explanation": "Template Method Pattern dùng phương thức `final` ở lớp trừu tượng để cố định trình tự thực hiện thuật toán (không cho sửa thứ tự), trong khi các bước cụ thể (`readData`, `processData`) được khai báo là `abstract` để các lớp con tự do tùy biến cách làm."
   },
   {
-    "id": 291,
+    "id": 283,
     "bank_id": "abs-06",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6228,7 +6060,7 @@ const QUIZ_DATA = [
     "explanation": "Cú pháp `new Greeter() { ... }` là Anonymous Inner Class. Bản thân `Greeter` không bị khởi tạo trực tiếp, mà compiler sinh ra một lớp con vô danh kế thừa `Greeter`, cài đặt phương thức `greet()`, và tạo một instance của lớp con vô danh đó."
   },
   {
-    "id": 292,
+    "id": 284,
     "bank_id": "abs-07",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6249,7 +6081,7 @@ const QUIZ_DATA = [
     "explanation": "Dù Java 8+ cho phép Interface có default methods, điểm khác biệt căn bản nhất vẫn là: Abstract class có thể duy trì trạng thái của đối tượng (có các biến thể hiện `private int age;`, có constructor), còn Interface chỉ có hằng số `public static final` và không thể lưu trữ trạng thái riêng của đối tượng."
   },
   {
-    "id": 293,
+    "id": 285,
     "bank_id": "abs-08",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6270,7 +6102,7 @@ const QUIZ_DATA = [
     "explanation": "Java 17 chính thức đưa vào tính năng Sealed Classes/Interfaces. Bằng từ khóa `permits`, nhà phát triển có thể kiểm soát chặt chẽ danh sách lớp con được phép kế thừa (chỉ `Circle` và `Square`), giúp mô hình hóa phân cấp dữ liệu kín (Domain Modeling) an toàn tuyệt đối."
   },
   {
-    "id": 294,
+    "id": 286,
     "bank_id": "abs-09",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6291,7 +6123,7 @@ const QUIZ_DATA = [
     "explanation": "Một `abstract class` khi implement một `interface` KHÔNG BẮT BUỘC phải cung cấp thân hàm cho các phương thức trừu tượng của interface đó. Các phương thức chưa cài đặt sẽ tiếp tục được coi là abstract method và các lớp con cụ thể kế thừa abstract class sẽ phải cài đặt."
   },
   {
-    "id": 295,
+    "id": 287,
     "bank_id": "abs-10",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6312,7 +6144,7 @@ const QUIZ_DATA = [
     "explanation": "'Program to an interface/abstraction' khuyên lập trình viên phụ thuộc vào kiểu trừu tượng (`List`, `Map`, `PaymentService`) khi khai báo tham số, thuộc tính, kiểu trả về. Nhờ đó ta có thể dễ dàng thay thế lớp cài đặt cụ thể (`ArrayList` sang `LinkedList`) mà không làm ảnh hưởng phần còn lại của ứng dụng."
   },
   {
-    "id": 296,
+    "id": 288,
     "bank_id": "abs-11",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6333,7 +6165,7 @@ const QUIZ_DATA = [
     "explanation": "Tại dòng 8, toán tử `new Animal()` cố gắng khởi tạo trực tiếp đối tượng của Abstract Class `Animal`. Java nghiêm cấm việc này và trình biên dịch sẽ báo lỗi: 'Animal is abstract; cannot be instantiated'."
   },
   {
-    "id": 297,
+    "id": 289,
     "bank_id": "abs-12",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6354,7 +6186,7 @@ const QUIZ_DATA = [
     "explanation": "Khác hoàn toàn với Interface (nơi các biến mặc định là public static final), Abstract Class là một class thực thụ nên nó có thể chứa thuộc tính với bất kỳ access modifier nào (`private`, `default`, `protected`, `public`) và có thể là biến biến thiên (mutable instance variables)."
   },
   {
-    "id": 298,
+    "id": 290,
     "bank_id": "abs-13",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6375,7 +6207,7 @@ const QUIZ_DATA = [
     "explanation": "`synchronized` là chi tiết cài đặt liên quan đến việc khóa (lock) monitor khi thực thi mã trong phần thân hàm. Do `abstract method` không có phần thân mã, việc đặt `synchronized` là vô nghĩa và Java compiler cấm kết hợp này."
   },
   {
-    "id": 299,
+    "id": 291,
     "bank_id": "abs-14",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6396,7 +6228,7 @@ const QUIZ_DATA = [
     "explanation": "Nên dùng Abstract Class khi các lớp có mối quan hệ bản chất mật thiết 'IS-A' (ví dụ Dog is an Animal), muốn chia sẻ cả mã nguồn và biến thể hiện trạng thái (state). Dùng Interface khi muốn định nghĩa hành vi chung 'CAN-DO' (Comparable, Serializable, Runnable) cho các lớp hoàn toàn khác nhau."
   },
   {
-    "id": 300,
+    "id": 292,
     "bank_id": "abs-15",
     "category": "Lớp Trừu Tượng (Abstract Class)",
     "topicId": "abstraction",
@@ -6417,7 +6249,7 @@ const QUIZ_DATA = [
     "explanation": "Khi `new Child()` được gọi, constructor của `Child` ngầm định gọi `super()` trước tiên. Do đó, constructor của `Parent` được thực thi in ra 'P ', sau đó constructor của `Child` thực thi in ra 'C '. Kết quả là 'P C '."
   },
   {
-    "id": 301,
+    "id": 293,
     "bank_id": "iface-01",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6438,7 +6270,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Interface, mọi biến đều mặc định và bắt buộc là hằng số: `public static final`. Bạn không thể khai báo biến thể hiện (instance variable) hoặc biến có quyền truy cập `private`/`protected` trong interface."
   },
   {
-    "id": 302,
+    "id": 294,
     "bank_id": "iface-02",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6459,7 +6291,7 @@ const QUIZ_DATA = [
     "explanation": "Khi xảy ra xung đột 2 default methods giống hệt nhau từ 2 interface độc lập, compiler không tự ý chọn phương thức nào mà báo lỗi biên dịch. Lớp `C` bắt buộc phải tự override phương thức đó, và có thể chủ động gọi `A.super.show()` hoặc `B.super.show()`."
   },
   {
-    "id": 303,
+    "id": 295,
     "bank_id": "iface-03",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6480,7 +6312,7 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc giải quyết độ ưu tiên của Java 8: Nếu một phương thức được cài đặt ở một lớp cha (super class), nó LUÔN LUÔN chiến thắng bất kỳ default method nào từ interface. Vì vậy `new Child().hello()` gọi phương thức của `Parent` và in ra 'Parent'."
   },
   {
-    "id": 304,
+    "id": 296,
     "bank_id": "iface-04",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6501,7 +6333,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `static` trong Interface KHÔNG được kế thừa sang lớp cài đặt (implementing class). Chúng chỉ thuộc về phạm vi của chính interface đó và bắt buộc phải được gọi thông qua tên interface: `MyInterface.log()`."
   },
   {
-    "id": 305,
+    "id": 297,
     "bank_id": "iface-05",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6522,7 +6354,7 @@ const QUIZ_DATA = [
     "explanation": "Từ Java 9, Interface được phép khai báo các phương thức `private` và `private static`. Mục đích là để chia sẻ mã nguồn dùng chung giữa các `default method` hoặc `static method` mà không làm lộ các phương thức trợ giúp (helper methods) này ra ngoài API công khai."
   },
   {
-    "id": 306,
+    "id": 298,
     "bank_id": "iface-06",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6543,7 +6375,7 @@ const QUIZ_DATA = [
     "explanation": "Marker Interface (như `java.io.Serializable`, `java.lang.Cloneable`, `java.rmi.Remote`) là các interface hoàn toàn rỗng. Khi một class implement chúng, máy ảo JVM hoặc framework sẽ hiểu rằng đối tượng này được phép thực hiện một cơ chế đặc biệt (ví dụ tuần tự hóa)."
   },
   {
-    "id": 307,
+    "id": 299,
     "bank_id": "iface-07",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6564,7 +6396,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, một Interface ĐƯỢC PHÉP kế thừa nhiều Interface khác thông qua từ khóa `extends` và phân cách bởi dấu phẩy: `interface C extends A, B, D`. Đây là cách Java hỗ trợ Đa kế thừa kiểu (Multiple Type Inheritance)."
   },
   {
-    "id": 308,
+    "id": 300,
     "bank_id": "iface-08",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6585,7 +6417,7 @@ const QUIZ_DATA = [
     "explanation": "Annotation `@FunctionalInterface` thông báo cho compiler biết đây là Functional Interface (giao diện hàm). Nếu interface có nhiều hơn 1 abstract method (hoặc không có cái nào), trình biên dịch sẽ lập tức báo lỗi. Functional Interface là nền tảng để viết biểu thức Lambda."
   },
   {
-    "id": 309,
+    "id": 301,
     "bank_id": "iface-09",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6606,7 +6438,7 @@ const QUIZ_DATA = [
     "explanation": "Interface được phép khai báo lại các phương thức public của `java.lang.Object` (như `equals`, `hashCode`, `toString`). Tuy nhiên, theo đặc tả Java, chúng KHÔNG được tính là abstract method khi xem xét điều kiện SAM của Functional Interface (ví dụ interface `Comparator` có method `equals` nhưng vẫn là functional interface)."
   },
   {
-    "id": 310,
+    "id": 302,
     "bank_id": "iface-10",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6627,7 +6459,7 @@ const QUIZ_DATA = [
     "explanation": "Mặc dù không có annotation `@FunctionalInterface`, `Action` vẫn thỏa mãn điều kiện SAM (Single Abstract Method) nên nó mặc nhiên là một Functional Interface hợp lệ và có thể được cài đặt ngắn gọn bằng biểu thức Lambda `() -> ...`."
   },
   {
-    "id": 311,
+    "id": 303,
     "bank_id": "iface-11",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6648,7 +6480,7 @@ const QUIZ_DATA = [
     "explanation": "Trước Java 8, việc thêm một phương thức mới vào Interface (như `forEach()` trong `Iterable`) sẽ làm gãy mã nguồn của hàng triệu lớp cài đặt trên toàn thế giới. `default method` cung cấp cách cài đặt mặc định sẵn, đảm bảo tính tương thích ngược (Backward Compatibility) cho Collections Framework khi bổ sung Stream API."
   },
   {
-    "id": 312,
+    "id": 304,
     "bank_id": "iface-12",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6669,7 +6501,7 @@ const QUIZ_DATA = [
     "explanation": "Trong cú pháp Java, một lớp có thể kế thừa duy nhất 1 lớp cha (`extends Component`) và đồng thời cài đặt nhiều interface (`implements Clickable, Focusable`). Thứ tự bắt buộc là `extends` đứng trước, `implements` đứng sau."
   },
   {
-    "id": 313,
+    "id": 305,
     "bank_id": "iface-13",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6690,7 +6522,7 @@ const QUIZ_DATA = [
     "explanation": "Mọi biến khai báo trong interface đều mặc định là `public static final`. Biến `final` không thể gán lại giá trị sau khi đã khởi tạo. Lệnh `PI = 3.14159;` sẽ gây lỗi biên dịch 'Cannot assign a value to final variable PI'."
   },
   {
-    "id": 314,
+    "id": 306,
     "bank_id": "iface-14",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6711,7 +6543,7 @@ const QUIZ_DATA = [
     "explanation": "Interface con có thể ghi đè phương thức default của interface cha. Quy tắc ưu tiên của Java là 'Sub-interface wins': Nếu có sự lựa chọn giữa hai interface có quan hệ kế thừa, interface cụ thể hơn (sub-interface) sẽ được chọn."
   },
   {
-    "id": 315,
+    "id": 307,
     "bank_id": "iface-15",
     "category": "Giao Diện (Interface)",
     "topicId": "interface",
@@ -6732,7 +6564,7 @@ const QUIZ_DATA = [
     "explanation": "Interface hoàn toàn có thể chứa các Nested Classes hoặc Nested Interfaces. Mọi class hoặc interface lồng bên trong một interface đều mặc định là `public static`, thường dùng để tạo các lớp Builder, Type Object hoặc Helper gắn liền với interface đó."
   },
   {
-    "id": 316,
+    "id": 308,
     "bank_id": "exc-01",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6753,7 +6585,7 @@ const QUIZ_DATA = [
     "explanation": "Khối `finally` gần như luôn được thực thi trong mọi tình huống (kể cả khi `try` hay `catch` có `return`). Trường hợp duy nhất `finally` không chạy là khi máy ảo JVM bị chấm dứt cưỡng bức (như gọi `System.exit(...)`, mất nguồn điện, hệ điều hành kill tiến trình)."
   },
   {
-    "id": 317,
+    "id": 309,
     "bank_id": "exc-02",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6774,7 +6606,7 @@ const QUIZ_DATA = [
     "explanation": "Lệnh `return` trong khối `finally` sẽ ghi đè (override/discard) hoàn toàn bất kỳ giá trị trả về nào hoặc ngoại lệ nào phát sinh trước đó trong khối `try` hoặc `catch`. Do đó `getValue()` sẽ trả về 3 (Được khuyến cáo nên tránh dùng return trong finally vì dễ gây khó hiểu)."
   },
   {
-    "id": 318,
+    "id": 310,
     "bank_id": "exc-03",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6795,7 +6627,7 @@ const QUIZ_DATA = [
     "explanation": "Trong cú pháp Try-with-resources, bất kỳ đối tượng nào implements interface `AutoCloseable` (hoặc interface con `Closeable`) đều sẽ được JVM tự động gọi phương thức `close()` khi thoát khỏi khối try (kể cả khi có lỗi xảy ra)."
   },
   {
-    "id": 319,
+    "id": 311,
     "bank_id": "exc-04",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6816,7 +6648,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Multi-catch (`catch (A | B e)`), các exception được liệt kê KHÔNG ĐƯỢC có quan hệ kế thừa với nhau. Vì `FileNotFoundException` là lớp con của `IOException`, việc viết chung là dư thừa và Java compiler sẽ báo lỗi: 'The exception FileNotFoundException is already caught by the alternative IOException'."
   },
   {
-    "id": 320,
+    "id": 312,
     "bank_id": "exc-05",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6837,7 +6669,7 @@ const QUIZ_DATA = [
     "explanation": "`Error` đại diện cho các sự cố nghiêm trọng của môi trường thực thi (hết bộ nhớ, tràn ngăn xếp) mà chương trình không có khả năng khắc phục. `Exception` đại diện cho các điều kiện lỗi bất thường của ứng dụng có thể lường trước và xử lý phục hồi."
   },
   {
-    "id": 321,
+    "id": 313,
     "bank_id": "exc-06",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6858,7 +6690,7 @@ const QUIZ_DATA = [
     "explanation": "Trong cú pháp multi-catch của Java, tham số ngoại lệ `e` là ngầm định `final` (effectively final). Bạn không thể gán lại giá trị cho `e` bên trong khối catch."
   },
   {
-    "id": 322,
+    "id": 314,
     "bank_id": "exc-07",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6879,7 +6711,7 @@ const QUIZ_DATA = [
     "explanation": "Mọi lớp con kế thừa từ `RuntimeException` (và các lớp con của nó) đều là Unchecked Exception (không bị compiler ép buộc phải try-catch). Nếu kế thừa trực tiếp từ `Exception` (mà không qua RuntimeException), nó sẽ là Checked Exception."
   },
   {
-    "id": 323,
+    "id": 315,
     "bank_id": "exc-08",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6900,7 +6732,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Try-with-resources, nếu khối try ném ra ngoại lệ A, và lệnh `close()` tự động cũng ném ra ngoại lệ B, thì ngoại lệ A sẽ được ném ra ngoài, còn ngoại lệ B sẽ được gắn kèm vào A dưới dạng 'Suppressed Exception' (truy xuất qua `e.getSuppressed()`)."
   },
   {
-    "id": 324,
+    "id": 316,
     "bank_id": "exc-09",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6921,7 +6753,7 @@ const QUIZ_DATA = [
     "explanation": "Thứ tự sắp xếp các khối `catch` phải đi từ CỤ THỂ đến TỔNG QUÁT (từ lớp con đến lớp cha). Vì `Exception` là lớp cha của `ArithmeticException` và đứng trước, mọi ngoại lệ đã bị khối catch đầu tiên tóm gọn, làm cho khối catch thứ hai trở thành 'Unreachable code' -> Lỗi biên dịch."
   },
   {
-    "id": 325,
+    "id": 317,
     "bank_id": "exc-10",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6942,7 +6774,7 @@ const QUIZ_DATA = [
     "explanation": "Exception Chaining cho phép một ngoại lệ mang theo thông tin của ngoại lệ gốc (`cause`). Bằng cách truyền `e` vào constructor của `DaoException`, ta có thể xem lại toàn bộ chuỗi lỗi gốc thông qua `getCause()` và `printStackTrace()`."
   },
   {
-    "id": 326,
+    "id": 318,
     "bank_id": "exc-11",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6963,7 +6795,7 @@ const QUIZ_DATA = [
     "explanation": "`throw` là câu lệnh thực thi (VD: `throw new IllegalArgumentException();`), đi kèm với một instance cụ thể. `throws` là từ khóa khai báo trên chữ ký phương thức (VD: `void read() throws IOException`), thông báo cho caller biết phải chuẩn bị xử lý ngoại lệ này."
   },
   {
-    "id": 327,
+    "id": 319,
     "bank_id": "exc-12",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -6984,7 +6816,7 @@ const QUIZ_DATA = [
     "explanation": "Luồng chạy: In 'A ' -> Ném ngoại lệ -> Chuyển sang khối catch, in 'B ' -> Luôn luôn chạy khối finally, in 'C ' -> Ngoại lệ đã được bắt trọn vẹn, chương trình tiếp tục chạy câu lệnh sau try-catch, in 'D'. Kết quả: 'A B C D'."
   },
   {
-    "id": 328,
+    "id": 320,
     "bank_id": "exc-13",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -7005,7 +6837,7 @@ const QUIZ_DATA = [
     "explanation": "Quá trình tạo một `Throwable` đòi hỏi JVM phải duyệt ngược qua toàn bộ ngăn xếp gọi hàm (Call Stack) của luồng hiện tại để điền mảng `StackTraceElement` (`fillInStackTrace`). Thao tác này chậm hơn hàng trăm lần so với câu lệnh `if-else` thông thường."
   },
   {
-    "id": 329,
+    "id": 321,
     "bank_id": "exc-14",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -7026,7 +6858,7 @@ const QUIZ_DATA = [
     "explanation": "Mỗi khi một phương thức được gọi, một Stack Frame mới được đẩy vào Stack của luồng. Đệ quy vô hạn hoặc đệ quy quá sâu không có điểm dừng sẽ làm đầy giới hạn kích thước ngăn xếp của thread (cấu hình bởi `-Xss`), dẫn tới `java.lang.StackOverflowError`."
   },
   {
-    "id": 330,
+    "id": 322,
     "bank_id": "exc-15",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -7047,7 +6879,7 @@ const QUIZ_DATA = [
     "explanation": "`OutOfMemoryError: Java heap space` xảy ra khi ứng dụng tạo quá nhiều đối tượng trên vùng nhớ Heap (hoặc bị rò rỉ bộ nhớ Memory Leak), khiến kích thước vùng Heap vượt quá dung lượng tối đa cho phép (cấu hình qua `-Xmx`) và GC không thể thu hồi được."
   },
   {
-    "id": 331,
+    "id": 323,
     "bank_id": "exc-16",
     "category": "Xử Lý Ngoại Lệ (Exceptions)",
     "topicId": "exception",
@@ -7068,13 +6900,13 @@ const QUIZ_DATA = [
     "explanation": "Khối `static initializer` không có mệnh đề `throws` trên chữ ký để khai báo checked exception. Do đó, nếu có checked exception phát sinh trong static block, bạn BẮT BUỘC phải try-catch tại chỗ. Nếu ném unchecked exception, JVM sẽ bọc nó thành `ExceptionInInitializerError` lúc runtime."
   },
   {
-    "id": 332,
+    "id": 324,
     "bank_id": "coll-01",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cấu trúc dữ liệu nội tại của `HashMap` trong Java 8 thay đổi như thế nào khi một bucket xảy ra quá nhiều va chạm băm (Hash Collision)?",
     "codeSnippet": null,
     "image": null,
@@ -7089,13 +6921,13 @@ const QUIZ_DATA = [
     "explanation": "Từ Java 8, để tối ưu hóa hiệu năng chống tấn công từ chối dịch vụ do va chạm mã băm, khi số phần tử trong một bucket vượt quá ngưỡng `TREEIFY_THRESHOLD = 8` (và tổng capacity >= 64), danh sách liên kết sẽ chuyển đổi thành Cây đỏ đen (TreeNode), giúp giảm độ phức tạp tìm kiếm từ O(n) xuống O(log n)."
   },
   {
-    "id": 333,
+    "id": 325,
     "bank_id": "coll-02",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Hợp đồng (Contract) giữa hai phương thức `equals()` và `hashCode()` trong Java quy định điều gì?",
     "codeSnippet": null,
     "image": null,
@@ -7110,13 +6942,13 @@ const QUIZ_DATA = [
     "explanation": "Hợp đồng bắt buộc của Java: Nếu `a.equals(b) == true` thì `a.hashCode() == b.hashCode()` BẮT BUỘC phải đúng. Ngược lại, nếu hai đối tượng có cùng hashCode (hiện tượng va chạm băm), chúng KHÔNG NHẤT THIẾT phải equals nhau."
   },
   {
-    "id": 334,
+    "id": 326,
     "bank_id": "coll-03",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Bên dưới tầng cài đặt (under the hood), lớp `HashSet` lưu trữ dữ liệu bằng cấu trúc nào?",
     "codeSnippet": null,
     "image": null,
@@ -7131,13 +6963,13 @@ const QUIZ_DATA = [
     "explanation": "`HashSet` trong Java thực chất được bọc (wrapper) xung quanh một `HashMap`. Khi gọi `set.add(e)`, HashSet sẽ gọi `map.put(e, PRESENT)`, trong đó `PRESENT` là một đối tượng `new Object()` tĩnh đóng vai trò giá trị bù nhìn (dummy value)."
   },
   {
-    "id": 335,
+    "id": 327,
     "bank_id": "coll-04",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Đoạn mã sau xảy ra ngoại lệ gì khi chạy?",
     "codeSnippet": "List<String> list = new ArrayList<>(Arrays.asList(\"A\", \"B\", \"C\"));\nfor (String item : list) {\n    if (\"B\".equals(item)) {\n        list.remove(item);\n    }\n}",
     "image": null,
@@ -7152,13 +6984,13 @@ const QUIZ_DATA = [
     "explanation": "Khi duyệt qua `for-each` (bản chất là dùng `Iterator`), nếu ta thay đổi cấu trúc danh sách trực tiếp qua phương thức `list.remove()`, biến đếm `modCount` của list sẽ không khớp với `expectedModCount` của Iterator, khiến cơ chế Fail-fast kích hoạt và ném `ConcurrentModificationException`."
   },
   {
-    "id": 336,
+    "id": 328,
     "bank_id": "coll-05",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cách nào sau đây là AN TOÀN để xóa phần tử trong lúc đang duyệt qua một Collection?",
     "codeSnippet": null,
     "image": null,
@@ -7173,13 +7005,13 @@ const QUIZ_DATA = [
     "explanation": "Để xóa phần tử an toàn mà không bị `ConcurrentModificationException`, ta phải sử dụng `Iterator.remove()` (vì phương thức này đồng bộ lại `expectedModCount`) hoặc sử dụng phương thức tiện ích `Collection.removeIf(...)` của Java 8."
   },
   {
-    "id": 337,
+    "id": 329,
     "bank_id": "coll-06",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Sự khác biệt cốt lõi giữa `Comparable` và `Comparator` trong Java là gì?",
     "codeSnippet": null,
     "image": null,
@@ -7194,13 +7026,13 @@ const QUIZ_DATA = [
     "explanation": "`Comparable<T>` nằm trong `java.lang`, được implement bởi chính đối tượng cần sắp xếp và định nghĩa 'Natural Ordering' (thứ tự tự nhiên). `Comparator<T>` nằm trong `java.util`, là một đối tượng so sánh độc lập bên ngoài, cho phép định nghĩa vô số cách sắp xếp khác nhau (theo tên, theo tuổi, theo giá...)."
   },
   {
-    "id": 338,
+    "id": 330,
     "bank_id": "coll-07",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Đặc điểm nào phân biệt `LinkedHashMap` với `HashMap` thông thường?",
     "codeSnippet": null,
     "image": null,
@@ -7215,13 +7047,13 @@ const QUIZ_DATA = [
     "explanation": "`LinkedHashMap` kế thừa từ `HashMap` nhưng duy trì thêm một danh sách liên kết kép (doubly-linked list) chạy qua các entry. Nhờ đó, khi lặp qua map, các phần tử sẽ xuất hiện theo đúng thứ tự đã chèn vào (hoặc theo thứ tự vừa được truy cập gần nhất để làm LRU Cache)."
   },
   {
-    "id": 339,
+    "id": 331,
     "bank_id": "coll-08",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Cấu trúc dữ liệu nào trong Java Collections hoạt động theo nguyên lý hàng đợi ưu tiên (Priority Queue - phần tử có ưu tiên cao nhất nằm ở đầu hàng đợi)?",
     "codeSnippet": null,
     "image": null,
@@ -7236,13 +7068,13 @@ const QUIZ_DATA = [
     "explanation": "`PriorityQueue` là một triển khai của Queue dựa trên Min-Heap nhị phân (phần tử nhỏ nhất theo thứ tự sắp xếp tự nhiên hoặc theo Comparator sẽ luôn nằm ở đầu hàng đợi và được lấy ra trước với `poll()`)."
   },
   {
-    "id": 340,
+    "id": 332,
     "bank_id": "coll-09",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Phương thức tiện ích `List.of(...)` (từ Java 9) tạo ra loại danh sách nào?",
     "codeSnippet": "List<String> list = List.of(\"A\", \"B\", \"C\");\nlist.add(\"D\"); // Dòng này ra sao?",
     "image": null,
@@ -7257,13 +7089,13 @@ const QUIZ_DATA = [
     "explanation": "Các factory methods như `List.of()`, `Set.of()`, `Map.of()` trong Java 9 tạo ra các Collection bất biến thực sự (Truly Immutable). Bất kỳ thao tác thêm/sửa/xóa nào đều sẽ ném ngoại lệ `UnsupportedOperationException`. Ngoài ra, chúng cũng không cho phép chứa phần tử `null`."
   },
   {
-    "id": 341,
+    "id": 333,
     "bank_id": "coll-10",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Tại sao giao diện `Map` trong Java KHÔNG kế thừa từ giao diện `Collection`?",
     "codeSnippet": null,
     "image": null,
@@ -7278,13 +7110,13 @@ const QUIZ_DATA = [
     "explanation": "`Collection` đại diện cho tập hợp các phần tử đơn lẻ (như `List`, `Set`), hỗ trợ các phương thức như `add(E e)`, `contains(Object o)`. `Map` lưu trữ cấu trúc hai chiều gồm cặp `Key-Value`, có phương thức `put(K, V)`. Hai mô hình này không tương thích với nhau nên `Map` là một phân cấp độc lập."
   },
   {
-    "id": 342,
+    "id": 334,
     "bank_id": "coll-11",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Đoạn code sau đây in ra số lượng phần tử là bao nhiêu?",
     "codeSnippet": "class Person {\n    String name;\n    Person(String n) { name = n; }\n    // Không override equals và hashCode\n}\npublic class Main {\n    public static void main(String[] args) {\n        Set<Person> set = new HashSet<>();\n        set.add(new Person(\"Alice\"));\n        set.add(new Person(\"Alice\"));\n        System.out.println(set.size());\n    }\n}",
     "image": null,
@@ -7299,13 +7131,13 @@ const QUIZ_DATA = [
     "explanation": "Vì lớp `Person` không ghi đè `equals()` và `hashCode()`, hai đối tượng `new Person(\"Alice\")` sẽ sử dụng cài đặt mặc định của `Object` (so sánh bằng địa chỉ ô nhớ trên Heap). Do nằm ở hai ô nhớ khác nhau, chúng có hashCode khác nhau và `equals == false`, khiến `HashSet` coi chúng là 2 phần tử tách biệt, in ra 2."
   },
   {
-    "id": 343,
+    "id": 335,
     "bank_id": "coll-12",
     "category": "Collections Framework",
     "topicId": "collections",
-    "topicName": "Collections Framework & Generics",
+    "topicName": "Java Collections Framework (List, Set, Map)",
     "topicShortName": "Collections",
-    "topicIcon": "📦",
+    "topicIcon": "📚",
     "question": "Lớp `CopyOnWriteArrayList` trong gói `java.util.concurrent` giải quyết vấn đề đa luồng theo cơ chế nào?",
     "codeSnippet": null,
     "image": null,
@@ -7320,11 +7152,11 @@ const QUIZ_DATA = [
     "explanation": "`CopyOnWriteArrayList` là collection an toàn đa luồng tối ưu cho hệ thống đọc nhiều - ghi ít. Mọi thao tác sửa đổi đều nhân bản (copy) mảng ngầm bên dưới, nhờ đó các Iterator có thể duyệt mảng cũ nhanh chóng mà không cần đồng bộ (lock-free) và không bao giờ gặp `ConcurrentModificationException`."
   },
   {
-    "id": 344,
+    "id": 336,
     "bank_id": "midterm-obj-001",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong Java, sự khác biệt cơ bản nhất giữa một Lớp (Class) và một Đối tượng (Object) là gì?",
@@ -7341,11 +7173,11 @@ const QUIZ_DATA = [
     "explanation": "Lớp (Class) là khuôn mẫu định nghĩa cấu trúc dữ liệu và hành vi, trong khi Đối tượng (Object) là thực thể cụ thể chiếm dụng bộ nhớ trong thời gian chạy (runtime instance)."
   },
   {
-    "id": 345,
+    "id": 337,
     "bank_id": "midterm-obj-002",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi thực hiện lệnh `Car myCar = new Car();`, đối tượng thực sự được cấp phát tại vùng nhớ nào trong JVM?",
@@ -7362,11 +7194,11 @@ const QUIZ_DATA = [
     "explanation": "Mọi đối tượng (instances) trong Java được cấp phát trên Heap. Biến tham chiếu `myCar` nằm trên Stack và trỏ đến địa chỉ của đối tượng trên Heap."
   },
   {
-    "id": 346,
+    "id": 338,
     "bank_id": "midterm-obj-003",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Biến tham chiếu `myCar` trong câu lệnh `Car myCar = new Car();` được lưu trữ ở đâu?",
@@ -7383,11 +7215,11 @@ const QUIZ_DATA = [
     "explanation": "Biến cục bộ (local variable) lưu giá trị tham chiếu (địa chỉ ô nhớ) trên Stack của luồng thực thi."
   },
   {
-    "id": 347,
+    "id": 339,
     "bank_id": "midterm-obj-004",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Giá trị mặc định của biến thể hiện (instance variable) kiểu `int`, `boolean` và kiểu tham chiếu (reference type) khi không được gán tường minh lần lượt là gì?",
@@ -7404,11 +7236,11 @@ const QUIZ_DATA = [
     "explanation": "Biến thể hiện trong Java tự động nhận giá trị mặc định khi đối tượng được khởi tạo: số nguyên là 0, số thực là 0.0, boolean là false, kiểu tham chiếu là null."
   },
   {
-    "id": 348,
+    "id": 340,
     "bank_id": "midterm-obj-005",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Điều gì xảy ra khi bạn sử dụng một biến cục bộ (local variable) trong phương thức mà chưa khởi tạo giá trị cho nó?",
@@ -7425,11 +7257,11 @@ const QUIZ_DATA = [
     "explanation": "Khác với biến thể hiện (instance variable), biến cục bộ trong Java KHÔNG có giá trị mặc định và bắt buộc phải được gán giá trị trước khi sử dụng, nếu không sẽ bị lỗi biên dịch."
   },
   {
-    "id": 349,
+    "id": 341,
     "bank_id": "midterm-obj-006",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả xuất ra màn hình là gì?",
@@ -7446,11 +7278,11 @@ const QUIZ_DATA = [
     "explanation": "Trong phương thức `setX`, tham số `x` che khuất (shadows) thuộc tính `this.x`. Phép gán `x = x;` chỉ gán tham số cho chính nó, không làm thay đổi thuộc tính `this.x`, nên `x` của đối tượng vẫn giữ giá trị mặc định là 0."
   },
   {
-    "id": 350,
+    "id": 342,
     "bank_id": "midterm-obj-007",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Từ khóa `this` trong Java đại diện cho điều gì?",
@@ -7467,11 +7299,11 @@ const QUIZ_DATA = [
     "explanation": "`this` là một biến tham chiếu đặc biệt trỏ đến chính đối tượng hiện tại (current instance) đang gọi phương thức hoặc đang được khởi tạo."
   },
   {
-    "id": 351,
+    "id": 343,
     "bank_id": "midterm-obj-008",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Tại sao không thể sử dụng từ khóa `this` bên trong một phương thức `static`?",
@@ -7488,11 +7320,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức static được nạp cùng class và có thể gọi trực tiếp qua tên class mà không cần tạo đối tượng. Do đó, không có khái niệm 'đối tượng hiện tại' (`this`) trong ngữ cảnh static."
   },
   {
-    "id": 352,
+    "id": 344,
     "bank_id": "midterm-obj-009",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Đoạn mã này có biên dịch thành công không?",
@@ -7509,11 +7341,11 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, lệnh gọi hàm tạo khác `this(...)` hoặc hàm tạo lớp cha `super(...)` BẮT BUỘC phải là câu lệnh đầu tiên trong thân hàm tạo. Đặt câu lệnh in phía trước gây lỗi biên dịch."
   },
   {
-    "id": 353,
+    "id": 345,
     "bank_id": "midterm-obj-010",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi một lớp không khai báo bất kỳ constructor nào, trình biên dịch Java sẽ làm gì?",
@@ -7530,11 +7362,11 @@ const QUIZ_DATA = [
     "explanation": "Nếu lập trình viên không viết bất kỳ constructor nào, trình biên dịch Java sẽ tự động tạo một default constructor không tham số (no-argument constructor)."
   },
   {
-    "id": 354,
+    "id": 346,
     "bank_id": "midterm-obj-011",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Nếu một lớp đã có một constructor có tham số như `public Book(String title) {}`, trình biên dịch có tự động tạo Default Constructor không tham số nữa không?",
@@ -7551,11 +7383,11 @@ const QUIZ_DATA = [
     "explanation": "Một khi lớp đã khai báo bất kỳ constructor nào (dù có hay không có tham số), trình biên dịch sẽ không tự sinh default constructor nữa. Nếu cần `new Book()`, lập trình viên phải tự viết constructor không tham số."
   },
   {
-    "id": 355,
+    "id": 347,
     "bank_id": "midterm-obj-012",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả xuất ra màn hình là gì?",
@@ -7572,11 +7404,11 @@ const QUIZ_DATA = [
     "explanation": "Biến `b` được gán bằng `a`, nghĩa là cả hai biến tham chiếu `a` và `b` đều cùng trỏ tới MỘT đối tượng duy nhất trên Heap. Thay đổi `b.value = 100` cũng làm thay đổi đối tượng mà `a` trỏ tới."
   },
   {
-    "id": 356,
+    "id": 348,
     "bank_id": "midterm-obj-013",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cơ chế truyền tham số trong Java đối với đối tượng là gì?",
@@ -7593,11 +7425,11 @@ const QUIZ_DATA = [
     "explanation": "Java LUÔN LUÔN là Pass-by-value (truyền theo giá trị). Khi truyền một đối tượng vào phương thức, Java sao chép giá trị của biến tham chiếu (địa chỉ bộ nhớ) vào biến tham số cục bộ của phương thức."
   },
   {
-    "id": 357,
+    "id": 349,
     "bank_id": "midterm-obj-014",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -7614,11 +7446,11 @@ const QUIZ_DATA = [
     "explanation": "Trong phương thức `modify`, phép gán `m = new Message(\"World\");` chỉ làm cho biến tham số cục bộ `m` trỏ tới đối tượng mới. Biến `msg` trong `main` vẫn trỏ tới đối tượng ban đầu mang nội dung \"Hello\"."
   },
   {
-    "id": 358,
+    "id": 350,
     "bank_id": "midterm-obj-015",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -7635,11 +7467,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `change` không gán lại tham chiếu mà thay đổi thuộc tính `m.text` của đối tượng được trỏ tới. Vì `msg` và `m` cùng trỏ tới một đối tượng, thuộc tính `text` của đối tượng bị đổi thành \"World\"."
   },
   {
-    "id": 359,
+    "id": 351,
     "bank_id": "midterm-obj-016",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khối khởi tạo tĩnh (Static Initialization Block) được thực thi khi nào trong vòng đời chương trình Java?",
@@ -7656,11 +7488,11 @@ const QUIZ_DATA = [
     "explanation": "Khối khởi tạo tĩnh `static { ... }` chỉ được thực thi MỘT lần duy nhất khi lớp được JVM ClassLoader nạp vào bộ nhớ, trước khi bất kỳ đối tượng nào được tạo hoặc phương thức static nào được truy cập."
   },
   {
-    "id": 360,
+    "id": 352,
     "bank_id": "midterm-obj-017",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Thứ tự thực thi nào sau đây là ĐÚNG khi khởi tạo một đối tượng của một lớp?",
@@ -7677,11 +7509,11 @@ const QUIZ_DATA = [
     "explanation": "Thứ tự thực thi: 1. Khối static (nếu class chưa load) -> 2. Khối khởi tạo thể hiện (instance initializer) -> 3. Thân Constructor."
   },
   {
-    "id": 361,
+    "id": 353,
     "bank_id": "midterm-obj-018",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Thứ tự in ra các số trên màn hình là gì?",
@@ -7698,11 +7530,11 @@ const QUIZ_DATA = [
     "explanation": "Khối static chạy trước khi lớp nạp (in 1), tiếp theo khối instance initializer chạy khi tạo đối tượng (in 2), sau cùng là thân constructor (in 3). Kết quả: 1 2 3."
   },
   {
-    "id": 362,
+    "id": 354,
     "bank_id": "midterm-obj-019",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau khi tạo HAI đối tượng liên tiếp. Kết quả in ra là gì?",
@@ -7719,11 +7551,11 @@ const QUIZ_DATA = [
     "explanation": "Khối `static` chỉ chạy 1 lần duy nhất khi nạp lớp (in 1). Mỗi lần gọi `new Demo()`, khối instance initializer (in 2) và constructor (in 3) sẽ chạy lại. Kết quả: `1 2 3 2 3`."
   },
   {
-    "id": 363,
+    "id": 355,
     "bank_id": "midterm-obj-020",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một phương thức có thể có kiểu trả về trùng tên với lớp không? (Ví dụ: `public class A { public void A() {} }`)",
@@ -7740,11 +7572,11 @@ const QUIZ_DATA = [
     "explanation": "Nếu một phương thức có cùng tên với lớp nhưng CÓ kiểu trả về (kể cả `void`), Java coi nó là một phương thức thông thường, KHÔNG phải là constructor. Mặc dù hợp lệ về cú pháp nhưng đây là bad practice."
   },
   {
-    "id": 364,
+    "id": 356,
     "bank_id": "midterm-obj-021",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một Constructor trong Java có được phép khai báo từ khóa `return;` không?",
@@ -7761,11 +7593,11 @@ const QUIZ_DATA = [
     "explanation": "Constructor không được trả về giá trị (không thể viết `return x;`), nhưng hoàn toàn có thể dùng `return;` trống để kết thúc sớm quá trình khởi tạo."
   },
   {
-    "id": 365,
+    "id": 357,
     "bank_id": "midterm-obj-022",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào một đối tượng trong bộ nhớ Java đủ điều kiện để Bộ thu dọn rác (Garbage Collector - GC) thu hồi?",
@@ -7782,11 +7614,11 @@ const QUIZ_DATA = [
     "explanation": "Một đối tượng trở nên 'unreachable' (không thể với tới từ GC Roots) và đủ điều kiện để GC thu dọn khi không còn bất kỳ tham chiếu hợp lệ nào trỏ đến nó."
   },
   {
-    "id": 366,
+    "id": 358,
     "bank_id": "midterm-obj-023",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Lệnh `System.gc()` có tác dụng gì trong Java?",
@@ -7803,11 +7635,11 @@ const QUIZ_DATA = [
     "explanation": "`System.gc()` chỉ là lời đề nghị (hint) gửi tới JVM. JVM hoàn toàn có quyền quyết định khi nào và có thực hiện thu gom rác hay không."
   },
   {
-    "id": 367,
+    "id": 359,
     "bank_id": "midterm-obj-024",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong lớp `Object` của Java, phương thức `toString()` mặc định trả về chuỗi có định dạng như thế nào?",
@@ -7824,11 +7656,11 @@ const QUIZ_DATA = [
     "explanation": "Cài đặt mặc định của `Object.toString()` là: `getClass().getName() + '@' + Integer.toHexString(hashCode())`."
   },
   {
-    "id": 368,
+    "id": 360,
     "bank_id": "midterm-obj-025",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Toán tử `==` và phương thức `equals()` khác nhau như thế nào khi so sánh hai đối tượng trong Java?",
@@ -7845,11 +7677,11 @@ const QUIZ_DATA = [
     "explanation": "`==` kiểm tra xem hai biến tham chiếu có cùng trỏ tới 1 địa chỉ ô nhớ trên Heap không. Phương thức `equals()` trong `Object` mặc định cũng dùng `==`, nhưng thường được các lớp con (như String, Integer...) ghi đè để so sánh nội dung logic."
   },
   {
-    "id": 369,
+    "id": 361,
     "bank_id": "midterm-obj-026",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Nếu một lớp ghi đè phương thức `equals()` thì BẮT BUỘC nên ghi đè phương thức nào đi kèm để duy trì tính nhất quán khi làm việc với Hash collections?",
@@ -7866,11 +7698,11 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc hợp đồng (contract) của Java: Nếu `a.equals(b) == true` thì bắt buộc `a.hashCode() == b.hashCode()`. Nếu không ghi đè `hashCode()`, đối tượng sẽ hoạt động sai trong `HashMap`, `HashSet`."
   },
   {
-    "id": 370,
+    "id": 362,
     "bank_id": "midterm-obj-027",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -7887,11 +7719,11 @@ const QUIZ_DATA = [
     "explanation": "`s1` và `s2` là hai đối tượng riêng biệt trên Heap tạo bằng `new String()`, nên `s1 == s2` là `false`. Lớp `String` đã ghi đè `equals()` để so sánh nội dung chuỗi, nên `s1.equals(s2)` là `true`."
   },
   {
-    "id": 371,
+    "id": 363,
     "bank_id": "midterm-obj-028",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau với lớp `User` KHÔNG ghi đè `equals()`. Kết quả in ra là gì?",
@@ -7908,11 +7740,11 @@ const QUIZ_DATA = [
     "explanation": "Khi lớp `User` không ghi đè `equals()`, nó thừa kế phương thức `equals()` từ `Object`, vốn chỉ so sánh địa chỉ `this == obj`. Vì `u1` và `u2` là 2 đối tượng khác nhau, cả `u1 == u2` và `u1.equals(u2)` đều là `false`."
   },
   {
-    "id": 372,
+    "id": 364,
     "bank_id": "midterm-obj-029",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Kỹ thuật Nạp chồng phương thức (Method Overloading) trong Java được phân biệt dựa trên tiêu chí nào?",
@@ -7929,11 +7761,11 @@ const QUIZ_DATA = [
     "explanation": "Chữ ký phương thức (method signature) chỉ bao gồm tên phương thức và danh sách tham số. Hai phương thức chỉ khác nhau ở kiểu trả về thì KHÔNG được coi là nạp chồng hợp lệ và sẽ bị lỗi biên dịch."
   },
   {
-    "id": 373,
+    "id": 365,
     "bank_id": "midterm-obj-030",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Đoạn mã sau có biên dịch thành công không?",
@@ -7950,11 +7782,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `calc(int a, int b)` bị khai báo trùng chữ ký. Trình biên dịch không thể phân biệt phương thức nào được gọi chỉ dựa vào kiểu trả về."
   },
   {
-    "id": 374,
+    "id": 366,
     "bank_id": "midterm-obj-031",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi gọi `print(10)` với hai phương thức nạp chồng: `void print(long x)` và `void print(Integer x)`, Java sẽ ưu tiên gọi phương thức nào?",
@@ -7971,11 +7803,11 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc ưu tiên overload trong Java: 1. Widening nguyên thủy (`int` -> `long`) -> 2. Autoboxing (`int` -> `Integer`) -> 3. Varargs (`int...`). Do đó `print(long)` được chọn."
   },
   {
-    "id": 375,
+    "id": 367,
     "bank_id": "midterm-obj-032",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Quy tắc nào sau đây là BẮT BUỘC khi khai báo tham số có độ dài biến thiên (Varargs `...`) trong một phương thức Java?",
@@ -7992,11 +7824,11 @@ const QUIZ_DATA = [
     "explanation": "Một phương thức chỉ được phép có tối đa MỘT tham số Varargs và nó BẮT BUỘC phải nằm ở vị trí cuối cùng trong danh sách tham số."
   },
   {
-    "id": 376,
+    "id": 368,
     "bank_id": "midterm-obj-033",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Bản chất của tham số Varargs (ví dụ `int... nums`) trong mã bytecode của JVM là gì?",
@@ -8013,11 +7845,11 @@ const QUIZ_DATA = [
     "explanation": "Varargs trong Java thực chất là cú pháp thuận tiện (syntactic sugar) cho mảng một chiều. Trình biên dịch sẽ gói các đối số truyền vào thành một mảng tương ứng."
   },
   {
-    "id": 377,
+    "id": 369,
     "bank_id": "midterm-obj-034",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Mối quan hệ nào sau đây thể hiện mối quan hệ 'HAS-A' (chứa/sở hữu) thay vì 'IS-A' (là một)?",
@@ -8034,11 +7866,11 @@ const QUIZ_DATA = [
     "explanation": "Composition (Thành phần kết hợp) thể hiện quan hệ 'HAS-A' (Xe có Động cơ). Kế thừa (Inheritance) thể hiện quan hệ 'IS-A' (Xe là một Phương tiện)."
   },
   {
-    "id": 378,
+    "id": 370,
     "bank_id": "midterm-obj-035",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Để tạo một Lớp Bất Biến (Immutable Class) trong Java, điều nào sau đây KHÔNG PHẢI là một yêu cầu bắt buộc?",
@@ -8055,11 +7887,11 @@ const QUIZ_DATA = [
     "explanation": "Tính bất biến (Immutability) không liên quan đến interface `Serializable`. Các quy tắc chính là: class final, fields private final, không có setters, và tạo defensive copy cho các trường đối tượng có thể thay đổi."
   },
   {
-    "id": 379,
+    "id": 371,
     "bank_id": "midterm-obj-036",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Kỹ thuật 'Defensive Copy' (Sao chép phòng thủ) được sử dụng trong hàm tạo của một Immutable Class để giải quyết nguy cơ gì?",
@@ -8076,11 +7908,11 @@ const QUIZ_DATA = [
     "explanation": "Nếu truyền một đối tượng khả biến (như `Date` hoặc `List`) vào hàm tạo và lưu trực tiếp, người gọi từ bên ngoài vẫn giữ tham chiếu đó và có thể sửa đổi dữ liệu ngầm. Cần sao chép một bản sao mới (defensive copy) để lưu trữ."
   },
   {
-    "id": 380,
+    "id": 372,
     "bank_id": "midterm-obj-037",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Tính năng `record` được giới thiệu chính thức từ Java 16 có đặc điểm nổi bật nào?",
@@ -8097,11 +7929,11 @@ const QUIZ_DATA = [
     "explanation": "Java `record` là cú pháp ngắn gọn để tạo lớp vận chuyển dữ liệu bất biến. JVM tự động sinh canonical constructor, các phương thức accessor (không có tiền tố `get`), `equals()`, `hashCode()` và `toString()`."
   },
   {
-    "id": 381,
+    "id": 373,
     "bank_id": "midterm-obj-038",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho khai báo `record Point(int x, int y) {}`. Cách nào sau đây là ĐÚNG để truy xuất giá trị trường `x` của đối tượng `p`?",
@@ -8118,11 +7950,11 @@ const QUIZ_DATA = [
     "explanation": "Trong Java `record`, phương thức truy xuất (accessor) cho trường `x` có tên trùng với tên trường là `p.x()`, KHÔNG PHẢI là `p.getX()`."
   },
   {
-    "id": 382,
+    "id": 374,
     "bank_id": "midterm-obj-039",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một Java `record` có thể kế thừa (extends) từ một lớp cha khác không?",
@@ -8139,11 +7971,11 @@ const QUIZ_DATA = [
     "explanation": "Tất cả các `record` trong Java đều tự động kế thừa `java.lang.Record`. Vì Java là đơn kế thừa lớp, một record không thể khai báo `extends` lớp khác (nhưng có thể `implements` nhiều interface)."
   },
   {
-    "id": 383,
+    "id": 375,
     "bank_id": "midterm-obj-040",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau về Integer Cache. Kết quả in ra màn hình là gì?",
@@ -8160,11 +7992,11 @@ const QUIZ_DATA = [
     "explanation": "Java có cơ chế bộ đệm `IntegerCache` cho các giá trị từ -128 đến 127. `a` và `b` nhận giá trị 100 nên cùng trỏ tới 1 đối tượng cached (`a == b` là true). `c` và `d` là 200 vượt quá 127 nên được tạo 2 đối tượng mới riêng biệt trên Heap (`c == d` là false)."
   },
   {
-    "id": 384,
+    "id": 376,
     "bank_id": "midterm-obj-041",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Constructor có thể được khai báo với quyền truy cập `private` không? Mục đích điển hình là gì?",
@@ -8181,11 +8013,11 @@ const QUIZ_DATA = [
     "explanation": "Constructor `private` được sử dụng rất phổ biến trong Singleton Pattern, Factory Pattern hoặc các Utility classes (chỉ chứa static methods như `java.lang.Math`)."
   },
   {
-    "id": 385,
+    "id": 377,
     "bank_id": "midterm-obj-042",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Đoạn mã sau xảy ra hiện tượng gì khi chạy?",
@@ -8202,11 +8034,11 @@ const QUIZ_DATA = [
     "explanation": "Trình biên dịch Java phát hiện đệ quy trực tiếp hoặc gián tiếp giữa các constructor (`this()` gọi chính nó) và báo lỗi biên dịch ngay lập tức."
   },
   {
-    "id": 386,
+    "id": 378,
     "bank_id": "midterm-obj-043",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một biến thành viên kiểu `final` của đối tượng (instance field) phải được gán giá trị chậm nhất là khi nào?",
@@ -8223,11 +8055,11 @@ const QUIZ_DATA = [
     "explanation": "Biến `final` của instance (blank final variable) bắt buộc phải được khởi tạo giá trị trước khi constructor kết thúc thực thi. Nếu một constructor nào không gán giá trị cho nó, trình biên dịch sẽ báo lỗi."
   },
   {
-    "id": 387,
+    "id": 379,
     "bank_id": "midterm-obj-044",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả xuất ra màn hình là gì?",
@@ -8244,11 +8076,11 @@ const QUIZ_DATA = [
     "explanation": "Biến `count` là `static`, được chia sẻ chung cho tất cả các thể hiện của lớp `Counter`. Ba lần gọi `new Counter()` làm tăng biến `count` lên 3."
   },
   {
-    "id": 388,
+    "id": 380,
     "bank_id": "midterm-obj-045",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Điều gì xảy ra khi bạn gán `null` cho một biến tham chiếu đối tượng?",
@@ -8265,11 +8097,11 @@ const QUIZ_DATA = [
     "explanation": "Gán `null` chỉ làm mất liên kết giữa biến tham chiếu và đối tượng trên Heap. Đối tượng chỉ bị xóa khi Garbage Collector chạy sau đó nếu không còn tham chiếu nào khác trỏ tới nó."
   },
   {
-    "id": 389,
+    "id": 381,
     "bank_id": "midterm-obj-046",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -8286,11 +8118,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `sayHello()` là `static`, thuộc về lớp `Greeter`. Khi gọi qua biến tham chiếu `g.sayHello()`, trình biên dịch phân giải dựa trên kiểu của biến (`Greeter`) mà không cần dereference `g`, nên không bị NullPointerException."
   },
   {
-    "id": 390,
+    "id": 382,
     "bank_id": "midterm-obj-047",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Điều gì xảy ra khi chạy?",
@@ -8307,11 +8139,11 @@ const QUIZ_DATA = [
     "explanation": "Biến `value` là biến thể hiện (non-static instance variable). Khi truy cập `box.value` với `box == null`, JVM cố gắng dereference con trỏ null và ném ra `NullPointerException`."
   },
   {
-    "id": 391,
+    "id": 383,
     "bank_id": "midterm-obj-048",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một lớp Java có thể có bao nhiêu constructor?",
@@ -8328,11 +8160,11 @@ const QUIZ_DATA = [
     "explanation": "Một lớp có thể nạp chồng (overload) bao nhiêu constructor tùy ý, miễn là danh sách tham số của chúng khác nhau về kiểu hoặc số lượng."
   },
   {
-    "id": 392,
+    "id": 384,
     "bank_id": "midterm-obj-049",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Thuộc tính `name` của đối tượng `Person` trong đoạn mã sau có giá trị là gì khi in ra?",
@@ -8349,11 +8181,11 @@ const QUIZ_DATA = [
     "explanation": "Constructor nhận tham số `String name` gán giá trị \"John\" cho `this.name`, ghi đè giá trị khởi tạo ban đầu \"Unknown\"."
   },
   {
-    "id": 393,
+    "id": 385,
     "bank_id": "midterm-obj-050",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Tại sao việc so sánh hai đối tượng bằng `equals()` mà không kiểm tra `null` trước có thể gây ra NullPointerException?",
@@ -8370,11 +8202,11 @@ const QUIZ_DATA = [
     "explanation": "Khi `a == null`, biểu thức `a.equals(b)` sẽ ném ra NPE. Để an toàn, nên dùng `Objects.equals(a, b)` trong `java.util.Objects`."
   },
   {
-    "id": 394,
+    "id": 386,
     "bank_id": "midterm-obj-051",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một phương thức instance có thể truy cập trực tiếp biến static của cùng lớp đó không?",
@@ -8391,11 +8223,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức thể hiện (instance method) có toàn quyền truy cập cả thành viên tĩnh (static) và thành viên thể hiện của lớp."
   },
   {
-    "id": 395,
+    "id": 387,
     "bank_id": "midterm-obj-052",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Giá trị của `b.val` in ra màn hình là gì?",
@@ -8412,11 +8244,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức `modify` nhận tham số là tham chiếu tới đối tượng `b`, và câu lệnh `x.val = 20` làm thay đổi trực tiếp thuộc tính của đối tượng đó."
   },
   {
-    "id": 396,
+    "id": 388,
     "bank_id": "midterm-obj-053",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong mẫu thiết kế JavaBean chuẩn, phương thức getter cho thuộc tính kiểu boolean nguyên thủy nên bắt đầu bằng tiền tố nào?",
@@ -8433,11 +8265,11 @@ const QUIZ_DATA = [
     "explanation": "Theo quy ước chuẩn của JavaBean, thuộc tính boolean nguyên thủy (ví dụ `boolean active`) thường có getter bắt đầu bằng `is` (ví dụ `isActive()`)."
   },
   {
-    "id": 397,
+    "id": 389,
     "bank_id": "midterm-obj-054",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Phương thức `finalize()` trong lớp `Object` (đã bị deprecated từ Java 9) được JVM gọi khi nào?",
@@ -8454,11 +8286,11 @@ const QUIZ_DATA = [
     "explanation": "`finalize()` là phương thức mà JVM gọi trước khi thu dọn rác đối tượng. Hiện nay nó đã bị deprecated vì không đảm bảo thời gian chạy và gây rò rỉ tài nguyên."
   },
   {
-    "id": 398,
+    "id": 390,
     "bank_id": "midterm-obj-055",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả xuất ra màn hình là gì?",
@@ -8475,11 +8307,11 @@ const QUIZ_DATA = [
     "explanation": "Khối khởi tạo instance chạy trước (`A`), sau đó thân constructor mới thực thi (`B`)."
   },
   {
-    "id": 399,
+    "id": 391,
     "bank_id": "midterm-obj-056",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một lớp khai báo `public class Foo {}` được lưu trong file `Bar.java`. Điều gì xảy ra khi biên dịch?",
@@ -8496,11 +8328,11 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc bắt buộc trong Java: Mỗi file mã nguồn `.java` chỉ được chứa tối đa 1 class `public`, và tên file bắt buộc phải trùng khớp hoàn toàn với tên của class public đó."
   },
   {
-    "id": 400,
+    "id": 392,
     "bank_id": "midterm-obj-057",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một file mã nguồn Java có thể chứa bao nhiêu class không phải là `public` (package-private classes)?",
@@ -8517,11 +8349,11 @@ const QUIZ_DATA = [
     "explanation": "Một file `.java` chỉ có tối đa một public class, nhưng có thể chứa không giới hạn số lượng class package-private (không có từ khóa public)."
   },
   {
-    "id": 401,
+    "id": 393,
     "bank_id": "midterm-obj-058",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi thực hiện `Person p = new Person();`, từ khóa `new` có chức năng chính là gì?",
@@ -8538,11 +8370,11 @@ const QUIZ_DATA = [
     "explanation": "Từ khóa `new` yêu cầu JVM cấp phát bộ nhớ trên Heap cho đối tượng mới, khởi tạo các trường theo giá trị mặc định, sau đó gọi constructor."
   },
   {
-    "id": 402,
+    "id": 394,
     "bank_id": "midterm-obj-059",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi một phương thức trả về kiểu đối tượng, nó thực sự trả về cái gì?",
@@ -8559,11 +8391,11 @@ const QUIZ_DATA = [
     "explanation": "Java trả về bản sao của giá trị tham chiếu (địa chỉ ô nhớ trên Heap), người nhận có thể thao tác với cùng đối tượng đó."
   },
   {
-    "id": 403,
+    "id": 395,
     "bank_id": "midterm-obj-060",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Đoạn mã sau có kết quả in ra là gì?",
@@ -8580,11 +8412,11 @@ const QUIZ_DATA = [
     "explanation": "Mảng đối tượng `String[] arr = new String[5];` khởi tạo 5 phần tử với giá trị mặc định của kiểu tham chiếu là `null`."
   },
   {
-    "id": 404,
+    "id": 396,
     "bank_id": "midterm-obj-061",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Điều gì xảy ra khi bạn gọi phương thức `toString()` trên một biến tham chiếu đang giữ giá trị `null`? (Ví dụ: `String s = null; s.toString();`)",
@@ -8601,11 +8433,11 @@ const QUIZ_DATA = [
     "explanation": "Gọi bất kỳ phương thức instance nào trên biến tham chiếu có giá trị `null` đều dẫn đến `NullPointerException` trong thời gian chạy."
   },
   {
-    "id": 405,
+    "id": 397,
     "bank_id": "midterm-obj-062",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong câu lệnh `System.out.println(obj);`, nếu `obj` là `null`, kết quả in ra màn hình là gì?",
@@ -8622,11 +8454,11 @@ const QUIZ_DATA = [
     "explanation": "`PrintStream.println(Object)` ngầm kiểm tra: `String.valueOf(obj)`. Nếu `obj == null`, nó an toàn trả về chuỗi \"null\" mà không bị NullPointerException."
   },
   {
-    "id": 406,
+    "id": 398,
     "bank_id": "midterm-obj-063",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Constructor có thể có từ khóa `abstract` hoặc `static` hoặc `final` không?",
@@ -8643,11 +8475,11 @@ const QUIZ_DATA = [
     "explanation": "Constructor không thể là `abstract` (vì phải khởi tạo cụ thể), không thể là `static` (vì gắn liền với đối tượng), và không thể là `final` (vì constructor không được kế thừa hay ghi đè)."
   },
   {
-    "id": 407,
+    "id": 399,
     "bank_id": "midterm-obj-064",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Từ khóa nào được sử dụng để ngăn chặn một lớp không thể bị kế thừa bởi bất kỳ lớp nào khác?",
@@ -8664,11 +8496,11 @@ const QUIZ_DATA = [
     "explanation": "Một lớp được khai báo với từ khóa `final` (ví dụ `public final class String`) thì không lớp con nào có thể kế thừa từ nó."
   },
   {
-    "id": 408,
+    "id": 400,
     "bank_id": "midterm-obj-065",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra màn hình là gì?",
@@ -8685,11 +8517,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức tĩnh `add(int x)` nhận tham số x là giá trị nguyên thủy (pass-by-value). Phép toán `x += 5` bên trong phương thức không làm thay đổi biến `num` trong `main`."
   },
   {
-    "id": 409,
+    "id": 401,
     "bank_id": "midterm-obj-066",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong một lớp, nếu không khai báo access modifier cho một thuộc tính, thuộc tính đó có phạm vi truy cập mặc định là gì?",
@@ -8706,11 +8538,11 @@ const QUIZ_DATA = [
     "explanation": "Nếu không ghi rõ access modifier, phạm vi là package-private (mặc định), cho phép mọi lớp trong cùng package truy cập trực tiếp."
   },
   {
-    "id": 410,
+    "id": 402,
     "bank_id": "midterm-obj-067",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào phương thức `equals(Object o)` mặc định của lớp `Object` trả về `true`?",
@@ -8727,11 +8559,11 @@ const QUIZ_DATA = [
     "explanation": "Cài đặt mặc định của `Object.equals(Object obj)` chỉ đơn giản là `return (this == obj);`."
   },
   {
-    "id": 411,
+    "id": 403,
     "bank_id": "midterm-obj-068",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Phương thức nào sau đây KHÔNG thuộc về lớp `java.lang.Object`?",
@@ -8748,11 +8580,11 @@ const QUIZ_DATA = [
     "explanation": "`compareTo()` thuộc về interface `Comparable<T>`, không phải là phương thức của lớp `Object`."
   },
   {
-    "id": 412,
+    "id": 404,
     "bank_id": "midterm-obj-069",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khai báo nào sau đây tạo ra một hằng số toàn cục an toàn trong Java?",
@@ -8769,11 +8601,11 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, hằng số (constant) chuẩn được khai báo bằng `public static final` kết hợp với quy ước đặt tên IN_HOA."
   },
   {
-    "id": 413,
+    "id": 405,
     "bank_id": "midterm-obj-070",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -8790,11 +8622,11 @@ const QUIZ_DATA = [
     "explanation": "Các khối `static` được thực thi tuần tự từ trên xuống dưới theo thứ tự khai báo trong file mã nguồn khi lớp được nạp."
   },
   {
-    "id": 414,
+    "id": 406,
     "bank_id": "midterm-obj-071",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Điều gì xảy ra nếu cố gắng gán lại giá trị cho một biến tham chiếu được khai báo là `final`? (Ví dụ: `final Person p = new Person(); p = new Person();`)",
@@ -8811,11 +8643,11 @@ const QUIZ_DATA = [
     "explanation": "Từ khóa `final` gắn với biến tham chiếu nghĩa là địa chỉ tham chiếu không thể bị thay đổi sau khi khởi tạo."
   },
   {
-    "id": 415,
+    "id": 407,
     "bank_id": "midterm-obj-072",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Nếu biến tham chiếu là `final`, các thuộc tính bên trong đối tượng mà nó trỏ tới có thể thay đổi được không? (Ví dụ: `final Person p = new Person(); p.setName(\"Bob\");`)",
@@ -8832,11 +8664,11 @@ const QUIZ_DATA = [
     "explanation": "`final` chỉ bảo vệ biến tham chiếu không bị gán lại sang địa chỉ khác. Trạng thái nội tại (state) của đối tượng vẫn có thể bị biến đổi bình thường nếu đối tượng không phải là immutable."
   },
   {
-    "id": 416,
+    "id": 408,
     "bank_id": "midterm-obj-073",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Đoạn mã sau có lỗi gì không?",
@@ -8853,11 +8685,11 @@ const QUIZ_DATA = [
     "explanation": "Trong phương thức `static` (như `main`), không thể truy cập trực tiếp biến thực thể non-static `x` mà không thông qua một đối tượng cụ thể (`new Main().x`)."
   },
   {
-    "id": 417,
+    "id": 409,
     "bank_id": "midterm-obj-074",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khái niệm 'Encapsulation' (Tính đóng gói) liên hệ chặt chẽ nhất với thiết kế class nào sau đây?",
@@ -8874,11 +8706,11 @@ const QUIZ_DATA = [
     "explanation": "Đóng gói dữ liệu giúp bảo vệ tính toàn vẹn của trạng thái đối tượng, che giấu chi tiết cài đặt và kiểm soát quyền truy cập."
   },
   {
-    "id": 418,
+    "id": 410,
     "bank_id": "midterm-obj-075",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Constructor mặc định (Default Constructor) có phạm vi truy cập (access modifier) là gì?",
@@ -8895,11 +8727,11 @@ const QUIZ_DATA = [
     "explanation": "Theo đặc tả Java (JLS), default constructor do trình biên dịch sinh ra có cùng access modifier với lớp định nghĩa nó."
   },
   {
-    "id": 419,
+    "id": 411,
     "bank_id": "midterm-obj-076",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào thì hai chuỗi `s1` và `s2` có cùng địa chỉ ô nhớ (`s1 == s2 == true`)?",
@@ -8916,11 +8748,11 @@ const QUIZ_DATA = [
     "explanation": "Chuỗi ký tự literal (ví dụ `\"Hello\"`) được JVM đưa vào String Constant Pool và tái sử dụng, do đó chúng có cùng địa chỉ tham chiếu."
   },
   {
-    "id": 420,
+    "id": 412,
     "bank_id": "midterm-obj-077",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Phương thức `intern()` của lớp `String` làm nhiệm vụ gì?",
@@ -8937,11 +8769,11 @@ const QUIZ_DATA = [
     "explanation": "`s.intern()` kiểm tra xem chuỗi có trong pool chưa. Nếu có, nó trả về tham chiếu từ pool; nếu chưa, nó thêm vào pool rồi trả về tham chiếu đó."
   },
   {
-    "id": 421,
+    "id": 413,
     "bank_id": "midterm-obj-078",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Kết quả in ra là gì?",
@@ -8958,11 +8790,11 @@ const QUIZ_DATA = [
     "explanation": "Gọi `s2.intern()` trả về tham chiếu của đối tượng chuỗi trong String Pool, vốn chính là tham chiếu của `s1`. Vì vậy `s1 == s2.intern()` là true."
   },
   {
-    "id": 422,
+    "id": 414,
     "bank_id": "midterm-obj-079",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong Java, từ khóa nào dùng để cấp phát bộ nhớ động cho một mảng các đối tượng?",
@@ -8979,11 +8811,11 @@ const QUIZ_DATA = [
     "explanation": "Toán tử `new` được dùng để cấp phát bộ nhớ cho cả đối tượng đơn lẻ và mảng (ví dụ `new Student[10]`)."
   },
   {
-    "id": 423,
+    "id": 415,
     "bank_id": "midterm-obj-080",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi thực hiện `Student[] list = new Student[10];`, có bao nhiêu đối tượng `Student` thực sự được tạo ra trên Heap?",
@@ -9000,11 +8832,11 @@ const QUIZ_DATA = [
     "explanation": "Lệnh `new Student[10]` chỉ tạo ra 1 đối tượng MẢNG có sức chứa 10 phần tử, tất cả các phần tử ban đầu đều là `null`. Chưa có đối tượng `Student` nào được khởi tạo."
   },
   {
-    "id": 424,
+    "id": 416,
     "bank_id": "midterm-obj-081",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Quan hệ giữa Object và Class trong Java là quan hệ gì?",
@@ -9021,11 +8853,11 @@ const QUIZ_DATA = [
     "explanation": "Một lớp là khuôn mẫu định nghĩa các thuộc tính và hành vi, còn đối tượng là hiện thực cụ thể được sinh ra từ lớp đó."
   },
   {
-    "id": 425,
+    "id": 417,
     "bank_id": "midterm-obj-082",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Biến `static` (class variable) có đặc điểm nào sau đây?",
@@ -9042,11 +8874,11 @@ const QUIZ_DATA = [
     "explanation": "Biến static được lưu trong Metaspace/Heap và chỉ có 1 bản sao duy nhất tồn tại cho toàn bộ lớp."
   },
   {
-    "id": 426,
+    "id": 418,
     "bank_id": "midterm-obj-083",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào ta nên định nghĩa một phương thức là `static`?",
@@ -9063,11 +8895,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức static thích hợp cho các hàm tiện ích (utility) hoặc toán học (như `Math.sqrt`) không cần đọc hay sửa trạng thái của đối tượng."
   },
   {
-    "id": 427,
+    "id": 419,
     "bank_id": "midterm-obj-084",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Biến `result` có giá trị là gì?",
@@ -9084,11 +8916,11 @@ const QUIZ_DATA = [
     "explanation": "Phương thức tĩnh `sum` nhận hai đối số và trả về tổng 15 một cách chính xác."
   },
   {
-    "id": 428,
+    "id": 420,
     "bank_id": "midterm-obj-085",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Điều gì xảy ra khi bạn cố gắng tạo một đối tượng từ một lớp trừu tượng (abstract class) bằng từ khóa `new`?",
@@ -9105,11 +8937,11 @@ const QUIZ_DATA = [
     "explanation": "Lớp trừu tượng (abstract class) không thể khởi tạo trực tiếp bằng từ khóa `new`. Nó phải được kế thừa bởi một lớp cụ thể."
   },
   {
-    "id": 429,
+    "id": 421,
     "bank_id": "midterm-obj-086",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Một lớp có thể vừa là `abstract` vừa là `final` được không?",
@@ -9126,11 +8958,11 @@ const QUIZ_DATA = [
     "explanation": "`abstract` và `final` là hai từ khóa xung đột logic: một cái bắt buộc kế thừa, một cái cấm kế thừa. Trình biên dịch sẽ báo lỗi."
   },
   {
-    "id": 430,
+    "id": 422,
     "bank_id": "midterm-obj-087",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Để tạo một bản sao độc lập của một đối tượng trong Java bằng phương thức `clone()`, lớp đó cần cài đặt interface nào?",
@@ -9147,11 +8979,11 @@ const QUIZ_DATA = [
     "explanation": "Lớp gọi `super.clone()` phải cài đặt interface đánh dấu `Cloneable`, nếu không sẽ bị ném ngoại lệ `CloneNotSupportedException`."
   },
   {
-    "id": 431,
+    "id": 423,
     "bank_id": "midterm-obj-088",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Sự khác biệt giữa 'Shallow Copy' (Sao chép nông) và 'Deep Copy' (Sao chép sâu) là gì?",
@@ -9168,11 +9000,11 @@ const QUIZ_DATA = [
     "explanation": "Shallow copy chia sẻ chung các đối tượng con bên trong (chỉ copy tham chiếu). Deep copy tạo ra các bản sao độc lập hoàn toàn cho cả đối tượng chính lẫn các đối tượng con."
   },
   {
-    "id": 432,
+    "id": 424,
     "bank_id": "midterm-obj-089",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khai báo `public static void main(String[] args)` có thể thay đổi vị trí của các từ khóa `public` và `static` không?",
@@ -9189,11 +9021,11 @@ const QUIZ_DATA = [
     "explanation": "Thứ tự của các access modifier và từ khóa chỉ định (`public`, `static`, `final`) không quan trọng trong Java. `static public void` hoàn toàn tương đương."
   },
   {
-    "id": 433,
+    "id": 425,
     "bank_id": "midterm-obj-090",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Cho đoạn mã sau. Biến `msg` trong phương thức `printInfo()` tham chiếu tới đối tượng nào?",
@@ -9210,11 +9042,11 @@ const QUIZ_DATA = [
     "explanation": "Biến cục bộ luôn có quyền ưu tiên cao hơn và che khuất (shadow) biến thể hiện cùng tên nếu không sử dụng từ khóa `this.msg`."
   },
   {
-    "id": 434,
+    "id": 426,
     "bank_id": "midterm-obj-091",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Trong Java, từ khóa `this` có thể được dùng để trả về chính đối tượng hiện tại nhằm hỗ trợ kỹ thuật Method Chaining (Fluent API) không?",
@@ -9231,11 +9063,11 @@ const QUIZ_DATA = [
     "explanation": "Trả về `return this;` là mẫu thiết kế kinh điển (ví dụ: Builder Pattern) cho phép gọi liên tiếp các phương thức: `builder.setName(\"A\").setAge(20).build()`."
   },
   {
-    "id": 435,
+    "id": 427,
     "bank_id": "midterm-obj-092",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào một phương thức được gọi là 'Accessor' (Getter)?",
@@ -9252,11 +9084,11 @@ const QUIZ_DATA = [
     "explanation": "Accessor (Getter) có nhiệm vụ cung cấp quyền đọc dữ liệu của thuộc tính một cách an toàn mà không phá vỡ tính đóng gói."
   },
   {
-    "id": 436,
+    "id": 428,
     "bank_id": "midterm-obj-093",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Khi nào một phương thức được gọi là 'Mutator' (Setter)?",
@@ -9273,11 +9105,11 @@ const QUIZ_DATA = [
     "explanation": "Mutator (Setter) cho phép thay đổi dữ liệu của thuộc tính, đồng thời có thể chèn các logic kiểm tra hợp lệ (validation)."
   },
   {
-    "id": 437,
+    "id": 429,
     "bank_id": "midterm-obj-094",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Hai đối tượng khác nhau trên Heap có thể có cùng mã `hashCode` không?",
@@ -9294,11 +9126,11 @@ const QUIZ_DATA = [
     "explanation": "Vì kiểu `int` của hashCode chỉ có tối đa 2^32 giá trị trong khi số lượng đối tượng có thể tạo ra là vô hạn, hiện tượng trùng mã băm (hash collision) là hoàn toàn bình thường."
   },
   {
-    "id": 438,
+    "id": 430,
     "bank_id": "midterm-obj-095",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
     "question": "Mệnh đề nào sau đây đúng về hàm khởi tạo mặc định (Default Constructor)?",
@@ -9315,14 +9147,14 @@ const QUIZ_DATA = [
     "explanation": "Default constructor không có tham số và câu lệnh đầu tiên của nó luôn là lệnh gọi ngầm định `super()` tới constructor của lớp cha."
   },
   {
-    "id": 439,
+    "id": 431,
     "bank_id": "midterm-obj-096",
     "category": "Lớp và Đối tượng (Objects & Classes)",
     "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
+    "topicName": "Objects and Classes (Lớp và Đối tượng)",
     "topicShortName": "Objects & Classes",
     "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 96)",
+    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -9336,196 +9168,7 @@ const QUIZ_DATA = [
     "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
   },
   {
-    "id": 440,
-    "bank_id": "midterm-obj-097",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 97)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 441,
-    "bank_id": "midterm-obj-098",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 98)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 442,
-    "bank_id": "midterm-obj-099",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 99)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 443,
-    "bank_id": "midterm-obj-100",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 100)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 444,
-    "bank_id": "midterm-obj-101",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 101)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 445,
-    "bank_id": "midterm-obj-102",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 102)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 446,
-    "bank_id": "midterm-obj-103",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 103)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 447,
-    "bank_id": "midterm-obj-104",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 104)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 448,
-    "bank_id": "midterm-obj-105",
-    "category": "Lớp và Đối tượng (Objects & Classes)",
-    "topicId": "objects_classes",
-    "topicName": "Objects and Classes",
-    "topicShortName": "Objects & Classes",
-    "topicIcon": "📦",
-    "question": "Xét một lớp `Product` có thuộc tính `price`. Nếu muốn bảo vệ giá trị `price` không bị gán số âm, cách tốt nhất trong OOP là gì? (Câu 105)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Đặt `price` là `public` để mọi nơi tự kiểm tra",
-      "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-      "Đặt `price` là `static`",
-      "Khai báo `price` là `transient`"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Đặt `price` là `private` và kiểm tra `if (price >= 0)` trong phương thức setter",
-    "explanation": "Tính đóng gói (Encapsulation) yêu cầu đặt thuộc tính là `private` và cung cấp setter có logic xác thực (validation) để duy trì tính nhất quán và bảo vệ dữ liệu."
-  },
-  {
-    "id": 449,
+    "id": 432,
     "bank_id": "midterm-encap-001",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9546,7 +9189,7 @@ const QUIZ_DATA = [
     "explanation": "Từ khóa `public` cung cấp phạm vi truy cập rộng nhất, cho phép truy cập từ mọi class trong mọi package."
   },
   {
-    "id": 450,
+    "id": 433,
     "bank_id": "midterm-encap-002",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9567,7 +9210,7 @@ const QUIZ_DATA = [
     "explanation": "`protected` cho phép truy cập từ các lớp trong cùng package và các lớp kế thừa ở package khác."
   },
   {
-    "id": 451,
+    "id": 434,
     "bank_id": "midterm-encap-003",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9588,7 +9231,7 @@ const QUIZ_DATA = [
     "explanation": "Mặc định khi không khai báo (default), quyền truy cập là package-private, chỉ các lớp trong cùng package mới thấy được."
   },
   {
-    "id": 452,
+    "id": 435,
     "bank_id": "midterm-encap-004",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9609,7 +9252,7 @@ const QUIZ_DATA = [
     "explanation": "`private` là mức bảo vệ nghiêm ngặt nhất, chỉ mã nguồn nằm bên trong chính lớp đó mới truy cập được."
   },
   {
-    "id": 453,
+    "id": 436,
     "bank_id": "midterm-encap-005",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9630,7 +9273,7 @@ const QUIZ_DATA = [
     "explanation": "Thuộc tính public cho phép bất kỳ mã ngoài nào tùy ý sửa đổi dữ liệu mà không qua xác thực, phá hủy tính đóng gói và toàn vẹn dữ liệu."
   },
   {
-    "id": 454,
+    "id": 437,
     "bank_id": "midterm-encap-006",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9651,7 +9294,7 @@ const QUIZ_DATA = [
     "explanation": "`Date` là một đối tượng khả biến (mutable). Nếu trả về trực tiếp tham chiếu nội bộ, bên ngoài có thể gọi `date.setTime(...)` làm thay đổi trạng thái đối tượng bất biến. Trả về bản sao (defensive copy) ngăn chặn điều này."
   },
   {
-    "id": 455,
+    "id": 438,
     "bank_id": "midterm-encap-007",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9672,7 +9315,7 @@ const QUIZ_DATA = [
     "explanation": "Thành viên protected ở package khác chỉ có thể truy cập thông qua quan hệ kế thừa (bên trong lớp con), không thể truy cập qua tham chiếu của một đối tượng lớp cha độc lập."
   },
   {
-    "id": 456,
+    "id": 439,
     "bank_id": "midterm-encap-008",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9693,7 +9336,7 @@ const QUIZ_DATA = [
     "explanation": "Top-level class chỉ có thể là `public` hoặc `package-private` (default). Không thể khai báo top-level class là `private` hay `protected` (chỉ inner class mới được)."
   },
   {
-    "id": 457,
+    "id": 440,
     "bank_id": "midterm-encap-009",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
@@ -9714,14 +9357,14 @@ const QUIZ_DATA = [
     "explanation": "`secret` là thuộc tính `private` của lớp `Vault`, nên không thể truy cập trực tiếp từ bên ngoài lớp `Vault` (`v.secret = 20` gây lỗi biên dịch)."
   },
   {
-    "id": 458,
+    "id": 441,
     "bank_id": "midterm-encap-010",
     "category": "Tính Đóng Gói (Encapsulation)",
     "topicId": "encapsulation",
     "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
     "topicShortName": "Encapsulation",
     "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 10)",
+    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -9735,364 +9378,7 @@ const QUIZ_DATA = [
     "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
   },
   {
-    "id": 459,
-    "bank_id": "midterm-encap-011",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 11)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 460,
-    "bank_id": "midterm-encap-012",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 461,
-    "bank_id": "midterm-encap-013",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 462,
-    "bank_id": "midterm-encap-014",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 463,
-    "bank_id": "midterm-encap-015",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 464,
-    "bank_id": "midterm-encap-016",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 465,
-    "bank_id": "midterm-encap-017",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 466,
-    "bank_id": "midterm-encap-018",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 467,
-    "bank_id": "midterm-encap-019",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 468,
-    "bank_id": "midterm-encap-020",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 469,
-    "bank_id": "midterm-encap-021",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 470,
-    "bank_id": "midterm-encap-022",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 471,
-    "bank_id": "midterm-encap-023",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 472,
-    "bank_id": "midterm-encap-024",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 473,
-    "bank_id": "midterm-encap-025",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 474,
-    "bank_id": "midterm-encap-026",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 475,
-    "bank_id": "midterm-encap-027",
-    "category": "Tính Đóng Gói (Encapsulation)",
-    "topicId": "encapsulation",
-    "topicName": "Encapsulation (Tính Đóng Gói & Access Modifiers)",
-    "topicShortName": "Encapsulation",
-    "topicIcon": "🔒",
-    "question": "Lợi ích nào sau đây KHÔNG PHẢI là lợi ích của tính Đóng gói (Encapsulation)? (Câu 27)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Kiểm soát và thẩm định giá trị dữ liệu nhập vào thông qua setter",
-      "Cho phép thay đổi cài đặt nội bộ mà không làm ảnh hưởng đến mã nguồn bên ngoài",
-      "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-      "Giấu các chi tiết cài đặt phức tạp khỏi người dùng"
-    ],
-    "correctIndex": 2,
-    "correct_text": "Tự động tăng tốc độ xử lý đa luồng gấp đôi",
-    "explanation": "Tính đóng gói giúp bảo vệ dữ liệu và tăng khả năng bảo trì, chứ không tự động tăng tốc độ phần cứng hay hiệu năng đa luồng."
-  },
-  {
-    "id": 476,
+    "id": 442,
     "bank_id": "midterm-inh-001",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10113,7 +9399,7 @@ const QUIZ_DATA = [
     "explanation": "Java áp dụng đơn kế thừa lớp (Single Class Inheritance) để tránh xung đột Diamond Problem khi hai lớp cha có cùng phương thức."
   },
   {
-    "id": 477,
+    "id": 443,
     "bank_id": "midterm-inh-002",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10134,7 +9420,7 @@ const QUIZ_DATA = [
     "explanation": "Trình biên dịch tự động chèn lệnh `super();` vào đầu mọi constructor nếu lập trình viên không gọi `super(...)` hoặc `this(...)` tường minh."
   },
   {
-    "id": 478,
+    "id": 444,
     "bank_id": "midterm-inh-003",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10155,7 +9441,7 @@ const QUIZ_DATA = [
     "explanation": "Constructor của lớp cha `Base` luôn chạy trước khi thân constructor của lớp con `Sub` được thực thi. Kết quả: `Base Sub`."
   },
   {
-    "id": 479,
+    "id": 445,
     "bank_id": "midterm-inh-004",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10176,7 +9462,7 @@ const QUIZ_DATA = [
     "explanation": "Lớp con tự động tìm constructor không tham số `super()`. Vì lớp cha chỉ có constructor có tham số, `super()` không tồn tại dẫn đến lỗi biên dịch."
   },
   {
-    "id": 480,
+    "id": 446,
     "bank_id": "midterm-inh-005",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10197,7 +9483,7 @@ const QUIZ_DATA = [
     "explanation": "`super` dùng để gọi constructor lớp cha (`super(...)`), truy cập thuộc tính bị che khuất (`super.field`), hoặc gọi phương thức bị ghi đè (`super.method()`)."
   },
   {
-    "id": 481,
+    "id": 447,
     "bank_id": "midterm-inh-006",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
@@ -10218,14 +9504,14 @@ const QUIZ_DATA = [
     "explanation": "Biến thuộc tính (fields) trong Java KHÔNG có tính đa hình; chúng bị che khuất (shadowed/hidden). Việc truy cập thuộc tính được giải quyết tại thời điểm biên dịch dựa trên kiểu tham chiếu `Parent`, nên in ra `10`."
   },
   {
-    "id": 482,
+    "id": 448,
     "bank_id": "midterm-inh-007",
     "category": "Tính Kế Thừa (Inheritance)",
     "topicId": "inheritance",
     "topicName": "Inheritance (Tính Kế Thừa)",
     "topicShortName": "Inheritance",
     "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 7)",
+    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -10239,406 +9525,7 @@ const QUIZ_DATA = [
     "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
   },
   {
-    "id": 483,
-    "bank_id": "midterm-inh-008",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 8)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 484,
-    "bank_id": "midterm-inh-009",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 9)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 485,
-    "bank_id": "midterm-inh-010",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 10)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 486,
-    "bank_id": "midterm-inh-011",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 11)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 487,
-    "bank_id": "midterm-inh-012",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 488,
-    "bank_id": "midterm-inh-013",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 489,
-    "bank_id": "midterm-inh-014",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 490,
-    "bank_id": "midterm-inh-015",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 491,
-    "bank_id": "midterm-inh-016",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 492,
-    "bank_id": "midterm-inh-017",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 493,
-    "bank_id": "midterm-inh-018",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 494,
-    "bank_id": "midterm-inh-019",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 495,
-    "bank_id": "midterm-inh-020",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 496,
-    "bank_id": "midterm-inh-021",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 497,
-    "bank_id": "midterm-inh-022",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 498,
-    "bank_id": "midterm-inh-023",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 499,
-    "bank_id": "midterm-inh-024",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 500,
-    "bank_id": "midterm-inh-025",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 501,
-    "bank_id": "midterm-inh-026",
-    "category": "Tính Kế Thừa (Inheritance)",
-    "topicId": "inheritance",
-    "topicName": "Inheritance (Tính Kế Thừa)",
-    "topicShortName": "Inheritance",
-    "topicIcon": "🧬",
-    "question": "Tất cả các lớp trong Java không khai báo từ khóa `extends` thì ngầm định kế thừa trực tiếp từ lớp nào? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "java.lang.System",
-      "java.lang.Object",
-      "java.lang.Class",
-      "java.lang.Base"
-    ],
-    "correctIndex": 1,
-    "correct_text": "java.lang.Object",
-    "explanation": "`java.lang.Object` là lớp gốc (root class) của toàn bộ cây kế thừa trong Java."
-  },
-  {
-    "id": 502,
+    "id": 449,
     "bank_id": "midterm-poly-001",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -10659,7 +9546,7 @@ const QUIZ_DATA = [
     "explanation": "Runtime Polymorphism được kích hoạt khi một phương thức được ghi đè (overridden) ở lớp con và được gọi thông qua biến tham chiếu của lớp cha."
   },
   {
-    "id": 503,
+    "id": 450,
     "bank_id": "midterm-poly-002",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -10680,7 +9567,7 @@ const QUIZ_DATA = [
     "explanation": "Lớp con ghi đè phương thức không được phép giảm quyền truy cập (ví dụ: cha là protected thì con phải là protected hoặc public)."
   },
   {
-    "id": 504,
+    "id": 451,
     "bank_id": "midterm-poly-003",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -10701,7 +9588,7 @@ const QUIZ_DATA = [
     "explanation": "Nhờ cơ chế Đa hình (Dynamic Binding), phương thức `sound()` của đối tượng thực tế `Dog` trên Heap sẽ được gọi, in ra `Bark`."
   },
   {
-    "id": 505,
+    "id": 452,
     "bank_id": "midterm-poly-004",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -10722,7 +9609,7 @@ const QUIZ_DATA = [
     "explanation": "Đối tượng thực sự trên Heap là `Animal`, không phải `Dog`. Phép ép kiểu xuống (downcasting) sẽ thất bại tại runtime và ném ngoại lệ `ClassCastException`."
   },
   {
-    "id": 506,
+    "id": 453,
     "bank_id": "midterm-poly-005",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
@@ -10743,14 +9630,14 @@ const QUIZ_DATA = [
     "explanation": "Từ Java 5, phương thức ghi đè ở lớp con được phép trả về kiểu dữ liệu con (subtype) của kiểu trả về ở lớp cha."
   },
   {
-    "id": 507,
+    "id": 454,
     "bank_id": "midterm-poly-006",
     "category": "Tính Đa Hình (Polymorphism)",
     "topicId": "polymorphism",
     "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
     "topicShortName": "Polymorphism",
     "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 6)",
+    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -10764,427 +9651,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
   },
   {
-    "id": 508,
-    "bank_id": "midterm-poly-007",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 7)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 509,
-    "bank_id": "midterm-poly-008",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 8)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 510,
-    "bank_id": "midterm-poly-009",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 9)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 511,
-    "bank_id": "midterm-poly-010",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 10)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 512,
-    "bank_id": "midterm-poly-011",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 11)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 513,
-    "bank_id": "midterm-poly-012",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 514,
-    "bank_id": "midterm-poly-013",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 515,
-    "bank_id": "midterm-poly-014",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 516,
-    "bank_id": "midterm-poly-015",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 517,
-    "bank_id": "midterm-poly-016",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 518,
-    "bank_id": "midterm-poly-017",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 519,
-    "bank_id": "midterm-poly-018",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 520,
-    "bank_id": "midterm-poly-019",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 521,
-    "bank_id": "midterm-poly-020",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 522,
-    "bank_id": "midterm-poly-021",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 523,
-    "bank_id": "midterm-poly-022",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 524,
-    "bank_id": "midterm-poly-023",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 525,
-    "bank_id": "midterm-poly-024",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 526,
-    "bank_id": "midterm-poly-025",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 527,
-    "bank_id": "midterm-poly-026",
-    "category": "Tính Đa Hình (Polymorphism)",
-    "topicId": "polymorphism",
-    "topicName": "Polymorphism (Tính Đa Hình & Overriding)",
-    "topicShortName": "Polymorphism",
-    "topicIcon": "🎭",
-    "question": "Phương thức `static` có thể bị ghi đè (overridden) theo cơ chế đa hình động không? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn ghi đè như phương thức thông thường",
-      "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-      "Chỉ ghi đè được nếu có annotation @Override",
-      "Chỉ ghi đè được nếu lớp con là abstract"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, phương thức static bị che giấu (method hiding) chứ không đa hình động vì được liên kết tại compile time",
-    "explanation": "Phương thức static thuộc về lớp và được liên kết tại compile-time (early binding). Khai báo trùng tên ở lớp con chỉ là Method Hiding."
-  },
-  {
-    "id": 528,
+    "id": 455,
     "bank_id": "midterm-abs-001",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
@@ -11205,7 +9672,7 @@ const QUIZ_DATA = [
     "explanation": "Lớp abstract có thể chứa cả phương thức abstract (không thân) và phương thức thông thường (có thân), cũng như thuộc tính và constructor."
   },
   {
-    "id": 529,
+    "id": 456,
     "bank_id": "midterm-abs-002",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
@@ -11226,7 +9693,7 @@ const QUIZ_DATA = [
     "explanation": "Abstract class vẫn có constructor để khởi tạo các thuộc tính của chính nó khi lớp con gọi `super(...)`."
   },
   {
-    "id": 530,
+    "id": 457,
     "bank_id": "midterm-abs-003",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
@@ -11247,7 +9714,7 @@ const QUIZ_DATA = [
     "explanation": "Một lớp cụ thể kế thừa abstract class bắt buộc phải cung cấp phần thân (body) cho toàn bộ các phương thức abstract thừa hưởng."
   },
   {
-    "id": 531,
+    "id": 458,
     "bank_id": "midterm-abs-004",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
@@ -11268,7 +9735,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức abstract không được phép có phần thân (kể cả `{}`). Cố tình viết `{}` sẽ gây lỗi biên dịch."
   },
   {
-    "id": 532,
+    "id": 459,
     "bank_id": "midterm-abs-005",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
@@ -11289,14 +9756,14 @@ const QUIZ_DATA = [
     "explanation": "Abstract class phù hợp khi các lớp có quan hệ họ hàng ruột thịt (is-a), cần chia sẻ thuộc tính thực thể (instance fields) và hàm tạo chung."
   },
   {
-    "id": 533,
+    "id": 460,
     "bank_id": "midterm-abs-006",
     "category": "Tính Trừu Tượng (Abstraction)",
     "topicId": "abstraction",
     "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
     "topicShortName": "Abstraction",
     "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 6)",
+    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -11310,427 +9777,7 @@ const QUIZ_DATA = [
     "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
   },
   {
-    "id": 534,
-    "bank_id": "midterm-abs-007",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 7)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 535,
-    "bank_id": "midterm-abs-008",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 8)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 536,
-    "bank_id": "midterm-abs-009",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 9)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 537,
-    "bank_id": "midterm-abs-010",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 10)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 538,
-    "bank_id": "midterm-abs-011",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 11)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 539,
-    "bank_id": "midterm-abs-012",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 540,
-    "bank_id": "midterm-abs-013",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 541,
-    "bank_id": "midterm-abs-014",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 542,
-    "bank_id": "midterm-abs-015",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 543,
-    "bank_id": "midterm-abs-016",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 544,
-    "bank_id": "midterm-abs-017",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 545,
-    "bank_id": "midterm-abs-018",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 546,
-    "bank_id": "midterm-abs-019",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 547,
-    "bank_id": "midterm-abs-020",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 548,
-    "bank_id": "midterm-abs-021",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 549,
-    "bank_id": "midterm-abs-022",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 550,
-    "bank_id": "midterm-abs-023",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 551,
-    "bank_id": "midterm-abs-024",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 552,
-    "bank_id": "midterm-abs-025",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 553,
-    "bank_id": "midterm-abs-026",
-    "category": "Tính Trừu Tượng (Abstraction)",
-    "topicId": "abstraction",
-    "topicName": "Abstraction (Tính Trừu Tượng & Abstract Class)",
-    "topicShortName": "Abstraction",
-    "topicIcon": "🌫️",
-    "question": "Một phương thức có thể vừa là `abstract` vừa là `static` hoặc `final` hoặc `private` không? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, hoàn toàn hợp lệ",
-      "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-      "Chỉ có thể kết hợp abstract với final",
-      "Chỉ có thể kết hợp abstract với static"
-    ],
-    "correctIndex": 1,
-    "correct_text": "Không, vì abstract bắt buộc phải được ghi đè ở lớp con, trong khi static, final và private đều ngăn cản việc ghi đè",
-    "explanation": "`abstract` mâu thuẫn trực tiếp với `private`, `static`, và `final` vì phương thức abstract yêu cầu phải được lớp con override."
-  },
-  {
-    "id": 554,
+    "id": 461,
     "bank_id": "midterm-if-001",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11751,7 +9798,7 @@ const QUIZ_DATA = [
     "explanation": "Mọi biến khai báo trong interface đều ngầm định là hằng số: `public static final`, dù lập trình viên không viết các từ khóa đó ra."
   },
   {
-    "id": 555,
+    "id": 462,
     "bank_id": "midterm-if-002",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11772,7 +9819,7 @@ const QUIZ_DATA = [
     "explanation": "Java 8 giới thiệu phương thức `default` và `static` trong interface để hỗ trợ tương thích ngược cho các thư viện như Collections."
   },
   {
-    "id": 556,
+    "id": 463,
     "bank_id": "midterm-if-003",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11793,7 +9840,7 @@ const QUIZ_DATA = [
     "explanation": "Java 9 cho phép khai báo phương thức `private` trong interface nhằm chia sẻ mã nguồn dùng chung giữa các phương thức default."
   },
   {
-    "id": 557,
+    "id": 464,
     "bank_id": "midterm-if-004",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11814,7 +9861,7 @@ const QUIZ_DATA = [
     "explanation": "Nếu hai interface cung cấp cùng một default method signature, trình biên dịch báo lỗi và bắt buộc lớp thực thi phải override để chỉ rõ cài đặt."
   },
   {
-    "id": 558,
+    "id": 465,
     "bank_id": "midterm-if-005",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11835,7 +9882,7 @@ const QUIZ_DATA = [
     "explanation": "Để gọi phương thức default của một interface cụ thể, dùng cú pháp `InterfaceName.super.method()`."
   },
   {
-    "id": 559,
+    "id": 466,
     "bank_id": "midterm-if-006",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11856,7 +9903,7 @@ const QUIZ_DATA = [
     "explanation": "Trong Java, một interface có thể mở rộng nhiều interface khác bằng cú pháp: `interface C extends A, B {}`."
   },
   {
-    "id": 560,
+    "id": 467,
     "bank_id": "midterm-if-007",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11877,7 +9924,7 @@ const QUIZ_DATA = [
     "explanation": "Phương thức tĩnh của interface KHÔNG được kế thừa bởi các lớp cài đặt. Nó chỉ có thể được gọi trực tiếp qua tên interface: `InterfaceName.method()`."
   },
   {
-    "id": 561,
+    "id": 468,
     "bank_id": "midterm-if-008",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11898,7 +9945,7 @@ const QUIZ_DATA = [
     "explanation": "Functional Interface là interface chỉ có duy nhất 1 phương thức trừu tượng (SAM), đóng vai trò là kiểu đích cho biểu thức Lambda."
   },
   {
-    "id": 562,
+    "id": 469,
     "bank_id": "midterm-if-009",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11919,7 +9966,7 @@ const QUIZ_DATA = [
     "explanation": "`Serializable` và `Cloneable` là các Marker Interface kinh điển trong Java, không có phương thức nào, dùng để đánh dấu khả năng của đối tượng cho JVM."
   },
   {
-    "id": 563,
+    "id": 470,
     "bank_id": "midterm-if-010",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
@@ -11940,14 +9987,14 @@ const QUIZ_DATA = [
     "explanation": "Bất kỳ lớp nào cài đặt interface cũng đã có sẵn cài đặt cho các phương thức của `Object`, nên các phương thức này không được tính vào giới hạn 1 abstract method của Functional Interface."
   },
   {
-    "id": 564,
+    "id": 471,
     "bank_id": "midterm-if-011",
     "category": "Giao Diện (Interfaces)",
     "topicId": "interface",
     "topicName": "Interface (Giao Diện & Default Methods)",
     "topicShortName": "Interface",
     "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 11)",
+    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -11961,1561 +10008,7 @@ const QUIZ_DATA = [
     "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
   },
   {
-    "id": 565,
-    "bank_id": "midterm-if-012",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 566,
-    "bank_id": "midterm-if-013",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 567,
-    "bank_id": "midterm-if-014",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 568,
-    "bank_id": "midterm-if-015",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 569,
-    "bank_id": "midterm-if-016",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 570,
-    "bank_id": "midterm-if-017",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 571,
-    "bank_id": "midterm-if-018",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 572,
-    "bank_id": "midterm-if-019",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 573,
-    "bank_id": "midterm-if-020",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 574,
-    "bank_id": "midterm-if-021",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 575,
-    "bank_id": "midterm-if-022",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 576,
-    "bank_id": "midterm-if-023",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 577,
-    "bank_id": "midterm-if-024",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 578,
-    "bank_id": "midterm-if-025",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 579,
-    "bank_id": "midterm-if-026",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 580,
-    "bank_id": "midterm-if-027",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 27)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 581,
-    "bank_id": "midterm-if-028",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 28)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 582,
-    "bank_id": "midterm-if-029",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 29)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 583,
-    "bank_id": "midterm-if-030",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 30)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 584,
-    "bank_id": "midterm-if-031",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 31)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 585,
-    "bank_id": "midterm-if-032",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 32)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 586,
-    "bank_id": "midterm-if-033",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 33)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 587,
-    "bank_id": "midterm-if-034",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 34)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 588,
-    "bank_id": "midterm-if-035",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 35)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 589,
-    "bank_id": "midterm-if-036",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 36)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 590,
-    "bank_id": "midterm-if-037",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 37)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 591,
-    "bank_id": "midterm-if-038",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 38)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 592,
-    "bank_id": "midterm-if-039",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 39)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 593,
-    "bank_id": "midterm-if-040",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 40)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 594,
-    "bank_id": "midterm-if-041",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 41)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 595,
-    "bank_id": "midterm-if-042",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 42)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 596,
-    "bank_id": "midterm-if-043",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 43)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 597,
-    "bank_id": "midterm-if-044",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 44)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 598,
-    "bank_id": "midterm-if-045",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 45)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 599,
-    "bank_id": "midterm-if-046",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 46)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 600,
-    "bank_id": "midterm-if-047",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 47)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 601,
-    "bank_id": "midterm-if-048",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 48)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 602,
-    "bank_id": "midterm-if-049",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 49)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 603,
-    "bank_id": "midterm-if-050",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 50)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 604,
-    "bank_id": "midterm-if-051",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 51)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 605,
-    "bank_id": "midterm-if-052",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 52)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 606,
-    "bank_id": "midterm-if-053",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 53)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 607,
-    "bank_id": "midterm-if-054",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 54)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 608,
-    "bank_id": "midterm-if-055",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 55)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 609,
-    "bank_id": "midterm-if-056",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 56)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 610,
-    "bank_id": "midterm-if-057",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 57)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 611,
-    "bank_id": "midterm-if-058",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 58)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 612,
-    "bank_id": "midterm-if-059",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 59)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 613,
-    "bank_id": "midterm-if-060",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 60)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 614,
-    "bank_id": "midterm-if-061",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 61)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 615,
-    "bank_id": "midterm-if-062",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 62)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 616,
-    "bank_id": "midterm-if-063",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 63)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 617,
-    "bank_id": "midterm-if-064",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 64)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 618,
-    "bank_id": "midterm-if-065",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 65)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 619,
-    "bank_id": "midterm-if-066",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 66)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 620,
-    "bank_id": "midterm-if-067",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 67)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 621,
-    "bank_id": "midterm-if-068",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 68)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 622,
-    "bank_id": "midterm-if-069",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 69)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 623,
-    "bank_id": "midterm-if-070",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 70)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 624,
-    "bank_id": "midterm-if-071",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 71)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 625,
-    "bank_id": "midterm-if-072",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 72)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 626,
-    "bank_id": "midterm-if-073",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 73)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 627,
-    "bank_id": "midterm-if-074",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 74)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 628,
-    "bank_id": "midterm-if-075",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 75)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 629,
-    "bank_id": "midterm-if-076",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 76)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 630,
-    "bank_id": "midterm-if-077",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 77)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 631,
-    "bank_id": "midterm-if-078",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 78)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 632,
-    "bank_id": "midterm-if-079",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 79)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 633,
-    "bank_id": "midterm-if-080",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 80)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 634,
-    "bank_id": "midterm-if-081",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 81)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 635,
-    "bank_id": "midterm-if-082",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 82)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 636,
-    "bank_id": "midterm-if-083",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 83)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 637,
-    "bank_id": "midterm-if-084",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 84)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 638,
-    "bank_id": "midterm-if-085",
-    "category": "Giao Diện (Interfaces)",
-    "topicId": "interface",
-    "topicName": "Interface (Giao Diện & Default Methods)",
-    "topicShortName": "Interface",
-    "topicIcon": "🔌",
-    "question": "Một class có thể vừa kế thừa một abstract class vừa cài đặt nhiều interface cùng lúc không? (Câu 85)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Có, cú pháp: `class A extends Base implements B, C`",
-      "Không, chỉ được chọn một trong hai",
-      "Chỉ được nếu abstract class không có constructor",
-      "Chỉ được trong Java 11 trở lên"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Có, cú pháp: `class A extends Base implements B, C`",
-    "explanation": "Java cho phép kết hợp đơn kế thừa lớp (`extends`) với đa thực thi interface (`implements Interface1, Interface2`)."
-  },
-  {
-    "id": 639,
+    "id": 472,
     "bank_id": "midterm-lam-001",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13536,7 +10029,7 @@ const QUIZ_DATA = [
     "explanation": "Cú pháp Lambda trong Java là `(parameters) -> expression` hoặc `(parameters) -> { statements; }`."
   },
   {
-    "id": 640,
+    "id": 473,
     "bank_id": "midterm-lam-002",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13557,7 +10050,7 @@ const QUIZ_DATA = [
     "explanation": "Chỉ khi có đúng 1 tham số không chỉ định kiểu tường minh, ví dụ `x -> x * 2`, thì dấu ngoặc đơn mới có thể được bỏ qua."
   },
   {
-    "id": 641,
+    "id": 474,
     "bank_id": "midterm-lam-003",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13578,7 +10071,7 @@ const QUIZ_DATA = [
     "explanation": "Biến cục bộ được lambda bắt giữ (captured) phải là `final` hoặc `effectively final`. Việc gán lại giá trị cho biến này sau đó sẽ gây lỗi biên dịch."
   },
   {
-    "id": 642,
+    "id": 475,
     "bank_id": "midterm-lam-004",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13599,7 +10092,7 @@ const QUIZ_DATA = [
     "explanation": "Dòng 3 làm thay đổi biến `num` khiến nó không còn là 'effectively final', do đó biểu thức Lambda ở Dòng 2 báo lỗi biên dịch."
   },
   {
-    "id": 643,
+    "id": 476,
     "bank_id": "midterm-lam-005",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13620,7 +10113,7 @@ const QUIZ_DATA = [
     "explanation": "`Predicate<T>` nhận một tham số kiểu `T` và trả về giá trị kiểu `boolean` qua phương thức `test(T t)`."
   },
   {
-    "id": 644,
+    "id": 477,
     "bank_id": "midterm-lam-006",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13641,7 +10134,7 @@ const QUIZ_DATA = [
     "explanation": "`Consumer<T>` 'tiêu thụ' dữ liệu: nó nhận một đối số kiểu `T` và trả về `void` thông qua phương thức `accept(T t)`."
   },
   {
-    "id": 645,
+    "id": 478,
     "bank_id": "midterm-lam-007",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13662,7 +10155,7 @@ const QUIZ_DATA = [
     "explanation": "`Supplier<T>` 'cung cấp' dữ liệu: không nhận tham số đầu vào và trả về một đối tượng kiểu `T` qua phương thức `T get()`."
   },
   {
-    "id": 646,
+    "id": 479,
     "bank_id": "midterm-lam-008",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13683,7 +10176,7 @@ const QUIZ_DATA = [
     "explanation": "`Function<T, R>` đại diện cho hàm biến đổi: nhận vào kiểu `T` và trả về kết quả kiểu `R` thông qua `apply(T t)`."
   },
   {
-    "id": 647,
+    "id": 480,
     "bank_id": "midterm-lam-009",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13704,7 +10197,7 @@ const QUIZ_DATA = [
     "explanation": "`System.out::println` là tham chiếu tới phương thức instance của một đối tượng cụ thể (`System.out`)."
   },
   {
-    "id": 648,
+    "id": 481,
     "bank_id": "midterm-lam-010",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13725,7 +10218,7 @@ const QUIZ_DATA = [
     "explanation": "Tham chiếu tới constructor sử dụng cú pháp `ClassName::new`."
   },
   {
-    "id": 649,
+    "id": 482,
     "bank_id": "midterm-lam-011",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
@@ -13746,14 +10239,14 @@ const QUIZ_DATA = [
     "explanation": "Khác với Anonymous Class (nơi `this` trỏ tới chính lớp ẩn danh), Lambda có phạm vi từ vựng (lexical scope), nên `this` trỏ tới đối tượng của lớp chứa bao ngoài."
   },
   {
-    "id": 650,
+    "id": 483,
     "bank_id": "midterm-lam-012",
     "category": "Biểu Thức Lambda & Functional Interface",
     "topicId": "lambda",
     "topicName": "Lambda Expressions & Functional Interface",
     "topicShortName": "Lambda",
     "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 12)",
+    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -13767,1960 +10260,7 @@ const QUIZ_DATA = [
     "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
   },
   {
-    "id": 651,
-    "bank_id": "midterm-lam-013",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 652,
-    "bank_id": "midterm-lam-014",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 653,
-    "bank_id": "midterm-lam-015",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 654,
-    "bank_id": "midterm-lam-016",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 655,
-    "bank_id": "midterm-lam-017",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 656,
-    "bank_id": "midterm-lam-018",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 657,
-    "bank_id": "midterm-lam-019",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 658,
-    "bank_id": "midterm-lam-020",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 659,
-    "bank_id": "midterm-lam-021",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 660,
-    "bank_id": "midterm-lam-022",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 661,
-    "bank_id": "midterm-lam-023",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 662,
-    "bank_id": "midterm-lam-024",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 663,
-    "bank_id": "midterm-lam-025",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 664,
-    "bank_id": "midterm-lam-026",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 665,
-    "bank_id": "midterm-lam-027",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 27)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 666,
-    "bank_id": "midterm-lam-028",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 28)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 667,
-    "bank_id": "midterm-lam-029",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 29)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 668,
-    "bank_id": "midterm-lam-030",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 30)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 669,
-    "bank_id": "midterm-lam-031",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 31)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 670,
-    "bank_id": "midterm-lam-032",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 32)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 671,
-    "bank_id": "midterm-lam-033",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 33)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 672,
-    "bank_id": "midterm-lam-034",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 34)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 673,
-    "bank_id": "midterm-lam-035",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 35)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 674,
-    "bank_id": "midterm-lam-036",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 36)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 675,
-    "bank_id": "midterm-lam-037",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 37)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 676,
-    "bank_id": "midterm-lam-038",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 38)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 677,
-    "bank_id": "midterm-lam-039",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 39)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 678,
-    "bank_id": "midterm-lam-040",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 40)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 679,
-    "bank_id": "midterm-lam-041",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 41)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 680,
-    "bank_id": "midterm-lam-042",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 42)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 681,
-    "bank_id": "midterm-lam-043",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 43)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 682,
-    "bank_id": "midterm-lam-044",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 44)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 683,
-    "bank_id": "midterm-lam-045",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 45)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 684,
-    "bank_id": "midterm-lam-046",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 46)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 685,
-    "bank_id": "midterm-lam-047",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 47)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 686,
-    "bank_id": "midterm-lam-048",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 48)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 687,
-    "bank_id": "midterm-lam-049",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 49)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 688,
-    "bank_id": "midterm-lam-050",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 50)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 689,
-    "bank_id": "midterm-lam-051",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 51)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 690,
-    "bank_id": "midterm-lam-052",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 52)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 691,
-    "bank_id": "midterm-lam-053",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 53)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 692,
-    "bank_id": "midterm-lam-054",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 54)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 693,
-    "bank_id": "midterm-lam-055",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 55)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 694,
-    "bank_id": "midterm-lam-056",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 56)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 695,
-    "bank_id": "midterm-lam-057",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 57)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 696,
-    "bank_id": "midterm-lam-058",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 58)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 697,
-    "bank_id": "midterm-lam-059",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 59)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 698,
-    "bank_id": "midterm-lam-060",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 60)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 699,
-    "bank_id": "midterm-lam-061",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 61)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 700,
-    "bank_id": "midterm-lam-062",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 62)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 701,
-    "bank_id": "midterm-lam-063",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 63)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 702,
-    "bank_id": "midterm-lam-064",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 64)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 703,
-    "bank_id": "midterm-lam-065",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 65)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 704,
-    "bank_id": "midterm-lam-066",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 66)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 705,
-    "bank_id": "midterm-lam-067",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 67)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 706,
-    "bank_id": "midterm-lam-068",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 68)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 707,
-    "bank_id": "midterm-lam-069",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 69)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 708,
-    "bank_id": "midterm-lam-070",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 70)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 709,
-    "bank_id": "midterm-lam-071",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 71)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 710,
-    "bank_id": "midterm-lam-072",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 72)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 711,
-    "bank_id": "midterm-lam-073",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 73)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 712,
-    "bank_id": "midterm-lam-074",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 74)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 713,
-    "bank_id": "midterm-lam-075",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 75)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 714,
-    "bank_id": "midterm-lam-076",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 76)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 715,
-    "bank_id": "midterm-lam-077",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 77)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 716,
-    "bank_id": "midterm-lam-078",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 78)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 717,
-    "bank_id": "midterm-lam-079",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 79)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 718,
-    "bank_id": "midterm-lam-080",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 80)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 719,
-    "bank_id": "midterm-lam-081",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 81)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 720,
-    "bank_id": "midterm-lam-082",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 82)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 721,
-    "bank_id": "midterm-lam-083",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 83)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 722,
-    "bank_id": "midterm-lam-084",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 84)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 723,
-    "bank_id": "midterm-lam-085",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 85)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 724,
-    "bank_id": "midterm-lam-086",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 86)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 725,
-    "bank_id": "midterm-lam-087",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 87)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 726,
-    "bank_id": "midterm-lam-088",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 88)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 727,
-    "bank_id": "midterm-lam-089",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 89)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 728,
-    "bank_id": "midterm-lam-090",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 90)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 729,
-    "bank_id": "midterm-lam-091",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 91)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 730,
-    "bank_id": "midterm-lam-092",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 92)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 731,
-    "bank_id": "midterm-lam-093",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 93)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 732,
-    "bank_id": "midterm-lam-094",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 94)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 733,
-    "bank_id": "midterm-lam-095",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 95)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 734,
-    "bank_id": "midterm-lam-096",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 96)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 735,
-    "bank_id": "midterm-lam-097",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 97)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 736,
-    "bank_id": "midterm-lam-098",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 98)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 737,
-    "bank_id": "midterm-lam-099",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 99)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 738,
-    "bank_id": "midterm-lam-100",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 100)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 739,
-    "bank_id": "midterm-lam-101",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 101)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 740,
-    "bank_id": "midterm-lam-102",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 102)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 741,
-    "bank_id": "midterm-lam-103",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 103)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 742,
-    "bank_id": "midterm-lam-104",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 104)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 743,
-    "bank_id": "midterm-lam-105",
-    "category": "Biểu Thức Lambda & Functional Interface",
-    "topicId": "lambda",
-    "topicName": "Lambda Expressions & Functional Interface",
-    "topicShortName": "Lambda",
-    "topicIcon": "λ",
-    "question": "Annotation `@FunctionalInterface` có bắt buộc phải khai báo trên một functional interface để sử dụng với lambda không? (Câu 105)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-      "Bắt buộc; thiếu annotation sẽ bị lỗi biên dịch khi dùng lambda",
-      "Chỉ bắt buộc trong Spring Framework",
-      "Chỉ bắt buộc khi có phương thức default"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Không bắt buộc; bất kỳ interface nào chỉ có đúng 1 abstract method đều là functional interface, annotation chỉ giúp trình biên dịch kiểm tra tính hợp lệ",
-    "explanation": "`@FunctionalInterface` là annotation thông tin nhằm bảo vệ interface không bị thêm phương thức trừu tượng thứ hai do vô tình; nó không bắt buộc."
-  },
-  {
-    "id": 744,
+    "id": 484,
     "bank_id": "midterm-inn-001",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15741,7 +10281,7 @@ const QUIZ_DATA = [
     "explanation": "Java phân loại Nested Class thành: Static Nested Class và Non-static Nested Class (gồm Member Inner Class, Local Inner Class, Anonymous Inner Class)."
   },
   {
-    "id": 745,
+    "id": 485,
     "bank_id": "midterm-inn-002",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15762,7 +10302,7 @@ const QUIZ_DATA = [
     "explanation": "Member Inner Class luôn gắn liền với một thể hiện cụ thể của Outer class và giữ tham chiếu ẩn tới nó. Static Nested Class độc lập và không giữ tham chiếu tới outer instance."
   },
   {
-    "id": 746,
+    "id": 486,
     "bank_id": "midterm-inn-003",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15783,7 +10323,7 @@ const QUIZ_DATA = [
     "explanation": "Vì Member Inner Class cần một instance của Outer class, cú pháp tạo đối tượng là `outerObject.new Inner()`."
   },
   {
-    "id": 747,
+    "id": 487,
     "bank_id": "midterm-inn-004",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15804,7 +10344,7 @@ const QUIZ_DATA = [
     "explanation": "Static Nested Class không cần đối tượng outer class, được khởi tạo trực tiếp bằng cú pháp `new Outer.Nested()`."
   },
   {
-    "id": 748,
+    "id": 488,
     "bank_id": "midterm-inn-005",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15825,7 +10365,7 @@ const QUIZ_DATA = [
     "explanation": "Cú pháp `OuterClass.this.field` được sử dụng để truy cập thành viên của lớp bao ngoài khi bị che khuất."
   },
   {
-    "id": 749,
+    "id": 489,
     "bank_id": "midterm-inn-006",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15846,7 +10386,7 @@ const QUIZ_DATA = [
     "explanation": "Local Inner Class sao chép giá trị của biến cục bộ vào trường ẩn của nó, do đó biến cục bộ bắt buộc phải là `final` hoặc effectively final để tránh xung đột vòng đời."
   },
   {
-    "id": 750,
+    "id": 490,
     "bank_id": "midterm-inn-007",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15867,7 +10407,7 @@ const QUIZ_DATA = [
     "explanation": "Lớp ẩn danh không có tên do lập trình viên đặt nên trình biên dịch đánh số thứ tự: `Outer$1.class`, `Outer$2.class`..."
   },
   {
-    "id": 751,
+    "id": 491,
     "bank_id": "midterm-inn-008",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15888,7 +10428,7 @@ const QUIZ_DATA = [
     "explanation": "Constructor phải có tên trùng với tên class. Vì Anonymous Class không có tên, lập trình viên không thể viết constructor tường minh mà chỉ có thể dùng khối khởi tạo `{ ... }`."
   },
   {
-    "id": 752,
+    "id": 492,
     "bank_id": "midterm-inn-009",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15909,7 +10449,7 @@ const QUIZ_DATA = [
     "explanation": "Static Nested Class không gắn với một đối tượng Outer cụ thể, nên không thể truy cập trực tiếp các thành phần non-static của Outer class."
   },
   {
-    "id": 753,
+    "id": 493,
     "bank_id": "midterm-inn-010",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
@@ -15930,14 +10470,14 @@ const QUIZ_DATA = [
     "explanation": "Khác với top-level class chỉ có thể là public hoặc default, Member Inner Class là thành viên của lớp nên có thể mang bất kỳ access modifier nào trong 4 loại."
   },
   {
-    "id": 754,
+    "id": 494,
     "bank_id": "midterm-inn-011",
     "category": "Lớp Lồng Nhau (Inner Classes)",
     "topicId": "inner_class",
     "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
     "topicShortName": "Inner Class",
     "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 11)",
+    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì?",
     "codeSnippet": null,
     "image": null,
     "options": [
@@ -15951,1981 +10491,7 @@ const QUIZ_DATA = [
     "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
   },
   {
-    "id": 755,
-    "bank_id": "midterm-inn-012",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 756,
-    "bank_id": "midterm-inn-013",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 757,
-    "bank_id": "midterm-inn-014",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 758,
-    "bank_id": "midterm-inn-015",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 759,
-    "bank_id": "midterm-inn-016",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 760,
-    "bank_id": "midterm-inn-017",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 761,
-    "bank_id": "midterm-inn-018",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 762,
-    "bank_id": "midterm-inn-019",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 763,
-    "bank_id": "midterm-inn-020",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 764,
-    "bank_id": "midterm-inn-021",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 765,
-    "bank_id": "midterm-inn-022",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 766,
-    "bank_id": "midterm-inn-023",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 767,
-    "bank_id": "midterm-inn-024",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 768,
-    "bank_id": "midterm-inn-025",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 769,
-    "bank_id": "midterm-inn-026",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 770,
-    "bank_id": "midterm-inn-027",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 27)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 771,
-    "bank_id": "midterm-inn-028",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 28)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 772,
-    "bank_id": "midterm-inn-029",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 29)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 773,
-    "bank_id": "midterm-inn-030",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 30)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 774,
-    "bank_id": "midterm-inn-031",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 31)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 775,
-    "bank_id": "midterm-inn-032",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 32)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 776,
-    "bank_id": "midterm-inn-033",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 33)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 777,
-    "bank_id": "midterm-inn-034",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 34)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 778,
-    "bank_id": "midterm-inn-035",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 35)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 779,
-    "bank_id": "midterm-inn-036",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 36)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 780,
-    "bank_id": "midterm-inn-037",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 37)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 781,
-    "bank_id": "midterm-inn-038",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 38)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 782,
-    "bank_id": "midterm-inn-039",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 39)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 783,
-    "bank_id": "midterm-inn-040",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 40)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 784,
-    "bank_id": "midterm-inn-041",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 41)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 785,
-    "bank_id": "midterm-inn-042",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 42)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 786,
-    "bank_id": "midterm-inn-043",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 43)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 787,
-    "bank_id": "midterm-inn-044",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 44)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 788,
-    "bank_id": "midterm-inn-045",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 45)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 789,
-    "bank_id": "midterm-inn-046",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 46)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 790,
-    "bank_id": "midterm-inn-047",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 47)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 791,
-    "bank_id": "midterm-inn-048",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 48)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 792,
-    "bank_id": "midterm-inn-049",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 49)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 793,
-    "bank_id": "midterm-inn-050",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 50)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 794,
-    "bank_id": "midterm-inn-051",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 51)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 795,
-    "bank_id": "midterm-inn-052",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 52)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 796,
-    "bank_id": "midterm-inn-053",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 53)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 797,
-    "bank_id": "midterm-inn-054",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 54)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 798,
-    "bank_id": "midterm-inn-055",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 55)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 799,
-    "bank_id": "midterm-inn-056",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 56)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 800,
-    "bank_id": "midterm-inn-057",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 57)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 801,
-    "bank_id": "midterm-inn-058",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 58)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 802,
-    "bank_id": "midterm-inn-059",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 59)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 803,
-    "bank_id": "midterm-inn-060",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 60)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 804,
-    "bank_id": "midterm-inn-061",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 61)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 805,
-    "bank_id": "midterm-inn-062",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 62)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 806,
-    "bank_id": "midterm-inn-063",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 63)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 807,
-    "bank_id": "midterm-inn-064",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 64)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 808,
-    "bank_id": "midterm-inn-065",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 65)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 809,
-    "bank_id": "midterm-inn-066",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 66)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 810,
-    "bank_id": "midterm-inn-067",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 67)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 811,
-    "bank_id": "midterm-inn-068",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 68)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 812,
-    "bank_id": "midterm-inn-069",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 69)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 813,
-    "bank_id": "midterm-inn-070",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 70)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 814,
-    "bank_id": "midterm-inn-071",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 71)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 815,
-    "bank_id": "midterm-inn-072",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 72)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 816,
-    "bank_id": "midterm-inn-073",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 73)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 817,
-    "bank_id": "midterm-inn-074",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 74)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 818,
-    "bank_id": "midterm-inn-075",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 75)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 819,
-    "bank_id": "midterm-inn-076",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 76)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 820,
-    "bank_id": "midterm-inn-077",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 77)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 821,
-    "bank_id": "midterm-inn-078",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 78)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 822,
-    "bank_id": "midterm-inn-079",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 79)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 823,
-    "bank_id": "midterm-inn-080",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 80)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 824,
-    "bank_id": "midterm-inn-081",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 81)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 825,
-    "bank_id": "midterm-inn-082",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 82)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 826,
-    "bank_id": "midterm-inn-083",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 83)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 827,
-    "bank_id": "midterm-inn-084",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 84)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 828,
-    "bank_id": "midterm-inn-085",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 85)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 829,
-    "bank_id": "midterm-inn-086",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 86)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 830,
-    "bank_id": "midterm-inn-087",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 87)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 831,
-    "bank_id": "midterm-inn-088",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 88)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 832,
-    "bank_id": "midterm-inn-089",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 89)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 833,
-    "bank_id": "midterm-inn-090",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 90)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 834,
-    "bank_id": "midterm-inn-091",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 91)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 835,
-    "bank_id": "midterm-inn-092",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 92)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 836,
-    "bank_id": "midterm-inn-093",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 93)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 837,
-    "bank_id": "midterm-inn-094",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 94)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 838,
-    "bank_id": "midterm-inn-095",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 95)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 839,
-    "bank_id": "midterm-inn-096",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 96)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 840,
-    "bank_id": "midterm-inn-097",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 97)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 841,
-    "bank_id": "midterm-inn-098",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 98)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 842,
-    "bank_id": "midterm-inn-099",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 99)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 843,
-    "bank_id": "midterm-inn-100",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 100)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 844,
-    "bank_id": "midterm-inn-101",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 101)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 845,
-    "bank_id": "midterm-inn-102",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 102)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 846,
-    "bank_id": "midterm-inn-103",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 103)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 847,
-    "bank_id": "midterm-inn-104",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 104)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 848,
-    "bank_id": "midterm-inn-105",
-    "category": "Lớp Lồng Nhau (Inner Classes)",
-    "topicId": "inner_class",
-    "topicName": "Inner Class & Nested Class (Lớp lồng nhau)",
-    "topicShortName": "Inner Class",
-    "topicIcon": "🪆",
-    "question": "Trong việc đóng gói và nhóm logic mã nguồn, lợi ích của việc sử dụng Inner Class trong Java là gì? (Câu 105)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-      "Tự động tăng tốc độ xử lý I/O mạng",
-      "Cho phép bỏ qua các kiểm tra ngoại lệ Checked Exception",
-      "Cho phép đa kế thừa lớp trực tiếp"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Nhóm các lớp chỉ phục vụ cho một lớp duy nhất vào cùng một chỗ và tăng tính bảo mật nhờ truy cập trực tiếp các trường private của outer class",
-    "explanation": "Inner class giúp tổ chức code gọn gàng, tăng tính đóng gói bằng cách gom các helper class vào trong lớp sử dụng chúng."
-  },
-  {
-    "id": 849,
+    "id": 495,
     "bank_id": "midterm-exp-001",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -17946,7 +10512,7 @@ const QUIZ_DATA = [
     "explanation": "`java.lang.Throwable` là lớp gốc của toàn bộ cây phân cấp ngoại lệ và lỗi trong Java, là cha của cả `Exception` và `Error`."
   },
   {
-    "id": 850,
+    "id": 496,
     "bank_id": "midterm-exp-002",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -17967,7 +10533,7 @@ const QUIZ_DATA = [
     "explanation": "`Error` đại diện cho các vấn đề nghiêm trọng cấp độ máy ảo mà ứng dụng bình thường không nên cố gắng bắt hay xử lý."
   },
   {
-    "id": 851,
+    "id": 497,
     "bank_id": "midterm-exp-003",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -17988,7 +10554,7 @@ const QUIZ_DATA = [
     "explanation": "`IOException` là Checked Exception (kế thừa trực tiếp từ `Exception` mà không qua `RuntimeException`), bắt buộc phải xử lý."
   },
   {
-    "id": 852,
+    "id": 498,
     "bank_id": "midterm-exp-004",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18009,7 +10575,7 @@ const QUIZ_DATA = [
     "explanation": "`RuntimeException` và các lớp con của nó (cùng với `Error`) là Unchecked Exceptions, không bắt buộc phải khai báo throws hay try-catch."
   },
   {
-    "id": 853,
+    "id": 499,
     "bank_id": "midterm-exp-005",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18030,7 +10596,7 @@ const QUIZ_DATA = [
     "explanation": "Khối `finally` luôn được đảm bảo chạy kể cả khi có return hoặc ngoại lệ, TRỪ KHI chương trình bị dừng cưỡng bức bởi `System.exit()` hoặc sự cố phần cứng/JVM chết."
   },
   {
-    "id": 854,
+    "id": 500,
     "bank_id": "midterm-exp-006",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18051,7 +10617,7 @@ const QUIZ_DATA = [
     "explanation": "Khi khối `finally` chứa câu lệnh `return 20;`, nó sẽ ghi đè (override) và triệt tiêu giá trị trả về `10` của khối `try`."
   },
   {
-    "id": 855,
+    "id": 501,
     "bank_id": "midterm-exp-007",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18072,7 +10638,7 @@ const QUIZ_DATA = [
     "explanation": "Tham số ngoại lệ trong khối multi-catch ngầm định là `final`. Việc gán lại `e = new ...` sẽ gây lỗi biên dịch."
   },
   {
-    "id": 856,
+    "id": 502,
     "bank_id": "midterm-exp-008",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18093,7 +10659,7 @@ const QUIZ_DATA = [
     "explanation": "`try-with-resources` tự động gọi phương thức `close()` khi kết thúc, do đó mọi tài nguyên bắt buộc phải cài đặt `java.lang.AutoCloseable` (hoặc con của nó là `Closeable`)."
   },
   {
-    "id": 857,
+    "id": 503,
     "bank_id": "midterm-exp-009",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18114,7 +10680,7 @@ const QUIZ_DATA = [
     "explanation": "Quy tắc ghi đè ngoại lệ: Lớp con không được phép ném Checked Exception mới hoặc rộng hơn lớp cha. Nó chỉ có thể ném cùng loại, ném hẹp hơn (subclass), hoặc không ném gì."
   },
   {
-    "id": 858,
+    "id": 504,
     "bank_id": "midterm-exp-010",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
@@ -18135,1568 +10701,14 @@ const QUIZ_DATA = [
     "explanation": "`throw` đi kèm với một thể hiện ngoại lệ cụ thể (`throw new Exception()`), trong khi `throws` nằm ở khai báo phương thức đi kèm với tên lớp ngoại lệ."
   },
   {
-    "id": 859,
+    "id": 505,
     "bank_id": "midterm-exp-011",
     "category": "Xử Lý Ngoại Lệ (Exception Handling)",
     "topicId": "exception",
     "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
     "topicShortName": "Exception",
     "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 11)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 860,
-    "bank_id": "midterm-exp-012",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 12)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 861,
-    "bank_id": "midterm-exp-013",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 13)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 862,
-    "bank_id": "midterm-exp-014",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 14)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 863,
-    "bank_id": "midterm-exp-015",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 15)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 864,
-    "bank_id": "midterm-exp-016",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 16)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 865,
-    "bank_id": "midterm-exp-017",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 17)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 866,
-    "bank_id": "midterm-exp-018",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 18)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 867,
-    "bank_id": "midterm-exp-019",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 19)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 868,
-    "bank_id": "midterm-exp-020",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 20)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 869,
-    "bank_id": "midterm-exp-021",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 21)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 870,
-    "bank_id": "midterm-exp-022",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 22)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 871,
-    "bank_id": "midterm-exp-023",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 23)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 872,
-    "bank_id": "midterm-exp-024",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 24)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 873,
-    "bank_id": "midterm-exp-025",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 25)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 874,
-    "bank_id": "midterm-exp-026",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 26)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 875,
-    "bank_id": "midterm-exp-027",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 27)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 876,
-    "bank_id": "midterm-exp-028",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 28)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 877,
-    "bank_id": "midterm-exp-029",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 29)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 878,
-    "bank_id": "midterm-exp-030",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 30)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 879,
-    "bank_id": "midterm-exp-031",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 31)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 880,
-    "bank_id": "midterm-exp-032",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 32)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 881,
-    "bank_id": "midterm-exp-033",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 33)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 882,
-    "bank_id": "midterm-exp-034",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 34)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 883,
-    "bank_id": "midterm-exp-035",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 35)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 884,
-    "bank_id": "midterm-exp-036",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 36)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 885,
-    "bank_id": "midterm-exp-037",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 37)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 886,
-    "bank_id": "midterm-exp-038",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 38)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 887,
-    "bank_id": "midterm-exp-039",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 39)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 888,
-    "bank_id": "midterm-exp-040",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 40)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 889,
-    "bank_id": "midterm-exp-041",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 41)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 890,
-    "bank_id": "midterm-exp-042",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 42)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 891,
-    "bank_id": "midterm-exp-043",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 43)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 892,
-    "bank_id": "midterm-exp-044",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 44)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 893,
-    "bank_id": "midterm-exp-045",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 45)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 894,
-    "bank_id": "midterm-exp-046",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 46)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 895,
-    "bank_id": "midterm-exp-047",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 47)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 896,
-    "bank_id": "midterm-exp-048",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 48)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 897,
-    "bank_id": "midterm-exp-049",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 49)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 898,
-    "bank_id": "midterm-exp-050",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 50)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 899,
-    "bank_id": "midterm-exp-051",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 51)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 900,
-    "bank_id": "midterm-exp-052",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 52)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 901,
-    "bank_id": "midterm-exp-053",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 53)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 902,
-    "bank_id": "midterm-exp-054",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 54)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 903,
-    "bank_id": "midterm-exp-055",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 55)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 904,
-    "bank_id": "midterm-exp-056",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 56)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 905,
-    "bank_id": "midterm-exp-057",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 57)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 906,
-    "bank_id": "midterm-exp-058",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 58)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 907,
-    "bank_id": "midterm-exp-059",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 59)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 908,
-    "bank_id": "midterm-exp-060",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 60)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 909,
-    "bank_id": "midterm-exp-061",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 61)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 910,
-    "bank_id": "midterm-exp-062",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 62)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 911,
-    "bank_id": "midterm-exp-063",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 63)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 912,
-    "bank_id": "midterm-exp-064",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 64)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 913,
-    "bank_id": "midterm-exp-065",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 65)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 914,
-    "bank_id": "midterm-exp-066",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 66)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 915,
-    "bank_id": "midterm-exp-067",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 67)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 916,
-    "bank_id": "midterm-exp-068",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 68)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 917,
-    "bank_id": "midterm-exp-069",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 69)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 918,
-    "bank_id": "midterm-exp-070",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 70)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 919,
-    "bank_id": "midterm-exp-071",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 71)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 920,
-    "bank_id": "midterm-exp-072",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 72)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 921,
-    "bank_id": "midterm-exp-073",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 73)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 922,
-    "bank_id": "midterm-exp-074",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 74)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 923,
-    "bank_id": "midterm-exp-075",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 75)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 924,
-    "bank_id": "midterm-exp-076",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 76)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 925,
-    "bank_id": "midterm-exp-077",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 77)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 926,
-    "bank_id": "midterm-exp-078",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 78)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 927,
-    "bank_id": "midterm-exp-079",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 79)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 928,
-    "bank_id": "midterm-exp-080",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 80)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 929,
-    "bank_id": "midterm-exp-081",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 81)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 930,
-    "bank_id": "midterm-exp-082",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 82)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 931,
-    "bank_id": "midterm-exp-083",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 83)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 932,
-    "bank_id": "midterm-exp-084",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 84)",
-    "codeSnippet": null,
-    "image": null,
-    "options": [
-      "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-      "Vì máy ảo JVM sẽ bị crash nếu không đặt ở cuối",
-      "Vì khối Exception không có phương thức getMessage()",
-      "Không có quy định này, đặt đâu cũng được"
-    ],
-    "correctIndex": 0,
-    "correct_text": "Vì nếu đặt `Exception` lên đầu, nó sẽ bắt tất cả các ngoại lệ và khiến các khối catch con bên dưới bị unreachable dẫn đến lỗi biên dịch",
-    "explanation": "Trình biên dịch Java yêu cầu bắt ngoại lệ từ cụ thể nhất đến tổng quát nhất (từ lớp con đến lớp cha) để tránh mã không thể tiếp cận (unreachable code)."
-  },
-  {
-    "id": 933,
-    "bank_id": "midterm-exp-085",
-    "category": "Xử Lý Ngoại Lệ (Exception Handling)",
-    "topicId": "exception",
-    "topicName": "Exception Handling (Xử Lý Ngoại Lệ)",
-    "topicShortName": "Exception",
-    "topicIcon": "🛡️",
-    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể? (Câu 85)",
+    "question": "Trong chuỗi các khối catch, tại sao khối bắt `catch (Exception e)` phải được đặt sau cùng so với các ngoại lệ con cụ thể?",
     "codeSnippet": null,
     "image": null,
     "options": [
